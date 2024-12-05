@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY father "file:/Users/horrocks/Software/OilEd/ontologies/mad_cows.owl#is+father+">
+  <!ENTITY has "http://cohse.semanticweb.org/ontologies/people#has++">
+  <!ENTITY mad_cows.owl "file:/Users/horrocks/Software/OilEd/ontologies/mad_cows.owl">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY people "http://cohse.semanticweb.org/ontologies/people#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="&mad_cows.owl;"
+         xmlns:father="&mad_cows.owl;#is+father+"
+         xmlns:has="&has;++"
+         xmlns:owl="&owl;"
+         xmlns:people="&people;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;">
+
+<!-- Ontology Information -->
+  <owl:Ontology rdf:about=""/>
+
+<!-- Classes -->
+  <owl:Class rdf:about="&people;animal">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;eats"/>
+        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;animal+lover">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:minCardinality>
+        <owl:onProperty rdf:resource="&has;++pet"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;bicycle">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;bone"/>
+  <owl:Class rdf:about="&people;boy">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;sex"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;male"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;young"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;brain"/>
+  <owl:Class rdf:about="&people;broadsheet">
+    <rdfs:subClassOf rdf:resource="&people;newspaper"/>
+    <owl:disjointWith rdf:resource="&people;tabloid"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;bus">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;bus+company">
+    <rdfs:subClassOf rdf:resource="&people;company"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;bus+driver">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="&people;broadsheet"/>
+            <owl:onProperty rdf:resource="&people;reads"/>
+          </owl:Restriction>
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="&people;likes"/>
+                <owl:someValuesFrom>
+                  <owl:Class>
+                    <owl:intersectionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="&people;person"/>
+                      <owl:Restriction rdf:nodeID="b1494">
+                        <owl:onProperty rdf:resource="&people;age"/>
+                        <owl:someValuesFrom>
+                          <rdf:Description>
+                            <owl:oneOf rdf:parseType="Collection">
+                              <rdf:Description rdf:about="&people;young"/>
+                            </owl:oneOf>
+                          </rdf:Description>
+                        </owl:someValuesFrom>
+                      </owl:Restriction>
+                    </owl:intersectionOf>
+                  </owl:Class>
+                </owl:someValuesFrom>
+              </owl:Restriction>
+            </owl:complementOf>
+          </owl:Class>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom rdf:resource="&people;bus"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;car">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;cat">
+    <rdfs:subClassOf rdf:resource="&people;animal"/>
+    <owl:disjointWith rdf:resource="&people;dog"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;cat+liker">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;likes"/>
+        <owl:someValuesFrom rdf:resource="&people;cat"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;cat+owner">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&has;++pet"/>
+        <owl:someValuesFrom rdf:resource="&people;cat"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;colour"/>
+  <owl:Class rdf:about="&people;company"/>
+  <owl:Class rdf:about="&people;cow">
+    <rdfs:subClassOf rdf:resource="&people;vegetarian"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;dog">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;eats"/>
+        <owl:someValuesFrom rdf:resource="&people;bone"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="&people;cat"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;dog+liker">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;likes"/>
+        <owl:someValuesFrom rdf:resource="&people;dog"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;dog+owner">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&has;++pet"/>
+        <owl:someValuesFrom rdf:resource="&people;dog"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;driver">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom rdf:resource="&people;vehicle"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;giraffe">
+    <rdfs:subClassOf rdf:resource="&people;animal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="&people;leaf"/>
+        <owl:onProperty rdf:resource="&people;eats"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;girl">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;sex"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;female"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;young"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;grass">
+    <rdfs:subClassOf rdf:resource="&people;plant"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;grownup">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;adult"/>
+              <rdf:Description rdf:about="&people;elderly"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;haulage+company"/>
+  <owl:Class rdf:about="&people;haulage+truck+driver">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;works+for"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="&people;part+of"/>
+            <owl:someValuesFrom rdf:resource="&people;haulage+company"/>
+          </owl:Restriction>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom rdf:resource="&people;truck"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;haulage+worker">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;works+for"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;haulage+company"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="&people;part+of"/>
+                <owl:someValuesFrom rdf:resource="&people;haulage+company"/>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;kid">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <rdf:Description rdf:nodeID="b1494"/>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;leaf">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;part+of"/>
+        <owl:someValuesFrom rdf:resource="&people;tree"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;lorry">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;lorry+driver">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom rdf:resource="&people;lorry"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;mad+cow">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;cow"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;eats"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;brain"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="&people;part+of"/>
+                <owl:someValuesFrom rdf:resource="&people;sheep"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;magazine">
+    <rdfs:subClassOf rdf:resource="&people;publication"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;man">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;adult"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;sex"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;male"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;newspaper">
+    <rdfs:subClassOf rdf:resource="&people;publication"/>
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="&people;broadsheet"/>
+          <rdf:Description rdf:about="&people;tabloid"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;old+lady">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="&has;++pet"/>
+            <owl:someValuesFrom rdf:resource="&people;animal"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="&people;cat"/>
+            <owl:onProperty rdf:resource="&has;++pet"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;elderly"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;sex"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;female"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;person">
+    <rdfs:subClassOf rdf:resource="&people;animal"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;pet+owner">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&has;++pet"/>
+        <owl:someValuesFrom rdf:resource="&people;animal"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;plant"/>
+  <owl:Class rdf:about="&people;publication"/>
+  <owl:Class rdf:about="&people;quality+broadsheet">
+    <rdfs:subClassOf rdf:resource="&people;broadsheet"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;red+top">
+    <rdfs:subClassOf rdf:resource="&people;tabloid"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;sheep">
+    <rdfs:subClassOf rdf:resource="&people;animal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="&people;grass"/>
+        <owl:onProperty rdf:resource="&people;eats"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;tabloid">
+    <rdfs:subClassOf rdf:resource="&people;newspaper"/>
+    <owl:disjointWith rdf:resource="&people;broadsheet"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;tree">
+    <rdfs:subClassOf rdf:resource="&people;plant"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;truck">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;van">
+    <rdfs:subClassOf rdf:resource="&people;vehicle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;van+driver">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom rdf:resource="&people;van"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;vegetarian">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;animal"/>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:complementOf rdf:resource="&people;animal"/>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="&people;eats"/>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="&people;part+of"/>
+                <owl:someValuesFrom rdf:resource="&people;animal"/>
+              </owl:Restriction>
+            </owl:complementOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="&people;eats"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;vehicle"/>
+  <owl:Class rdf:about="&people;white+van+man">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="&people;tabloid"/>
+        <owl:onProperty rdf:resource="&people;reads"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;man"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;drives"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;van"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="&has;++colour"/>
+                <owl:someValuesFrom>
+                  <rdf:Description>
+                    <owl:oneOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="&people;white"/>
+                    </owl:oneOf>
+                  </rdf:Description>
+                </owl:someValuesFrom>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&people;woman">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;person"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;age"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;adult"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;sex"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="&people;female"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:nodeID="b1523">
+    <owl:disjointWith>
+      <owl:Class>
+        <owl:disjointWith rdf:nodeID="b1523"/>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="&people;plant"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="&people;part+of"/>
+            <owl:someValuesFrom rdf:resource="&people;plant"/>
+          </owl:Restriction>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:disjointWith>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&people;animal"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&people;part+of"/>
+        <owl:someValuesFrom rdf:resource="&people;animal"/>
+      </owl:Restriction>
+    </owl:unionOf>
+  </owl:Class>
+
+<!-- Datatype Properties -->
+  <owl:DatatypeProperty rdf:about="&people;service_number"/>
+
+<!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="#is+father+of"/>
+  <owl:ObjectProperty rdf:about="&people;age">
+    <rdfs:range>
+      <rdf:Description>
+        <owl:oneOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="&people;adult"/>
+          <rdf:Description rdf:about="&people;elderly"/>
+          <rdf:Description rdf:about="&people;young"/>
+        </owl:oneOf>
+      </rdf:Description>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&people;drives"/>
+  <owl:ObjectProperty rdf:about="&people;eaten+by"/>
+  <owl:ObjectProperty rdf:about="&people;eats">
+    <rdfs:domain rdf:resource="&people;animal"/>
+    <owl:inverseOf rdf:resource="&people;eaten+by"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&has;++child"/>
+  <owl:ObjectProperty rdf:about="&has;++colour"/>
+  <owl:ObjectProperty rdf:about="&has;++father">
+    <rdfs:range rdf:resource="&people;man"/>
+    <rdfs:subPropertyOf rdf:resource="&has;++parent"/>
+    <owl:inverseOf rdf:resource="#is+father+of"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&has;++mother">
+    <rdfs:range rdf:resource="&people;woman"/>
+    <rdfs:subPropertyOf rdf:resource="&has;++parent"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&has;++parent"/>
+  <owl:ObjectProperty rdf:about="&has;++part">
+    <owl:inverseOf rdf:resource="&people;part+of"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&has;++pet"/>
+  <owl:ObjectProperty rdf:about="&people;likes"/>
+  <owl:ObjectProperty rdf:about="&people;part+of"/>
+  <owl:ObjectProperty rdf:about="&people;reads">
+    <rdfs:range rdf:resource="&people;publication"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&people;sex">
+    <rdfs:range>
+      <rdf:Description>
+        <owl:oneOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="&people;female"/>
+          <rdf:Description rdf:about="&people;male"/>
+        </owl:oneOf>
+      </rdf:Description>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&people;works+for"/>
+
+<!-- Instances -->
+  <people:van rdf:about="#A123ABC">
+    <has:colour rdf:resource="&people;white"/>
+  </people:van>
+
+  <people:person rdf:about="#John">
+    <father:of rdf:resource="#Peter"/>
+    <people:drives rdf:resource="#A123ABC"/>
+    <people:reads rdf:resource="&people;TheSun"/>
+  </people:person>
+
+  <people:person rdf:about="#Peter"/>
+  <people:bus rdf:about="&people;The42">
+    <people:service_number rdf:datatype="&xsd;integer">42</people:service_number>
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:bus>
+
+  <people:broadsheet rdf:about="&people;TheGuardian">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:broadsheet>
+
+  <people:tabloid rdf:about="&people;TheMirror">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:tabloid>
+
+  <people:publication rdf:about="&people;TheSun">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:publication>
+
+  <people:broadsheet rdf:about="&people;TheTimes">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:broadsheet>
+
+  <owl:Thing rdf:about="&people;adult"/>
+  <people:colour rdf:about="&people;blue">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:colour>
+
+  <owl:Thing rdf:about="&people;elderly"/>
+  <owl:Thing rdf:about="&people;female"/>
+  <owl:Thing rdf:about="&people;male"/>
+  <people:colour rdf:about="&people;red">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:colour>
+
+  <people:colour rdf:about="&people;white">
+    <rdf:type rdf:resource="&owl;Thing"/>
+  </people:colour>
+
+  <owl:Thing rdf:about="&people;young"/>
+</rdf:RDF>

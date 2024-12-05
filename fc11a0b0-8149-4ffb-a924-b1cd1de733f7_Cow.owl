@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Ontology1241117378878 "http://www.semanticweb.org/ontologies/2009/3/Ontology1241117378878.owl#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2006/12/owl2-xml#"
+     xml:base="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:Ontology1241117378878="http://www.semanticweb.org/ontologies/2009/3/Ontology1241117378878.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     URI="http://www.semanticweb.org/ontologies/2009/3/Ontology1241117378878.owl">
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Animal"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Animal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <Class URI="&owl;Thing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Animal-Lover"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <ObjectUnionOf>
+                <Class URI="&Ontology1241117378878;Animal"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+                    <Class URI="&Ontology1241117378878;Animal"/>
+                </ObjectSomeValuesFrom>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Animal-Lover"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Bone"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Bone"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+            <Class URI="&Ontology1241117378878;Animal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Brain"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cat"/>
+        <Class URI="&Ontology1241117378878;Animal"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Cat-Liker"/>
+        <ObjectIntersectionOf>
+            <Class URI="&Ontology1241117378878;Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty URI="&Ontology1241117378878;likes"/>
+                <Class URI="&Ontology1241117378878;Cat"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cat-Liker"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Cat-Owner"/>
+        <ObjectIntersectionOf>
+            <Class URI="&Ontology1241117378878;Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty URI="&Ontology1241117378878;has-pet"/>
+                <Class URI="&Ontology1241117378878;Cat"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cat-Owner"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cow"/>
+        <Class URI="&Ontology1241117378878;Vegetarian"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Cow-Brain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+            <Class URI="&Ontology1241117378878;Cow"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cow-Brain"/>
+        <Class URI="&Ontology1241117378878;Brain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Cow-Brain"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Dog"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Dog"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <Class URI="&Ontology1241117378878;Bone"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Dog-Liker"/>
+        <ObjectIntersectionOf>
+            <Class URI="&Ontology1241117378878;Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty URI="&Ontology1241117378878;likes"/>
+                <Class URI="&Ontology1241117378878;Dog"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Dog-Liker"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Duck"/>
+        <Class URI="&Ontology1241117378878;Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Grass"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Leaf"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Leaf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+            <Class URI="&Ontology1241117378878;Tree"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Mad-Cow"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <Class URI="&Ontology1241117378878;Sheep-Brain"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Mad-Cow"/>
+        <Class URI="&Ontology1241117378878;Cow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Mad-Cow"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Person"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Pet-Owner"/>
+        <ObjectIntersectionOf>
+            <Class URI="&Ontology1241117378878;Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty URI="&Ontology1241117378878;has-pet"/>
+                <Class URI="&Ontology1241117378878;Animal"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Pet-Owner"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Plant"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Sheep"/>
+        <Class URI="&Ontology1241117378878;Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Sheep"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <Class URI="&Ontology1241117378878;Grass"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Sheep-Brain"/>
+        <ObjectIntersectionOf>
+            <Class URI="&Ontology1241117378878;Brain"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+                <Class URI="&Ontology1241117378878;Sheep"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Sheep-Brain"/>
+        <Class URI="&Ontology1241117378878;Brain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Sheep-Brain"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Tree"/>
+        <Class URI="&Ontology1241117378878;Plant"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Vegetarian"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <ObjectComplementOf>
+                <Class URI="&Ontology1241117378878;Animal"/>
+            </ObjectComplementOf>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class URI="&Ontology1241117378878;Vegetarian"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty URI="&Ontology1241117378878;eats"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty URI="&Ontology1241117378878;is-part-of"/>
+                    <Class URI="&Ontology1241117378878;Animal"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class URI="&Ontology1241117378878;Vegetarian"/>
+        <Class URI="&owl;Thing"/>
+    </SubClassOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.941) http://owlapi.sourceforge.net -->
+

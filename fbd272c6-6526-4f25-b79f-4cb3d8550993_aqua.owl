@@ -1,0 +1,508 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ontologydesignpatterns.org/test/aqua.owl#"
+     xml:base="http://www.ontologydesignpatterns.org/test/aqua.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#brotherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#brotherOf">
+        <rdfs:label xml:lang="en">brotherOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#eat -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#eat">
+        <rdfs:label xml:lang="en">eat</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn">
+        <rdfs:label xml:lang="en">livesIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#motherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#motherOf">
+        <rdfs:label xml:lang="en">motherOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#partOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label xml:lang="en">part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#sibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#sibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="en">sibling</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#uncleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#uncleOf">
+        <rdfs:label xml:lang="en">uncleOf</rdfs:label>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#brotherOf"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#motherOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#id">
+        <rdfs:label xml:lang="en">id</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#lengthInMetres -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#lengthInMetres">
+        <rdfs:label xml:lang="en">lengthInMetres</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Animal -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Animal">
+        <rdfs:label xml:lang="en">Animal</rdfs:label>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#id"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal">
+        <rdfs:label xml:lang="en">AquaticMammal</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MammiferoAquatico"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticOrganism"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Mammal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticOrganism -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticOrganism">
+        <rdfs:label xml:lang="en">AquaticOrganism</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Crustacean"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Crustacean -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Crustacean">
+        <rdfs:label xml:lang="en">Crustacean</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Fish -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish">
+        <rdfs:label xml:lang="en">Fish</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#LivingInIndianOcean -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#LivingInIndianOcean">
+        <rdfs:label xml:lang="en">LivingInIndianOcean</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+                <owl:hasValue rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#LivingInIndianPacificOceans -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#LivingInIndianPacificOceans">
+        <rdfs:label xml:lang="en">LivingInIndianPacificOceans</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#PacificOcean"/>
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Mammal -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Mammal">
+        <rdfs:label xml:lang="en">Mammal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#MammiferoAquatico -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#MammiferoAquatico">
+        <rdfs:label xml:lang="en">MammiferoAquatico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat">
+        <rdfs:label xml:lang="en">MarineHabitat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#NonFish -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#NonFish">
+        <rdfs:label xml:lang="en">NonFish</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#OmnivoreAnimal -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#OmnivoreAnimal">
+        <rdfs:label xml:lang="en">OmnivoreAnimal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Animal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#eat"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Animal"/>
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Plant"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Plant -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Plant">
+        <rdfs:label xml:lang="en">Plant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Whale -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Whale">
+        <rdfs:label xml:lang="en">Whale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#BackOfNautilusTail -->
+
+    <owl:Thing rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#BackOfNautilusTail">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">BackOfNautilusTail</rdfs:label>
+        <partOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#NautilusTail"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+        <rdfs:label xml:lang="en">IndianOcean</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#MobyDick -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#MobyDick">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Whale"/>
+        <rdfs:label xml:lang="en">MobyDick</rdfs:label>
+        <lengthInMetres rdf:datatype="&xsd;float">23.0</lengthInMetres>
+        <id rdf:datatype="&rdfs;Literal">5764</id>
+        <rdfs:comment rdf:datatype="&xsd;string">Moby Dick has been inspired by a long hunting for the albino sperm whale Mocha Dick near the coast of Chile (more than 100 battles with whalers)</rdfs:comment>
+        <motherOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Nautilus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Nautilus -->
+
+    <owl:Thing rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Nautilus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">Nautilus</rdfs:label>
+        <livesIn rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#NautilusTail -->
+
+    <owl:Thing rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#NautilusTail">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">Tail</rdfs:label>
+        <partOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Nautilus"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#PacificOcean -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#PacificOcean">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+        <rdfs:label xml:lang="en">PacificOcean</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#Purpy -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Purpy">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Whale"/>
+        <rdfs:label xml:lang="en">Purpy</rdfs:label>
+        <brotherOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MobyDick"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/test/aqua.owl#TheWhiteWhale -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#TheWhiteWhale">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Whale"/>
+        <rdfs:label xml:lang="en">TheWhiteWhale</rdfs:label>
+        <id rdf:datatype="&rdfs;Literal">5764</id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Crustacean"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+        </owl:unionOf>
+    </owl:Class>
+    <owl:Class>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:complementOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+    </owl:Class>
+    <owl:Class>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticOrganism"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Mammal"/>
+        </owl:intersectionOf>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#AquaticMammal"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Crustacean"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Fish"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#OmnivoreAnimal"/>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#eat"/>
+        <owl:allValuesFrom>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Animal"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#Plant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:allValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#livesIn"/>
+        <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/test/aqua.owl#MarineHabitat"/>
+    </owl:Restriction>
+    <owl:Class>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:oneOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#PacificOcean"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/test/aqua.owl#IndianOcean"/>
+        </owl:oneOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1785) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Nightinggale">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="canSing"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Bird"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Animal"/>
+  <owl:Class rdf:about="#Bird">
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Fish"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Mammal"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Air"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="livesAt"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sea">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Land"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LivinArea"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Air"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Fish">
+    <owl:disjointWith rdf:resource="#Bird"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Sea"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#livesAt"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Mammal"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Air">
+    <owl:disjointWith rdf:resource="#Sea"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Land"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#LivinArea"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Mammal">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#livesAt"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Land"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+    <owl:disjointWith rdf:resource="#Fish"/>
+    <owl:disjointWith rdf:resource="#Bird"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Land">
+    <owl:disjointWith rdf:resource="#Sea"/>
+    <rdfs:subClassOf rdf:resource="#LivinArea"/>
+    <owl:disjointWith rdf:resource="#Air"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Herring">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="isEdible"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Fish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Feline">
+    <rdfs:subClassOf rdf:resource="#Mammal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasWhiskers"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cat">
+    <rdfs:subClassOf rdf:resource="#Feline"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#livesAt">
+    <rdfs:range rdf:resource="#LivinArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Animal"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#canSing">
+    <rdfs:domain rdf:resource="#Animal"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf>
+          <rdf:List>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >false</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:List>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+          </rdf:List>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="#hasWhiskers">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf>
+          <rdf:List>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >false</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:List>
+            </rdf:rest>
+          </rdf:List>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Animal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#isEdible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf>
+          <rdf:List>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >false</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:List>
+            </rdf:rest>
+          </rdf:List>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Animal"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.0 beta, Build 246)  http://protege.stanford.edu -->

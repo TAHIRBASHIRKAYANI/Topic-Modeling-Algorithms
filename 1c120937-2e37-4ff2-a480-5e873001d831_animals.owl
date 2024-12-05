@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY animals "http://www.semanticweb.org/ontologies/2008/9/animals.owl#" >
+    <!ENTITY Ontology1222949986786 "http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2008/9/animals.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2008/9/animals.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:Ontology1222949986786="http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#"
+     xmlns:animals="http://www.semanticweb.org/ontologies/2008/9/animals.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#feedsOn -->
+
+    <owl:ObjectProperty rdf:about="&Ontology1222949986786;feedsOn"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#hasPredator -->
+
+    <owl:ObjectProperty rdf:about="&Ontology1222949986786;hasPredator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Animal -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Animal">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Ontology1222949986786;Bird"/>
+                    <rdf:Description rdf:about="&Ontology1222949986786;Fox"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Bird -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Bird">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Ontology1222949986786;Chicken"/>
+                    <rdf:Description rdf:about="&Ontology1222949986786;Duck"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Chicken -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Chicken">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Bird"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Ontology1222949986786;feedsOn"/>
+                        <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Worm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Ontology1222949986786;hasPredator"/>
+                        <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Fox"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Duck -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Duck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Ontology1222949986786;MallardDuck"/>
+                    <rdf:Description rdf:about="&Ontology1222949986786;MandarinDuck"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Bird"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Ontology1222949986786;hasPredator"/>
+                <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Fox"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Flies -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Flies">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Food -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Food">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Fox -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Fox">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Animal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Ontology1222949986786;feedsOn"/>
+                <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Duck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Grass -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Grass">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#MallardDuck -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;MallardDuck">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Duck"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Ontology1222949986786;feedsOn"/>
+                <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Grass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#MandarinDuck -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;MandarinDuck">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Duck"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Ontology1222949986786;feedsOn"/>
+                <owl:someValuesFrom rdf:resource="&Ontology1222949986786;Seed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Seed -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Seed">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Worm -->
+
+    <owl:Class rdf:about="&Ontology1222949986786;Worm">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/animals.owl#Fruit -->
+
+    <owl:Class rdf:about="#Fruit">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Food"/>
+        <owl:disjointWith rdf:resource="#Grain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/animals.owl#Grain -->
+
+    <owl:Class rdf:about="#Grain">
+        <rdfs:subClassOf rdf:resource="&Ontology1222949986786;Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Tweety -->
+
+    <Ontology1222949986786:Animal rdf:about="&Ontology1222949986786;Tweety">
+        <rdf:type>
+            <owl:Class>
+                <owl:complementOf rdf:resource="&Ontology1222949986786;Flies"/>
+            </owl:Class>
+        </rdf:type>
+    </Ontology1222949986786:Animal>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/Ontology1222949986786.owl#Vuk -->
+
+    <Ontology1222949986786:Fox rdf:about="&Ontology1222949986786;Vuk"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2008/9/animals.owl#Wheat -->
+
+    <Grain rdf:about="#Wheat"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.914) http://owlapi.sourceforge.net -->
+

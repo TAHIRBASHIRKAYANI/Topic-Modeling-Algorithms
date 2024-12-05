@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY koala "http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#">
+  <!ENTITY koala.owl "http://protege.stanford.edu/plugins/owl/owl-library/koala.owl">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="&koala.owl;"
+         xmlns:koala="&koala;"
+         xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;">
+
+<!-- Ontology Information -->
+  <owl:Ontology rdf:about=""/>
+
+<!-- Classes -->
+  <owl:Class rdf:about="#Animal"
+             rdfs:seeAlso="Male"
+             owl:versionInfo="1.1">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+        <owl:onProperty rdf:resource="#hasHabitat"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="#hasGender"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Athletic"/>
+  <owl:Class rdf:about="#Degree"/>
+  <owl:Class rdf:about="#DryEucalyptForest">
+    <rdfs:subClassOf rdf:resource="#Forest"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Female">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="#female"/>
+        <owl:onProperty rdf:resource="#hasGender"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Forest">
+    <rdfs:subClassOf rdf:resource="#Habitat"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Gender"/>
+  <owl:Class rdf:about="#GraduateStudent">
+    <rdfs:subClassOf rdf:resource="#Student"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#hasDegree"/>
+        <owl:someValuesFrom>
+          <rdf:Description>
+            <owl:oneOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="#BA"/>
+              <rdf:Description rdf:about="#BS"/>
+            </owl:oneOf>
+          </rdf:Description>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Habitat"/>
+  <owl:Class rdf:about="#HappyParent">
+    <rdfs:subClassOf rdf:resource="#Parent"/>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Parent"/>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="#Athletic"/>
+              <rdf:Description rdf:about="#Intelligent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="#hasChildren"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Intelligent"/>
+  <owl:Class rdf:about="#Koala">
+    <rdfs:subClassOf rdf:resource="#Marsupials"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#hasHabitat"/>
+        <owl:someValuesFrom rdf:resource="#DryEucalyptForest"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+        <owl:onProperty rdf:resource="#isHardWorking"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#KoalaWithPhD"
+             owl:versionInfo="1.2">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Koala"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="#PhD"/>
+        <owl:onProperty rdf:resource="#hasDegree"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Male">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="#male"/>
+        <owl:onProperty rdf:resource="#hasGender"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+
+  <owl:Class rdf:about="#MaleStudentWith3Daughters">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Student"/>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:cardinality>
+        <owl:onProperty rdf:resource="#hasChildren"/>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Female"/>
+        <owl:onProperty rdf:resource="#hasChildren"/>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="#male"/>
+        <owl:onProperty rdf:resource="#hasGender"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Marsupials">
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+    <owl:disjointWith rdf:resource="#Person"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Parent">
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Animal"/>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+        <owl:onProperty rdf:resource="#hasChildren"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Person">
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+    <owl:disjointWith rdf:resource="#Marsupials"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Quokka">
+    <rdfs:subClassOf rdf:resource="#Marsupials"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+        <owl:onProperty rdf:resource="#isHardWorking"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Rainforest">
+    <rdfs:subClassOf rdf:resource="#Forest"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Student">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Person"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+        <owl:onProperty rdf:resource="#isHardWorking"/>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#hasHabitat"/>
+        <owl:someValuesFrom rdf:resource="#University"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#TasmanianDevil">
+    <rdfs:subClassOf rdf:resource="#Marsupials"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="#University">
+    <rdfs:subClassOf rdf:resource="#Habitat"/>
+  </owl:Class>
+
+  <owl:Class rdf:nodeID="b213">
+    <owl:complementOf rdf:resource="#Athletic"/>
+  </owl:Class>
+
+<!-- Datatypes -->
+  <rdfs:Datatype rdf:about="&xsd;boolean"/>
+
+<!-- Annotation Properties -->
+  <owl:AnnotationProperty rdf:about="&rdfs;seeAlso"/>
+  <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+
+<!-- Datatype Properties -->
+  <owl:DatatypeProperty rdf:about="#isHardWorking">
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="&xsd;boolean"/>
+  </owl:DatatypeProperty>
+
+<!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="#hasChildren">
+    <rdfs:domain rdf:resource="#Animal"/>
+    <rdfs:range rdf:resource="#Animal"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasDegree">
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="#Degree"/>
+  </owl:ObjectProperty>
+
+  <owl:FunctionalProperty rdf:about="#hasGender">
+    <rdf:type rdf:resource="&owl;ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Animal"/>
+    <rdfs:range rdf:resource="#Gender"/>
+  </owl:FunctionalProperty>
+
+  <owl:ObjectProperty rdf:about="#hasHabitat">
+    <rdfs:domain rdf:resource="#Animal"/>
+    <rdfs:range rdf:resource="#Habitat"/>
+  </owl:ObjectProperty>
+
+<!-- Instances -->
+  <koala:Degree rdf:about="#BA"/>
+  <koala:Degree rdf:about="#BS"/>
+  <koala:HappyParent rdf:about="#John">
+    <koala:hasChildren rdf:resource="#Mary"/>
+  </koala:HappyParent>
+
+  <koala:Degree rdf:about="#MA"/>
+  <rdf:Description rdf:about="#Mary">
+    <rdf:type rdf:nodeID="b213"/>
+  </rdf:Description>
+
+  <koala:Degree rdf:about="#PhD"/>
+  <koala:Gender rdf:about="#female"/>
+  <koala:Gender rdf:about="#male"/>
+</rdf:RDF>
