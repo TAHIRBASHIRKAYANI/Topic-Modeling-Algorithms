@@ -1,0 +1,2186 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY resource "http://semanticscience.org/resource/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY leo "http://semanticscience.org/sadi/ontology/leo.owl#" >
+    <!ENTITY leo3 "http://semanticscience.org/sadi/ontology/leo.owl#12" >
+    <!ENTITY leo2 "http://semanticscience.org/sadi/ontology/leo.owl#13" >
+]>
+
+
+<rdf:RDF xmlns="http://semanticscience.org/sadi/ontology/leo.owl#"
+     xml:base="http://semanticscience.org/sadi/ontology/leo.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:leo="http://semanticscience.org/sadi/ontology/leo.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:leo3="&leo;12"
+     xmlns:leo2="&leo;13">
+    <owl:Ontology rdf:about="">
+        <dc:rights rdf:datatype="&xsd;string"
+            >The ontology is provided &quot;as is&quot; and with no warranties. Neither I2R(Institute of Infocomm Research, A-STAR, Singapore), NUS(National University of Singapore), nor any other party involved in the creation and/or development of the ontology shall be liable for any direct, incidental, consequential, indirect or punitive damages arising out of or in relation to the Users&#39; access to, or use of, the ontology. I2R and NUS do not guarantee the accuracy of information provided by external sources and accepts no responsibility or liability for any consequences arising from the use of such data. I2R and NUS make no representations in relation to the ontology or the information provided, including but not limited to the fact that the information provided in the ontology may not be comprehensive, complete or up-to-date. Users may make modifications to the ontology provided that subsequent versions carry prominent notices stating that it was modified from the named original giving a relevant date[ and acknowledging the originators as the source of the unmodified version].</dc:rights>
+        <dc:description
+            >Lipid Eicosanoid Ontology is an extension of LiPro ontology to describe and classify eicosanoid lipids.</dc:description>
+        <rdfs:comment
+            >necessary: include all template functional group- AND &amp; OR
+use ONLY to include rare functional group that is found in the class but not sufficient to be a template functional group when necessary statement don&#39;t have AND statement</rdfs:comment>
+        <dc:title
+            >Lipid Eicosanoid Ontology</dc:title>
+        <dc:creator
+            >Leonid Chepelev, Hong-Sang Low, Michel Dumontier, Christopher J.O. Baker, Alexander Garcia, Markus R. Wenk.</dc:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000053 -->
+
+    <owl:ObjectProperty rdf:about="&resource;SIO_000053">
+        <owl:equivalentProperty rdf:resource="#hasProperPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="#hasPart">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#hasProperPart -->
+
+    <owl:ObjectProperty rdf:about="#hasProperPart">
+        <rdfs:subPropertyOf rdf:resource="#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#isPart_Of -->
+
+    <owl:ObjectProperty rdf:about="#isPart_Of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#isProper_Part_Of -->
+
+    <owl:ObjectProperty rdf:about="#isProper_Part_Of">
+        <rdfs:subPropertyOf rdf:resource="#isPart_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#12DimethylCycloPentane -->
+
+    <owl:Class rdf:about="#12DimethylCycloPentane">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#13DihydroxyCycloPentane -->
+
+    <owl:Class rdf:about="#13DihydroxyCycloPentane">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Acyl_Chain -->
+
+    <owl:Class rdf:about="#Acyl_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Acyl_Ester_Chain -->
+
+    <owl:Class rdf:about="#Acyl_Ester_Chain">
+        <rdfs:subClassOf rdf:resource="#Acyl_Chain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Acyl_Estolide_Chain -->
+
+    <owl:Class rdf:about="#Acyl_Estolide_Chain">
+        <rdfs:subClassOf rdf:resource="#Acyl_Chain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alcohol -->
+
+    <owl:Class rdf:about="#Alcohol">
+        <rdfs:subClassOf rdf:resource="#Hydroxy_Compound"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Aldehyde -->
+
+    <owl:Class rdf:about="#Aldehyde">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Aliphatic_Carbon_Group -->
+
+    <owl:Class rdf:about="#Aliphatic_Carbon_Group">
+        <rdfs:subClassOf rdf:resource="#Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkenyl_Group -->
+
+    <owl:Class rdf:about="#Alkenyl_Group">
+        <rdfs:subClassOf rdf:resource="#Aliphatic_Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkyl_Chain -->
+
+    <owl:Class rdf:about="#Alkyl_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkyl_Chain_Derivative -->
+
+    <owl:Class rdf:about="#Alkyl_Chain_Derivative">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkyl_Ether_Chain -->
+
+    <owl:Class rdf:about="#Alkyl_Ether_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkyl_Group -->
+
+    <owl:Class rdf:about="#Alkyl_Group">
+        <rdfs:subClassOf rdf:resource="#Aliphatic_Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkyl_Halide_Group -->
+
+    <owl:Class rdf:about="#Alkyl_Halide_Group">
+        <rdfs:subClassOf rdf:resource="#Aliphatic_Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alkynyl_Group -->
+
+    <owl:Class rdf:about="#Alkynyl_Group">
+        <rdfs:subClassOf rdf:resource="#Aliphatic_Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Allyl_Ether_Chain -->
+
+    <owl:Class rdf:about="#Allyl_Ether_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Alpha-Hydroxy_Acid_Group -->
+
+    <owl:Class rdf:about="#Alpha-Hydroxy_Acid_Group">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Amine_Group -->
+
+    <owl:Class rdf:about="#Amine_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Nitrogen_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Amino_Acid -->
+
+    <owl:Class rdf:about="#Amino_Acid">
+        <rdfs:subClassOf rdf:resource="#Complex_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Arthro_series -->
+
+    <owl:Class rdf:about="#Arthro_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Butyl_Derivative -->
+
+    <owl:Class rdf:about="#Butyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carbon_Chain_Group -->
+
+    <owl:Class rdf:about="#Carbon_Chain_Group">
+        <rdfs:subClassOf rdf:resource="#Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carbon_Group -->
+
+    <owl:Class rdf:about="#Carbon_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carbonyl_Compound_Group -->
+
+    <owl:Class rdf:about="#Carbonyl_Compound_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid-ACP -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid-ACP">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Ester_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid-Adenosine_Monophosphate -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid-Adenosine_Monophosphate">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Ester_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid-Carnitine -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid-Carnitine">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Ester_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid-CoA -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid-CoA">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Ester_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Amide_Group -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Amide_Group">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Ester -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Ester">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Ester_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Ester_Group -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Ester_Group">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Ethanolamine -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Ethanolamine">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Amide_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Homoserine_Lactone -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Homoserine_Lactone">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Amide_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Primary_Amide -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Primary_Amide">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Amide_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_Secondary_Amide -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_Secondary_Amide">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_Amide_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Carboxylic_Acid_derivative_Group -->
+
+    <owl:Class rdf:about="#Carboxylic_Acid_derivative_Group">
+        <rdfs:subClassOf rdf:resource="#Carbonyl_Compound_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Chain_Group -->
+
+    <owl:Class rdf:about="#Chain_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >only chain group need to separate into chain and group</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Charged_Glycan_series -->
+
+    <owl:Class rdf:about="#Charged_Glycan_series">
+        <rdfs:subClassOf rdf:resource="#Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#ChloroEpoxyCyclopentanone -->
+
+    <owl:Class rdf:about="#ChloroEpoxyCyclopentanone">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#ClavuloneGroup -->
+
+    <owl:Class rdf:about="#ClavuloneGroup">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Complex_Organic_Group -->
+
+    <owl:Class rdf:about="#Complex_Organic_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Group"/>
+        <rdfs:comment
+            >Future work may include moving nucleoside, nucleosine, amino acid, complex carboxylic acid derivative groups here.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Conjugated_Diene -->
+
+    <owl:Class rdf:about="#Conjugated_Diene">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Conjugated_Tetraene -->
+
+    <owl:Class rdf:about="#Conjugated_Tetraene">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Cyclopentenone -->
+
+    <owl:Class rdf:about="#Cyclopentenone">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Cyclopropanoyl-Iso-Octyl -->
+
+    <owl:Class rdf:about="#Cyclopropanoyl-Iso-Octyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Cytidine_Diphosphate_Glycerol -->
+
+    <owl:Class rdf:about="#Cytidine_Diphosphate_Glycerol">
+        <rdfs:subClassOf rdf:resource="#Cytidine_Phosphate_Glycerol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Cytidine_Phosphate_Glycerol_Group -->
+
+    <owl:Class rdf:about="#Cytidine_Phosphate_Glycerol_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >check out adenosine monophosphate under ester group</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Decanoyl_Derivative -->
+
+    <owl:Class rdf:about="#Decanoyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Dehydrophytosphingosine_Chain -->
+
+    <owl:Class rdf:about="#Dehydrophytosphingosine_Chain">
+        <rdfs:subClassOf rdf:resource="#Sphingoid_Base_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Dimeric_Glycan_Group -->
+
+    <owl:Class rdf:about="#Dimeric_Glycan_Group">
+        <rdfs:subClassOf rdf:resource="#Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Epoxy -->
+
+    <owl:Class rdf:about="#Epoxy">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ether -->
+
+    <owl:Class rdf:about="#Ether">
+        <rdfs:subClassOf rdf:resource="#Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ethyl -->
+
+    <owl:Class rdf:about="#Ethyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ethyl-Iso-Octyl -->
+
+    <owl:Class rdf:about="#Ethyl-Iso-Octyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Galactose -->
+
+    <owl:Class rdf:about="#Galactose">
+        <rdfs:subClassOf rdf:resource="#Monomeric_Glycan_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Gal</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ganglio_series -->
+
+    <owl:Class rdf:about="#Ganglio_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ganglioside_series -->
+
+    <owl:Class rdf:about="#Ganglioside_series">
+        <rdfs:subClassOf rdf:resource="#Charged_Glycan_series"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >based on Svennerholm nomenclature</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Globo_series -->
+
+    <owl:Class rdf:about="#Globo_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glucose -->
+
+    <owl:Class rdf:about="#Glucose">
+        <rdfs:subClassOf rdf:resource="#Monomeric_Glycan_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Glu</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glucuronic_acid -->
+
+    <owl:Class rdf:about="#Glucuronic_acid">
+        <rdfs:subClassOf rdf:resource="#Monomeric_Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycan_Group -->
+
+    <owl:Class rdf:about="#Glycan_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Sugar_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycan_series -->
+
+    <owl:Class rdf:about="#Glycan_series">
+        <rdfs:subClassOf rdf:resource="#Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerol -->
+
+    <owl:Class rdf:about="#Glycerol">
+        <rdfs:subClassOf rdf:resource="#Glycerol_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerol-nonitol -->
+
+    <owl:Class rdf:about="#Glycerol-nonitol">
+        <rdfs:subClassOf rdf:resource="#Glycerol_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerol_derivative_Group -->
+
+    <owl:Class rdf:about="#Glycerol_derivative_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerolglycan -->
+
+    <owl:Class rdf:about="#Glycerolglycan">
+        <rdfs:subClassOf rdf:resource="#Glycerol_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphate_Group -->
+
+    <owl:Class rdf:about="#Glycerophosphate_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerol_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidic_acid -->
+
+    <owl:Class rdf:about="#Glycerophosphatidic_acid">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylcholine -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylcholine">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylethanolamine -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylethanolamine">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphatidylinositol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol_Diphosphates -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol_Diphosphates">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphatidylinositol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol_Glycans -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol_Glycans">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphatidylinositol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol_Group -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol_Monophosphate -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol_Monophosphate">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphatidylinositol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylinositol_Triphosphates -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylinositol_Triphosphates">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphatidylinositol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphatidylserine -->
+
+    <owl:Class rdf:about="#Glycerophosphatidylserine">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphoglycerol_Group -->
+
+    <owl:Class rdf:about="#Glycerophosphoglycerol_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphono_Group -->
+
+    <owl:Class rdf:about="#Glycerophosphono_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphonotidylcholine -->
+
+    <owl:Class rdf:about="#Glycerophosphonotidylcholine">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphonotidylethanolamine -->
+
+    <owl:Class rdf:about="#Glycerophosphonotidylethanolamine">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphotidylglycerol -->
+
+    <owl:Class rdf:about="#Glycerophosphotidylglycerol">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphoglycerol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphotidylglycerophosphate -->
+
+    <owl:Class rdf:about="#Glycerophosphotidylglycerophosphate">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphoglycerol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycerophosphotidylglycerophosphoglycerol -->
+
+    <owl:Class rdf:about="#Glycerophosphotidylglycerophosphoglycerol">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphoglycerol_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glyceropyrophosphatidic_acid -->
+
+    <owl:Class rdf:about="#Glyceropyrophosphatidic_acid">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycine -->
+
+    <owl:Class rdf:about="#Glycine">
+        <rdfs:subClassOf rdf:resource="#Amino_Acid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Glycosylglycerophosphate_Group -->
+
+    <owl:Class rdf:about="#Glycosylglycerophosphate_Group">
+        <rdfs:subClassOf rdf:resource="#Glycerophosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Hepthyl_Derivative -->
+
+    <owl:Class rdf:about="#Hepthyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Heptyl -->
+
+    <owl:Class rdf:about="#Heptyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Hexanoyl_Derivative -->
+
+    <owl:Class rdf:about="#Hexanoyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Hexyl -->
+
+    <owl:Class rdf:about="#Hexyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Hydroperoxide -->
+
+    <owl:Class rdf:about="#Hydroperoxide">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Hydroxy_Compound -->
+
+    <owl:Class rdf:about="#Hydroxy_Compound">
+        <rdfs:subClassOf rdf:resource="#Carbon_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Iso-Octyl_Derivative -->
+
+    <owl:Class rdf:about="#Iso-Octyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Iso-Penthyl_Derivative -->
+
+    <owl:Class rdf:about="#Iso-Penthyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Penthyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Iso-Propyl_Derivative -->
+
+    <owl:Class rdf:about="#Iso-Propyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Propyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Isoglobo_series -->
+
+    <owl:Class rdf:about="#Isoglobo_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Isoprene_Chain -->
+
+    <owl:Class rdf:about="#Isoprene_Chain">
+        <rdfs:subClassOf rdf:resource="#Isoprenoid_derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Isoprene_Chain_derivative -->
+
+    <owl:Class rdf:about="#Isoprene_Chain_derivative">
+        <rdfs:subClassOf rdf:resource="#Isoprenoid_derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Isoprenoid_derivative -->
+
+    <owl:Class rdf:about="#Isoprenoid_derivative">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#IsoprostaneRing -->
+
+    <owl:Class rdf:about="#IsoprostaneRing">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ketone -->
+
+    <owl:Class rdf:about="#Ketone">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Clavulone -->
+
+    <owl:Class rdf:about="#LC_Clavulone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#ClavuloneGroup"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#ChloroEpoxyCyclopentanone"/>
+                                    <rdf:Description rdf:about="#Cyclopentenone"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Eicosanoid -->
+
+    <owl:Class rdf:about="#LC_Eicosanoid">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Fatty_Acyl"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Primary_Acyl_Chain"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Eicosanoids are fatty acyls that at least have a carboxylic acid group and an alkenyl group</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Eicosapentaenoic_acid_derivative -->
+
+    <owl:Class rdf:about="#LC_Eicosapentaenoic_acid_derivative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alkenyl_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Alcohol"/>
+                                    <rdf:Description rdf:about="#Hydroperoxide"/>
+                                    <rdf:Description rdf:about="#Peroxide"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">5</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Eicosatetraenoic_acid_derivative -->
+
+    <owl:Class rdf:about="#LC_Eicosatetraenoic_acid_derivative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alkenyl_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Alcohol"/>
+                                    <rdf:Description rdf:about="#Hydroperoxide"/>
+                                    <rdf:Description rdf:about="#Peroxide"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Eicosatrienoic_acid_derivative -->
+
+    <owl:Class rdf:about="#LC_Eicosatrienoic_acid_derivative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alkenyl_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Alcohol"/>
+                                    <rdf:Description rdf:about="#Hydroperoxide"/>
+                                    <rdf:Description rdf:about="#Peroxide"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Epoxyeicosatrienoic_acid -->
+
+    <owl:Class rdf:about="#LC_Epoxyeicosatrienoic_acid">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Epoxy"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Lipidmaps is not consistent here as this class, by strict definition should not have a an alcohol group but one of its memebers has....</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Fatty_Acyl -->
+
+    <owl:Class rdf:about="#LC_Fatty_Acyl">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Polyatomic_Entity"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasProperPart"/>
+                                <owl:someValuesFrom rdf:resource="#Alkyl_Chain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasProperPart"/>
+                                <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#NonRingPropylDerivative"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Fatty acyls are lipids that have an acyl group or a derivative of acyl group</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Hepoxilin -->
+
+    <owl:Class rdf:about="#LC_Hepoxilin">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasProperPart"/>
+                                <owl:someValuesFrom rdf:resource="#Conjugated_Diene"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Alcohol"/>
+                                    <rdf:Description rdf:about="#Epoxy"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Hydroxyeicosapentaenoic_acid -->
+
+    <owl:Class rdf:about="#LC_Hydroxyeicosapentaenoic_acid">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosapentaenoic_acid_derivative"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alcohol"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosapentaenoic_acid_derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Hydroxyeicosatetraenoic_acid -->
+
+    <owl:Class rdf:about="#LC_Hydroxyeicosatetraenoic_acid">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosatetraenoic_acid_derivative"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alcohol"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosatetraenoic_acid_derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Hydroxyeicosatrienoic_acid -->
+
+    <owl:Class rdf:about="#LC_Hydroxyeicosatrienoic_acid">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosatrienoic_acid_derivative"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alcohol"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosatrienoic_acid_derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Isoprostane -->
+
+    <owl:Class rdf:about="#LC_Isoprostane">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#13DihydroxyCycloPentane"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alkenyl_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#IsoprostaneRing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alcohol"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Leukotriene -->
+
+    <owl:Class rdf:about="#LC_Leukotriene">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Leukotriene_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:onClass rdf:resource="#Alkenyl_Group"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Levuglandin -->
+
+    <owl:Class rdf:about="#LC_Levuglandin">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Aldehyde"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Alkenyl_Group"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Ketone"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Levuglandin_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Lipoxin -->
+
+    <owl:Class rdf:about="#LC_Lipoxin">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Conjugated_Diene"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Conjugated_Tetraene"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Prostaglandin -->
+
+    <owl:Class rdf:about="#LC_Prostaglandin">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#12DimethylCycloPentane"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#RingExternalOxygen"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#LC_Thromboxane -->
+
+    <owl:Class rdf:about="#LC_Thromboxane">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LC_Eicosanoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Carboxylic_Acid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Primary_Acyl_Chain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="#Tetrahydropyran"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasProperPart"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Oxetane"/>
+                                    <rdf:Description rdf:about="#RingExternalOxygen"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#LC_Eicosanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Lacto_series -->
+
+    <owl:Class rdf:about="#Lacto_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Lactose -->
+
+    <owl:Class rdf:about="#Lactose">
+        <rdfs:subClassOf rdf:resource="#Dimeric_Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Leukotriene_Chain -->
+
+    <owl:Class rdf:about="#Leukotriene_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Levuglandin_Chain -->
+
+    <owl:Class rdf:about="#Levuglandin_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Lipid -->
+
+    <owl:Class rdf:about="#Lipid">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&resource;SIO_000053"/>
+                <owl:someValuesFrom rdf:resource="#NonRingPropylDerivative"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Polyatomic_Entity"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >hydrophobic or amphiphatic small molecules that originates or in part by carboanion based condensations and/or carbocation-based condensations of isoprene units(prenols, sterols)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Meromycolic_Chain -->
+
+    <owl:Class rdf:about="#Meromycolic_Chain">
+        <rdfs:subClassOf rdf:resource="#Acyl_Chain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Methoxy_Group -->
+
+    <owl:Class rdf:about="#Methoxy_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Methyl -->
+
+    <owl:Class rdf:about="#Methyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Methyl-Iso-Octyl -->
+
+    <owl:Class rdf:about="#Methyl-Iso-Octyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Methyl_Derivative -->
+
+    <owl:Class rdf:about="#Methyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Mollu_series -->
+
+    <owl:Class rdf:about="#Mollu_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Monomeric_Glycan_Group -->
+
+    <owl:Class rdf:about="#Monomeric_Glycan_Group">
+        <rdfs:subClassOf rdf:resource="#Glycan_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >MOnosaccharide and sugar derivatives</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Neo-lacto_series -->
+
+    <owl:Class rdf:about="#Neo-lacto_series">
+        <rdfs:subClassOf rdf:resource="#Neutral_Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Neutral_Glycan_series -->
+
+    <owl:Class rdf:about="#Neutral_Glycan_series">
+        <rdfs:subClassOf rdf:resource="#Glycan_series"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Nitrile_Group -->
+
+    <owl:Class rdf:about="#Nitrile_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Nitrogen_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Nitro_Group -->
+
+    <owl:Class rdf:about="#Nitro_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Nitrogen_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#NonRingPropylDerivative -->
+
+    <owl:Class rdf:about="#NonRingPropylDerivative">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Nucleoside -->
+
+    <owl:Class rdf:about="#Nucleoside">
+        <rdfs:subClassOf rdf:resource="#Complex_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Octyl_Derivative -->
+
+    <owl:Class rdf:about="#Octyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Organic_Group -->
+
+    <owl:Class rdf:about="#Organic_Group">
+        <rdfs:subClassOf rdf:resource="#Polyatomic_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Organic_Nitrogen_Group -->
+
+    <owl:Class rdf:about="#Organic_Nitrogen_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Organic_Phosphate_Group -->
+
+    <owl:Class rdf:about="#Organic_Phosphate_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Organic_Sugar_Group -->
+
+    <owl:Class rdf:about="#Organic_Sugar_Group">
+        <rdfs:subClassOf rdf:resource="#Complex_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Organic_Sulfur_Group -->
+
+    <owl:Class rdf:about="#Organic_Sulfur_Group">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Oxetane -->
+
+    <owl:Class rdf:about="#Oxetane">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Penthyl -->
+
+    <owl:Class rdf:about="#Penthyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Penthyl_Derivative -->
+
+    <owl:Class rdf:about="#Penthyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Pentose -->
+
+    <owl:Class rdf:about="#Pentose">
+        <rdfs:subClassOf rdf:resource="#Monomeric_Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Peroxide -->
+
+    <owl:Class rdf:about="#Peroxide">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphate_Group -->
+
+    <owl:Class rdf:about="#Phosphate_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Phosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phospho_Group -->
+
+    <owl:Class rdf:about="#Phospho_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Phosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphocholine -->
+
+    <owl:Class rdf:about="#Phosphocholine">
+        <rdfs:subClassOf rdf:resource="#Phospho_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphoethanolamine -->
+
+    <owl:Class rdf:about="#Phosphoethanolamine">
+        <rdfs:subClassOf rdf:resource="#Phospho_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphoinositol -->
+
+    <owl:Class rdf:about="#Phosphoinositol">
+        <rdfs:subClassOf rdf:resource="#Phospho_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphonic_Acid -->
+
+    <owl:Class rdf:about="#Phosphonic_Acid">
+        <rdfs:subClassOf rdf:resource="#Phosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphonic_Acid_Diester -->
+
+    <owl:Class rdf:about="#Phosphonic_Acid_Diester">
+        <rdfs:subClassOf rdf:resource="#Phosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphono_Group -->
+
+    <owl:Class rdf:about="#Phosphono_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Phosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphonocholine -->
+
+    <owl:Class rdf:about="#Phosphonocholine">
+        <rdfs:subClassOf rdf:resource="#Phosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphonoethanolamine -->
+
+    <owl:Class rdf:about="#Phosphonoethanolamine">
+        <rdfs:subClassOf rdf:resource="#Phosphono_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphoric_Acid -->
+
+    <owl:Class rdf:about="#Phosphoric_Acid">
+        <rdfs:subClassOf rdf:resource="#Phosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phosphoric_Acid_Diester -->
+
+    <owl:Class rdf:about="#Phosphoric_Acid_Diester">
+        <rdfs:subClassOf rdf:resource="#Phosphate_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Phytyl -->
+
+    <owl:Class rdf:about="#Phytyl">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Polyatomic_Entity -->
+
+    <owl:Class rdf:about="#Polyatomic_Entity">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Prenyl -->
+
+    <owl:Class rdf:about="#Prenyl">
+        <rdfs:subClassOf rdf:resource="#Simple_Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Primary_Acyl_Chain -->
+
+    <owl:Class rdf:about="#Primary_Acyl_Chain">
+        <rdfs:subClassOf rdf:resource="#Acyl_Chain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Primary_Amine -->
+
+    <owl:Class rdf:about="#Primary_Amine">
+        <rdfs:subClassOf rdf:resource="#Amine_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Primary_Iso-Octyl -->
+
+    <owl:Class rdf:about="#Primary_Iso-Octyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Primary_Iso-Propyl -->
+
+    <owl:Class rdf:about="#Primary_Iso-Propyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Propyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Propyl -->
+
+    <owl:Class rdf:about="#Propyl">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Propyl-Iso-Octyl -->
+
+    <owl:Class rdf:about="#Propyl-Iso-Octyl">
+        <rdfs:subClassOf rdf:resource="#Iso-Octyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Propyl_Derivative -->
+
+    <owl:Class rdf:about="#Propyl_Derivative">
+        <rdfs:subClassOf rdf:resource="#Alkyl_Chain_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Quarternary_Ammonium_Salt -->
+
+    <owl:Class rdf:about="#Quarternary_Ammonium_Salt">
+        <rdfs:subClassOf rdf:resource="#Amine_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#RingAlcohol -->
+
+    <owl:Class rdf:about="#RingAlcohol">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#RingExternalOxygen -->
+
+    <owl:Class rdf:about="#RingExternalOxygen">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Ring_Group -->
+
+    <owl:Class rdf:about="#Ring_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Secondary_Amine -->
+
+    <owl:Class rdf:about="#Secondary_Amine">
+        <rdfs:subClassOf rdf:resource="#Amine_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Simple_Organic_Group -->
+
+    <owl:Class rdf:about="#Simple_Organic_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sphing-4-nine_par_Sphingosine_par_Chain -->
+
+    <owl:Class rdf:about="#Sphing-4-nine_par_Sphingosine_par_Chain">
+        <rdfs:subClassOf rdf:resource="#Sphingoid_Base_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sphinganine_par_Dihydrosphingosine_par_Chain -->
+
+    <owl:Class rdf:about="#Sphinganine_par_Dihydrosphingosine_par_Chain">
+        <rdfs:subClassOf rdf:resource="#Sphingoid_Base_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sphingoid_Base_Chain_Group -->
+
+    <owl:Class rdf:about="#Sphingoid_Base_Chain_Group">
+        <rdfs:subClassOf rdf:resource="#Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfonic_Acid_Derivative -->
+
+    <owl:Class rdf:about="#Sulfonic_Acid_Derivative">
+        <rdfs:subClassOf rdf:resource="#Organic_Sulfur_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfonic_Acid_Group -->
+
+    <owl:Class rdf:about="#Sulfonic_Acid_Group">
+        <rdfs:subClassOf rdf:resource="#Sulfonic_Acid_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfuric_Acid -->
+
+    <owl:Class rdf:about="#Sulfuric_Acid">
+        <rdfs:subClassOf rdf:resource="#Sulfuric_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfuric_Acid_Diester -->
+
+    <owl:Class rdf:about="#Sulfuric_Acid_Diester">
+        <rdfs:subClassOf rdf:resource="#Sulfuric_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfuric_Acid_Monoester -->
+
+    <owl:Class rdf:about="#Sulfuric_Acid_Monoester">
+        <rdfs:subClassOf rdf:resource="#Sulfuric_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Sulfuric_Acid_derivative_Group -->
+
+    <owl:Class rdf:about="#Sulfuric_Acid_derivative_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Sulfur_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Taurine -->
+
+    <owl:Class rdf:about="#Taurine">
+        <rdfs:subClassOf rdf:resource="#Amino_Acid"/>
+        <rdfs:subClassOf rdf:resource="#Sulfonic_Acid_Group"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >provision an amino acid but i place it here to deal the sulfur group effect</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Terminal_Acyl_Group -->
+
+    <owl:Class rdf:about="#Terminal_Acyl_Group">
+        <rdfs:subClassOf rdf:resource="#Carboxylic_Acid_derivative_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Terminal_Methoxy -->
+
+    <owl:Class rdf:about="#Terminal_Methoxy">
+        <rdfs:subClassOf rdf:resource="#Methoxy_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Tert-Butyl -->
+
+    <owl:Class rdf:about="#Tert-Butyl">
+        <rdfs:subClassOf rdf:resource="#Butyl_Derivative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Tertiary_Amine -->
+
+    <owl:Class rdf:about="#Tertiary_Amine">
+        <rdfs:subClassOf rdf:resource="#Amine_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Tetrahydropyran -->
+
+    <owl:Class rdf:about="#Tetrahydropyran">
+        <rdfs:subClassOf rdf:resource="#Ring_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Thiol_Group -->
+
+    <owl:Class rdf:about="#Thiol_Group">
+        <rdfs:subClassOf rdf:resource="#Organic_Sulfur_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Trehalose -->
+
+    <owl:Class rdf:about="#Trehalose">
+        <rdfs:subClassOf rdf:resource="#Dimeric_Glycan_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Uridine -->
+
+    <owl:Class rdf:about="#Uridine">
+        <rdfs:subClassOf rdf:resource="#Nucleoside"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#Vinyl_Ether_Chain -->
+
+    <owl:Class rdf:about="#Vinyl_Ether_Chain">
+        <rdfs:subClassOf rdf:resource="#Carbon_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#distal_Alkenyl -->
+
+    <owl:Class rdf:about="#distal_Alkenyl">
+        <rdfs:subClassOf rdf:resource="#Alkenyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#non-terminal_Methoxy -->
+
+    <owl:Class rdf:about="#non-terminal_Methoxy">
+        <rdfs:subClassOf rdf:resource="#Methoxy_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#num4-hydroxysphinganine_par_Phytosphingosine_par_Chain -->
+
+    <owl:Class rdf:about="#num4-hydroxysphinganine_par_Phytosphingosine_par_Chain">
+        <rdfs:subClassOf rdf:resource="#Sphingoid_Base_Chain_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/sadi/ontology/leo.owl#proximal_Alkenyl -->
+
+    <owl:Class rdf:about="#proximal_Alkenyl">
+        <rdfs:subClassOf rdf:resource="#Alkenyl_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.owl-ontologies.com/Ontology1174405183.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1174405183.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Aminoacylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Isomerisation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Base_Modification_Reaction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Methylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Base">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Base_Modification_Reaction"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="C-Methylation">
+    <rdfs:subClassOf rdf:resource="#Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modified_Base">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Unmodified_Base"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Base"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has_reaction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Base_Modification_Reaction"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Unmodified_Base"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="original_base"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Transamination">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Substitution"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Epoxyqueuosinylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Threonylcarbamoylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Carbamoylation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Aliphatic-N-Methylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="N-Methylation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Decarboxymethylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Elimination"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="C-Hydroxymethylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#N-Methylation">
+    <rdfs:subClassOf rdf:resource="#Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Glycylation">
+    <rdfs:subClassOf rdf:resource="#Aminoacylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Glutamylation">
+    <rdfs:subClassOf rdf:resource="#Aminoacylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Amide_Cleavage">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Hydrolysis"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Unmodified_Base">
+    <owl:disjointWith rdf:resource="#Modified_Base"/>
+    <rdfs:subClassOf rdf:resource="#Base"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hydroxylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="O-Methylation">
+    <rdfs:subClassOf rdf:resource="#Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Glycosylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Carboxymethylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Methylcarbamoylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Carbamoylation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Hydration">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Ribose-Ribosylation">
+    <rdfs:subClassOf rdf:resource="#Glycosylation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Carbamoylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Glycylcarbamoylation">
+    <rdfs:subClassOf rdf:resource="#Carbamoylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Thiolation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Substitution">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Base_Modification_Reaction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Aromatic-O-Methylation">
+    <rdfs:subClassOf rdf:resource="#O-Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ribose-O2-Methylation">
+    <rdfs:subClassOf rdf:resource="#O-Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Epoxide_Elimination">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Elimination"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Aromatic-N-Methylation">
+    <rdfs:subClassOf rdf:resource="#N-Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Isopentenylation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Addition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Base_Modification_Reaction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pseudouridine_Formation">
+    <rdfs:subClassOf rdf:resource="#Isomerisation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Diformylglutamylation">
+    <rdfs:subClassOf rdf:resource="#Aminoacylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Galactosylation">
+    <rdfs:subClassOf rdf:resource="#Glycosylation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Hydrolysis">
+    <rdfs:subClassOf rdf:resource="#Substitution"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Formylation">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Selenation">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Aspartylation">
+    <rdfs:subClassOf rdf:resource="#Aminoacylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mannosylation">
+    <rdfs:subClassOf rdf:resource="#Glycosylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lysylation">
+    <rdfs:subClassOf rdf:resource="#Aminoacylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Methylester_Formation">
+    <rdfs:subClassOf rdf:resource="#O-Methylation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Wyosine_Formation">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Base_Modification_Reaction">
+    <owl:disjointWith rdf:resource="#Base"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hydroxyl-Peroxidation">
+    <rdfs:subClassOf rdf:resource="#Substitution"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Elimination">
+    <rdfs:subClassOf rdf:resource="#Base_Modification_Reaction"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#has_reaction">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Means that a Modified_Base was subject to a particular Modification_Reaction at some point in its history. Each Modified_Base can have many of these.</rdfs:comment>
+    <rdfs:range rdf:resource="#Base_Modification_Reaction"/>
+    <rdfs:domain rdf:resource="#Modified_Base"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#original_base">
+    <rdfs:range rdf:resource="#Unmodified_Base"/>
+    <rdfs:domain rdf:resource="#Modified_Base"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_double_reaction">
+    <rdfs:subPropertyOf rdf:resource="#has_reaction"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="annotationProperty_164">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </owl:DatatypeProperty>
+  <Modified_Base rdf:ID="mnm5s2U">
+    <original_base>
+      <Unmodified_Base rdf:ID="U"/>
+    </original_base>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m6Am">
+    <original_base>
+      <Unmodified_Base rdf:ID="A"/>
+    </original_base>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Gm">
+    <original_base>
+      <Unmodified_Base rdf:ID="G"/>
+    </original_base>
+  </Modified_Base>
+  <Pseudouridine_Formation rdf:ID="Pseudouridine_Formation_156"/>
+  <Modified_Base rdf:ID="D">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Ribose-O2-Methylation rdf:ID="Ribose-O2-Methylation_127"/>
+  <Modified_Base rdf:ID="m42Cm">
+    <original_base>
+      <Unmodified_Base rdf:ID="C"/>
+    </original_base>
+  </Modified_Base>
+  <Methylester_Formation rdf:ID="Methylester_Formation_128"/>
+  <Aliphatic-N-Methylation rdf:ID="Aliphatic-N-Methylation_130"/>
+  <Modified_Base rdf:ID="se2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m7m22G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ncm5Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Epoxide_Elimination rdf:ID="Epoxide_Elimination_155"/>
+  <Modified_Base rdf:ID="m2G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Aspartylation rdf:ID="Aspartylation_149"/>
+  <Modified_Base rdf:ID="Im">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Formylation rdf:ID="Formylation_142"/>
+  <Modified_Base rdf:ID="ms2i6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Glycylation rdf:ID="Glycylation_152"/>
+  <Modified_Base rdf:ID="acp3U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Aromatic-N-Methylation rdf:ID="Aromatic-N-Methylation_131"/>
+  <Modified_Base rdf:ID="ho5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="OHyW_star">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="f5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Diformylglutamylation rdf:ID="Diformylglutamylation_150"/>
+  <Modified_Base rdf:ID="preQ1base">
+    <original_base>
+      <Unmodified_Base rdf:ID="Queuosine"/>
+    </original_base>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1Gm">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1Im">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m44C">
+    <original_base rdf:resource="#C"/>
+    <has_double_reaction rdf:resource="#Aliphatic-N-Methylation_130"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Ym">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Amide_Cleavage rdf:ID="Amide_Cleavage_159"/>
+  <Modified_Base rdf:ID="m42C">
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Epoxyqueuosinylation rdf:ID="Epoxyqueuosinylation_143"/>
+  <Modified_Base rdf:ID="cm5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Arp">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m4C">
+    <has_reaction rdf:resource="#Aliphatic-N-Methylation_130"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ms2io6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Selenation rdf:ID="Selenation_135"/>
+  <Modified_Base rdf:ID="ms2t6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="tm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Transamination rdf:ID="Transamination_157"/>
+  <Modified_Base rdf:ID="tm5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Threonylcarbamoylation rdf:ID="Threonylcarbamoylation_145"/>
+  <Modified_Base rdf:ID="m7m2G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Hydroxyl-Peroxidation rdf:ID="Hydroxyl-Peroxidation_158"/>
+  <Modified_Base rdf:ID="Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="oQtRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Hydration rdf:ID="Hydration_138"/>
+  <Modified_Base rdf:ID="m4Cm">
+    <original_base rdf:resource="#C"/>
+    <has_reaction rdf:resource="#Ribose-O2-Methylation_127"/>
+    <has_reaction rdf:resource="#Aliphatic-N-Methylation_130"/>
+  </Modified_Base>
+  <C-Hydroxymethylation rdf:ID="C-Hydroxymethylation_148"/>
+  <Thiolation rdf:ID="Thiolation_134"/>
+  <Modified_Base rdf:ID="m5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1Am">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ac4Cm">
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m2A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="nm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="cmnm5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Carboxymethylation rdf:ID="Carboxymethylation_144"/>
+  <Modified_Base rdf:ID="m5Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="hm5C">
+    <has_reaction rdf:resource="#C-Hydroxymethylation_148"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ac4C">
+    <original_base rdf:resource="#C"/>
+    <has_reaction rdf:resource="#Carboxymethylation_144"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m5D">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="preQ0base">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Lysylation rdf:ID="Lysylation_153"/>
+  <Modified_Base rdf:ID="f5Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m62Am">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mcm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m3Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <C-Methylation rdf:ID="C-Methylation_132"/>
+  <Modified_Base rdf:ID="cm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="s2Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Mannosylation rdf:ID="Mannosylation_140"/>
+  <Ribose-Ribosylation rdf:ID="Ribose-Ribosylation_141"/>
+  <Modified_Base rdf:ID="nm5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m5C">
+    <has_reaction rdf:resource="#C-Methylation_132"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Grp">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="f5C">
+    <original_base rdf:resource="#C"/>
+    <has_reaction rdf:resource="#Formylation_142"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mcmo5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="preQ1tRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mnm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="nm5se2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Galactosylation rdf:ID="Galactosylation_139"/>
+  <Modified_Base rdf:ID="m5Cm">
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="chm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Isopentenylation rdf:ID="Isopentenylation_136"/>
+  <Modified_Base rdf:ID="s4U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m22G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="k2C">
+    <original_base rdf:resource="#C"/>
+    <has_reaction rdf:resource="#Lysylation_153"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ms2m6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="QtrNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Wyosine_Formation rdf:ID="Wyosine_Formation_133"/>
+  <Hydroxylation rdf:ID="Hydroxylation_137"/>
+  <Modified_Base rdf:ID="imG-14">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="manQtRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m3Y">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mchm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m7G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Glycylcarbamoylation rdf:ID="Glycylcarbamoylation_147"/>
+  <Modified_Base rdf:ID="I">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m62A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Y">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Glutamylation rdf:ID="Glutamylation_151"/>
+  <Modified_Base rdf:ID="hn6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mcm5s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="preQ0tRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="acp3Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="f5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="galQtRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m2Gm">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m6t6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Am">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="imG">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="o2yW">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="cmnm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="t6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1I">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m22Gm">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mimG">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Qbase">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="cmnm5se2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1acp3Y">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="ncm5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mnm5se2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="g6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="cmo5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="Cm">
+    <has_reaction rdf:resource="#Ribose-O2-Methylation_127"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="s2C">
+    <original_base rdf:resource="#C"/>
+    <has_reaction rdf:resource="#Thiolation_134"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m44Cm">
+    <original_base rdf:resource="#C"/>
+    <has_double_reaction rdf:resource="#Aliphatic-N-Methylation_130"/>
+    <has_reaction rdf:resource="#Ribose-O2-Methylation_127"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m3U">
+    <original_base rdf:resource="#U"/>
+    <has_reaction rdf:resource="#Aromatic-N-Methylation_131"/>
+  </Modified_Base>
+  <Aromatic-O-Methylation rdf:ID="Aromatic-O-Methylation_129"/>
+  <Modified_Base rdf:ID="f5se2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mcm5Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="gluQtRNA">
+    <original_base rdf:resource="#Queuosine"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="s2U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="io6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="i6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1G">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Decarboxymethylation rdf:ID="Decarboxymethylation_154"/>
+  <Modified_Base rdf:ID="ms2hn6A">
+    <original_base rdf:resource="#A"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="f5Cm">
+    <has_reaction rdf:resource="#Ribose-O2-Methylation_127"/>
+    <has_reaction rdf:resource="#Formylation_142"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="mo5U">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="cmnm5Um">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m3C">
+    <has_reaction rdf:resource="#Aromatic-N-Methylation_131"/>
+    <original_base rdf:resource="#C"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="yW">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="m1Y">
+    <original_base rdf:resource="#U"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="imG2">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Modified_Base rdf:ID="OHyW">
+    <original_base rdf:resource="#G"/>
+  </Modified_Base>
+  <Methylcarbamoylation rdf:ID="Methylcarbamoylation_146"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->
