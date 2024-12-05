@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.mesur.org/schemas/2007-03/mesur#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.mesur.org/schemas/2007-03/mesur">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;BR>&lt;IMG SRC="images/mesur-logo.jpg"> &lt;BR> &lt;BR> The &lt;A TARGET="_blank" HREF="http://www.mesur.org">MESUR&lt;/A> project at the Research Library of the Los Alamos National Laboratory is interested in developing metrics for quantifying the value of all scholarly artifacts (e.g. authors, journals, conferences, articles, institutions, etc.). In order to do this, an accurate model of the scholarly community is needed that includes both bibliographic and usage data. This model is best represented by a scholarly semantic network. That is, a network of heterogeneous artifacts connected to one another by qualified or typed relationships. Given the current standards in metadata archiving and harvesting, usage recording, and representational frameworks for semantic networks, a practical ontology for the large-scale modeling of scholarly artifact usage is presented. &lt;BR> &lt;BR>&lt;IMG SRC="images/full-ontology.jpg"></rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;BR>&lt;B>Download MESUR's OWL RDF/XML ontology description &lt;A TARGET="_blank" HREF="http://purl.lanl.gov/MESUR/schemas/2007-03/mesur.owl">here&lt;/A>&lt;/B>.&lt;BR>
+The MESUR ontology was developed by &lt;A TARGET="_blank" HREF="http://www.soe.ucsc.edu/~okram">Marko A. Rodriguez&lt;/A>, &lt;A TARGET="_blank" HREF="http://public.lanl.gov/jbollen">Johan Bollen&lt;/A>, and &lt;A TARGET="_blank" HREF="http://public.lanl.gov/herbertv">Herbert Van de Sompel&lt;/A>.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2007-03</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="BookArticle">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Article"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ConferenceArticle"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="JournalArticle"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PreprintArticle"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A book chapter that is contained in an EditedBook.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="NominalMetric">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Metric"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasNominalValue"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WeightedRelationship">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Affiliation"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Metric"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="State"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasSink"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >In many instances, one artifact is related to another by a particular semantic. However, in some instance, one artifact is related to another by a semantic label and a floating point weight value. Furthermore, that weighted relationship may have been recorded from some start time point to some end time point (i.e. a period of time). The WeightedRelationship state context is used to represent such relationships.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Document"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Context"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An abstract class that represents both Humans and Organizations.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="GroupCitation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Citation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProceedingsEdition">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="JournalEdition"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Proceedings"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="partOf"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Proceedings"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A particular issue of a conference Proceedings.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Human">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Organization"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Human is an actual individual whether that individual can be uniquely identified (e.g. an document author) or not (e.g. a document user).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Uses">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Publishes"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Uses context denotes a single usage event where an Agent uses a Document at a particular point in time. Depending on the usage provider, a session identifier and access type is recorded. A session identifier denotes the user's login session. An access type denotes, for example, whether the used Document had its abstract viewed or was fully downloaded.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Event"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasUser"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasDocument"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Journal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Group"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An abstract notion of a Journal.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="EditedBook"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proceedings"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Metric">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Metric context can be used to attach metric-based metadata to any Agent or Document.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Affiliation"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#WeightedRelationship"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#State"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasObject"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="User">
+    <rdfs:subClassOf rdf:resource="#Human"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Provider">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Article">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Unit"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A scholarly manuscript.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Book"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="GroupUses">
+    <rdfs:subClassOf rdf:resource="#Uses"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Group"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#State">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Event"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A State is some measurement that can, in some cases, occur over a span of time and are used to represent complex relationships between artifacts or as a way of attaching high-level properties (i.e.~metadata) to an artifact.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Context"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Citation">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Coauthor"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasEndDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasStartDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#WeightedRelationship"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Citation state context denotes a weighted citation and is a subclass of the WeightedRelationship. For Unit to Unit citation, the weight value is 1.0 and there are no start and end time points. However, for Group to Group citations, the weight of the Citation represents how many times a particular Group cites another over some time period.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Publishes">
+    <owl:disjointWith rdf:resource="#Uses"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasAuthor"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Publishes event states, in words, that a particular bibliographic data provider has acknowledged that a set of humans have authored a unit that was published in a group by a publishing organization at a particular point in time. A Publishes object relates a single bibliographic data Provider, Human authors, a Unit, a Publisher, a Group, and a publication ISO-8601 date time literal</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Organization">
+    <owl:disjointWith rdf:resource="#Human"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Organization is a class that is used for both bibliographic and usage provenance purposes. Given that bibliographic and usage data, at the large-scale, must be harvested from multiple institutions, it is necessary to make a distinction between the various data providers. In both cases, an Organization can be bibliographic data provider (e.g. a publisher), usage data provider (e.g. a repository) provider, or an academic institution (e.g. author's university).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Context">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Context class is an N-ary operator much like an rdf:Bag. Current triple store technology expresses tertiary relationships. That means that only three resources are related by a semantic network edge (i.e.~a subject URI, predicate URI, and object URI). However, many real-world relationships are the product of multiple interacting objects. It is the role of the various Context classes to provide relationships for more than three URIs.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Document"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Book">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Unit"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An authored book -- this is not the same as an EditedBook.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Article"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Institution">
+    <rdfs:subClassOf rdf:resource="#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NumericMetric">
+    <rdfs:subClassOf rdf:resource="#Metric"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasNumericValue"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PreprintArticle">
+    <owl:disjointWith rdf:resource="#BookArticle"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ConferenceArticle"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#JournalArticle"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="containedIn"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Article"/>
+  </owl:Class>
+  <owl:Class rdf:about="#EditedBook">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An EditedBook is a collection of multiple BookArticles.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="contains"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#BookArticle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Group"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Journal"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proceedings"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="UnitCitation">
+    <rdfs:subClassOf rdf:resource="#Citation"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasWeight"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasSinkEndDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasSourceEndDate"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Coauthor">
+    <owl:disjointWith rdf:resource="#Citation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Coauthor weighted relationship denotes the number of times the two authors have coauthored together over a particular time period.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#WeightedRelationship"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasSink"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Agent"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Event is some measurement done by some provider at a particular point in time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Context"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#State"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Author">
+    <rdfs:subClassOf rdf:resource="#Human"/>
+  </owl:Class>
+  <owl:Class rdf:about="#JournalArticle">
+    <rdfs:subClassOf rdf:resource="#Article"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An article that is contained in a Journal.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#BookArticle"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ConferenceArticle"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PreprintArticle"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Document">
+    <owl:disjointWith rdf:resource="#Context"/>
+    <owl:disjointWith rdf:resource="#Agent"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Document is an abstract concept denoting a scholarly product.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Publisher">
+    <rdfs:subClassOf rdf:resource="#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Group">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Scholarly documents written by multiple teams of authors.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unit"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Proceedings">
+    <rdfs:subClassOf rdf:resource="#Group"/>
+    <owl:disjointWith rdf:resource="#EditedBook"/>
+    <owl:disjointWith rdf:resource="#Journal"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An abstract notion of a conference Proceedings.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#JournalEdition">
+    <rdfs:subClassOf rdf:resource="#Journal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Journal"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#ProceedingsEdition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A particular issue/volume of a Journal.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Affiliation">
+    <rdfs:subClassOf rdf:resource="#State"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasAffiliatee"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasAffiliator"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Affiliation context denotes that a particular Human is affiliated with an Organization or that an Organization is affiliated with another Organization. An Affiliation can be represented as occurring over a particular period of time.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Metric"/>
+    <owl:disjointWith rdf:resource="#WeightedRelationship"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ConferenceArticle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An article that is contained in a conference Proceedings.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#BookArticle"/>
+    <owl:disjointWith rdf:resource="#JournalArticle"/>
+    <owl:disjointWith rdf:resource="#PreprintArticle"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UnitUses">
+    <rdfs:subClassOf rdf:resource="#Uses"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Unit"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Unit">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Scholarly documents written by a single team of authors.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Group"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasAffiliate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Organization has an affiliate Agent.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="InferredProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Agent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasAffiliation"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#InferredProperty">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >All InferredProperty properties can be inferred from respective Contexts.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="used">
+    <rdfs:range rdf:resource="#Document"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="usedBy"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#User"/>
+          <owl:Class rdf:about="#Institution"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Agent uses a Document.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="authored">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="authoredBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Author"/>
+          <owl:Class rdf:about="#Institution"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Agent authors a Document.</rdfs:comment>
+    <rdfs:range rdf:resource="#Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#usedBy">
+    <owl:inverseOf rdf:resource="#used"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Document was used by an Agent.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#User"/>
+          <owl:Class rdf:about="#Institution"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="published">
+    <rdfs:domain rdf:resource="#Publisher"/>
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:ID="publishedBy"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Document"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Agent publishes a Document.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasAuthor">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#User"/>
+          <owl:Class rdf:about="#Institution"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="ContextProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Publishes context has an authoring Agent.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Publishes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#ContextProperty">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ContextProperty properties are the base requirement for a lossless representation of the source data.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasAffiliation">
+    <rdfs:range rdf:resource="#Organization"/>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Agent has an Affiliation to an Organization.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <owl:inverseOf rdf:resource="#hasAffiliate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#contains">
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:about="#containedIn"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Article"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Group contains an Article.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#authoredBy">
+    <owl:inverseOf rdf:resource="#authored"/>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Document was authored by a Agent.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Author"/>
+          <owl:Class rdf:about="#Institution"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasSourceStartDate">
+    <rdfs:domain rdf:resource="#Citation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Citation has a Source start time.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#hasStartDate"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Organization"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDate"/>
+  <owl:DatatypeProperty rdf:about="#hasSourceEndDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Citation has a source end time.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#hasEndDate"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Citation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="#hasNumericValue">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A NumericMetric has a numeric value.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#NumericMetric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasPublisher">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Publishes context has a publishing Agent.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Publishes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdfs:range rdf:resource="#Publisher"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasUser">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Uses event has an Agent.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdfs:domain rdf:resource="#Uses"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Institution"/>
+          <owl:Class rdf:about="#User"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasSource">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A WeightedRelationship is pointed from an Agent or Document.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Agent"/>
+          <owl:Class rdf:about="#Document"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#WeightedRelationship"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasStartDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#State"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A State has a start time.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasObject">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Agent or Document is the object of a Metric.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Metric"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Agent"/>
+          <owl:Class rdf:about="#Document"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasIssue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#JournalEdition"/>
+          <owl:Class rdf:about="#ProceedingsEdition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A JournalEdition or ProceedingsEdition has an issue.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasSpec">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Metric has an associated specification.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Metric"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasDocument">
+    <rdfs:domain rdf:resource="#Uses"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Uses context has a used Document.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Document"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#partOf">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Journal"/>
+          <owl:Class rdf:about="#Proceedings"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#JournalEdition"/>
+          <owl:Class rdf:about="#ProceedingsEdition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An edition is part of its respective Journal or Proceedings.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasAffiliatee">
+    <rdfs:domain rdf:resource="#Affiliation"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Affiliation context has an affiliated Agent.</rdfs:comment>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasAffiliator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Organization"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdfs:domain rdf:resource="#Affiliation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Affiliation context has an affiliating Organization.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#containedIn">
+    <rdfs:domain rdf:resource="#Article"/>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <rdfs:range rdf:resource="#Group"/>
+    <owl:inverseOf rdf:resource="#contains"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Article is contained in a Group.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasSinkEndDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="#Citation"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#hasEndDate"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Citation has a sink end time.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasUnit">
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Publishes"/>
+    <rdfs:range rdf:resource="#Unit"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Publishes context has a published Unit.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasEndDate">
+    <rdfs:domain rdf:resource="#State"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A State has an end time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasWeight">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Weighted Relationship has a weight value.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WeightedRelationship"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasVolume">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A JournalEdition has a volume.</rdfs:comment>
+    <rdfs:domain rdf:resource="#JournalEdition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasSink">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WeightedRelationship points to an Agent or Document.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WeightedRelationship"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Agent"/>
+          <owl:Class rdf:about="#Document"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasAccess">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Uses context has a particular access type (e.g. full download, abstract)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Uses"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasProvider">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Event datum was provided by an Agent.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Provider"/>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdfs:domain rdf:resource="#Event"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Publishes context has a publishing Group.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#ContextProperty"/>
+    <rdfs:range rdf:resource="#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Publishes"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasSinkStartDate">
+    <rdfs:domain rdf:resource="#Citation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Citation has a Sink start time.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasStartDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#publishedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Document was published by an Agent.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#InferredProperty"/>
+    <rdfs:domain rdf:resource="#Document"/>
+    <owl:inverseOf rdf:resource="#published"/>
+    <rdfs:range rdf:resource="#Publisher"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasNominalValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A NominalMetric has a nominal value.</rdfs:comment>
+    <rdfs:domain rdf:resource="#NominalMetric"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Event occured at a point in time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#Event"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasSession">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Uses"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Uses context has a particular uses event.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3, Build 399)  http://protege.stanford.edu -->

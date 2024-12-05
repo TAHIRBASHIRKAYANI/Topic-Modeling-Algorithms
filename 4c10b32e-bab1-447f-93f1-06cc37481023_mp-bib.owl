@@ -1,0 +1,1627 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rss="http://purl.org/rss/1.0/"
+    xmlns:pub="http://www.l3s.de/bibtex#"
+    xmlns:jms="http://jena.hpl.hp.com/2003/08/jms#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://annotation.semanticweb.org/2004/iswc#"
+  xml:base="http://annotation.semanticweb.org/2004/iswc">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >$Id$</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ISWC Ontology</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Method">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="name"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Conference">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Application">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Association">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Researcher">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Publication">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="year"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Application"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="application"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="algorithm"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Algorithm"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="topic"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Topic"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="tool"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Tool"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="title"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Method"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="method"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Application_Domain"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="application_domain"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="author"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Person"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="formal_language"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Formal_Language"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="InBook">
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TechReport"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MastersThesis"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PhdThesis"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Misc"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Article"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InCollection"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Project">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="persons_involved"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Person"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="funding_by"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="project_title"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="is_about"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Topic"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="organizations_involved"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PhDStudent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Student"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Research_Funding_Institution">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Enterprise">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Faculty_Member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Proceedings">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Collection"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Journal"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Periodical"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="University">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MastersThesis">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TechReport"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PhdThesis"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Misc"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Article"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PhdThesis">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TechReport"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Article"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Misc"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Formal_Language">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Application_Domain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Student">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Journal">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Periodical"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Proceedings"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Collection"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Misc">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TechReport"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Article"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Article">
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TechReport"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#TechReport">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manual"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#Misc"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Institute">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Full_Professor">
+    <rdfs:subClassOf rdf:resource="#Faculty_Member"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Department">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Periodical">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Collection"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Journal"/>
+    <owl:disjointWith rdf:resource="#Proceedings"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="email"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has_affiliation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="first_Name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="photo"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="homepage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="fax"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involved_in_project"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="last_Name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="phone"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="address"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="research_topics"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Topic"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="middle_Initial"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Manual">
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Book"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="date"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="location"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="eventTitle"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Employee">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tutorial">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Book">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Collection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Collection">
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpublished"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Associate_Professor">
+    <rdfs:subClassOf rdf:resource="#Faculty_Member"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Unpublished">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InCollection"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#Collection"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+  </owl:Class>
+  <owl:Class rdf:about="#InCollection">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InProceedings"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <owl:disjointWith rdf:resource="#Unpublished"/>
+    <owl:disjointWith rdf:resource="#Collection"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Algorithm">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#InProceedings">
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Booklet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Unpublished"/>
+    <owl:disjointWith rdf:resource="#Collection"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="conference"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Conference"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith rdf:resource="#InCollection"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lecturer">
+    <rdfs:subClassOf rdf:resource="#Faculty_Member"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Booklet">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Report"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Unpublished"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <owl:disjointWith rdf:resource="#InCollection"/>
+    <owl:disjointWith rdf:resource="#InProceedings"/>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#Collection"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Topic">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasSubtopic"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Topic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Tool">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Organization">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty rdf:resource="#location"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has_affiliate"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty rdf:resource="#address"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="country"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Report">
+    <owl:disjointWith rdf:resource="#Booklet"/>
+    <owl:disjointWith rdf:resource="#Manual"/>
+    <owl:disjointWith rdf:resource="#InProceedings"/>
+    <owl:disjointWith rdf:resource="#MastersThesis"/>
+    <rdfs:subClassOf rdf:resource="#Publication"/>
+    <owl:disjointWith rdf:resource="#InCollection"/>
+    <owl:disjointWith rdf:resource="#TechReport"/>
+    <owl:disjointWith rdf:resource="#InBook"/>
+    <owl:disjointWith rdf:resource="#Article"/>
+    <owl:disjointWith rdf:resource="#Misc"/>
+    <owl:disjointWith rdf:resource="#Collection"/>
+    <owl:disjointWith rdf:resource="#Book"/>
+    <owl:disjointWith rdf:resource="#Unpublished"/>
+    <owl:disjointWith rdf:resource="#PhdThesis"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Workshop">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#author">
+    <rdfs:domain rdf:resource="#Publication"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Person"/>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="in">
+    <rdfs:range rdf:resource="#Collection"/>
+    <rdfs:domain rdf:resource="#Publication"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <InProceedings rdf:about="http://www.l3s.de/bibtex#ontoproper2000">
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2000</year>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >York Sure, Alexander Maedche, Steffen Staab. Leveraging Corporate Skill Knowledge - From ProPer to OntoProper. In: 3rd International Conference on Practical Aspects of Knowledge Management, oct, 2000</rdfs:comment>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#skillsmanagement2002_Sure_York">
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sure</last_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >York Sure</name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >York Sure</rdfs:comment>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >York</first_Name>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#ontoproper2000_Maedche_Alexander">
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Alexander</first_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Alexander Maedche</name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Maedche</last_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Alexander Maedche</rdfs:comment>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#ontoproper2000_Staab_Steffen">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Steffen Staab</name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Staab</last_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Steffen Staab</rdfs:comment>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Steffen</first_Name>
+      </Person>
+    </author>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Leveraging Corporate Skill Knowledge - From ProPer to OntoProper</title>
+    <in>
+      <Proceedings rdf:about="http://www.l3s.de/bibtex#ontoproper2000_3rd_International_Conference_on_Practical_Aspects_of_Knowledge_Management">
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >3rd International Conference on Practical Aspects of Knowledge Management</title>
+      </Proceedings>
+    </in>
+  </InProceedings>
+  <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Tadi__Serge">
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tadié</last_Name>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Serge</first_Name>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Serge Tadié</name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Serge Tadié</rdfs:comment>
+  </Person>
+  <Topic rdf:ID="Knowledge_Management_Methodology">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Knowledge Management Methodology</name>
+  </Topic>
+  <Misc rdf:about="http://www.l3s.de/bibtex#rdceospec">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IMS Reusable Definition of Competency or Educational Objective (RDCEO), oct, 2002</rdfs:comment>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IMS Reusable Definition of Competency or Educational Objective (RDCEO)</title>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2002</year>
+  </Misc>
+  <Topic rdf:ID="Databases">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Databases</name>
+  </Topic>
+  <Topic rdf:ID="Information_Systems">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Information Systems</name>
+  </Topic>
+  <Topic rdf:ID="Ontology_Learning">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology Learning</name>
+  </Topic>
+  <Formal_Language rdf:ID="OXML">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OXML</name>
+  </Formal_Language>
+  <Formal_Language rdf:ID="RDFS">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDFS</name>
+  </Formal_Language>
+  <Topic rdf:ID="Artificial_Intelligence">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Artificial Intelligence</name>
+    <hasSubtopic>
+      <Topic rdf:ID="Knowledge_Discovery">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Knowledge Discovery</name>
+        <hasSubtopic>
+          <Topic rdf:ID="Query_Languages">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Query Languages</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Text_Mining">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Text Mining</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Information_Retrieval">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Information Retrieval</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Data_Mining">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Data Mining</name>
+          </Topic>
+        </hasSubtopic>
+      </Topic>
+    </hasSubtopic>
+    <hasSubtopic>
+      <Topic rdf:ID="Information_Extraction">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Information Extraction</name>
+      </Topic>
+    </hasSubtopic>
+    <hasSubtopic>
+      <Topic rdf:ID="Agent_Systems">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Agent Systems</name>
+      </Topic>
+    </hasSubtopic>
+    <hasSubtopic>
+      <Topic rdf:ID="Agents">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Agents</name>
+      </Topic>
+    </hasSubtopic>
+    <hasSubtopic>
+      <Topic rdf:ID="Machine_Learning">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Machine Learning</name>
+      </Topic>
+    </hasSubtopic>
+    <hasSubtopic>
+      <Topic rdf:ID="Knowledge_Representation_And_Reasoning">
+        <hasSubtopic>
+          <Topic rdf:ID="Ontology_Engineering">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Ontology Engineering</name>
+            <hasSubtopic rdf:resource="#Ontology_Learning"/>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Knowledge_Representation_Languages">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Knowledge Representation Languages</name>
+          </Topic>
+        </hasSubtopic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Knowledge Representation and Reasoning</name>
+      </Topic>
+    </hasSubtopic>
+  </Topic>
+  <Topic rdf:ID="Business_Engineering">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business Engineering</name>
+  </Topic>
+  <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Mongiello_Marina">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Marina Mongiello</rdfs:comment>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Marina</first_Name>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mongiello</last_Name>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Marina Mongiello</name>
+  </Person>
+  <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Duc_Tran_Huu">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tran Huu Duc</rdfs:comment>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Duc</last_Name>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tran</first_Name>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tran Huu Duc</name>
+    <vcard:Other rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Huu</vcard:Other>
+  </Person>
+  <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Gauthier_Gilles">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gilles Gauthier</name>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gauthier</last_Name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gilles Gauthier</rdfs:comment>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gilles</first_Name>
+  </Person>
+  <Article rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05">
+    <author rdf:resource="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Tadi__Serge"/>
+    <in>
+      <Journal rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Applied_Artificial_Intelligence">
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Applied Artificial Intelligence</title>
+      </Journal>
+    </in>
+    <author rdf:resource="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Duc_Tran_Huu"/>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2005</year>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Lefebvre_Bernard">
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Lefebvre</last_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bernard Lefebvre</rdfs:comment>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bernard Lefebvre</name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bernard</first_Name>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Achaba_Hicham">
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hicham</first_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hicham Achaba</name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hicham Achaba</rdfs:comment>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Achaba</last_Name>
+      </Person>
+    </author>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bernard Lefebvre, Gilles Gauthier, Serge Tadié, Tran Huu Duc, Hicham Achaba. Competence Ontology for Domain Knowledge Dissemination and Retrieval.. Applied Artificial Intelligence 19(9-10), 2005</rdfs:comment>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Competence Ontology for Domain Knowledge Dissemination and Retrieval.</title>
+    <author rdf:resource="http://www.l3s.de/bibtex#DBLP_journals_aai_LefebvreGTDA05_Gauthier_Gilles"/>
+  </Article>
+  <Person rdf:about="http://www.l3s.de/bibtex#compositeDesignPattern_Riehle_Dirk">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dirk Riehle</name>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dirk</first_Name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dirk Riehle</rdfs:comment>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Riehle</last_Name>
+  </Person>
+  <InProceedings rdf:ID="TowardsSemanticWebMining">
+    <topic rdf:resource="#Data_Mining"/>
+    <topic>
+      <Topic rdf:ID="Semantic_Web">
+        <hasSubtopic>
+          <Topic rdf:ID="Semantic_Annotation">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Semantic Annotation</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Semantic_Web_Iinfrastructure">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Semantic Web Infrastructure</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Semantic_Web_Languages">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Semantic Web Languages</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic>
+          <Topic rdf:ID="Knowledge_Portals">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Knowledge Portals</name>
+          </Topic>
+        </hasSubtopic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Semantic Web</name>
+      </Topic>
+    </topic>
+    <formal_language>
+      <Formal_Language rdf:ID="Java">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Java</name>
+      </Formal_Language>
+    </formal_language>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Towards Semantic Web Mining</title>
+    <conference>
+      <Conference rdf:ID="ISWC_2002">
+        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sardinia</location>
+        <eventTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >International Semantic Web Conference 2002</eventTitle>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >June 9-12, 2002</date>
+      </Conference>
+    </conference>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2002</year>
+  </InProceedings>
+  <Article rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03">
+    <in>
+      <Journal rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_J__UCS">
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >J. UCS</title>
+      </Journal>
+    </in>
+    <author rdf:resource="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Mongiello_Marina"/>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2003</year>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Simona Colucci, Tommaso Di Noia, Eugenio Di Sciascio, Francesco M. Donini, Marina Mongiello, Marco Mottola. A Formal Approach to Ontology-Based Semantic Match of Skills Descriptions.. J. UCS 9(12), 2003</rdfs:comment>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Noia_Tommaso_Di">
+        <vcard:Other rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Di</vcard:Other>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tommaso</first_Name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Noia</last_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tommaso Di Noia</rdfs:comment>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tommaso Di Noia</name>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Colucci_Simona">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Simona Colucci</rdfs:comment>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Colucci</last_Name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Simona</first_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Simona Colucci</name>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Sciascio_Eugenio_Di">
+        <vcard:Other rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Di</vcard:Other>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Eugenio Di Sciascio</name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sciascio</last_Name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Eugenio</first_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Eugenio Di Sciascio</rdfs:comment>
+      </Person>
+    </author>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Formal Approach to Ontology-Based Semantic Match of Skills Descriptions.</title>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Donini_Francesco_M_">
+        <vcard:Other rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >M.</vcard:Other>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Donini</last_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Francesco M. Donini</name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Francesco M. Donini</rdfs:comment>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Francesco</first_Name>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_jucs_ColucciNSDMM03_Mottola_Marco">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Marco Mottola</rdfs:comment>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Mottola</last_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Marco Mottola</name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Marco</first_Name>
+      </Person>
+    </author>
+  </Article>
+  <Topic rdf:ID="Office_Information_Systems">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Office Information Systems</name>
+    <hasSubtopic rdf:resource="#Business_Engineering"/>
+    <hasSubtopic rdf:resource="#Information_Systems"/>
+  </Topic>
+  <Topic rdf:ID="Development_of_Knowledge_Management_Systems">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Development of Knowledge Management Systems</name>
+  </Topic>
+  <Person rdf:about="http://www.l3s.de/bibtex#deriMapping04_deBruijn_Jos">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jos de Bruijn</rdfs:comment>
+    <vcard:Prefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >de</vcard:Prefix>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jos</first_Name>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jos de Bruijn</name>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bruijn</last_Name>
+  </Person>
+  <Formal_Language rdf:ID="RDF">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF</name>
+  </Formal_Language>
+  <Formal_Language rdf:ID="DAML_OIL">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DAML/OIL</name>
+  </Formal_Language>
+  <Formal_Language rdf:ID="XML">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >XML</name>
+  </Formal_Language>
+  <Formal_Language rdf:ID="C">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C</name>
+  </Formal_Language>
+  <Person rdf:about="http://www.l3s.de/bibtex#cheetam05_Chivers_G_">
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chivers</last_Name>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G.</first_Name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G. Chivers</rdfs:comment>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G. Chivers</name>
+  </Person>
+  <Proceedings rdf:about="http://www.l3s.de/bibtex#compositeDesignPattern_ACM_SIGPLAN_Conference_on_Object_Oriented_Programming_Systems__Languages___Applications">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ACM SIGPLAN Conference on Object-Oriented Programming Systems, Languages &amp; Applications</title>
+  </Proceedings>
+  <Person rdf:about="http://www.l3s.de/bibtex#cheetam05_Cheetam_G_">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G. Cheetam</name>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cheetam</last_Name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G. Cheetam</rdfs:comment>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G.</first_Name>
+  </Person>
+  <Misc rdf:about="http://www.l3s.de/bibtex#deriMapping04">
+    <author rdf:resource="http://www.l3s.de/bibtex#deriMapping04_deBruijn_Jos"/>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#deriMapping04_Polleres_Axel">
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Polleres</last_Name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Axel Polleres</name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Axel</first_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Axel Polleres</rdfs:comment>
+      </Person>
+    </author>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2004</year>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Towards an Ontology Mapping Specification Language for the Semantic Web</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jos de Bruijn, Axel Polleres. Towards an Ontology Mapping Specification Language for the Semantic Web, jun, 2004</rdfs:comment>
+  </Misc>
+  <InProceedings rdf:about="http://www.l3s.de/bibtex#compositeDesignPattern">
+    <author rdf:resource="http://www.l3s.de/bibtex#compositeDesignPattern_Riehle_Dirk"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dirk Riehle. Composite Design Patterns. In: ACM SIGPLAN Conference on Object-Oriented Programming Systems, Languages &amp; Applications, 1997</rdfs:comment>
+    <in rdf:resource="http://www.l3s.de/bibtex#compositeDesignPattern_ACM_SIGPLAN_Conference_on_Object_Oriented_Programming_Systems__Languages___Applications"/>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Composite Design Patterns</title>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1997</year>
+  </InProceedings>
+  <Institute rdf:ID="AIFB">
+    <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karlsruhe</location>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AIFB</name>
+  </Institute>
+  <Topic rdf:ID="Knowledge_Management">
+    <hasSubtopic rdf:resource="#Knowledge_Management_Methodology"/>
+    <hasSubtopic>
+      <Topic rdf:ID="Knowledge_Systems">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Knowledge Systems</name>
+        <hasSubtopic>
+          <Topic rdf:ID="Ontology-based_Knowledge_Management_Systems">
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Ontology-based Knowledge Management Systems</name>
+          </Topic>
+        </hasSubtopic>
+        <hasSubtopic rdf:resource="#Development_of_Knowledge_Management_Systems"/>
+      </Topic>
+    </hasSubtopic>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Knowledge Management</name>
+  </Topic>
+  <Person rdf:about="http://www.l3s.de/bibtex#skillsmanagement2002_Lau_Thorsten">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thorsten Lau</name>
+    <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lau</last_Name>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thorsten Lau</rdfs:comment>
+    <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thorsten</first_Name>
+  </Person>
+  <Topic rdf:ID="World_Wide_Web">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >World Wide Web</name>
+    <hasSubtopic rdf:resource="#Semantic_Web"/>
+    <hasSubtopic>
+      <Topic rdf:ID="Web_Services">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Web Services</name>
+      </Topic>
+    </hasSubtopic>
+  </Topic>
+  <Formal_Language rdf:ID="SQL">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SQL</name>
+  </Formal_Language>
+  <Organization rdf:about="http://www.l3s.de/bibtex#cheetam05_Edgard_Elgar_Publishing_Limited">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edgard Elgar Publishing Limited</rdfs:comment>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edgard Elgar Publishing Limited</name>
+  </Organization>
+  <Proceedings rdf:about="http://www.l3s.de/bibtex#skillsmanagement2002_Modellierung_2002__Modellierung_in_der_Praxis___Modellierung_f_r_die_Praxis">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Modellierung 2002, Modellierung in der Praxis - Modellierung für die Praxis</title>
+  </Proceedings>
+  <Misc rdf:about="http://www.l3s.de/bibtex#url_hrxml">
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2004</year>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HR-XML Measurable Competencies</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HR-XML Measurable Competencies, aug, 2004</rdfs:comment>
+  </Misc>
+  <Topic rdf:ID="Modeling">
+    <hasSubtopic rdf:resource="#Ontology_Engineering"/>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Modeling</name>
+  </Topic>
+  <Topic rdf:ID="Network_Infrastructure">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Network Infrastructure</name>
+  </Topic>
+  <Topic rdf:ID="e-Business">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >e-Business</name>
+  </Topic>
+  <Formal_Language rdf:ID="KAON">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KAON</name>
+  </Formal_Language>
+  <Article rdf:about="http://www.l3s.de/bibtex#DBLP_journals_vldb_RahmB01">
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_vldb_RahmB01_Rahm_Erhard">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Erhard Rahm</name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Rahm</last_Name>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Erhard</first_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Erhard Rahm</rdfs:comment>
+      </Person>
+    </author>
+    <author>
+      <Person rdf:about="http://www.l3s.de/bibtex#DBLP_journals_vldb_RahmB01_Bernstein_Philip_A_">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Philip A. Bernstein</name>
+        <last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bernstein</last_Name>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Philip A. Bernstein</rdfs:comment>
+        <vcard:Other rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A.</vcard:Other>
+        <first_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Philip</first_Name>
+      </Person>
+    </author>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A survey of approaches to automatic schema matching.</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Erhard Rahm, Philip A. Bernstein. A survey of approaches to automatic schema matching.. VLDB J. 10(4), 2001</rdfs:comment>
+    <in>
+      <Journal rdf:about="http://www.l3s.de/bibtex#DBLP_journals_vldb_RahmB01_VLDB_J_">
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >VLDB J.</title>
+      </Journal>
+    </in>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2001</year>
+  </Article>
+  <Misc rdf:about="http://www.l3s.de/bibtex#srcmspec">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Simple Reusable Competency Map proposal (SRCM)</title>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2006</year>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Simple Reusable Competency Map proposal (SRCM), feb, 2006</rdfs:comment>
+  </Misc>
+  <Topic rdf:ID="Logic">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Logic</name>
+  </Topic>
+  <InProceedings rdf:about="http://www.l3s.de/bibtex#skillsmanagement2002">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Introducing Ontology-based Skills Management at a large Insurance Company</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thorsten Lau, York Sure. Introducing Ontology-based Skills Management at a large Insurance Company. In: Modellierung 2002, Modellierung in der Praxis - Modellierung für die Praxis, mar, 2002</rdfs:comment>
+    <in rdf:resource="http://www.l3s.de/bibtex#skillsmanagement2002_Modellierung_2002__Modellierung_in_der_Praxis___Modellierung_f_r_die_Praxis"/>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2002</year>
+    <author rdf:resource="http://www.l3s.de/bibtex#skillsmanagement2002_Sure_York"/>
+    <author rdf:resource="http://www.l3s.de/bibtex#skillsmanagement2002_Lau_Thorsten"/>
+  </InProceedings>
+  <Misc rdf:about="http://www.l3s.de/bibtex#url_wikipedia">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Wikipedia Encyclopedia</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Wikipedia Encyclopedia</rdfs:comment>
+  </Misc>
+  <Topic rdf:ID="Matching">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Matching</name>
+  </Topic>
+  <University rdf:ID="University_of_Karlsruhe">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >University of Karlsruhe</name>
+  </University>
+  <Book rdf:about="http://www.l3s.de/bibtex#cheetam05">
+    <author rdf:resource="http://www.l3s.de/bibtex#cheetam05_Chivers_G_"/>
+    <author rdf:resource="http://www.l3s.de/bibtex#cheetam05_Cheetam_G_"/>
+    <dc:publisher rdf:resource="http://www.l3s.de/bibtex#cheetam05_Edgard_Elgar_Publishing_Limited"/>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Professions, Competence and Informal Learning</title>
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2005</year>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >G. Cheetam, G. Chivers. Professions, Competence and Informal Learning, Edgard Elgar Publishing Limited, 2005</rdfs:comment>
+  </Book>
+  <Topic rdf:ID="Knowledge_Reasoning">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Knowledge Reasoning</name>
+  </Topic>
+  <Misc rdf:about="http://www.l3s.de/bibtex#rcdspec">
+    <year rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2005</year>
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IEEE 1484.20.1/Draft - Draft Standard for Reusable Competency Definitions (RCD)</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IEEE 1484.20.1/Draft - Draft Standard for Reusable Competency Definitions (RCD), nov, 2005</rdfs:comment>
+  </Misc>
+  <Misc rdf:about="http://www.l3s.de/bibtex#url_webster">
+    <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Webster Online Dictionary</title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Webster Online Dictionary</rdfs:comment>
+  </Misc>
+  <Topic rdf:ID="Human_Computer_Interaction">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Human Computer Interaction (HCI)</name>
+  </Topic>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->
