@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<!DOCTYPE owl [
+<!ENTITY bugs "http://www.cs.cmu.edu/~anupriya/bugs#">
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY code "http://www.cs.cmu.edu/~anupriya/code#">
+<!ENTITY interactions "http://www.cs.cmu.edu/~anupriya/interactions#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY community "http://www.cs.cmu.edu/~anupriya/community#">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+]>
+<rdf:RDF
+ xmlns:bugs="http://www.cs.cmu.edu/~anupriya/bugs#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:code="http://www.cs.cmu.edu/~anupriya/code#"
+ xmlns:interactions="http://www.cs.cmu.edu/~anupriya/interactions#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:community="http://www.cs.cmu.edu/~anupriya/community#"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xml:base="http://www.cs.cmu.edu/~anupriya/bugs"
+>
+<owl:Ontology rdf:about="http://www.cs.cmu.edu/~anupriya/bugs">
+</owl:Ontology>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BrokenLinkBug">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugType">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportStatus">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugType">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchReport">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchStatus">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportStatus">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PermissionsBug">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugType">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:label>PermissionsBug</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Priority">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportAttributes">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/interactions#InteractionItem">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportAttributes">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportStatus">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolution">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportAttributes">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportAttributes">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/code#Commit">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/code#OACSPackage">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/community#Person">
+</owl:Class>
+<owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/interactions#InteractionItem">
+</owl:Class>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#assignedTo">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/community#Person">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#fixesBug">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:range>
+  <owl:inverseOf rdf:resource="http://www.cs.cmu.edu/~anupriya/bugs#hasPatch" />
+  <rdfs:label>fixesBug</rdfs:label>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasBugType">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugType">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasPatch">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchReport">
+    </owl:Class>
+  </rdfs:range>
+  <owl:inverseOf rdf:resource="http://www.cs.cmu.edu/~anupriya/bugs#fixesBug" />
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasPriority">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Priority">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasResolution">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolution">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasSeverity">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasStatus">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#ReportStatus">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#resolvedBy">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/community#Person">
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:label>resolvedBy</rdfs:label>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#submittedBy">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/community#Person">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/code#refersToBug">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/code#Commit">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.cs.cmu.edu/~anupriya/code#refersToPatch">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/code#Commit">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchReport">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#fixForVersion">
+  <rdfs:domain>    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+</rdfs:domain>
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#fixedInVersion">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugReport">
+    </owl:Class>
+</rdfs:domain>
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasPatchContent">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchReport">
+    </owl:Class>
+</rdfs:domain>
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+  <rdfs:label>hasPatchContent</rdfs:label>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#hasSummary">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+</rdfs:domain>
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#reportForComponent">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Report">
+    </owl:Class>
+</rdfs:domain>
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Accepted">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Accepted</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed_ByDesign">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed (By Design)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed_Duplicate">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed (Duplicate)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed_Fixed">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed (Fixed)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed_NotReproducable">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed (Not Reproducable)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Closed_Postponed">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Closed (Postponed)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Cosmetic">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Cosmetic</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Critical">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Critical</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Deleted">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Deleted</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Enhancement">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Enhancement</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#FunctionBroken">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>FunctionBroken</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Inconvenience">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Inconvenience</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#MustFix">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Priority">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>MustFix</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Normal">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Priority">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Normal</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Open">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Open</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Refused">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#PatchStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Refused</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved_ByDesign">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved (By Design)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved_Duplicate">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved (Duplicate)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved_Fixed">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved (Fixed)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved_NotReproducable">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved (Not Reproducable)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Resolved_Postponed">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#BugStatus">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Resolved (Postponed)</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Trivial">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Severity">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Trivial</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Urgent">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.cs.cmu.edu/~anupriya/bugs#Priority">
+    </owl:Class>
+  </rdf:type>
+  <rdfs:label>Urgent</rdfs:label>
+</rdf:Description>
+
+</rdf:RDF>

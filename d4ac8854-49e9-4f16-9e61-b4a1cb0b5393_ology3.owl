@@ -1,0 +1,3740 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.owl-ontologies.com/Paddywhackery.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.owl-ontologies.com/Paddywhackery.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="protege" IRI="http://protege.stanford.edu/plugins/owl/protege#"/>
+    <Prefix name="xsp" IRI="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"/>
+    <Prefix name="" IRI="http://www.owl-ontologies.com/Paddywhackery.owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="Paddywhackery" IRI="http://www.owl-ontologies.com/Paddywhackery.owl#16"/>
+    <Declaration>
+        <Class IRI="#Accuracy_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Direction_of_Movement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Humidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Speed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Spore_Concentration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Air_Wetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Application_Programming_Interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atmosphere"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Battery_Lifetime_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calibration_Curve_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chamber_Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Condition_Status_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consume_Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#County"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CountyID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataBase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataBase_Administrator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Detection_Limit_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drift_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Engineer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Farm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FarmID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feature_Of_Interest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Forecasting_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frequency_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GIS_Time_Workspace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPSCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#General_Missing_Data_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hardware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Host"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Sink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Transformer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Input"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Input_Assay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Input_Investigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Input_Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Input_Study"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interpolation_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LandMass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Latency_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maintenance_Schedule_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement_Capability_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement_Range_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Missing_Data_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NodeID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Node_Network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operating_Power_Range_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operating_Property_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operating_Range_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ordinance_Survey_Map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Other_Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutPut_Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutbreakArchive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Output"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Output_Assay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Output_Investigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Output_Study"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Precision_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reaction_Chamber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resolution_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Response_Time_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Risk_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SMS_and_MMS_Generator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SPARQL_Endpoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Selectivity_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Self_Diagnostics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensitivity_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service_Number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoilMap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Specification_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spore_Time_Lag_Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Supply_Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Surrounding_Air"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Surrounding_Soil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Survival_Property_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Survival_Range_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System_Lifetime_Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transform_Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transmit_Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserUploads"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User_Query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weather_Forecast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Website"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#DeliversDataTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#LocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Measures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Observes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#SubscribesTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#16bitNumber-Raw"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Raw"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#S.I._Units"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#APISoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Air"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientHumiditySensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmbientTempSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Analog_Devices_ADT7320"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveMatrix"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveSensorA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveSensorB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveSensorC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveSensorD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CalibrationCurveSensorE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Campbell_Scientific_237F"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DMCiiSatelliteImageArchive"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DataArchive"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmX"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmZ"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmersUploadX"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmersUploadY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FarmersUploadZ"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InSpeed_Vortex"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InSpeed_e-Vane"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTempSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeafWetnessSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#METOffice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelAH123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelAT123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelIT123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelLW123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelR123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelS123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelWD123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModelWS123"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Network1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Network2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Network3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Network4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Network5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Node55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrdinanceSurveyWebsite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ReserveSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RiskModelSoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SamplingEngine55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sensirion_SHT15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SoilMapUK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporeModelSoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SporesSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SyngentaSwitzerland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindDirectionSensor55"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor31"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor34"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor35"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor41"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor42"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor43"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor44"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor45"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor51"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor52"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor53"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor54"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WindSpeedSensor55"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Input_Investigation"/>
+        <Class IRI="#Output_Study"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Input_Observation"/>
+        <Class IRI="#Output_Assay"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Input_Study"/>
+        <Class IRI="#OutPut_Observation"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Accuracy_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Direction_of_Movement"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Humidity"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Speed"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Spore_Concentration"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Temperature"/>
+        <Class IRI="#Temperature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Air_Wetness"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Application_Programming_Interface"/>
+        <Class IRI="#Information_Transformer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Application_Programming_Interface"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#DataBase"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Application_Programming_Interface"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Information_Sink"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atmosphere"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atmosphere"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Sensor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Battery_Lifetime_Matrix"/>
+        <Class IRI="#Survival_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calibration_Curve_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chamber_Temperature"/>
+        <Class IRI="#Temperature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Condition_Status_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consume_Data"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#County"/>
+        <Class IRI="#LandMass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CountyID"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase"/>
+        <Class IRI="#Information_Host"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#GIS_Time_Workspace"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Information_Source"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Application_Programming_Interface"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Specification_Matrix"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase_Administrator"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase_Administrator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase_Administrator"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataBase_Administrator"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Detection_Limit_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drift_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engineer"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engineer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engineer"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engineer"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Farm"/>
+        <Class IRI="#LandMass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FarmID"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Feature_Of_Interest"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forecasting_Model"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forecasting_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forecasting_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forecasting_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frequency_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GIS_Time_Workspace"/>
+        <Class IRI="#Information_Transformer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GIS_Time_Workspace"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Information_Source"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GIS_Time_Workspace"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPSCoordinate"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#General_Missing_Data_Model"/>
+        <Class IRI="#Missing_Data_Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Entity"/>
+        <Class IRI="#Information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Host"/>
+        <Class IRI="#Information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Host"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Host"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Transmit_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Sink"/>
+        <Class IRI="#Information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Sink"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Sink"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Risk_Model"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Sink"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Consume_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Sink"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#DataBase"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Source"/>
+        <Class IRI="#Information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Source"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Transformer"/>
+        <Class IRI="#Information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Transformer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_Transformer"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Transform_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Input"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Input_Assay"/>
+        <Class IRI="#Input"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Input_Investigation"/>
+        <Class IRI="#Input"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Input_Observation"/>
+        <Class IRI="#Input"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Input_Study"/>
+        <Class IRI="#Input"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpolation_Model"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpolation_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpolation_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpolation_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LandMass"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Latency_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maintenance_Schedule_Matrix"/>
+        <Class IRI="#Operating_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement_Capability_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement_Property_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement_Range_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Missing_Data_Model"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Missing_Data_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Missing_Data_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Missing_Data_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Model"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkID"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Sensor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Transmit_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Node_Network"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#LocatedIn"/>
+            <Class IRI="#County"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#LocatedIn"/>
+            <Class IRI="#Farm"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#LocatedIn"/>
+            <Class IRI="#Node_Network"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NodeID"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node_Network"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node_Network"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node_Network"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Transmit_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operating_Power_Range_Matrix"/>
+        <Class IRI="#Operating_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operating_Property_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operating_Range_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Other_Feature"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutPut_Observation"/>
+        <Class IRI="#Output"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutbreakArchive"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutbreakArchive"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutbreakArchive"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutbreakArchive"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Output"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Output_Assay"/>
+        <Class IRI="#Output"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Output_Investigation"/>
+        <Class IRI="#Output"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Output_Study"/>
+        <Class IRI="#Output"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Precision_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reaction_Chamber"/>
+        <Class IRI="#Atmosphere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resolution_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Response_Time_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#SMS_and_MMS_Generator"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#SPARQL_Endpoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#User"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Website"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Model"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Role"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SMS_and_MMS_Generator"/>
+        <Class IRI="#Information_Sink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SPARQL_Endpoint"/>
+        <Class IRI="#Information_Sink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Selectivity_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Self_Diagnostics"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensitivity_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Hardware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#Atmosphere"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#Node"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#Measures"/>
+            <Class IRI="#Feature_Of_Interest"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service_Number"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoilMap"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoilMap"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoilMap"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoilMap"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Specification_Matrix"/>
+        <Class IRI="#Information_Transformer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Specification_Matrix"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spore_Time_Lag_Model"/>
+        <Class IRI="#Missing_Data_Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Supply_Data"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Surrounding_Air"/>
+        <Class IRI="#Atmosphere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Surrounding_Soil"/>
+        <Class IRI="#Atmosphere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Survival_Property_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Survival_Range_Matrix"/>
+        <Class IRI="#Specification_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System_Lifetime_Matrix"/>
+        <Class IRI="#Survival_Property_Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#Feature_Of_Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transform_Data"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transmit_Data"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <Class IRI="#Information_Sink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserID"/>
+        <Class IRI="#Information_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserUploads"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserUploads"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserUploads"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserUploads"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User_Query"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User_Query"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User_Query"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Consume_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User_Query"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#ReceivesDataFrom"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weather_Forecast"/>
+        <Class IRI="#Information_Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weather_Forecast"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Role"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weather_Forecast"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#DeliversDataTo"/>
+            <Class IRI="#DataBase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weather_Forecast"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasProperty"/>
+            <Class IRI="#Supply_Data"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Website"/>
+        <Class IRI="#Information_Sink"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Accuracy_Matrix"/>
+        <Class IRI="#Detection_Limit_Matrix"/>
+        <Class IRI="#Drift_Matrix"/>
+        <Class IRI="#Frequency_Matrix"/>
+        <Class IRI="#Latency_Matrix"/>
+        <Class IRI="#Measurement_Range_Matrix"/>
+        <Class IRI="#Precision_Matrix"/>
+        <Class IRI="#Resolution_Matrix"/>
+        <Class IRI="#Response_Time_Matrix"/>
+        <Class IRI="#Selectivity_Matrix"/>
+        <Class IRI="#Sensitivity_Matrix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Air_Direction_of_Movement"/>
+        <Class IRI="#Air_Humidity"/>
+        <Class IRI="#Air_Speed"/>
+        <Class IRI="#Air_Spore_Concentration"/>
+        <Class IRI="#Air_Temperature"/>
+        <Class IRI="#Air_Wetness"/>
+        <Class IRI="#Chamber_Temperature"/>
+        <Class IRI="#Other_Feature"/>
+        <Class IRI="#Self_Diagnostics"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atmosphere"/>
+        <Class IRI="#DataBase_Administrator"/>
+        <Class IRI="#Engineer"/>
+        <Class IRI="#Model"/>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <Class IRI="#OutbreakArchive"/>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <Class IRI="#SoilMap"/>
+        <Class IRI="#UserUploads"/>
+        <Class IRI="#User_Query"/>
+        <Class IRI="#Weather_Forecast"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Battery_Lifetime_Matrix"/>
+        <Class IRI="#System_Lifetime_Matrix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Calibration_Curve_Matrix"/>
+        <Class IRI="#Condition_Status_Matrix"/>
+        <Class IRI="#Measurement_Capability_Matrix"/>
+        <Class IRI="#Measurement_Property_Matrix"/>
+        <Class IRI="#Operating_Property_Matrix"/>
+        <Class IRI="#Operating_Range_Matrix"/>
+        <Class IRI="#Survival_Property_Matrix"/>
+        <Class IRI="#Survival_Range_Matrix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CountyID"/>
+        <Class IRI="#GPSCoordinate"/>
+        <Class IRI="#NetworkID"/>
+        <Class IRI="#NodeID"/>
+        <Class IRI="#Service_Number"/>
+        <Class IRI="#Time"/>
+        <Class IRI="#UserID"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DataBase_Administrator"/>
+        <Class IRI="#Engineer"/>
+        <Class IRI="#Model"/>
+        <Class IRI="#Ordinance_Survey_Map"/>
+        <Class IRI="#OutbreakArchive"/>
+        <Class IRI="#Satellite_Classification_RasterMap"/>
+        <Class IRI="#SoilMap"/>
+        <Class IRI="#UserUploads"/>
+        <Class IRI="#User_Query"/>
+        <Class IRI="#Weather_Forecast"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Feature_Of_Interest"/>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Information"/>
+        <Class IRI="#Input"/>
+        <Class IRI="#LandMass"/>
+        <Class IRI="#Role"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Feature_Of_Interest"/>
+        <Class IRI="#Hardware"/>
+        <Class IRI="#Information"/>
+        <Class IRI="#LandMass"/>
+        <Class IRI="#Output"/>
+        <Class IRI="#Role"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Forecasting_Model"/>
+        <Class IRI="#Interpolation_Model"/>
+        <Class IRI="#Missing_Data_Model"/>
+        <Class IRI="#Risk_Model"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#General_Missing_Data_Model"/>
+        <Class IRI="#Spore_Time_Lag_Model"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Information_Entity"/>
+        <Class IRI="#Information_Host"/>
+        <Class IRI="#Information_Sink"/>
+        <Class IRI="#Information_Source"/>
+        <Class IRI="#Information_Transformer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Input_Assay"/>
+        <Class IRI="#Input_Investigation"/>
+        <Class IRI="#Input_Observation"/>
+        <Class IRI="#Input_Study"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Maintenance_Schedule_Matrix"/>
+        <Class IRI="#Operating_Power_Range_Matrix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OutPut_Observation"/>
+        <Class IRI="#Output_Assay"/>
+        <Class IRI="#Output_Investigation"/>
+        <Class IRI="#Output_Study"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Reaction_Chamber"/>
+        <Class IRI="#Surrounding_Air"/>
+        <Class IRI="#Surrounding_Soil"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SMS_and_MMS_Generator"/>
+        <Class IRI="#SPARQL_Endpoint"/>
+        <Class IRI="#User"/>
+        <Class IRI="#Website"/>
+    </DisjointClasses>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#APISoftware"/>
+        <NamedIndividual IRI="#RiskModelSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DataArchive"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#Network1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#Network2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#Network4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#Network5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#Network3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+        <NamedIndividual IRI="#DataArchive"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#FarmersUploadX"/>
+        <NamedIndividual IRI="#FarmX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#FarmersUploadY"/>
+        <NamedIndividual IRI="#FarmY"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#FarmersUploadZ"/>
+        <NamedIndividual IRI="#FarmZ"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#METOffice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#DMCiiSatelliteImageArchive"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#SyngentaSwitzerland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#FarmersUploadY"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#FarmersUploadZ"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#FarmersUploadX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#GISTIMEWorkspaceSoftware"/>
+        <NamedIndividual IRI="#OrdinanceSurveyWebsite"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#FarmX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network1"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#FarmX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network2"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#FarmY"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network3"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#FarmY"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network4"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#FarmZ"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Network5"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#SamplingEngine11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node11"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#SamplingEngine12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node12"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#SamplingEngine13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node13"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#SamplingEngine14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node14"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#SamplingEngine15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#Node12"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#Node13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#Node14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node15"/>
+        <NamedIndividual IRI="#Node15"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#SamplingEngine21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node21"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#SamplingEngine22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node22"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#SamplingEngine23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node23"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#SamplingEngine24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node24"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#Node21"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#Node22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#Node23"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#Node24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#Node25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node25"/>
+        <NamedIndividual IRI="#SamplingEngine25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node31"/>
+        <NamedIndividual IRI="#SamplingEngine31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#SamplingEngine32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node32"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#SamplingEngine33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node33"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#SamplingEngine34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node34"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#Node35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#Node34"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#Node33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#Node32"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#Node31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node35"/>
+        <NamedIndividual IRI="#SamplingEngine35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#SamplingEngine41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node41"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#SamplingEngine42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node42"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#SamplingEngine43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node43"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#SamplingEngine44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node44"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#Node41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#Node43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#SamplingEngine45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#Node42"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#Node45"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node45"/>
+        <NamedIndividual IRI="#Node44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node51"/>
+        <NamedIndividual IRI="#SamplingEngine51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#SamplingEngine52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node52"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node53"/>
+        <NamedIndividual IRI="#SamplingEngine53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#SamplingEngine54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node54"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#Node55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#Node54"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#Node53"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#Node52"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#SamplingEngine55"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#Node55"/>
+        <NamedIndividual IRI="#Node51"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ReceivesDataFrom"/>
+        <NamedIndividual IRI="#RiskModelSoftware"/>
+        <NamedIndividual IRI="#DatabaseSoftware"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyDomain>
+        <DataProperty IRI="#16bitNumber-Raw"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#16bitNumber-Raw"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Raw"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#Raw"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#S.I._Units"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#S.I._Units"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Direction_of_Movement</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The direction of Air movement in the vacinity of the Direction Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Humidity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Humidity of the Air in the vacinity of the Humidity Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Speed</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Speed of the wind in the vacinity of the Speed Sensor </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Spore_Concentration</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The amount of spores in the air captured in the reaction chamber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Temperature</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The temperature of the air in the vacinity of the Temperature sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Air_Wetness</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The extent of the dampness of the Air in the vacinity of the Wetness Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Application_Programming_Interface</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A computer program linking the database to the website, SPARQL endpoint and SMS/MMS generator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Atmosphere</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The provider of the stimulus for the sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Calibration_Curve_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Transformation polynomials that convert raw sensor readings into S.I. units</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Chamber_Temperature</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Temperature in the Reaction Chamber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Condition_Status_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of values indicating the performance of equipment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Consume_Data</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">To draw a conclusion from the supplied data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#County</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">One of the named landmasses according to legal boundaries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CountyID</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The landmass designated according to traditional UK boundaries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataBase</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The container for values of interest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataBase_Administrator</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A person or persons who can edit the database and its values</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Engineer</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A person who can edit selected database values</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Farm</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The named landmass owned or administered by the user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Feature_Of_Interest</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">What sensors are designed to be stimulated by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Forecasting_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A mathematical vehicle for estimating future database values </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GIS_Time_Workspace</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A transformation matrix that determines the equivalent values in S.I units </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GPSCoordinate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A unique geographical location in which the Assay takes place</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#General_Missing_Data_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A general purpose model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hardware</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Physically present equipment that creates and transmits data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Data that can be used for an interpretation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information_Entity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Fundamental elements of metadata that allows unique identification of any data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information_Host</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Place where data can reside indefinitely before further use</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information_Sink</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">entity where data ends up</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information_Source</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Entity that creates new data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Information_Transformer</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Set of mathematical intructions that converts data into convenient format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Input</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The measurable extent of the potential stimulation of the sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Input_Assay</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A single measurement events&#39; input</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Input_Investigation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of studies that reveals the general patterns and trends</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Input_Observation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of assay results that makes up a databurst</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Input_Study</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of observations that reveals a pattern or trend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Interpolation_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A mathematical vehicle for estimating values at locations that do not have a sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LandMass</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A named geographical element</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Measurement_Capability_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of values revealing the utility of the equipment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Measurement_Property_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of sensor charachteristics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Missing_Data_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A mathematical vehicle for estimating values that were not received on time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A mathematical vehicle for estimating certain values</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NetworkID</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The unique number identifying a set of nodes linked wirelessly</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Node</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The housing for the sensors and associated electromechanical equipment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NodeID</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A unique value identifying a particular node</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Node_Network</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A set of nodes connected wirelessly</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Operating_Property_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of intended operating conditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Operating_Range_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of information on the range of conditions where the sensor performs satisfactorily</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ordinance_Survey_Map</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A rastermap providing elevation above sealevel for a geographical range</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Other_Feature</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any other feature of interest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OutPut_Observation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of observations that reveals a pattern or trend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OutbreakArchive</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A rastermap showing the number of spore attacks in the last 10 years at a range of geographical locations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Output</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The measurable extent of the sensor&#39;s recording of the stimulus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Output_Assay</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of assay results that makes up a databurst</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Output_Investigation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The general patterns and trends</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Output_Study</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The cluster of studies that reveals the general patterns and trends</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reaction_Chamber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The locus of the stimulation of the Spore Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Risk_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A mathematical vehicle for assessing the overall danger of crop damage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Role</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The function of each entity in relation to data processing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SMS_and_MMS_Generator</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A computer programm that automatically sends SMS and or MMS messages to designated cellphones upon the appropriate prompts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SPARQL_Endpoint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An interface that allows probing of the database remotely via the world wide web</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Satellite_Classification_RasterMap</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A rastermap showing the most likely land use over a geographical range of locations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Self_Diagnostics</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A series of check values that will reveal an electromechanical failure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensor</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The device that is stimulated by the atmosphere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensor</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The sensor is defined based on the OWL file AustralianOntology and the url: http://purl.oclc.org/NET/ssnx/ssn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Service_Number</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A value revealing whether the nodes&#39; data should be ignored</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SoilMap</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A rastermap showing predominant soil type over a geographical range of locations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Specification_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A matrix of values that gives useful information on correctly interpreting database values</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Spore_Time_Lag_Model</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A missing data model specifically tailored to the time lag problem with the spore sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Supply_Data</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">To provide original data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Surrounding_Air</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The provider of the features of interest that stimulate sensors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Surrounding_Soil</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A provider of stimulus for any sensor buried in the soil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Survival_Property_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of information about a sensors useful life</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Survival_Range_Matrix</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Matrix of values indicating the safe limits of performance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Time</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The temporal location of the Assay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Transform_Data</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Neith create nor destroy data but change it from one format to another</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Transmit_Data</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Move data from one place to another without modifying it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A data consumer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserID</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A unique value identifying a particular data consumer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserUploads</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Information provided by the user if any</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User_Query</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A specific subset of database values determined by the user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Weather_Forecast</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A selection of weather features over a goegraphical and temporal range</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Website</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A vehicle on the world wide web that allows visual consumption of data</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

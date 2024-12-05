@@ -1,0 +1,2546 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY softwareengineering "http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#"
+     xml:base="http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:softwareengineering="http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <owl:versionInfo xml:lang="fr">1.0 alpha</owl:versionInfo>
+        <dc:description xml:lang="fr"
+            >Ce document a pour objectif de d&#233;crire les diff&#233;rents concepts relatifs au domaine de l&#39;ing&#233;nierie logiciel.
+
+Q: Domaine?
+R: Ing&#233;nierie logicielle
+Q: Pour quoi?
+R: Enseignement de l&#39;ing&#233;nierie logicielle au niveau universitaire.
+Q: Pour r&#233;pondre &#224; quel genre de question?
+R: Qu&#39;est-ce que l&#39;ing&#233;nierie logicielle? Quelles sont les phases d&#39;ing&#233;nierie? Qui participe au d&#233;veloppement?
+Q: Qui utilise et maintient cette ressource?
+R: Les &#233;tudiants et enseignant.</dc:description>
+        <dc:date xml:lang="fr"
+            >D&#233;but&#233; le 10 juin 2009.</dc:date>
+        <dc:language xml:lang="fr">Fran&#231;ais</dc:language>
+        <dc:contributor xml:lang="fr"
+            >Tom Rochette &lt;tom.rochette@polymtl.ca&gt;</dc:contributor>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;language"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&dc;contributor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#describes -->
+
+    <owl:ObjectProperty rdf:about="#describes"/>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#involves -->
+
+    <owl:ObjectProperty rdf:about="#involves"/>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#measures -->
+
+    <owl:ObjectProperty rdf:about="#measures"/>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#produces -->
+
+    <owl:ObjectProperty rdf:about="#produces"/>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#respects -->
+
+    <owl:ObjectProperty rdf:about="#respects"/>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#uses -->
+
+    <owl:ObjectProperty rdf:about="#uses"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Acceptance_testing -->
+
+    <owl:Class rdf:about="#Acceptance_testing">
+        <rdfs:label xml:lang="en"
+            >Acceptance testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test de validation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Test permettant de d&#233;terminer si toutes les exigences client d&#233;crites dans le document de sp&#233;cification du logiciel sont respect&#233;es.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Amdahls_law -->
+
+    <owl:Class rdf:about="#Amdahls_law">
+        <rdfs:label xml:lang="en">Amdahl&#39;s law</rdfs:label>
+        <rdfs:label xml:lang="fr">Loi de Amdahl</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Metrics"/>
+        <rdfs:comment xml:lang="fr"
+            >Loi permettant de pr&#233;dire les effets d&#39;une am&#233;lioration unitaire.
+Acc&#233;l&#233;rationTotal = 1 / [(1 - f) + f/AccUnitaire]
+
+ex. Acc&#233;l&#233;rer 5x une unit&#233; qui prend 20% du temps:
+AccTotal = 1 / [(1 - 0,2) + 0,2/5] = 1,19</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Analysis_document -->
+
+    <owl:Class rdf:about="#Analysis_document">
+        <rdfs:label xml:lang="en"
+            >Analysis document</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Document d&#39;analyse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#respects"/>
+                <owl:someValuesFrom rdf:resource="#IEEE_Analysis_document_standard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Document d&#233;crivant diverses informations &#224; propos d&#39;un logiciel &#224; concevoir.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Analysis_process -->
+
+    <owl:Class rdf:about="#Analysis_process">
+        <rdfs:label xml:lang="en"
+            >Analysis process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus d&#39;analyse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process"/>
+        <rdfs:comment xml:lang="fr"
+            >Le processus d&#39;analyser les demandes du clients en vue de produire un document de sp&#233;cifications qui explicitera les dites demandes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Analysis_tool -->
+
+    <owl:Class rdf:about="#Analysis_tool">
+        <rdfs:label xml:lang="en">Analysis tool</rdfs:label>
+        <rdfs:label xml:lang="fr">Outil d&#39;analyse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;couvrir et obtenir l&#39;ensemble des sp&#233;cifications du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Architecture_conception -->
+
+    <owl:Class rdf:about="#Architecture_conception">
+        <rdfs:label xml:lang="en"
+            >Architecture conception</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Conception de l&#39;architecture</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Conception_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Design_pattern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on d&#233;finie les structures essentielles au fonctionnement du logiciel. C&#39;est durant cette &#233;tape qu&#39;on d&#233;cide des divers moyen de communication entre les objets ainsi que les protocoles &#224; utiliser.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Artifact -->
+
+    <owl:Class rdf:about="#Artifact">
+        <rdfs:label xml:lang="en">Artifact</rdfs:label>
+        <rdfs:label xml:lang="fr">Art&#233;fact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >&#201;l&#233;ment tangible cr&#233;&#233; par l&#39;homme.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Black_box_testing -->
+
+    <owl:Class rdf:about="#Black_box_testing">
+        <rdfs:label xml:lang="en"
+            >Black box testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test en bo&#238;te noire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Test permettant de v&#233;rifier les fonctionnalit&#233;es du logiciel via entr&#233;es/sorties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Bug -->
+
+    <owl:Class rdf:about="#Bug">
+        <rdfs:label xml:lang="en">Bug</rdfs:label>
+        <rdfs:label xml:lang="fr">Bogue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Defect"/>
+        <rdfs:comment xml:lang="fr"
+            >Erreur dans le logiciel pr&#233;venant le comportement d&#233;sir&#233;e de celui-ci.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Bug_tracker -->
+
+    <owl:Class rdf:about="#Bug_tracker">
+        <rdfs:label xml:lang="en">Bug tracker</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Logiciel de suivi des bogues</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Configuration_management_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Bug"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de suivre le progr&#232;s effectu&#233; vers la correction d&#39;un bogue.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Build_tool -->
+
+    <owl:Class rdf:about="#Build_tool">
+        <rdfs:label xml:lang="en">Build tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de construction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Configuration_management_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant l&#39;installation d&#39;un logiciel dans un nouvel environnement de travail.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Buyer -->
+
+    <owl:Class rdf:about="#Buyer">
+        <rdfs:label xml:lang="en">Buyer</rdfs:label>
+        <rdfs:label xml:lang="fr">Acheteur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui ont commissionn&#233; le logiciel ou ceux qui repr&#233;sentent le march&#233; cible du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Capability_Maturity_Model -->
+
+    <owl:Class rdf:about="#Capability_Maturity_Model">
+        <rdfs:label xml:lang="en">CMM</rdfs:label>
+        <rdfs:label xml:lang="en"
+            >Capability maturity model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le de maturit&#233; des aptitudes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Framework"/>
+        <rdfs:comment xml:lang="fr"
+            >Collection structur&#233;e d&#39;&#233;l&#233;ments d&#233;crivant certains aspects de la maturit&#233; d&#39;une organisation, permettant la d&#233;finition et la compr&#233;hension des processus de cette organisation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Centralised_revision_control_system -->
+
+    <owl:Class rdf:about="#Centralised_revision_control_system">
+        <rdfs:label xml:lang="en"
+            >Centralised revision control system</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Syst&#232;me de gestion de r&#233;vision centralis&#233;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Revision_control_system"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil de gestion de r&#233;vision se trouvant sur un unique serveur.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Class_diagram -->
+
+    <owl:Class rdf:about="#Class_diagram">
+        <rdfs:label xml:lang="en">Class diagram</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Diagramme de classes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#UML_Diagram"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de repr&#233;senter l&#39;ensembles des classes composant un logiciel ainsi que les relations entre chacunes de ces classes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Client -->
+
+    <owl:Class rdf:about="#Client">
+        <rdfs:label xml:lang="en">Client</rdfs:label>
+        <rdfs:label xml:lang="fr">Client</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend l&#39;ensemble des individus qui partipent &#224; l&#39;achat (paiement) du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Code_coverage -->
+
+    <owl:Class rdf:about="#Code_coverage">
+        <rdfs:label xml:lang="en">Code coverage</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Couverture de code</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Metrics"/>
+        <rdfs:comment xml:lang="fr"
+            >D&#233;crit le degr&#233; de couverture d&#39;un code test&#233; (g&#233;n&#233;ralement en pourcentage, lignes de code test&#233;s/lignes de code total).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Coding -->
+
+    <owl:Class rdf:about="#Coding">
+        <rdfs:label xml:lang="en">Coding</rdfs:label>
+        <rdfs:label xml:lang="fr">Codage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle le code du logiciel est r&#233;alis&#233;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Compiler -->
+
+    <owl:Class rdf:about="#Compiler">
+        <rdfs:label xml:lang="en">Compiler</rdfs:label>
+        <rdfs:label xml:lang="fr">Compilateur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de lire les symboles g&#233;n&#233;r&#233;s par un interpr&#233;teur pour convertir le tout en format binaire.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Comprehension_tool -->
+
+    <owl:Class rdf:about="#Comprehension_tool">
+        <rdfs:label xml:lang="en"
+            >Comprehension tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de compr&#233;hension</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maintenance_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil assistant dans la compr&#233;hension humaine des programmes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Conception_document -->
+
+    <owl:Class rdf:about="#Conception_document">
+        <rdfs:label xml:lang="en"
+            >Conception document</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Document de conception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#respects"/>
+                <owl:someValuesFrom rdf:resource="#IEEE_Conception_document_standard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Document d&#233;crivant les &#233;l&#233;ments permettant de concevoir un logiciel pr&#233;c&#233;demment sp&#233;cifi&#233;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Conception_process -->
+
+    <owl:Class rdf:about="#Conception_process">
+        <rdfs:label xml:lang="en"
+            >Conception process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus de conception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process"/>
+        <rdfs:comment xml:lang="fr"
+            >Le processus de d&#233;finir l&#39;architecture, les composantes, les interfaces et autres caract&#233;ristiques d&#39;un syst&#232;me ou d&#39;une composante et le r&#233;sultat de ce processus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Conception_tool -->
+
+    <owl:Class rdf:about="#Conception_tool">
+        <rdfs:label xml:lang="en">Conception tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de conception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de communiquer et d&#39;&#233;tablir l&#39;architecture logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Configuration_language -->
+
+    <owl:Class rdf:about="#Configuration_language">
+        <rdfs:label xml:lang="en"
+            >Configuration language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de configuration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage employant des mots cl&#233;s dans le but d&#39;ex&#233;cuter certains logiciels (tel que compilateurs) dans le but de configurer un logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Configuration_management_tool -->
+
+    <owl:Class rdf:about="#Configuration_management_tool">
+        <rdfs:label xml:lang="en"
+            >Configuration management tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de gestion de configuration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de g&#233;rer l&#39;ensemble des artefacts de configuration logicielle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Coverage_analyzer -->
+
+    <owl:Class rdf:about="#Coverage_analyzer">
+        <rdfs:label xml:lang="en"
+            >Coverage analyzer</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyseur de couverture</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;terminer la couverture de code d&#39;un logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Cyclomatic_complexity -->
+
+    <owl:Class rdf:about="#Cyclomatic_complexity">
+        <rdfs:label xml:lang="en"
+            >Cyclomatic complexity</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Complexit&#233; cyclomatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Metrics"/>
+        <rdfs:comment xml:lang="fr"
+            >Mesure d&#233;finissant le degr&#233; de difficult&#233; afin de tester une fonction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Cyclomatic_complexity_analyzer -->
+
+    <owl:Class rdf:about="#Cyclomatic_complexity_analyzer">
+        <rdfs:label xml:lang="en"
+            >Cyclomatic complexity analyzer</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyseur de complexit&#233; cyclomatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#measures"/>
+                <owl:someValuesFrom rdf:resource="#Cyclomatic_complexity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant l&#39;analyse d&#39;un fichier source afin d&#39;en d&#233;terminer la complexit&#233; cyclomatique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Data_flow_diagram -->
+
+    <owl:Class rdf:about="#Data_flow_diagram">
+        <rdfs:label xml:lang="en"
+            >Data flow diagram</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Diagramme de flux de donn&#233;es</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#UML_Diagram"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de repr&#233;senter les d&#233;placements des donn&#233;es &#224; l&#39;int&#233;rieur du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Debugger -->
+
+    <owl:Class rdf:about="#Debugger">
+        <rdfs:label xml:lang="en">Debugger</rdfs:label>
+        <rdfs:label xml:lang="fr">D&#233;bogueur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;terminer les endroits causant des probl&#232;mes dans le code d&#39;un logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Defect -->
+
+    <owl:Class rdf:about="#Defect">
+        <rdfs:label xml:lang="en">Defect</rdfs:label>
+        <rdfs:label xml:lang="fr">D&#233;faut</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Imperfection d&#39;une entit&#233;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Dependency_tree -->
+
+    <owl:Class rdf:about="#Dependency_tree">
+        <rdfs:label xml:lang="en">Dependency tree</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Arbre de d&#233;pendances</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Arbre pr&#233;sentant l&#39;ensemble des d&#233;pendances entre diff&#233;rentes entit&#233;s.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Design_pattern -->
+
+    <owl:Class rdf:about="#Design_pattern">
+        <rdfs:label xml:lang="en">Design pattern</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Patron de conception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Conception_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de concevoir une architecture logicielle &#224; l&#39;aide de patrons de conception ayant &#233;t&#233; employ&#233;s et d&#233;cris par d&#39;autres.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Design_quality_analysis -->
+
+    <owl:Class rdf:about="#Design_quality_analysis">
+        <rdfs:label xml:lang="en"
+            >Design quality analysis</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyse de la qualit&#233; du design</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Conception_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on remet en jeu la qualit&#233; de l&#39;architecture d&#233;finie jusqu&#39;&#224; pr&#233;sent en vue de s&#39;assurer d&#39;avoir une structure solide.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Developer -->
+
+    <owl:Class rdf:about="#Developer">
+        <rdfs:label xml:lang="en">Developer</rdfs:label>
+        <rdfs:label xml:lang="fr">Programmeur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#produces"/>
+                <owl:someValuesFrom rdf:resource="#Artifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui travaillent &#224; la r&#233;alisation du logiciel par l&#39;interm&#233;diaire de l&#39;&#233;criture de code.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Diagram -->
+
+    <owl:Class rdf:about="#Diagram">
+        <rdfs:label xml:lang="en">Diagram</rdfs:label>
+        <rdfs:label xml:lang="fr">Diagramme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;crire une id&#233;e sous format visuel &#224; l&#39;aide de symboles et de relations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Distributed_revision_control_system -->
+
+    <owl:Class rdf:about="#Distributed_revision_control_system">
+        <rdfs:label xml:lang="en"
+            >Distributed revision control system</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Syst&#232;me de gestion de r&#233;vision distribu&#233;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Revision_control_system"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil de gestion de r&#233;vision se trouvant sur divers ordinateurs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Document -->
+
+    <owl:Class rdf:about="#Document">
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+        <rdfs:label xml:lang="fr">Document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Artifact"/>
+        <rdfs:comment xml:lang="fr"
+            >Support physique d&#39;information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Documentation_writing -->
+
+    <owl:Class rdf:about="#Documentation_writing">
+        <rdfs:label xml:lang="en"
+            >Documentation writing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >&#201;criture de documentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle les fonctionnalit&#233;s du logiciel sont explicit&#233;s et expliqu&#233;s dans des documents dans le but d&#39;&#234;tre partag&#233; avec les utilisateurs du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Engineer -->
+
+    <owl:Class rdf:about="#Engineer">
+        <rdfs:label xml:lang="en">Engineer</rdfs:label>
+        <rdfs:label xml:lang="fr">Ing&#233;nieur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#produces"/>
+                <owl:someValuesFrom rdf:resource="#Artifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus ayant re&#231;u une formation scientifique leur permettant de r&#233;soudre des probl&#232;mes de nature technologique et concret.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Evolutive_model -->
+
+    <owl:Class rdf:about="#Evolutive_model">
+        <rdfs:label xml:lang="en">Evolutive model</rdfs:label>
+        <rdfs:label xml:lang="fr">Mod&#232;le &#233;volutif</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Software_life_cycle_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le bas&#233; sur les it&#233;rations ou les exigences ne sont pas encore toutes connues. Une planification diff&#233;rente est donc effectu&#233;e &#224; chaque it&#233;ration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Extreme_Programming -->
+
+    <owl:Class rdf:about="#Extreme_Programming">
+        <rdfs:label xml:lang="en"
+            >Extreme programming</rdfs:label>
+        <rdfs:label xml:lang="en">XP</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Programmation extr&#234;me</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process_framework"/>
+        <rdfs:comment xml:lang="fr"
+            >Extreme Programming (XP) is a software engineering methodology which is intended to improve software quality and responsiveness to changing customer requirements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Formal_programming_language -->
+
+    <owl:Class rdf:about="#Formal_programming_language">
+        <rdfs:label xml:lang="en"
+            >Formal programming language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de programmation formel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Programming_language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage faisant l&#39;emploi d&#39;une grammaire sp&#233;cifique avec laquelle il est possible d&#39;employer des r&#232;gles d&#39;inf&#233;rences ainsi que des axiomes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Framework -->
+
+    <owl:Class rdf:about="#Framework">
+        <rdfs:label xml:lang="en">Framework</rdfs:label>
+        <rdfs:label xml:lang="fr">Cadriciel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#describes"/>
+                <owl:someValuesFrom rdf:resource="#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Structure d&#233;finie afin de r&#233;soudre ou adresser un domaine sp&#233;cifique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Grey_box_testing -->
+
+    <owl:Class rdf:about="#Grey_box_testing">
+        <rdfs:label xml:lang="en"
+            >Grey box testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test en bo&#238;te grise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE_Analysis_document_standard -->
+
+    <owl:Class rdf:about="#IEEE_Analysis_document_standard">
+        <rdfs:label xml:lang="en"
+            >IEEE Analysis document standard</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Standard IEEE des documents d&#39;analyse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#IEEE_Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard IEEE d&#233;finissant la structure et le contenu d&#39;un document d&#39;analyse.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE_Conception_document_standard -->
+
+    <owl:Class rdf:about="#IEEE_Conception_document_standard">
+        <rdfs:label xml:lang="en"
+            >IEEE Conception document standard</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Standard IEEE des documents de conception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#IEEE_Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard IEEE d&#233;finissant la structure et le contenu d&#39;un document de conception.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE_Maintenance_document_standard -->
+
+    <owl:Class rdf:about="#IEEE_Maintenance_document_standard">
+        <rdfs:label xml:lang="en"
+            >IEEE Maintenance document standard</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Standard IEEE des documents de maintenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#IEEE_Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard IEEE d&#233;finissant la structure et le contenu d&#39;un document de maintenance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE_Standard -->
+
+    <owl:Class rdf:about="#IEEE_Standard">
+        <rdfs:label xml:lang="en">IEEE Standard</rdfs:label>
+        <rdfs:label xml:lang="fr">Standard IEEE</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard &#233;tabli par l&#39;Institute of Electric and Electronics Engineers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE_Test_document_standard -->
+
+    <owl:Class rdf:about="#IEEE_Test_document_standard">
+        <rdfs:label xml:lang="en"
+            >IEEE Test document standard</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Standard IEEE des documents de test</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#IEEE_Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard IEEE d&#233;finissant la structure et le contenu d&#39;un document de test.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#ISO_Implementation_document_standard -->
+
+    <owl:Class rdf:about="#ISO_Implementation_document_standard">
+        <rdfs:label xml:lang="en"
+            >ISO Implementation document standard</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Standard ISO des documents d&#39;impl&#233;mentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#ISO_Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard ISO d&#233;finissant la structure et le contenu d&#39;un document d&#39;impl&#233;mentation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#ISO_Standard -->
+
+    <owl:Class rdf:about="#ISO_Standard">
+        <rdfs:label xml:lang="en">ISO Standard</rdfs:label>
+        <rdfs:label xml:lang="fr">Standard ISO</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Standard"/>
+        <rdfs:comment xml:lang="fr"
+            >Standard &#233;tabli par l&#39;Organisation International de normalisation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Impact_analysis -->
+
+    <owl:Class rdf:about="#Impact_analysis">
+        <rdfs:label xml:lang="en">Impact analysis</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyse d&#39;impact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maintenance_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on analyse quel serait les impacts de l&#39;ajout de nouvelles fonctionnalit&#233;s, de la modification de certaines m&#233;thodes, ou tout autre modification &#224; apporter au code.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Implementation_document -->
+
+    <owl:Class rdf:about="#Implementation_document">
+        <rdfs:label xml:lang="en"
+            >Implementation document</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Document d&#39;impl&#233;mentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#respects"/>
+                <owl:someValuesFrom rdf:resource="#ISO_Implementation_document_standard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Document d&#233;crivant le logiciel lui-m&#234;me, sous format compilable.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Implementation_process -->
+
+    <owl:Class rdf:about="#Implementation_process">
+        <rdfs:label xml:lang="en"
+            >Implementation process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus d&#39;impl&#233;mentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process"/>
+        <rdfs:comment xml:lang="fr"
+            >Le processus d&#39;&#233;criture du logiciel en vue de produire du code ex&#233;cutable.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Implementation_tool -->
+
+    <owl:Class rdf:about="#Implementation_tool">
+        <rdfs:label xml:lang="en"
+            >Implementation tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil d&#39;impl&#233;mentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de produire ou d&#39;acc&#233;l&#233;rer la production de produits logiciels.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Incremental_model -->
+
+    <owl:Class rdf:about="#Incremental_model">
+        <rdfs:label xml:lang="en"
+            >Incremental model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le incr&#233;mental</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Software_life_cycle_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le dans lequel l&#39;objectif est de passer &#224; travers l&#39;ensemble des processus afin de r&#233;aliser une partie du logiciel. &#192; la prochaine it&#233;ration, on d&#233;fini les prochains requis pour une nouvelle partie du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Integrated_development_environment -->
+
+    <owl:Class rdf:about="#Integrated_development_environment">
+        <rdfs:label xml:lang="en"
+            >Integrated development environment</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Environnement de d&#233;veloppement int&#233;gr&#233;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Interpreter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Text_editor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Debugger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Compiler"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Ensemble d&#39;outils permettant d&#39;&#233;crire du code, de le compiler et de le tester.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Integration_testing -->
+
+    <owl:Class rdf:about="#Integration_testing">
+        <rdfs:label xml:lang="en"
+            >Integration testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test d&#39;int&#233;gration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_process"/>
+        <rdfs:subClassOf rdf:resource="#Maintenance_process"/>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on s&#39;assure que le nouveau code s&#39;int&#232;gre correctement avec le code actuel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Interpreter -->
+
+    <owl:Class rdf:about="#Interpreter">
+        <rdfs:label xml:lang="en">Interpreter</rdfs:label>
+        <rdfs:label xml:lang="fr">Interpr&#233;teur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de convertir le code sous format texte en un format symbolique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Interview -->
+
+    <owl:Class rdf:about="#Interview">
+        <rdfs:label xml:lang="en">Interview</rdfs:label>
+        <rdfs:label xml:lang="fr">Entrevue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Engineer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Client"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;acqu&#233;rir des informations sur les sp&#233;cifications par l&#39;entremise de questions pos&#233;es directement au client.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Issue_tracker -->
+
+    <owl:Class rdf:about="#Issue_tracker">
+        <rdfs:label xml:lang="en">Issue tracker</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Logiciel de suivi de probl&#232;mes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Configuration_management_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de suivre le progr&#232;s d&#39;un probl&#232;me.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Iterative_model -->
+
+    <owl:Class rdf:about="#Iterative_model">
+        <rdfs:label xml:lang="en">Iterative model</rdfs:label>
+        <rdfs:label xml:lang="fr">Mod&#232;le it&#233;ratif</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Incremental_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le par lequel on passe successivement &#224; travers l&#39;ensemble des processus de d&#233;veloppement, puis on recommence. Chaque cycle est nomm&#233; it&#233;ration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Language -->
+
+    <owl:Class rdf:about="#Language">
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+        <rdfs:label xml:lang="fr">Langage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Forme de communication symbolique entre deux entit&#233;s.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Linguistic_programming_language -->
+
+    <owl:Class rdf:about="#Linguistic_programming_language">
+        <rdfs:label xml:lang="en"
+            >Linguistic programming language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de programmation linguistique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Programming_language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage employant une syntaxe textuelle sp&#233;cifique d&#233;crivant l&#39;ordre des appels &#224; des fonctions pr&#233;-existantes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Linker -->
+
+    <owl:Class rdf:about="#Linker">
+        <rdfs:label xml:lang="en">Linker</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >&#201;diteur de liens</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;assembler des fichiers objets afin de cr&#233;er un ex&#233;cutable.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Maintainer -->
+
+    <owl:Class rdf:about="#Maintainer">
+        <rdfs:label xml:lang="en">Maintainer</rdfs:label>
+        <rdfs:label xml:lang="fr">Mainteneur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui s&#39;occupent de la maintenance du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Maintenance_document -->
+
+    <owl:Class rdf:about="#Maintenance_document">
+        <rdfs:label xml:lang="en"
+            >Maintenance document</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Document de maintenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#respects"/>
+                <owl:someValuesFrom rdf:resource="#IEEE_Maintenance_document_standard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Maintenance_process -->
+
+    <owl:Class rdf:about="#Maintenance_process">
+        <rdfs:label xml:lang="en"
+            >Maintenance process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus de maintenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process"/>
+        <rdfs:comment xml:lang="fr"
+            >Le processus d&#39;assurer l&#39;ajout de fonctionnalit&#233;s et le fonctionnement d&#39;un logiciel apr&#232;s sa sortie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Maintenance_tool -->
+
+    <owl:Class rdf:about="#Maintenance_tool">
+        <rdfs:label xml:lang="en"
+            >Maintenance tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de maintenance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant la gestion et maintenance du produit logiciel apr&#232;s avoir &#233;t&#233; livr&#233; au client.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Management_tool -->
+
+    <owl:Class rdf:about="#Management_tool">
+        <rdfs:label xml:lang="en">Management tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de gestion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de g&#233;rer les diff&#233;rents aspects d&#39;un projet d&#39;ing&#233;nerie logicielle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Measurement_tool -->
+
+    <owl:Class rdf:about="#Measurement_tool">
+        <rdfs:label xml:lang="en"
+            >Measurement tool</rdfs:label>
+        <rdfs:label xml:lang="fr">Outil de mesure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Management_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;&#233;valuer les performances des individus et des &#233;quipes afin d&#39;&#234;tre en mesure d&#39;effectuer des planifications.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Metrics -->
+
+    <owl:Class rdf:about="#Metrics">
+        <rdfs:label xml:lang="en">Metrics</rdfs:label>
+        <rdfs:label xml:lang="fr">M&#233;triques</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Mesure quantitative d&#39;un &#233;l&#233;ment sp&#233;cifique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Modeling_language -->
+
+    <owl:Class rdf:about="#Modeling_language">
+        <rdfs:label xml:lang="en"
+            >Modeling language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Language de mod&#233;lisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage permettant de communiquer un mod&#232;le &#224; l&#39;aide d&#39;un ensemble de symboles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Mutation_testing -->
+
+    <owl:Class rdf:about="#Mutation_testing">
+        <rdfs:label xml:lang="en"
+            >Mutation testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test de mutation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle une partie du code est modifi&#233; dans le but d&#39;alt&#233;r&#233; le fonctionnement correct du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Observation -->
+
+    <owl:Class rdf:about="#Observation">
+        <rdfs:label xml:lang="en">Observation</rdfs:label>
+        <rdfs:label xml:lang="fr">Observation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Engineer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;acqu&#233;rir des informations sur les sp&#233;cifications par l&#39;entremise de l&#39;observation d&#39;utilisateurs dans leur environnement de travail.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Participant -->
+
+    <owl:Class rdf:about="#Participant">
+        <rdfs:label xml:lang="en">Participant</rdfs:label>
+        <rdfs:label xml:lang="fr">Participant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >&#202;tre humain consid&#233;r&#233; en tant qu&#8217;individu.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Performance_analysis_tool -->
+
+    <owl:Class rdf:about="#Performance_analysis_tool">
+        <rdfs:label xml:lang="en"
+            >Performance analysis tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyseur de performances</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;analyser les performances d&#39;un logiciel, autant en utilisation de ressources qu&#39;en utilisation temporelle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Process -->
+
+    <owl:Class rdf:about="#Process">
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+        <rdfs:label xml:lang="fr">Processus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Structure impos&#233;e au d&#233;veloppement d&#39;un produit logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Process_framework -->
+
+    <owl:Class rdf:about="#Process_framework">
+        <rdfs:label xml:lang="en"
+            >Process framework</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Cadriciel de processus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Framework"/>
+        <rdfs:comment xml:lang="fr"
+            >Structure d&#233;finie afin de r&#233;soudre ou adresser un domaine sp&#233;cifique du domaine des processus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Profiler -->
+
+    <owl:Class rdf:about="#Profiler">
+        <rdfs:label xml:lang="en">Profiler</rdfs:label>
+        <rdfs:label xml:lang="fr">Profileur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;celer les parties du code qui sont les plus fr&#233;quemment solicit&#233;es.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Programming_language -->
+
+    <owl:Class rdf:about="#Programming_language">
+        <rdfs:label xml:lang="en"
+            >Programming language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de programmation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage permettant la communication d&#39;id&#233;es et de concepts de provenance humaine vers une machine.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Project_planning_tool -->
+
+    <owl:Class rdf:about="#Project_planning_tool">
+        <rdfs:label xml:lang="en"
+            >Project planning tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de planification de projets</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Management_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Measurement_tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil utilis&#233; pour effectuer l&#39;estimation des co&#251;ts et de planifier le projet en d&#233;tails.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Prototype -->
+
+    <owl:Class rdf:about="#Prototype">
+        <rdfs:label xml:lang="en">Prototype</rdfs:label>
+        <rdfs:label xml:lang="fr">Prototype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Engineer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Client"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;acqu&#233;rir des informations sur les sp&#233;cifications par l&#39;entremise de logiciels incomplets d&#233;montrant les options d&#233;sir&#233;es.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Questionnaire -->
+
+    <owl:Class rdf:about="#Questionnaire">
+        <rdfs:label xml:lang="en">Questionnaire</rdfs:label>
+        <rdfs:label xml:lang="fr">Questionnaire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#involves"/>
+                <owl:someValuesFrom rdf:resource="#Engineer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;acqu&#233;rir des informations sur les sp&#233;cifications par l&#39;entremise de questions pos&#233;es sous forme de questionnaire, sans interaction direct avec le r&#233;pondant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Rapid_Application_Development -->
+
+    <owl:Class rdf:about="#Rapid_Application_Development">
+        <rdfs:label xml:lang="en"
+            >Rapid Application Development</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >D&#233;veloppement rapide d&#39;applications</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Incremental_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le utilisant le minimum de planification en &#233;change de prototypage rapide. Cela permet d&#233;crire le logiciel plus rapidement et de s&#39;adapter plus facilement aux changement de requis.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Reengineering -->
+
+    <owl:Class rdf:about="#Reengineering">
+        <rdfs:label xml:lang="en">Reengineering</rdfs:label>
+        <rdfs:label xml:lang="fr">R&#233;ing&#233;nierie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maintenance_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Reengineering_tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on remod&#232;le l&#39;architecture d&#39;une application en vue d&#39;y ajouter de nouvelles fonctionnalit&#233;s.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Reengineering_tool -->
+
+    <owl:Class rdf:about="#Reengineering_tool">
+        <rdfs:label xml:lang="en"
+            >Reengineering tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de r&#233;ing&#233;nierie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maintenance_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant examination et l&#39;alt&#233;ration d&#39;un logiciel sp&#233;cifique dans le but de le reconstituer d&#39;une nouvelle mani&#232;re.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Refactoring -->
+
+    <owl:Class rdf:about="#Refactoring">
+        <rdfs:label xml:lang="en">Refactoring</rdfs:label>
+        <rdfs:label xml:lang="fr">R&#233;usinage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Conception_process"/>
+        <rdfs:subClassOf rdf:resource="#Implementation_process"/>
+        <rdfs:subClassOf rdf:resource="#Maintenance_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle l&#39;objectif est de r&#233;&#233;crire une partie du code en vue d&#39;am&#233;liorer sa lisibilit&#233;, sa compr&#233;hensibilit&#233;, son efficacit&#233; et son fonctionnement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Regression_testing -->
+
+    <owl:Class rdf:about="#Regression_testing">
+        <rdfs:label xml:lang="en"
+            >Regression testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test de r&#233;gression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_process"/>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle le nouveau code est test&#233; contre des tests ayant d&#233;j&#224; &#233;t&#233; pass&#233;s. Permet de d&#233;terminer que le logiciel est toujours en mesure d&#39;effectuer les op&#233;rations pr&#233;c&#233;demment test&#233;es.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Reliability_measurement -->
+
+    <owl:Class rdf:about="#Reliability_measurement">
+        <rdfs:label xml:lang="en"
+            >Reliability measurement</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mesure de fiabilit&#233;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Metrics"/>
+        <rdfs:comment xml:lang="fr"
+            >Mesure permettant de d&#233;terminer la p&#233;riode de temps durant laquelle un syst&#232;me sera en mesure de fonctionner. On appel cette p&#233;riode le Mean time between failure (temps moyen entre les &#233;checs). La formule employ&#233; est
+MTBF = MTTF + MTTR
+o&#249; MTTF = mean time to failure (temps moyen avant l&#39;&#233;chec)
+et MTTR = mean time to repair (temps moyen pour r&#233;parer)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_analysis -->
+
+    <owl:Class rdf:about="#Requirements_analysis">
+        <rdfs:label xml:lang="en"
+            >Requirements analysis</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Analyse des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Questionnaire"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Prototype"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Interview"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquel l&#39;ing&#233;nieur analyse les requis afin d&#39;en d&#233;terminer les objectifs, d&#233;pendances de chaque requis afin de comprendre le mieux possible le domaine &#233;tudi&#233;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_elicitation -->
+
+    <owl:Class rdf:about="#Requirements_elicitation">
+        <rdfs:label xml:lang="en"
+            >Requirements elicitation</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Collecte des sp&#233;cifications</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle le client fait par de ses besoins &#224; l&#39;entreprise contract&#233;e.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_modeling_tool -->
+
+    <owl:Class rdf:about="#Requirements_modeling_tool">
+        <rdfs:label xml:lang="en"
+            >Requirements modeling tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de mod&#233;lisation des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Modeling_language"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de suivre les modifications apport&#233;s aux documents des requis logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_negotiation -->
+
+    <owl:Class rdf:about="#Requirements_negotiation">
+        <rdfs:label xml:lang="en"
+            >Requirements negotiation</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >N&#233;gociation des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle le client et l&#39;entreprise contract&#233; discutent des risques li&#233;s &#224; d&#233;veloppement du logiciel dans le but de diminuer ceux-ci (et les co&#251;ts qui leurs sont reli&#233;s).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_review -->
+
+    <owl:Class rdf:about="#Requirements_review">
+        <rdfs:label xml:lang="en"
+            >Requirements review</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Revue des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Requirements_validation"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle les requis sont revus dans le but de v&#233;rifier que les ing&#233;nieurs et les clients sont sur la m&#234;me longueur d&#39;onde.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_specification -->
+
+    <owl:Class rdf:about="#Requirements_specification">
+        <rdfs:label xml:lang="en"
+            >Requirements specification</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Sp&#233;cification des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Requirements_modeling_tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle l&#39;ing&#233;nieur d&#233;taille les sp&#233;cifications dans ses mots afin que le client soit en accord avec la d&#233;finition de l&#39;ing&#233;nieur. De plus, le document de sp&#233;cifications sert aussi de r&#233;f&#233;rence aux autres ing&#233;nieurs et d&#233;veloppeurs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_traceability_tool -->
+
+    <owl:Class rdf:about="#Requirements_traceability_tool">
+        <rdfs:label xml:lang="en"
+            >Requirements traceability tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de tra&#231;abilit&#233; des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil employ&#233; pour &#233;liciter, analyser, sp&#233;cifier et valider les requis logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Requirements_validation -->
+
+    <owl:Class rdf:about="#Requirements_validation">
+        <rdfs:label xml:lang="en"
+            >Requirements validation</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Validation des requis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Analysis_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle le document de requis est valid&#233; par le client afin que l&#39;entreprise contract&#233; puisse travailler sur un travail sur lequel les deux partis se sont entendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Revision_control_system -->
+
+    <owl:Class rdf:about="#Revision_control_system">
+        <rdfs:label xml:lang="en"
+            >Revision control system</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Syst&#232;me de gestion de r&#233;vision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Configuration_management_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil faisant la gestion des diverses r&#233;visions de fichiers sp&#233;cifiques.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Risk_management_tool -->
+
+    <owl:Class rdf:about="#Risk_management_tool">
+        <rdfs:label xml:lang="en"
+            >Risk management tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil de gestion des risques</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Management_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;identifier, estimer et suivre les risques.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Seller-installer -->
+
+    <owl:Class rdf:about="#Seller-installer">
+        <rdfs:label xml:lang="en"
+            >Seller-installer</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Vendeur-installateur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui s&#39;occupent de vendre et d&#39;installer le logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Sequence_diagram -->
+
+    <owl:Class rdf:about="#Sequence_diagram">
+        <rdfs:label xml:lang="en"
+            >Sequence diagram</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Diagramme de s&#233;quence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#UML_Diagram"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de repr&#233;senter les s&#233;quences d&#39;appels employ&#233;s afin d&#39;effectuer certaines actions sp&#233;cifiques &#224; l&#39;int&#233;rieur du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Sequential_model -->
+
+    <owl:Class rdf:about="#Sequential_model">
+        <rdfs:label xml:lang="en"
+            >Sequential model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le s&#233;quentiel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Software_life_cycle_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le dans lesquel les &#233;tapes se suivent une &#224; la suite de l&#39;autre, sans entrelacement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Software -->
+
+    <owl:Class rdf:about="#Software">
+        <rdfs:label xml:lang="en">Software</rdfs:label>
+        <rdfs:label xml:lang="fr">Logiciel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Artifact"/>
+        <rdfs:comment xml:lang="fr"
+            >Ensemble de proc&#233;dures performant une t&#226;che sp&#233;cifique sur un syst&#232;me informatique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Software_life_cycle_model -->
+
+    <owl:Class rdf:about="#Software_life_cycle_model">
+        <rdfs:label xml:lang="en"
+            >Software life cycle model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le de cycle de vie logiciel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#describes"/>
+                <owl:someValuesFrom rdf:resource="#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Un mod&#232;le de cycle de vie logiciel d&#233;crit comment approcher la vari&#233;t&#233; de t&#226;ches et activit&#233;s qui prennent place durant chaque processus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Software_product -->
+
+    <owl:Class rdf:about="#Software_product">
+        <rdfs:label xml:lang="en"
+            >Software product</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Produit logiciel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Artifact"/>
+        <rdfs:comment xml:lang="fr"
+            >&#201;l&#233;ment g&#233;n&#233;r&#233; &#224; travers l&#39;ensemble des processus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Source_code -->
+
+    <owl:Class rdf:about="#Source_code">
+        <rdfs:label xml:lang="en">Source code</rdfs:label>
+        <rdfs:label xml:lang="fr">Code source</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Software_product"/>
+        <rdfs:comment xml:lang="fr"
+            >Document contenant de l&#39;information pouvant &#234;tre ex&#233;cut&#233;e par un ordinateur.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Source_lines_of_code -->
+
+    <owl:Class rdf:about="#Source_lines_of_code">
+        <rdfs:label xml:lang="en"
+            >Source lines of code</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Lignes de code source</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Nombre de lignes de code</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Metrics"/>
+        <rdfs:comment xml:lang="fr"
+            >M&#233;trique permettant de d&#233;terminer la taille d&#39;un logiciel &#224; l&#39;aide du nombre de lignes qui le compose.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Source_lines_of_code_counter -->
+
+    <owl:Class rdf:about="#Source_lines_of_code_counter">
+        <rdfs:label xml:lang="en"
+            >Source lines of code counter</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Compteur de lignes de code source</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#measures"/>
+                <owl:someValuesFrom rdf:resource="#Source_lines_of_code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;obtenir le nombre de lignes de codes, de commentaires et de lignes vides pour un ou plusieurs fichiers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Spiral_model -->
+
+    <owl:Class rdf:about="#Spiral_model">
+        <rdfs:label xml:lang="en">Spiral model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le en spirale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Evolutive_model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#V_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le de d&#233;veloppement logiciel qui reprend les diff&#233;rentes &#233;tapes du mod&#232;le en V, en employant des it&#233;rations successives afin de produire un logiciel de plus en plus complet.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Stakeholder -->
+
+    <owl:Class rdf:about="#Stakeholder">
+        <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
+        <rdfs:label xml:lang="fr">Partie prenante</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui poss&#232;dent une int&#233;r&#234;t dans le succ&#232;s de l&#39;entreprise contractante.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Standard -->
+
+    <owl:Class rdf:about="#Standard">
+        <rdfs:label xml:lang="en">Standard</rdfs:label>
+        <rdfs:label xml:lang="fr">Standard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Ensemble de param&#232;tres d&#233;finis accept&#233;s et employ&#233;s par un ensemble d&#39;individus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_case_generation -->
+
+    <owl:Class rdf:about="#Test_case_generation">
+        <rdfs:label xml:lang="en"
+            >Test case generation</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >G&#233;n&#233;ration de cas de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Test_generator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle des cas de tests sont g&#233;n&#233;r&#233;s, soit automatiquement par des logiciels, soit manuellement par des d&#233;veloppeurs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_document -->
+
+    <owl:Class rdf:about="#Test_document">
+        <rdfs:label xml:lang="en">Test document</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Document de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#respects"/>
+                <owl:someValuesFrom rdf:resource="#IEEE_Test_document_standard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Document sp&#233;cifiant la mani&#232;re de tester un logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_evaluation_tool -->
+
+    <owl:Class rdf:about="#Test_evaluation_tool">
+        <rdfs:label xml:lang="en"
+            >Test evaluation tool</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Outil d&#39;&#233;valuation des tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;terminer si les r&#233;sultats des tests sont conformes aux r&#233;sultats attendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_execution -->
+
+    <owl:Class rdf:about="#Test_execution">
+        <rdfs:label xml:lang="en">Test execution</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Ex&#233;cution des tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle les tests sont effectu&#233;s afin de v&#233;rifier le code.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_generator -->
+
+    <owl:Class rdf:about="#Test_generator">
+        <rdfs:label xml:lang="en">Test generator</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >G&#233;n&#233;rateur de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de g&#233;n&#233;rer des tests.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_logger -->
+
+    <owl:Class rdf:about="#Test_logger">
+        <rdfs:label xml:lang="en">Test logger</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Archiveur de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de capturer et sauvegarder les r&#233;sultats de tests.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_logging -->
+
+    <owl:Class rdf:about="#Test_logging">
+        <rdfs:label xml:lang="en">Test logging</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Archivage des tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Test_logger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle les r&#233;sultats des tests sont enregistr&#233;s dans une base de donn&#233;e.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_manager -->
+
+    <owl:Class rdf:about="#Test_manager">
+        <rdfs:label xml:lang="en">Test manager</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Gestionnaire de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de g&#233;rer l&#39;ensembles des tests effectu&#233;s sur le logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_planning -->
+
+    <owl:Class rdf:about="#Test_planning">
+        <rdfs:label xml:lang="en">Test planning</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Planification des tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Test_manager"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle on planifie les activit&#233;s de tests futurs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_process -->
+
+    <owl:Class rdf:about="#Test_process">
+        <rdfs:label xml:lang="en">Test process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process"/>
+        <rdfs:comment xml:lang="fr"
+            >Le processus de tester le logiciel en vue de d&#233;couvrir et d&#39;&#233;liminer tout bogue &#233;ventuel avant la sortie officielle du logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_results_evaluation -->
+
+    <owl:Class rdf:about="#Test_results_evaluation">
+        <rdfs:label xml:lang="en"
+            >Test results evaluation</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >&#201;valuation des r&#233;sultats de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Test_evaluation_tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; durant laquelle les r&#233;sultat des tests sont analys&#233;s afin de d&#233;terminer les actions &#224; entreprendre par la suite.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Test_tool -->
+
+    <owl:Class rdf:about="#Test_tool">
+        <rdfs:label xml:lang="en">Test tool</rdfs:label>
+        <rdfs:label xml:lang="fr">Outil de tests</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de tester les produits logiciels en vue de d&#233;couvrir et de r&#233;gler d&#39;&#233;ventuels bogues.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Text_editor -->
+
+    <owl:Class rdf:about="#Text_editor">
+        <rdfs:label xml:lang="en">Text editor</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >&#201;diteur de texte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Implementation_tool"/>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant d&#39;&#233;crire et de modifier du texte.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Tool -->
+
+    <owl:Class rdf:about="#Tool">
+        <rdfs:label xml:lang="en">Tool</rdfs:label>
+        <rdfs:label xml:lang="fr">Outil</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr"
+            >Entit&#233; employ&#233;e pour interfacer deux domaines ou plus afin de faciliter l&#39;action de l&#39;un des domaines sur l&#39;autre.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Toolkit_language -->
+
+    <owl:Class rdf:about="#Toolkit_language">
+        <rdfs:label xml:lang="en"
+            >Toolkit language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage pour toolkit</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage permettant l&#39;&#233;criture de logiciel &#224; interfaces graphiques (GUI).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#UML_Diagram -->
+
+    <owl:Class rdf:about="#UML_Diagram">
+        <rdfs:label xml:lang="en">UML Diagram</rdfs:label>
+        <rdfs:label xml:lang="fr">Diagramme UML</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Conception_document"/>
+        <rdfs:subClassOf rdf:resource="#Diagram"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:hasValue rdf:resource="#UML"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:onClass rdf:resource="#Modeling_language"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Outil permettant de d&#233;crire une id&#233;e sous format visuel &#224; l&#39;aide de symboles et de relations &#224; l&#39;aide du langage UML.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Unified_Process -->
+
+    <owl:Class rdf:about="#Unified_Process">
+        <rdfs:label xml:lang="en">UP</rdfs:label>
+        <rdfs:label xml:lang="en">Unified process</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Processus unifi&#233;</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Process_framework"/>
+        <rdfs:comment xml:lang="fr"
+            >Cadriciel it&#233;ratif et incr&#233;mental. &#192; chaque it&#233;ration, un ensemble de cas d&#39;utilisations sont s&#233;lectionn&#233; des requis afin d&#39;&#234;tre d&#233;velopp&#233;s, test&#233;s et d&#233;ploy&#233;s. De plus, le processus unifi&#233; insiste sur le fait que l&#39;architecture doit &#234;tre au centre de l&#39;effort du travail d&#39;&#233;quipe.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Unit_testing -->
+
+    <owl:Class rdf:about="#Unit_testing">
+        <rdfs:label xml:lang="en">Unit testing</rdfs:label>
+        <rdfs:label xml:lang="fr">Test unitaire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Activit&#233; consistant &#224; v&#233;rifier que la plus petite unit&#233; de code (fonction ou m&#233;thode) fonctionne correctement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#User -->
+
+    <owl:Class rdf:about="#User">
+        <rdfs:label xml:lang="en">User</rdfs:label>
+        <rdfs:label xml:lang="fr">Utilisateur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Participant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Software"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Ce groupe comprend tous les individus qui utilisent le logiciel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#V_model -->
+
+    <owl:Class rdf:about="#V_model">
+        <rdfs:label xml:lang="en">V-model</rdfs:label>
+        <rdfs:label xml:lang="fr">Mod&#232;le en V</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sequential_model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uses"/>
+                <owl:someValuesFrom rdf:resource="#Waterfall_model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le utilisant la relation entre chaque &#233;tape de d&#233;veloppement et sa contrepartie en test.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Visual_programming_language -->
+
+    <owl:Class rdf:about="#Visual_programming_language">
+        <rdfs:label xml:lang="en"
+            >Visual programming language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de programmation visuel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Programming_language"/>
+        <rdfs:comment xml:lang="fr"
+            >Langage permettant de cr&#233;er des logiciels &#224; l&#39;aide de symboles graphiques organis&#233;s de mani&#232;re logique et syst&#233;matique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Waterfall_model -->
+
+    <owl:Class rdf:about="#Waterfall_model">
+        <rdfs:label xml:lang="en">Waterfall model</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Mod&#232;le en cascade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sequential_model"/>
+        <rdfs:comment xml:lang="fr"
+            >Mod&#232;le s&#233;quentielle &#224; travers lequel on passe successivement &#224; travers les &#233;tapes d&#39;analyse, de conception, d&#39;impl&#233;mentation, de test et de maintenance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#White_box_testing -->
+
+    <owl:Class rdf:about="#White_box_testing">
+        <rdfs:label xml:lang="en"
+            >White box testing</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Test en bo&#238;te blanche</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Test_process"/>
+        <rdfs:comment xml:lang="fr"
+            >Test permettant d&#39;&#233;valuer un logiciel &#224; l&#39;aide de son code source.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing">
+        <rdfs:label xml:lang="en">Thing</rdfs:label>
+        <rdfs:label xml:lang="fr">Chose</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >&#201;l&#233;ment de base, ind&#233;fini.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Bugzilla -->
+
+    <owl:Thing rdf:about="#Bugzilla">
+        <rdf:type rdf:resource="#Bug_tracker"/>
+        <rdfs:label xml:lang="en">Bugzilla</rdfs:label>
+        <rdfs:label xml:lang="fr">Bugzilla</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Application PHP/MySQL regroupant un ensemble de fonctionnalit&#233;s permettant d&#39;effectuer le suivi de bogues.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Concurrent_Version_System -->
+
+    <Centralised_revision_control_system rdf:about="#Concurrent_Version_System">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en"
+            >Concurrent Versions System</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Concurrent Versions System</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Gestionnaire de r&#233;vision non-atomique d&#233;velopp&#233; par l&#39;&#233;quipe CVS.</rdfs:comment>
+    </Centralised_revision_control_system>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Eclipse -->
+
+    <Integrated_development_environment rdf:about="#Eclipse">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Eclipse</rdfs:label>
+        <rdfs:label xml:lang="fr">Eclipse</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Environnement de d&#233;veloppement int&#233;gr&#233; sp&#233;cialis&#233; dans le d&#233;veloppement Java et supportant divers autres langages de programmation.
+</rdfs:comment>
+    </Integrated_development_environment>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#G++ -->
+
+    <owl:Thing rdf:about="#G++">
+        <rdf:type rdf:resource="#Compiler"/>
+        <rdfs:label xml:lang="en">G++</rdfs:label>
+        <rdfs:label xml:lang="fr">G++</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Compilateur du langage C++.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#GCC -->
+
+    <Compiler rdf:about="#GCC">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">GCC</rdfs:label>
+        <rdfs:label xml:lang="fr">GCC</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Compilateur du langage C.</rdfs:comment>
+    </Compiler>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#GIT -->
+
+    <Distributed_revision_control_system rdf:about="#GIT">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Git</rdfs:label>
+        <rdfs:label xml:lang="fr">Git</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Gestionnaire de r&#233;vision distribu&#233; d&#233;velopp&#233; par Linus Torvalds.</rdfs:comment>
+    </Distributed_revision_control_system>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Gcov -->
+
+    <owl:Thing rdf:about="#Gcov">
+        <rdf:type rdf:resource="#Coverage_analyzer"/>
+        <rdfs:label xml:lang="en">Gcov</rdfs:label>
+        <rdfs:label xml:lang="fr">Gcov</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Application permettant de d&#233;terminer la couverture d&#39;ex&#233;cution d&#39;une seconde application.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Gdb -->
+
+    <Debugger rdf:about="#Gdb">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Gdb</rdfs:label>
+        <rdfs:label xml:lang="fr">Gdb</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >D&#233;boggeur permettant d&#39;analyser une application en un point pr&#233;cis dans le code.</rdfs:comment>
+    </Debugger>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Gprof -->
+
+    <Profiler rdf:about="#Gprof">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Gprof</rdfs:label>
+        <rdfs:label xml:lang="fr">Gprof</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Application permettant d&#39;&#233;tablir le profil de performance d&#39;une seconde application.</rdfs:comment>
+    </Profiler>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-1008 -->
+
+    <owl:Thing rdf:about="#IEEE-1008">
+        <rdf:type rdf:resource="#IEEE_Test_document_standard"/>
+        <rdfs:label xml:lang="en">IEEE-1008</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-1008</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-1016 -->
+
+    <IEEE_Conception_document_standard rdf:about="#IEEE-1016">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">IEEE-1016</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-1016</rdfs:label>
+    </IEEE_Conception_document_standard>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-1058 -->
+
+    <IEEE_Analysis_document_standard rdf:about="#IEEE-1058">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">IEEE-1058</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-1058</rdfs:label>
+    </IEEE_Analysis_document_standard>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-1219 -->
+
+    <IEEE_Maintenance_document_standard rdf:about="#IEEE-1219">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">IEEE-1219</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-1219</rdfs:label>
+    </IEEE_Maintenance_document_standard>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-1233 -->
+
+    <owl:Thing rdf:about="#IEEE-1233">
+        <rdf:type rdf:resource="#IEEE_Analysis_document_standard"/>
+        <rdfs:label xml:lang="en">IEEE-1233</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-1233</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-829 -->
+
+    <owl:Thing rdf:about="#IEEE-829">
+        <rdf:type rdf:resource="#IEEE_Test_document_standard"/>
+        <rdfs:label xml:lang="en">IEEE-829</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-829</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#IEEE-830 -->
+
+    <IEEE_Analysis_document_standard rdf:about="#IEEE-830">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">IEEE-830</rdfs:label>
+        <rdfs:label xml:lang="fr">IEEE-830</rdfs:label>
+    </IEEE_Analysis_document_standard>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#ISO-9126 -->
+
+    <owl:Thing rdf:about="#ISO-9126">
+        <rdf:type rdf:resource="#ISO_Implementation_document_standard"/>
+        <rdfs:label xml:lang="en">ISO-9126</rdfs:label>
+        <rdfs:label xml:lang="fr">ISO-9126</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Lines_of_code -->
+
+    <owl:Thing rdf:about="#Lines_of_code">
+        <rdf:type rdf:resource="#Source_lines_of_code_counter"/>
+        <rdfs:label xml:lang="en">Lines of code</rdfs:label>
+        <rdfs:label xml:lang="fr">Lignes de code</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Lignes de code source, excluant les commentaires.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Makefile -->
+
+    <Build_tool rdf:about="#Makefile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Makefile</rdfs:label>
+        <rdfs:label xml:lang="fr">Makefile</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Fichier de configuration permettant &#224; l&#39;outil make d&#39;effectuer un ensemble de commandes sp&#233;cifi&#233; dans le document Makefile.</rdfs:comment>
+    </Build_tool>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Microsoft_Visual_Studio -->
+
+    <owl:Thing rdf:about="#Microsoft_Visual_Studio">
+        <rdf:type rdf:resource="#Integrated_development_environment"/>
+        <rdfs:label xml:lang="en"
+            >Microsoft Visual Studio</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Microsoft Visual Studio</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Environnement de d&#233;veloppement int&#233;gr&#233; d&#233;velopp&#233; par Microsoft. Sp&#233;cialis&#233; dans le d&#233;veloppement d&#39;applications C++/C#.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#NetBeans -->
+
+    <Integrated_development_environment rdf:about="#NetBeans">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">NetBeans</rdfs:label>
+        <rdfs:label xml:lang="fr">NetBeans</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Environnement de d&#233;veloppement int&#233;gr&#233; d&#233;velopp&#233; par NetBeans, sp&#233;cifiquement pour le d&#233;veloppement Java. Supporte toutefois d&#39;autres langages de programmation.</rdfs:comment>
+    </Integrated_development_environment>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Notepad -->
+
+    <Text_editor rdf:about="#Notepad">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Notepad</rdfs:label>
+        <rdfs:label xml:lang="fr">Bloc notes</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Application permettant l&#39;&#233;criture de document sous format texte, sans formattage.</rdfs:comment>
+    </Text_editor>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Observer_Pattern -->
+
+    <owl:Thing rdf:about="#Observer_Pattern">
+        <rdf:type rdf:resource="#Design_pattern"/>
+        <rdfs:label xml:lang="en"
+            >Observer pattern</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Patron observateur</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Patron de conception dont l&#39;intention est d&#39;&#233;tablir une relation un &#224; plusieurs entre des objets de mani&#232;re &#224; ce que lorsque l&#39;objet observ&#233; change, toutes ses d&#233;pendances en sont inform&#233;es.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Proxy_Pattern -->
+
+    <Design_pattern rdf:about="#Proxy_Pattern">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Proxy pattern</rdfs:label>
+        <rdfs:label xml:lang="fr">Patron proxy</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Patron de conception dont l&#39;intention est de fournir un rempla&#231;ant pour un autre objet afin d&#39;en contr&#244;ler l&#39;acc&#232;s.</rdfs:comment>
+    </Design_pattern>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Singleton_Pattern -->
+
+    <owl:Thing rdf:about="#Singleton_Pattern">
+        <rdf:type rdf:resource="#Design_pattern"/>
+        <rdfs:label xml:lang="en"
+            >Singleton pattern</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Patron singleton</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Patron de conception dont l&#39;intention est de contr&#244;ler le nombre d&#39;instance d&#39;un objet et de fournir un acc&#232;s global &#224; celui-ci.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Source_lines_of_code -->
+
+    <Source_lines_of_code_counter rdf:about="#Source_lines_of_code">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en"
+            >Source lines of code</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Lignes de code source</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Lignes de code source, incluant les commentaires.</rdfs:comment>
+    </Source_lines_of_code_counter>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#Subversion -->
+
+    <Centralised_revision_control_system rdf:about="#Subversion">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">Subversion</rdfs:label>
+        <rdfs:label xml:lang="fr">Subversion</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Gestionnaire de r&#233;vision atomique d&#233;velopp&#233; par Tigris.</rdfs:comment>
+    </Centralised_revision_control_system>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#UML -->
+
+    <Modeling_language rdf:about="#UML">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en"
+            >Unified modeling language</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Langage de modelage unifi&#233;</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Langage permettant aux divers intervenants de communiquer avec les m&#234;mes symboles.</rdfs:comment>
+    </Modeling_language>
+    
+
+
+    <!-- http://www.tomrochette.com/log1000/site/ontology/softwareengineering.owl#pmmcabe -->
+
+    <owl:Thing rdf:about="#pmmcabe">
+        <rdf:type rdf:resource="#Cyclomatic_complexity_analyzer"/>
+        <rdfs:label xml:lang="en">ppmcabe</rdfs:label>
+        <rdfs:label xml:lang="fr">pmmcabe</rdfs:label>
+        <rdfs:comment xml:lang="fr"
+            >Application permettant de d&#233;terminer la complexit&#233; cyclomatique d&#39;un code source.</rdfs:comment>
+    </owl:Thing>
+</rdf:RDF>

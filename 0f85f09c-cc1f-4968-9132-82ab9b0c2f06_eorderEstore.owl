@@ -1,0 +1,84 @@
+<!DOCTYPE rdf:RDF[
+	<!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xs  "http://www.w3.org/2001/XMLSchema#" >
+]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns="http://www.w3.org/2002/ws/sawsdl/spec/ontology/purchaseorder#"
+  xml:base="http://www.w3.org/2002/ws/sawsdl/spec/ontology/purchaseorder#">
+  <owl:Ontology />
+  <owl:Class rdf:ID="OrderRequest" />
+  <owl:ObjectProperty rdf:ID="hasLineItems">
+    <rdfs:domain rdf:resource="#OrderRequest" />
+    <rdfs:range rdf:resource="#LineItem" />
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="hasCustomer">
+    <rdfs:domain rdf:resource="#OrderRequest" />
+    <rdfs:range rdf:resource="#Customer" />
+    <rdf:type rdf:resource="&owl;ObjectProperty" />
+  </owl:FunctionalProperty>
+  <owl:Class rdf:ID="LineItem" />
+  <owl:ObjectProperty rdf:ID="hasQuantity">
+    <rdfs:domain rdf:resource="#LineItem" />
+    <rdfs:range rdf:resource="#Quantity" />
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="hasProduct">
+    <rdfs:domain rdf:resource="#LineItem" />
+    <rdfs:range rdf:resource="#Product" />
+    <rdf:type rdf:resource="&owl;ObjectProperty" />
+  </owl:FunctionalProperty>
+  <owl:Class rdf:ID="Customer" />
+  <owl:FunctionalProperty rdf:ID="hasCustomerID">
+    <rdfs:domain rdf:resource="#Customer" />
+    <rdfs:range rdf:resource="#CustomerID" />
+    <rdf:type rdf:resource="&owl;ObjectProperty" />
+    <rdfs:subPropertyOf rdf:resource="#hasIdentifier" />
+  </owl:FunctionalProperty>
+  <owl:Class rdf:ID="CustomerID">
+    <rdfs:subClassOf rdf:resource="#Identifier" />
+  </owl:Class>
+  <owl:Class rdf:ID="Product" />
+  <owl:FunctionalProperty rdf:ID="hasProductCode">
+    <rdfs:domain rdf:resource="#Product" />
+    <rdfs:range rdf:resource="#ProductCode" />
+    <rdf:type rdf:resource="&owl;ObjectProperty" />
+    <rdfs:subPropertyOf rdf:resource="#hasIdentifier" />
+  </owl:FunctionalProperty>
+  <owl:Class rdf:ID="UPCCode">
+    <rdfs:subClassOf rdf:resource="#ProductCode" />
+  </owl:Class>
+  <owl:Class rdf:ID="ProductCode">
+    <rdfs:subClassOf rdf:resource="#Identifier" />
+  </owl:Class>
+  <owl:Class rdf:ID="Identifier" />
+  <owl:FunctionalProperty rdf:ID="hasLexicalRespresentation">
+    <rdfs:domain rdf:resource="#Identifier" />
+    <rdfs:range rdf:resource="&xs;string" />
+    <rdf:type rdf:resource="&owl;DatatypeProperty" />
+  </owl:FunctionalProperty>
+  <owl:Class rdf:ID="Quantity" />
+  <owl:DatatypeProperty rdf:ID="hasAmount">
+    <rdfs:domain rdf:resource="#Quantity" />
+    <rdfs:range rdf:resource="&xs;float" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasUnit">
+    <rdfs:domain rdf:resource="#Quantity" />
+    <rdfs:range rdf:resource="#Unit" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="Unit" />
+  
+  <owl:Class rdf:ID="ItemUnavailable" />
+  <owl:Class rdf:ID="OrderConfirmation" />
+  <owl:FunctionalProperty rdf:ID="hasStatus">
+    <rdfs:domain rdf:resource="#OrderConfirmation" />
+    <rdfs:range rdf:resource="&xs;string" />
+    <rdf:type rdf:resource="&owl;DatatypeProperty" />
+  </owl:FunctionalProperty>
+  <owl:ObjectProperty rdf:ID="hasIdentifier">
+    <rdfs:domain rdf:resource="&owl;Thing" />
+    <rdfs:range rdf:resource="#Identifier" />
+  </owl:ObjectProperty>
+  
+  <owl:Class rdf:ID="RequestPurchaseOrder" />
+</rdf:RDF>

@@ -1,0 +1,2186 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY itn "http:/cui.unige.chch/isi/onto/inspire-TN#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY gml "http://www.opengis.net/gml/" >
+]>
+
+
+<rdf:RDF xmlns="http://cui.unige.ch/isi/onto/inspire-TN#"
+     xml:base="http://cui.unige.ch/isi/onto/inspire-TN#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gml="http://www.opengis.net/gml/"
+     xmlns:itn="http:/cui.unige.chch/isi/onto/inspire-TN#">
+    <owl:Ontology rdf:about="http://cui.unige.ch/isi/onto/inspire-TN"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://cui.unige.ch/isi/ontologies/inspire-transport#UML_Pack"/>
+    <owl:AnnotationProperty rdf:about="http://cui.unige.ch/isi/ontologies/inspire-transport#x_hasContents"/>
+    <owl:AnnotationProperty rdf:about="&itn;UML_Pack"/>
+    <owl:AnnotationProperty rdf:about="http://cui.unige.ch/isi/ontologies/inspire-transport#x_hasNext"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cui.unige.ch/isi/ontologies/inspire-transport#formOfRoadNode -->
+
+    <owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/ontologies/inspire-transport#formOfRoadNode"/>
+    
+
+
+    <!-- http://cui.unige.ch/isi/ontologies/inspire-transport#geometry -->
+
+    <owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/ontologies/inspire-transport#geometry"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#centerlineGeometry -->
+
+    <owl:ObjectProperty rdf:about="&itn;centerlineGeometry"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#centralLineGeometry -->
+
+    <owl:ObjectProperty rdf:about="&itn;centralLineGeometry"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#element -->
+
+    <owl:ObjectProperty rdf:about="&itn;element">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#elements -->
+
+    <owl:ObjectProperty rdf:about="&itn;elements"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#endNode -->
+
+    <owl:ObjectProperty rdf:about="&itn;endNode"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fictitious -->
+
+    <owl:ObjectProperty rdf:about="&itn;fictitious">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&itn;Link"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;sign"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;boolean"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#inNetwork -->
+
+    <owl:ObjectProperty rdf:about="&itn;inNetwork">
+        <owl:inverseOf rdf:resource="&itn;elements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#link -->
+
+    <owl:ObjectProperty rdf:about="&itn;link"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#networkRef -->
+
+    <owl:ObjectProperty rdf:about="&itn;networkRef"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#startNode -->
+
+    <owl:ObjectProperty rdf:about="&itn;startNode"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#val -->
+
+    <owl:ObjectProperty rdf:about="&itn;val"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#x_hasContents -->
+
+    <owl:ObjectProperty rdf:about="&itn;x_hasContents">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#x_hasNext -->
+
+    <owl:ObjectProperty rdf:about="&itn;x_hasNext">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#beginLifespanVersion -->
+
+    <owl:DatatypeProperty rdf:about="&itn;beginLifespanVersion"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#endLifespanVersion -->
+
+    <owl:DatatypeProperty rdf:about="&itn;endLifespanVersion"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#inspireId -->
+
+    <owl:DatatypeProperty rdf:about="&itn;inspireId"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#sign -->
+
+    <owl:DatatypeProperty rdf:about="&itn;sign">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cui.unige.ch/isi/ontologies/inspire-transport#GM_Point -->
+
+    <owl:Class rdf:about="&gml;Point"/>
+    
+
+
+    <!-- http://cui.unige.ch/isi/ontologies/inspire-transport#GM_Surface -->
+
+    <owl:Class rdf:about="&gml;Surface"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#AccessRestriction -->
+
+    <owl:Class rdf:about="&itn;AccessRestriction">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#AreaConditionValue -->
+
+    <owl:Class rdf:about="&itn;AreaConditionValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ConditionOfFacility -->
+
+    <owl:Class rdf:about="&itn;ConditionOfFacility">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ConnectionTypeValue -->
+
+    <owl:Class rdf:about="&itn;ConnectionTypeValue">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#CrossReference -->
+
+    <owl:Class rdf:about="&itn;CrossReference">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;element"/>
+                <owl:onClass rdf:resource="&itn;X_List_2_NetworkElements"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#DirectedLink -->
+
+    <owl:Class rdf:about="&itn;DirectedLink">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;link"/>
+                <owl:onClass rdf:resource="&itn;Link"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;sign"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ERoad -->
+
+    <owl:Class rdf:about="&itn;ERoad">
+        <rdfs:subClassOf rdf:resource="&itn;TransportLinkSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#FormOfRoadNodeValue -->
+
+    <owl:Class rdf:about="&itn;FormOfRoadNodeValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#FormOfWay -->
+
+    <owl:Class rdf:about="&itn;FormOfWay">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#FunctionalRoadClass -->
+
+    <owl:Class rdf:about="&itn;FunctionalRoadClass">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#FunctionalRoadClassValue -->
+
+    <owl:Class rdf:about="&itn;FunctionalRoadClassValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#GeneralisedLink -->
+
+    <owl:Class rdf:about="&itn;GeneralisedLink">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#GradeSeparatedCrossing -->
+
+    <owl:Class rdf:about="&itn;GradeSeparatedCrossing">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;element"/>
+                <owl:onClass rdf:resource="&itn;X_List_Min2_Links"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#Link -->
+
+    <owl:Class rdf:about="&itn;Link">
+        <rdfs:subClassOf rdf:resource="&itn;GeneralisedLink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;startNode"/>
+                <owl:onClass rdf:resource="&itn;Node"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;centralLineGeometry"/>
+                <owl:onClass rdf:resource="&gml;Curve"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;endNode"/>
+                <owl:onClass rdf:resource="&itn;Node"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#LinkDirectionValue -->
+
+    <owl:Class rdf:about="&itn;LinkDirectionValue">
+        <UML_Pack>Network
+</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#LinkReference -->
+
+    <owl:Class rdf:about="&itn;LinkReference">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkReference"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;element"/>
+                <owl:onClass rdf:resource="&itn;GeneralisedLink"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#LinkSequence -->
+
+    <owl:Class rdf:about="&itn;LinkSequence">
+        <rdfs:subClassOf rdf:resource="&itn;GeneralisedLink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;link"/>
+                <owl:onClass rdf:resource="&itn;X_List_Min1_DirectedLink"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#LinkSet -->
+
+    <owl:Class rdf:about="&itn;LinkSet">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;link"/>
+                <owl:onClass rdf:resource="&itn;GeneralisedLink"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#MaintenanceAuthority -->
+
+    <owl:Class rdf:about="&itn;MaintenanceAuthority">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#MarkerPost -->
+
+    <owl:Class rdf:about="&itn;MarkerPost">
+        <rdfs:subClassOf rdf:resource="&itn;TransportPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#MinMaxLaneValue -->
+
+    <owl:Class rdf:about="&itn;MinMaxLaneValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#Network -->
+
+    <owl:Class rdf:about="&itn;Network">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;elements"/>
+                <owl:allValuesFrom rdf:resource="&itn;NetworkElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <UML_Pack>Network</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NetworkArea -->
+
+    <owl:Class rdf:about="&itn;NetworkArea">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cui.unige.ch/isi/ontologies/inspire-transport#geometry"/>
+                <owl:onClass rdf:resource="&gml;Surface"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NetworkConnection -->
+
+    <owl:Class rdf:about="&itn;NetworkConnection">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;element"/>
+                <owl:onClass rdf:resource="&itn;X_List_Min2_NetworkElements"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Constraint: Elements in different networks
+
+All elements have to be in different networks 
+:
+
+OCL:	
+inv: element-&gt;forAll(e1,e2	|e1&lt;&gt;e2 implies e1.inNetwork- &gt;excludesAll(e2.inNetwork) )</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NetworkElement -->
+
+    <owl:Class rdf:about="&itn;NetworkElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;inNetwork"/>
+                <owl:onClass rdf:resource="&itn;Network"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <UML_Pack>Network</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NetworkProperty -->
+
+    <owl:Class rdf:about="&itn;NetworkProperty">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;beginLifespanVersion"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;inspireId"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;networkRef"/>
+                <owl:onClass rdf:resource="&itn;NetworkReference"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;endLifespanVersion"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Definition:
+
+Abstract base type representing phenomena located at or along a network element. This base type provides general properties to associate the network- related phenomena (network properties) with the network elements.
+
+Description:
+
+In the simplest case (NetworkReference), the network property applies to the whole network element. In the case of a Link, the spatial reference may be restricted to part of the Link by using a linear reference. ISO/TC 211 is currently in the early stages of developing a standard for Linear Referencing (ISO 19148). A simple mechanism to express linear references is provided in this version of the network model; it is expected that the model will be extended once ISO 19148 is stable. The current simple model requires for all linear references two expressions representing a distance from the start of the Link along its curve geometry. The network property applies to the part of the Link between fromPosition and toPosition.
+
+
+
+Proposed «featureType»</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NetworkReference -->
+
+    <owl:Class rdf:about="&itn;NetworkReference">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;element"/>
+                <owl:onClass rdf:resource="&itn;NetworkElement"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <UML_Pack>Network</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#Node -->
+
+    <owl:Class rdf:about="&itn;Node">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#NumberOfLanes -->
+
+    <owl:Class rdf:about="&itn;NumberOfLanes">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#OwnerAuthority -->
+
+    <owl:Class rdf:about="&itn;OwnerAuthority">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RestrictionForVehicles -->
+
+    <owl:Class rdf:about="&itn;RestrictionForVehicles">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RestrictionTypeValue -->
+
+    <owl:Class rdf:about="&itn;RestrictionTypeValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#Road -->
+
+    <owl:Class rdf:about="&itn;Road">
+        <rdfs:subClassOf rdf:resource="&itn;TransportLinkSet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;link"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&itn;RoadLink"/>
+                            <rdf:Description rdf:about="&itn;RoadLinkSequence"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A collection of road link sequences and/or individual road links that are characterized by one or more thematic identifiers and/or properties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadArea -->
+
+    <owl:Class rdf:about="&itn;RoadArea">
+        <rdfs:subClassOf rdf:resource="&itn;TransportArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadLink -->
+
+    <owl:Class rdf:about="&itn;RoadLink">
+        <rdfs:subClassOf rdf:resource="&itn;TransportLink"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadLinkSequence -->
+
+    <owl:Class rdf:about="&itn;RoadLinkSequence">
+        <rdfs:subClassOf rdf:resource="&itn;TransportLinkSequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadName -->
+
+    <owl:Class rdf:about="&itn;RoadName">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadNode -->
+
+    <owl:Class rdf:about="&itn;RoadNode">
+        <rdfs:subClassOf rdf:resource="&itn;TransportNode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cui.unige.ch/isi/ontologies/inspire-transport#formOfRoadNode"/>
+                <owl:onClass rdf:resource="&itn;FormOfRoadNodeValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadPartValue -->
+
+    <owl:Class rdf:about="&itn;RoadPartValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadServiceArea -->
+
+    <owl:Class rdf:about="&itn;RoadServiceArea">
+        <rdfs:subClassOf rdf:resource="&itn;TransportArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadServiceType -->
+
+    <owl:Class rdf:about="&itn;RoadServiceType">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadSurfaceCategory -->
+
+    <owl:Class rdf:about="&itn;RoadSurfaceCategory">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadSurfaceCategoryValue -->
+
+    <owl:Class rdf:about="&itn;RoadSurfaceCategoryValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#RoadWidth -->
+
+    <owl:Class rdf:about="&itn;RoadWidth">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ServiceFacilityValue -->
+
+    <owl:Class rdf:about="&itn;ServiceFacilityValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#SimpleLinearReference -->
+
+    <owl:Class rdf:about="&itn;SimpleLinearReference">
+        <rdfs:subClassOf rdf:resource="&itn;LinkReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#SimplePointReference -->
+
+    <owl:Class rdf:about="&itn;SimplePointReference">
+        <rdfs:subClassOf rdf:resource="&itn;LinkReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#SpeedLimit -->
+
+    <owl:Class rdf:about="&itn;SpeedLimit">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#SpeedLimitMinMaxValue -->
+
+    <owl:Class rdf:about="&itn;SpeedLimitMinMaxValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#SpeedLimitSourceValue -->
+
+    <owl:Class rdf:about="&itn;SpeedLimitSourceValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TrafficFlowdirection -->
+
+    <owl:Class rdf:about="&itn;TrafficFlowdirection">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;networkRef"/>
+                <owl:allValuesFrom rdf:resource="&itn;LinkReference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportArea -->
+
+    <owl:Class rdf:about="&itn;TransportArea">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkArea"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;inspireId"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportLink -->
+
+    <owl:Class rdf:about="&itn;TransportLink">
+        <rdfs:subClassOf rdf:resource="&itn;Link"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;inspireId"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportLinkSequence -->
+
+    <owl:Class rdf:about="&itn;TransportLinkSequence">
+        <rdfs:subClassOf rdf:resource="&itn;LinkSequence"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportLinkSet -->
+
+    <owl:Class rdf:about="&itn;TransportLinkSet">
+        <rdfs:subClassOf rdf:resource="&itn;LinkSet"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportNetwork -->
+
+    <owl:Class rdf:about="&itn;TransportNetwork">
+        <rdfs:subClassOf rdf:resource="&itn;Network"/>
+        <UML_Pack>Common transport elements</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportNode -->
+
+    <owl:Class rdf:about="&itn;TransportNode">
+        <rdfs:subClassOf rdf:resource="&itn;Node"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportObject -->
+
+    <owl:Class rdf:about="&itn;TransportObject">
+        <UML_Pack>Common transport elements</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportPoint -->
+
+    <owl:Class rdf:about="&itn;TransportPoint">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkElement"/>
+        <rdfs:subClassOf rdf:resource="&itn;TransportObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cui.unige.ch/isi/ontologies/inspire-transport#geometry"/>
+                <owl:onClass rdf:resource="&gml;Point"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportProperty -->
+
+    <owl:Class rdf:about="&itn;TransportProperty">
+        <rdfs:subClassOf rdf:resource="&itn;NetworkProperty"/>
+        <UML_Pack>Common transport elements</UML_Pack>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#TransportTypeValue -->
+
+    <owl:Class rdf:about="&itn;TransportTypeValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#VehicleTrafficArea -->
+
+    <owl:Class rdf:about="&itn;VehicleTrafficArea">
+        <rdfs:subClassOf rdf:resource="&itn;TransportArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#VehicleTypeValue -->
+
+    <owl:Class rdf:about="&itn;VehicleTypeValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#VerticalPosition -->
+
+    <owl:Class rdf:about="&itn;VerticalPosition">
+        <rdfs:subClassOf rdf:resource="&itn;TransportProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#WeatherConditionValue -->
+
+    <owl:Class rdf:about="&itn;WeatherConditionValue"/>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_EmptyList -->
+
+    <owl:Class rdf:about="&itn;X_EmptyList">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasContents"/>
+                        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:maxCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:maxCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List -->
+
+    <owl:Class rdf:about="&itn;X_List">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                <owl:allValuesFrom rdf:resource="&itn;X_List"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_2_NetworkElements -->
+
+    <owl:Class rdf:about="&itn;X_List_2_NetworkElements">
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Max2"/>
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Min2"/>
+        <rdfs:subClassOf rdf:resource="&itn;X_List_NetworkElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_DirectedLinks -->
+
+    <owl:Class rdf:about="&itn;X_List_DirectedLinks">
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;x_hasContents"/>
+                <owl:allValuesFrom rdf:resource="&itn;DirectedLink"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                <owl:allValuesFrom rdf:resource="&itn;X_List_DirectedLinks"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Links -->
+
+    <owl:Class rdf:about="&itn;X_List_Links">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasContents"/>
+                        <owl:allValuesFrom rdf:resource="&itn;Link"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:allValuesFrom rdf:resource="&itn;X_List_Links"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Max1 -->
+
+    <owl:Class rdf:about="&itn;X_List_Max1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_EmptyList"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:someValuesFrom rdf:resource="&itn;X_EmptyList"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Max2 -->
+
+    <owl:Class rdf:about="&itn;X_List_Max2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:allValuesFrom rdf:resource="&itn;X_List_Max1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Min1 -->
+
+    <owl:Class rdf:about="&itn;X_List_Min1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasContents"/>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Min1_DirectedLink -->
+
+    <owl:Class rdf:about="&itn;X_List_Min1_DirectedLink">
+        <rdfs:subClassOf rdf:resource="&itn;X_List_DirectedLinks"/>
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Min1"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Min2 -->
+
+    <owl:Class rdf:about="&itn;X_List_Min2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="&itn;X_EmptyList"/>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Min2_Links -->
+
+    <owl:Class rdf:about="&itn;X_List_Min2_Links">
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Links"/>
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Min2"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_Min2_NetworkElements -->
+
+    <owl:Class rdf:about="&itn;X_List_Min2_NetworkElements">
+        <rdfs:subClassOf rdf:resource="&itn;X_List_Min2"/>
+        <rdfs:subClassOf rdf:resource="&itn;X_List_NetworkElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#X_List_NetworkElements -->
+
+    <owl:Class rdf:about="&itn;X_List_NetworkElements">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&itn;X_List"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasContents"/>
+                        <owl:allValuesFrom rdf:resource="&itn;NetworkElement"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&itn;x_hasNext"/>
+                        <owl:allValuesFrom rdf:resource="&itn;X_List_NetworkElements"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&itn;X_List"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#gml:Curve -->
+
+    <owl:Class rdf:about="&gml;Curve"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cui.unige.ch/isi/ontologies/inspire-transport#anotherEmptyList -->
+
+  
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#air -->
+
+    <itn:TransportTypeValue rdf:about="&itn;air">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:TransportTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#allVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;allVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#average -->
+
+    <itn:MinMaxLaneValue rdf:about="&itn;average">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:MinMaxLaneValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#bicycle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;bicycle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#bicycleRoad -->
+
+    <itn:FormOfWay rdf:about="&itn;bicycleRoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#bothDirections -->
+
+    <itn:LinkDirectionValue rdf:about="&itn;bothDirections">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:LinkDirectionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#busStation -->
+
+    <itn:RoadServiceType rdf:about="&itn;busStation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadServiceType>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#cable -->
+
+    <itn:TransportTypeValue rdf:about="&itn;cable">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:TransportTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#carWithTrailer -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;carWithTrailer">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#carriageway -->
+
+    <itn:RoadPartValue rdf:about="&itn;carriageway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadPartValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#deliveryTruck -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;deliveryTruck">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#disused -->
+
+    <itn:ConditionOfFacility rdf:about="&itn;disused">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ConditionOfFacility>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#drinks -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;drinks">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#dualCarriageway -->
+
+    <itn:FormOfWay rdf:about="&itn;dualCarriageway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#eighthClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;eighthClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#emergencyVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;emergencyVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#employeeVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;employeeVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#enclosedTrafficArea -->
+
+    <itn:FormOfWay rdf:about="&itn;enclosedTrafficArea">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;FormOfRoadNodeValue"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#entranceOrExitCarPark -->
+
+    <itn:FormOfWay rdf:about="&itn;entranceOrExitCarPark">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#entranceOrExitService -->
+
+    <itn:FormOfWay rdf:about="&itn;entranceOrExitService">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#facilityVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;facilityVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#farmVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;farmVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fifthClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;fifthClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#firstClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;firstClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fixedTrafficSign -->
+
+    <itn:SpeedLimitSourceValue rdf:about="&itn;fixedTrafficSign">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:SpeedLimitSourceValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fog -->
+
+    <itn:WeatherConditionValue rdf:about="&itn;fog">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:WeatherConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#food -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;food">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#forbiddenLegally -->
+
+    <itn:AccessRestriction rdf:about="&itn;forbiddenLegally">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AccessRestriction>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fourthClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;fourthClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#freeway -->
+
+    <itn:FormOfWay rdf:about="&itn;freeway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#fuel -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;fuel">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#functional -->
+
+    <itn:ConditionOfFacility rdf:about="&itn;functional">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ConditionOfFacility>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#highOccupancyVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;highOccupancyVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ice -->
+
+    <itn:WeatherConditionValue rdf:about="&itn;ice">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:WeatherConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#inDirection -->
+
+    <itn:LinkDirectionValue rdf:about="&itn;inDirection">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:LinkDirectionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#inNationalPark -->
+
+    <itn:AreaConditionValue rdf:about="&itn;inNationalPark">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#inOppositeDirection -->
+
+    <itn:LinkDirectionValue rdf:about="&itn;inOppositeDirection">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:LinkDirectionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#insideCities -->
+
+    <itn:AreaConditionValue rdf:about="&itn;insideCities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#junction -->
+
+    <itn:FormOfRoadNodeValue rdf:about="&itn;junction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfRoadNodeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#levelCrossing -->
+
+    <itn:FormOfRoadNodeValue rdf:about="&itn;levelCrossing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfRoadNodeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#lightRail -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;lightRail">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#list-a -->
+
+    <itn:X_List rdf:about="&itn;list-a">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <itn:x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <itn:x_hasNext rdf:resource="&itn;list-b"/>
+        <x_hasNext rdf:resource="&itn;list-b"/>
+    </itn:X_List>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#list-b -->
+
+    <itn:X_List rdf:about="&itn;list-b">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <itn:x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <x_hasNext rdf:resource="&itn;list-c"/>
+        <itn:x_hasNext rdf:resource="&itn;list-c"/>
+    </itn:X_List>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#list-c -->
+
+    <itn:X_List rdf:about="&itn;list-c">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <itn:x_hasContents rdf:resource="&itn;aTestElementForLists"/>
+        <x_hasNext rdf:resource="&itn;x_emptyList"/>
+        <itn:x_hasNext rdf:resource="&itn;x_emptyList"/>
+    </itn:X_List>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#mailVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;mailVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#mainRoad -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;mainRoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximum -->
+
+    <itn:SpeedLimitMinMaxValue rdf:about="&itn;maximum">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;MinMaxLaneValue"/>
+    </itn:SpeedLimitMinMaxValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumDoubleAxleWeight -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumDoubleAxleWeight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumHeight -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumHeight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumLength -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumLength">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumSingleAxleWeight -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumSingleAxleWeight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumTotalWeight -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumTotalWeight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumTripleAxleWeight -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumTripleAxleWeight">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#maximumWidth -->
+
+    <itn:RestrictionTypeValue rdf:about="&itn;maximumWidth">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RestrictionTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#militaryVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;militaryVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#minimum -->
+
+    <itn:SpeedLimitMinMaxValue rdf:about="&itn;minimum">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;MinMaxLaneValue"/>
+    </itn:SpeedLimitMinMaxValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#moped -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;moped">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#motorcycle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;motorcycle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#motorway -->
+
+    <itn:FormOfWay rdf:about="&itn;motorway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#nearRailroadCrossing -->
+
+    <itn:AreaConditionValue rdf:about="&itn;nearRailroadCrossing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#nearSchool -->
+
+    <itn:AreaConditionValue rdf:about="&itn;nearSchool">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#ninthClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;ninthClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#onGroundSurface -->
+
+    <itn:VerticalPosition rdf:about="&itn;onGroundSurface">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VerticalPosition>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#outsideCities -->
+
+    <itn:AreaConditionValue rdf:about="&itn;outsideCities">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#parking -->
+
+    <itn:RoadServiceType rdf:about="&itn;parking">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadServiceType>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#passengerCar -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;passengerCar">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#paved -->
+
+    <itn:RoadSurfaceCategoryValue rdf:about="&itn;paved">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadSurfaceCategoryValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#pavedSurface -->
+
+    <itn:RoadPartValue rdf:about="&itn;pavedSurface">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadPartValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#pedestrian -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;pedestrian">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#pedestrianZone -->
+
+    <itn:FormOfWay rdf:about="&itn;pedestrianZone">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#physicallyImpossible -->
+
+    <itn:AccessRestriction rdf:about="&itn;physicallyImpossible">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AccessRestriction>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#picnicArea -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;picnicArea">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#playground -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;playground">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#private -->
+
+    <itn:AccessRestriction rdf:about="&itn;private">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AccessRestriction>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#privateBus -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;privateBus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#projected -->
+
+    <itn:ConditionOfFacility rdf:about="&itn;projected">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ConditionOfFacility>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#pseudoNode -->
+
+    <itn:FormOfRoadNodeValue rdf:about="&itn;pseudoNode">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfRoadNodeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#publicAccess -->
+
+    <itn:AccessRestriction rdf:about="&itn;publicAccess">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AccessRestriction>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#publicBus -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;publicBus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#rail -->
+
+    <itn:TransportTypeValue rdf:about="&itn;rail">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:TransportTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#railway -->
+
+    <itn:FormOfWay rdf:about="&itn;railway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#rain -->
+
+    <itn:WeatherConditionValue rdf:about="&itn;rain">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:WeatherConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#recommendedMaximum -->
+
+    <itn:SpeedLimitMinMaxValue rdf:about="&itn;recommendedMaximum">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:SpeedLimitMinMaxValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#recommendedMinimum -->
+
+    <itn:SpeedLimitMinMaxValue rdf:about="&itn;recommendedMinimum">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:SpeedLimitMinMaxValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#regulation -->
+
+    <itn:SpeedLimitSourceValue rdf:about="&itn;regulation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:SpeedLimitSourceValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#residentialVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;residentialVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#restArea -->
+
+    <itn:RoadServiceType rdf:about="&itn;restArea">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadServiceType>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#road -->
+
+    <itn:TransportTypeValue rdf:about="&itn;road">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:TransportTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#roadEnd -->
+
+    <itn:FormOfRoadNodeValue rdf:about="&itn;roadEnd">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfRoadNodeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#roadServiceArea -->
+
+    <itn:FormOfRoadNodeValue rdf:about="&itn;roadServiceArea">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfRoadNodeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#roundabout -->
+
+    <itn:FormOfWay rdf:about="&itn;roundabout">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;FormOfRoadNodeValue"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#schoolBus -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;schoolBus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#seasonal -->
+
+    <itn:AccessRestriction rdf:about="&itn;seasonal">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AccessRestriction>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#secondClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;secondClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#serviceRoad -->
+
+    <itn:FormOfWay rdf:about="&itn;serviceRoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#seventhClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;seventhClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#shop -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;shop">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#singleCarriageway -->
+
+    <itn:FormOfWay rdf:about="&itn;singleCarriageway">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#sixthClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;sixthClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#slipRoad -->
+
+    <itn:FormOfWay rdf:about="&itn;slipRoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#smog -->
+
+    <itn:WeatherConditionValue rdf:about="&itn;smog">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:WeatherConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#snow -->
+
+    <itn:WeatherConditionValue rdf:about="&itn;snow">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:WeatherConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#snowChainEquippedVehicle -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;snowChainEquippedVehicle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#suspendedOrElevated -->
+
+    <itn:VerticalPosition rdf:about="&itn;suspendedOrElevated">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VerticalPosition>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#tanier -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;tanier">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#taxi -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;taxi">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#thirdClass -->
+
+    <itn:FunctionalRoadClassValue rdf:about="&itn;thirdClass">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FunctionalRoadClassValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#toilets -->
+
+    <itn:ServiceFacilityValue rdf:about="&itn;toilets">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ServiceFacilityValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#toll -->
+
+    <itn:RoadServiceType rdf:about="&itn;toll">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;AccessRestriction"/>
+    </itn:RoadServiceType>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#tractor -->
+
+    <itn:FormOfWay rdf:about="&itn;tractor">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#trafficCalmingArea -->
+
+    <itn:AreaConditionValue rdf:about="&itn;trafficCalmingArea">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:AreaConditionValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#trafficSquare -->
+
+    <itn:FormOfWay rdf:about="&itn;trafficSquare">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;FormOfRoadNodeValue"/>
+    </itn:FormOfWay>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#transportTruck -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;transportTruck">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#trolleyBus -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;trolleyBus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#underConstruction -->
+
+    <itn:ConditionOfFacility rdf:about="&itn;underConstruction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:ConditionOfFacility>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#underground -->
+
+    <itn:VerticalPosition rdf:about="&itn;underground">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VerticalPosition>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#unpaved -->
+
+    <itn:RoadSurfaceCategoryValue rdf:about="&itn;unpaved">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:RoadSurfaceCategoryValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#variableTrafficSign -->
+
+    <itn:SpeedLimitSourceValue rdf:about="&itn;variableTrafficSign">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:SpeedLimitSourceValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#vehicleForDisabledPerson -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;vehicleForDisabledPerson">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#vehicleWithExplosiveLoad -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;vehicleWithExplosiveLoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#vehicleWithWaterPollutingLoad -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;vehicleWithWaterPollutingLoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#vehicleWithotherDangerousLoad -->
+
+    <itn:VehicleTypeValue rdf:about="&itn;vehicleWithotherDangerousLoad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:VehicleTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#water -->
+
+    <itn:TransportTypeValue rdf:about="&itn;water">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </itn:TransportTypeValue>
+    
+
+
+    <!-- http:/cui.unige.chch/isi/ontologies/2012/7/intr#x_emptyList -->
+
+    <itn:X_List_DirectedLinks rdf:about="&itn;x_emptyList">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type rdf:resource="&itn;X_EmptyList"/>
+    </itn:X_List_DirectedLinks>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

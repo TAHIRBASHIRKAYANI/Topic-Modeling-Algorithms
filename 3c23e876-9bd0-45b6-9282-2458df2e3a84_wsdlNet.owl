@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<!DOCTYPE owl [
+<!ENTITY owl  "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+<rdf:RDF
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:wsdl-straight="http://www.w3.org/@@@@/@@/wsdl-straight#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+<owl:Ontology rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight">
+</owl:Ontology>
+<owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Binding">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#BindingFault">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#BindingOperation">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+  <rdfs:label>WSDL Component</rdfs:label>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+  <rdfs:comment>Often the value of a component property is a set of components (or values).</rdfs:comment>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Definitions">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#interfaces" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Interface">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#targetNamespace" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#elementDeclarations" />
+      <owl:allValuesFrom>
+        <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclarationSet">
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#name" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#services" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Service">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#bindings" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Binding">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclaration">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclaration">
+  <rdfs:label>{Element Declaration}</rdfs:label>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclarationSet">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclarationSet">
+  <rdfs:comment>Placeholder until we have a schema components ontology to restrict the contains to.</rdfs:comment>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Endpoint">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FaultReference">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#direction" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#faultReference" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageLabel" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Feature">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#name" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#required" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeatureSet">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeatureSet">
+  <rdfs:comment>A set of features. Since these show up all over, seemed better to make a named class.</rdfs:comment>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#properties" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#features" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Interface">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#faults" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceFault">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#extendedInterfaces" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Interface">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#operations" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceOperation">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#NamedComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Interface">
+  <rdfs:label>WDSL Interface</rdfs:label>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceFault">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#element" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#NamedComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceOperation">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferences" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FaultReference">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferences" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferences" />
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+          <owl:allValuesFrom>
+            <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageReference">
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferences" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#safety" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageExchangePattern" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#style" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#NamedComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageExchangePattern">
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageReference">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#element" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageLabel" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#messageContentModel" />
+      <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#direction" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#NamedComponent">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#targetNamespace" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#name" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#NamedComponent">
+  <rdfs:comment>This unifies all the components with names and targetNamespaces.</rdfs:comment>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#OperationStyle">
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Property">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#name" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#required" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#PropertySet">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#PropertySet">
+  <rdfs:comment>A set of properties which can be the value of a componentProperty. See FeatureSet.</rdfs:comment>
+</rdf:Description>
+<owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Service">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#bindings">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#bindings">
+  <rdfs:label>{bindings}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  <rdfs:label>WSDL Component Property</rdfs:label>
+  <rdfs:comment>If component properties *are* components, then we should probably reify them, instead of mapping them to OWL properties (that, or move strongly into OWL Full by having an ObjectProperty subclass a Class).</rdfs:comment>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#contains">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ComponentSet">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#contains">
+  <rdfs:comment>This allows us to represent sets of components.</rdfs:comment>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Definitions">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#direction">
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#element">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#element">
+  <rdfs:label>{element}</rdfs:label>
+  <rdfs:label>{element}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#elementDeclarations">
+  <rdfs:range>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#contains" />
+      <owl:allValuesFrom>
+        <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#ElementDeclaration">
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:range>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#elementDeclarations">
+  <rdfs:label>{element declarations}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#extendedInterfaces">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#extendedInterfaces">
+  <rdfs:label>{extended interfaces}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReference">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReference">
+  <rdfs:label>{fault reference}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferenceProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FaultReference">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferences">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferences">
+  <rdfs:label>{fault references}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faults">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faults">
+  <rdfs:label>{faults}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#features">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeatureSet">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#features">
+  <rdfs:label>{features}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceOperation">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Interface">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaces">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaces">
+  <rdfs:label>{interfaces}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageContentModel">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageContentModel">
+  <rdfs:label>{message content model}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageExchangePattern">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#InterfaceOperation">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageExchangePattern">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageExchangePattern">
+  <rdfs:comment>The value SHOULD be named with a wsdls:anyURI.</rdfs:comment>
+  <rdfs:label>{message exchange pattern}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageLabel">
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferenceProperty">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageReference">
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferences">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferences">
+  <rdfs:label>{message references}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#operations">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#operations">
+  <rdfs:label>{operations}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#properties">
+  <rdfs:domain>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FeaturesAndPropertiesExtensibleComponent">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#PropertySet">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#properties">
+  <rdfs:label>{properties}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#FaultReference">
+        </owl:Class>
+        <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#MessageReference">
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  <rdfs:comment>Some properties are shared between message and fault references.</rdfs:comment>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#services">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#services">
+  <rdfs:label>{services}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#style">
+</owl:ObjectProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#style">
+  <rdfs:label>{style}</rdfs:label>
+</rdf:Description>
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#typeDeclarations">
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentDatatypeProperty">
+  <rdfs:domain>    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#Component">
+    </owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#name">
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#name">
+  <rdfs:label>{name}</rdfs:label>
+</rdf:Description>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#required">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/@@@@/@@/wsdl-straight#componentDatatypeProperty" />
+</owl:DatatypeProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#required">
+  <rdfs:label>{required}</rdfs:label>
+</rdf:Description>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#safety">
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#safety">
+  <rdfs:label>{safety}</rdfs:label>
+</rdf:Description>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#targetNamespace">
+  <rdfs:range>    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</rdfs:range>
+</owl:DatatypeProperty>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#targetNamespace">
+  <rdfs:label>{rarget namespace}</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#RPCStyle">
+  <rdf:type>
+    <owl:Class rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#OperationStyle">
+    </owl:Class>
+  </rdf:type>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#RPCStyle">
+  <rdfs:label>RPC Style</rdfs:label>
+</rdf:Description>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferences">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#extendedInterfaces">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#typeDeclarations">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#properties">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageExchangePattern">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#direction">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferenceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#operations">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageLabel">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#element">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferenceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaces">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#element">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#name">
+  <rdfs:subPropertyOf>
+  <owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentDatatypeProperty">
+  </owl:DatatypeProperty>
+  </rdfs:subPropertyOf>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#elementDeclarations">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#elementDeclarations">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#style">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#features">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferenceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaces">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReference">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageContentModel">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferenceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faults">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#bindings">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageReferenceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#services">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#messageExchangePattern">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#bindings">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#referenceProperty">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#targetNamespace">
+  <rdfs:subPropertyOf>
+  <owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentDatatypeProperty">
+  </owl:DatatypeProperty>
+  </rdfs:subPropertyOf>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#faultReferences">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#interfaceOperationProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#services">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#definitionsProperty">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#safety">
+  <rdfs:subPropertyOf>
+  <owl:DatatypeProperty rdf:about="http://www.w3.org/@@@@/@@/wsdl-straight#componentDatatypeProperty">
+  </owl:DatatypeProperty>
+  </rdfs:subPropertyOf>
+</owl:DatatypeProperty>
+
+</rdf:RDF>
+

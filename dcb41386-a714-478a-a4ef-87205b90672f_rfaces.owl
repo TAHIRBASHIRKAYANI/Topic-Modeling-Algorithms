@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:codkernel="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#"
+    xmlns="http://www.ontologydesignpatterns.org/cpont/codo/codinterfaces.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:coddata="http://www.ontologydesignpatterns.org/cpont/codo/coddata.owl#"
+  xml:base="http://www.ontologydesignpatterns.org/cpont/codo/codinterfaces.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.1: Created by Aldo Gangemi
+0.2: Added version info and comments
+0.3: Moved some elements to the new module: codointeraction.owl
+0.4: Added English labels, added more classes of InterfaceObject
+0.5: Moved InterfaceObject to codkernel for architectural consistency
+0.6: Added missing comments; changed naming schema of interface object types</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl"/>
+    <rdfs:comment>This codolite module contains classes and properties that represent some typical interface entities: interface objects, panes, windows, etc.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:nodeID="A0">
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+      <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/informationobjectsandrepresentationlanguages.owl#LinguisticObject"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ItemList">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A list of items</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="ItemListInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The ItemList InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Item list</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OrderingSymbol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A symbol used to suggest an ordering to symbols, images, etc.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="OrderingSymbolInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The OrderingSymbol InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Ordering symbol</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Button">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A button (interface object)</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="ButtonInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Button InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Button</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Panel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A temporary window in a GUI used to gather information from a user</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="PanelInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Panel InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Panel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Widget">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A component of a user interface that operates in a particular way</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="WidgetInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Widget InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Widget</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="PositionOnWindow">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A position within a window</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="InterfaceObjectAttribute"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Position on window</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Pane">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A separate defined area within a window for the display of, or interaction with, a part of that window's application or output</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="PaneInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Pane InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Window"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPositionOnWindow"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pane</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#InterfaceObjectAttribute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An attribute of an InterfaceObject</rdfs:comment>
+    <rdfs:label xml:lang="en">Interface object attribute</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Colour">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A colour used for an InterfaceObject</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#InterfaceObjectAttribute"/>
+    <rdfs:label xml:lang="en">Colour</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Window">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A framed area on a display screen for viewing information</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="WindowInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Window InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Window</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OrderedListOfSymbols">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An ordered list of symbols</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="OrderedListOfSymbolsInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The OrderedListofSymbols InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Ordered list of symbols</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OrderedListOfImages">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An ordered list of images</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="OrderedListOfImagesInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The OrderedList InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Ordered list of images</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="InterfaceObjectType">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#classifies"/>
+        <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#KnowledgeResource"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+    <rdfs:label xml:lang="en">Interface object type</rdfs:label>
+    <rdfs:comment>A type of InterfaceObject. Used as the reification for the intension for any class of interface objects.</rdfs:comment>
+    <rdfs:label xml:lang="en">Interface object type</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Tab">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A window configuration that can be activated from one or more available</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <InterfaceObjectType rdf:ID="TabInterfaceObjectType">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The Tab InterfaceObjectType</rdfs:comment>
+          </InterfaceObjectType>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#isClassifiedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">Tab</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#hasPositionOnWindow">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation between an InterfaceObject and a PositionOnWindow</rdfs:comment>
+    <rdfs:label xml:lang="en">has position on window</rdfs:label>
+    <rdfs:range rdf:resource="#PositionOnWindow"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isPositionOnWindowOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isPositionOnWindowOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation between an InterfaceObject and a PositionOnWindow</rdfs:comment>
+    <rdfs:domain rdf:resource="#PositionOnWindow"/>
+    <owl:inverseOf rdf:resource="#hasPositionOnWindow"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cpont/codo/codkernel.owl#InterfaceObject"/>
+    <rdfs:label xml:lang="en">is position on window of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasColour">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation between an InterfaceObejct and a Colour</rdfs:comment>
+    <rdfs:range rdf:resource="#Colour"/>
+    <rdfs:label xml:lang="en">has colour</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isColourOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:nodeID="A0"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isColourOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation between an InterfaceObejct and a Colour</rdfs:comment>
+    <owl:inverseOf rdf:resource="#hasColour"/>
+    <rdfs:label xml:lang="en">is colour of</rdfs:label>
+    <rdfs:domain rdf:resource="#Colour"/>
+    <rdfs:range rdf:nodeID="A0"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

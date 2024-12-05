@@ -1,0 +1,778 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://floss.syr.edu/ontologies/2008/flosscomms-basic.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl11xml="http://www.w3.org/2006/12/owl11-xml#"
+    xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
+    xmlns:owl11="http://www.w3.org/2006/12/owl11#"
+  xml:base="http://floss.syr.edu/ontologies/2008/flosscomms-basic.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A work in progress, by James Howison,  for an ontology for detailed events in Free and Open Source Software development Projects (FLOSS).  Currently it is stringly biased towards communication venues and Events, and isn't integrated with other relevant ontologies, like DOAP, EvoOnt and SIOC.</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A work in Progress, by James Howison,  for an ontology for FLOSS artifacts.  It is biased towards communication venues, and isn't integrated with other relevant ontologies, like DOAP and EvoOnt.  The URL doesn't resolve as yet.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ReleaseNoteContent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Identifier"/>
+  <owl:Class rdf:ID="NamedThread">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Thread"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CommunicationThread">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Thread"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasEvent"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="CommunicationEvent"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SvnRepository">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NamedVenue"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="SvnCommitEvent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ReleaseSystem">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="SoftwareReleaseEvent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedVenue"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Participant"/>
+  <owl:Class rdf:ID="SoftwareRevision">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A specific version of a SoftwarePackage.  eg Fire.app 0.36.a is a Version of Fire.app. These are made available through a SoftwareReleaseEvent.  In common parlance they are often called 'releases', but Versions helps keep the emphasis on the specific realization, rather than the event of releasing. </rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Artifact"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DiscussionForum">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Venue"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="DiscussionForumThread"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasThread"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedVenue"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IdentifierUniquenessVP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ValuePartition"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Unique"/>
+          <owl:Class rdf:ID="NotUnique"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="DevListedParticipant">
+    <rdfs:subClassOf rdf:resource="#Participant"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MailingListThread">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="MailingListEvent"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedThread"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SoftwareReleaseEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NamedEvent"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#ReleaseNoteContent"/>
+              <owl:Class rdf:ID="ChangeNoteContent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasDocument"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="releasedRevision"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="SoftwarePackage"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The release of a software package.  This is usually accompanied by a set of release notes and a change list.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#SvnCommitEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="SvnLogMessage"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An SVN commit event.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#NotUnique">
+    <rdfs:subClassOf rdf:resource="#IdentifierUniquenessVP"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unique"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="TrackerCommentEvent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A class to represent the Comment of a Tracker item (note that this perhaps ought to be aligned with EvoOnt).</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedEvent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ChangeNoteContent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DiscussionForumThread">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="DiscussionForumEvent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedThread"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreadedVenue">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasThread"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Thread"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Venue"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#SvnLogMessage">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Document"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A message typed in by a developer as they issue svn commit or similar.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MailingList">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasThread"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#MailingListThread"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Venue"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedVenue"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#NamedEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DeveloperListing">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The listing of an individual developer in a developer List.  TODO: Model as an n-ary relation to allow different roles (ie it's a characteristic on the property linking DeveloperListing and an Identifier.  Probably this becomes a Role listing.
+
+  Clearly this needs an event_date datatype property.</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Identifier"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="listsIdentifier"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Event"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#NamedEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SFAbbrevEmailAddressIdentifier">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NamedIdentifier"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="#NotUnique"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasIdentifierUniqueness"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Unique">
+    <rdfs:subClassOf rdf:resource="#IdentifierUniquenessVP"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MailingListEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="EmailMessageContent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UniqueIdentifier">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Identifiers where the hasContent is known to be unique.  These can safely be used to merge Participants</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Identifier"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasIdentifierUniqueness"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#Unique"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Document">
+    <rdfs:subClassOf rdf:resource="#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CommunicationEvent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Event"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDocument"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Document"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SfUserIDIdentifier">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasIdentifierUniqueness"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#Unique"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedIdentifier"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CoreParticipant">
+    <rdfs:subClassOf rdf:resource="#Participant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DeveloperList">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A listing of developers, and their named roles.  This is an example of a Venue that is not a CommunicationVenue.  Each listing of developers is an event in this Venue.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NamedVenue"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#DiscussionForum"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#DeveloperListing"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="CommunicationVenue">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Venue"/>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#hasEvent"/>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="#CommunicationEvent"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#CommunicationThread"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#hasThread"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Communication venues are those whose events have Documents</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#NamedVenue">
+    <rdfs:subClassOf rdf:resource="#Venue"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IssueTracker">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="TrackerItemThread"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasThread"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#NamedVenue"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SoftwarePackage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An 'abstract' piece of software, eg Fire.app.  These are realized in SoftwareVersion, which are associated with a Release event.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TrackerSubmissionEvent">
+    <rdfs:subClassOf rdf:resource="#NamedEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="TrackerSubmissionContent"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A class to represent the submission of a Tracker item (note that this perhaps ought to be aligned with EvoOnt).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#TrackerSubmissionContent">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DiscussionForumEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasDocument"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="ForumMessageContent"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TrackerCommentContent">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NamedIdentifier">
+    <rdfs:subClassOf rdf:resource="#Identifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Project"/>
+  <owl:Class rdf:about="#TrackerItemThread">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#TrackerSubmissionEvent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedThread"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RealNameIdentifier">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasIdentifierUniqueness"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#NotUnique"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NamedIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SfUserNameIdentifier">
+    <rdfs:subClassOf rdf:resource="#NamedIdentifier"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasIdentifierUniqueness"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#Unique"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#EmailMessageContent">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ForumMessageContent">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#hasThread">
+    <rdfs:range rdf:resource="#Thread"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A ThreadedVenue can have Threads, Projects can inherit this property</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isThreadOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasReply">
+    <rdfs:range rdf:resource="#CommunicationEvent"/>
+    <rdfs:domain rdf:resource="#CommunicationEvent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isReplyTo"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasParticipant">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isParticipantIn"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property links Containers of Events (Threads, Venues, Projects) to the Participants which performed the Events.  It is probably specified through a Role Chain or SWRL rule.</rdfs:comment>
+    <rdfs:range rdf:resource="#Participant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCommitterIdentifier">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The identifier string used to identify who made a commit.  With SF SVN this is always the SF username.</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isCommitterIdentifierOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasPerformerIdentifier"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isPerformerIdentifierOf">
+    <rdfs:domain rdf:resource="#Identifier"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasPerformerIdentifier"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A meta property for linking an Identifier to an Event which the Identifier is associated with.  Usually this relationship would be specified from Event to Identifier, with this inverse relationship as a convenience.</rdfs:comment>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hostedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hostsPackage"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasReleaserIdentifier">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isReleaserIdentifierOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasPerformerIdentifier"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isRevisionOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasRevision"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isCommitterIdentifierOf">
+    <owl:inverseOf rdf:resource="#hasCommitterIdentifier"/>
+    <rdfs:subPropertyOf rdf:resource="#isPerformerIdentifierOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hostsPackage">
+    <rdfs:range rdf:resource="#SoftwarePackage"/>
+    <rdfs:domain rdf:resource="#ReleaseSystem"/>
+    <owl:inverseOf rdf:resource="#hostedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="releasedThrough">
+    <rdfs:domain rdf:resource="#SoftwareRevision"/>
+    <rdfs:range rdf:resource="#SoftwareReleaseEvent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#releasedRevision"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isIdentifierOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isIdentifiedBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Identifier"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Identifiers to Participants; This ought probably to be implemented using foaf:nick or similar.</rdfs:comment>
+    <rdfs:range rdf:resource="#Participant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isEventOf">
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasEvent"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Events to Event Containers (Projects, Venues, Threads).</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#releasedRevision">
+    <rdfs:domain rdf:resource="#SoftwareReleaseEvent"/>
+    <owl:inverseOf rdf:resource="#releasedThrough"/>
+    <rdfs:range rdf:resource="#SoftwareRevision"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="performedBy">
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="didPerform"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Events to Participants.</rdfs:comment>
+    <rdfs:range rdf:resource="#Participant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasVenue">
+    <rdfs:range rdf:resource="#Venue"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isVenueOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Project"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSenderIdentifier">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links a CommunicativeEvent (MailingList msg, Forum msg, Tracker Comment) to the Identifier which is said to have sent the message.</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isSenderIdentifierOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasPerformerIdentifier"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isReplyTo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used for CommunicationEvents that have a threaded structure (MailingList and Forums)</rdfs:comment>
+    <owl:inverseOf rdf:resource="#hasReply"/>
+    <rdfs:domain rdf:resource="#CommunicationEvent"/>
+    <rdfs:range rdf:resource="#CommunicationEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#didPerform">
+    <owl:inverseOf rdf:resource="#performedBy"/>
+    <rdfs:domain rdf:resource="#Participant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Participants to the Events they performed.  Note that it is different from hasEvent, which only applies to Event containers (Project, Venues, Threads).</rdfs:comment>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasRevision">
+    <rdfs:domain rdf:resource="#SoftwarePackage"/>
+    <owl:inverseOf rdf:resource="#isRevisionOf"/>
+    <rdfs:range rdf:resource="#SoftwareRevision"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isThreadOf">
+    <rdfs:domain rdf:resource="#Thread"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Threads to Venues.  Link can be transfered to the Project that owns the Venue.</rdfs:comment>
+    <owl:inverseOf rdf:resource="#hasThread"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isIdentifiedBy">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Participants to Identifiers</rdfs:comment>
+    <rdfs:range rdf:resource="#Identifier"/>
+    <owl:inverseOf rdf:resource="#isIdentifierOf"/>
+    <rdfs:domain rdf:resource="#Participant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isReleaserIdentifierOf">
+    <rdfs:subPropertyOf rdf:resource="#isPerformerIdentifierOf"/>
+    <owl:inverseOf rdf:resource="#hasReleaserIdentifier"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isSenderIdentifierOf">
+    <rdfs:subPropertyOf rdf:resource="#isPerformerIdentifierOf"/>
+    <owl:inverseOf rdf:resource="#hasSenderIdentifier"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links an identifier for a Sent msg (MailingList, Forum, Tracker Comment) to its Event.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isParticipantIn">
+    <rdfs:domain rdf:resource="#Participant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Participant performed at least one event in the Thread, Venue, Project.</rdfs:comment>
+    <owl:inverseOf rdf:resource="#hasParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="wasListedIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#listsIdentifier"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links a Developer Listing with the identifiers that it lists</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasEvent">
+    <owl:inverseOf rdf:resource="#isEventOf"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Threads, Venues and Projects to Events.  Note that Participants do not use hasEvent, they use didPerform.</rdfs:comment>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasDocument">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Events are the primary holders of Documents, but the documents can also transitively belong to the containers that use hasEvent (Thread, Venue, Project).</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isDocumentOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isVenueOf">
+    <rdfs:domain rdf:resource="#Venue"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links Projects to Venues</rdfs:comment>
+    <rdfs:range rdf:resource="#Project"/>
+    <owl:inverseOf rdf:resource="#hasVenue"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#listsIdentifier">
+    <owl:inverseOf rdf:resource="#wasListedIn"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A DeveloperListing listsIdentifier Identifier</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isDocumentOf">
+    <owl:inverseOf rdf:resource="#hasDocument"/>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Property linking Documents to their Events and transitively to the EventContainers (Projects, Venues, Threads).</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasPerformerIdentifier">
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf rdf:resource="#isPerformerIdentifierOf"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A meta property for those properties that link an Event to the Identifier said to perform it.</rdfs:comment>
+    <rdfs:range rdf:resource="#Identifier"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="revision_name"/>
+  <owl:DatatypeProperty rdf:ID="sf_unixname">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The sf project name.  Roughly equivalent to doap:name?</rdfs:comment>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasBody">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Body of a communication message document</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="sf_venuename">
+    <rdfs:domain rdf:resource="#Venue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The sf name for a venue.  eg gaim-cabal or users-helping-users (a gaim forum)</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSubject">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The subject of a communication document (probably should use dc:title or similar</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="sf_tracker_item_number">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The SF id number identifying the Tracker Item.  This is used to 'name' the Thread.  The submission is an Event in the thread, as are the Comments.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackerItemThread"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="rev_number">
+    <rdfs:domain rdf:resource="#SvnCommitEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasContent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used to store the content for Identifiers and Documents</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="package_name"/>
+  <owl:FunctionalProperty rdf:about="#hasIdentifierUniqueness">
+    <rdfs:range rdf:resource="#IdentifierUniquenessVP"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:ID="hasNextRevision">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This shows which the next SoftwareRevision of a Package is.  It is a 'way around' the Open World Assumption, where you know what the next revision is.  This idea was taken from the rcs ontology: http://semweb.ivx.ch/software/rcs.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#SoftwareRevision"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="hasPreviousRevision"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#SoftwareRevision"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasPreviousRevision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#SoftwareRevision"/>
+    <owl:inverseOf rdf:resource="#hasNextRevision"/>
+    <rdfs:domain rdf:resource="#SoftwareRevision"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4, Build 125)  http://protege.stanford.edu -->
