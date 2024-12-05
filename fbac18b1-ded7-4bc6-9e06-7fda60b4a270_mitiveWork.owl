@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://semanticscience.org/resource/rdbowlizer/employees-mapped-by-dbowlizer-primitive.owl#"
+     xml:base="http://semanticscience.org/resource/rdbowlizer/employees-mapped-by-dbowlizer-primitive.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dl="http://semanticscience.org/resource/dl:">
+    <owl:Ontology rdf:about="http://semanticscience.org/resource/rdbowlizer/employees-mapped-by-dbowlizer-primitive.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasDependent.employee_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasDependent.employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasManager.id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasManager.id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasManager.project -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasManager.project">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasOutsourceproject.contract_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasOutsourceproject.contract_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasOutsourceproject.project_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasOutsourceproject.project_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasOutsourceworkers.employee_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasOutsourceworkers.employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasOutsourceworkers.project_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasOutsourceworkers.project_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasProjectjobemployee.employee_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasProjectjobemployee.employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasProjectjobemployee.job_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasProjectjobemployee.job_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasProjectjobemployee.project_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasProjectjobemployee.project_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasSubproject.project -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasSubproject.project">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasSubproject.subproject -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasSubproject.subproject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasTemporalassignment.department_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasTemporalassignment.department_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasTemporalassignment.employee_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasTemporalassignment.employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasTemporalassignment.project_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasTemporalassignment.project_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasWorksfor.department_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasWorksfor.department_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasWorksfor.employee_id -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/dl:hasWorksfor.employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasContract.company -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasContract.company">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasContract.duration -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasContract.duration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasDepartment.location -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasDepartment.location">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasDepartment.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasDepartment.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasDependent.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasDependent.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasEmployee.address -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasEmployee.address">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasEmployee.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasEmployee.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasEmployee.salary -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasEmployee.salary">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasJob.description -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasJob.description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasJob.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasJob.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasManager.entry_date -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasManager.entry_date">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasManager.time_assigned -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasManager.time_assigned">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasOutsourceworkers.start_date -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasOutsourceworkers.start_date">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasProject.description -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasProject.description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasProject.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasProject.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasUsers.name -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasUsers.name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:hasUsers.pwd -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/dl:hasUsers.pwd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000645 -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000645">
+        <rdfs:comment>An informational entity is an entity that is an abstraction of, representation for, description of, or information about some entity (whether a type or instance), and only has informational entities as its parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000647 -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000647">
+        <rdfs:comment>A model process entity represents the model of a process. In the case of a database, it represents an N-Ary relation of informational entities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Contract -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Contract">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationContract</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Department -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Department">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationDepartment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Dependent -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Dependent">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationDependent</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Employee -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Employee">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationEmployee</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Job -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Job">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationJob</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Manager -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Manager">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/dl:Employee"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationManager</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Outsourceproject -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Outsourceproject">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000647"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Outsourceworkers -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Outsourceworkers">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000647"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Project -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Project">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationProject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Projectjobemployee -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Projectjobemployee">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000647"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Temporalassignment -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Temporalassignment">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000647"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/dl:Users -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/dl:Users">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000645"/>
+        <rdfs:comment>A class that represents an entity generated from the database relationUsers</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1413) http://owlapi.sourceforge.net -->
+

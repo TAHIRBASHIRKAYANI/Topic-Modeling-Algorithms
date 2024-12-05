@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY lang "http://multimedialab.elis.ugent.be/users/chpoppe/Ontologies/LangString.owl#">
+]>
+<rdf:RDF  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns ="http://multimedialab.elis.ugent.be/users/chpoppe/Ontologies/Address.owl#"
+    xml:base="http://multimedialab.elis.ugent.be/users/chpoppe/Ontologies/Address.owl#"	
+    xmlns:lang="&lang;"	
+	>
+    <!-- ======================================================================================================== -->  
+    <owl:Ontology rdf:about="">
+        <rdfs:comment xml:lang="en">
+            Ontology for describing addresses 
+        </rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version 0.1</owl:versionInfo>  
+        <owl:imports rdf:resource="&lang;"/>  
+    </owl:Ontology>
+    <!-- ======================================================================================================== -->
+    <!-- F2.9 Address  -->
+    
+    <!-- create XML struct to assign a value to this type -->
+
+    <owl:Class rdf:ID="Address">
+        <rdfs:label>Address</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#addressName"/>
+                <owl:maxCardinality rdf:datatype="&xsd;integer">1</owl:maxCardinality>
+            </owl:Restriction>	
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#addressCode"/>
+                <owl:maxCardinality rdf:datatype="&xsd;integer">1</owl:maxCardinality>
+            </owl:Restriction>	
+        </rdfs:subClassOf>
+    </owl:Class>
+     <!-- ======================================================================================================== -->
+    <owl:ObjectProperty rdf:ID="addressName">
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="&lang;LangString"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:ID="addressComponent">
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="#AddressComponent"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:ID="addressCode">
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="#AddressCodes"/>
+    </owl:ObjectProperty>
+    
+    <owl:Class rdf:ID="AddressCodes">
+        <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#PostCode"/>
+            <owl:Class rdf:about="#ZipCode"/>
+        </owl:unionOf>
+    </owl:Class>
+    
+    <owl:Class rdf:ID="PostCode"/>
+    <owl:Class rdf:ID="ZipCode"/>
+    
+    <owl:DatatypeProperty rdf:ID="post">
+        <rdfs:domain rdf:resource="#PostCode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="zip">
+        <rdfs:domain rdf:resource="#ZipCode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- country code of ISO 3166-1 -->
+    <owl:ObjectProperty rdf:ID="addressCountry">
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="#Country"/>
+    </owl:ObjectProperty>
+    
+    <owl:Class rdf:ID="Country">
+        <rdfs:label>Class representing Countries</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#countryCode"/>
+                <owl:maxCardinality rdf:datatype="&xsd;integer">1</owl:maxCardinality>
+            </owl:Restriction>	
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <owl:ObjectProperty rdf:ID="countryCode">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&lang;LangString"/>
+    </owl:ObjectProperty>
+        
+    <owl:Class rdf:ID="AddressType"/>
+    
+    <AddressType rdf:ID="Domestic">
+        <rdfs:label>The domestic delivery address</rdfs:label>
+    </AddressType>
+    
+    <AddressType rdf:ID="International">
+        <rdfs:label>The international delivery address</rdfs:label>
+    </AddressType>
+    
+    <AddressType rdf:ID="Postal">
+        <rdfs:label>The postal delivery address</rdfs:label>
+    </AddressType>
+    <!--...-->
+    
+    <owl:Class rdf:ID="AddressTypes">
+        <owl:oneOf rdf:parseType="Collection">
+            <AddressType rdf:about="#Domestic"/>
+            <AddressType rdf:about="#International"/>
+            <AddressType rdf:about="#Postal"/>
+            <!--...-->
+        </owl:oneOf>
+    </owl:Class>
+       
+    <owl:ObjectProperty rdf:ID="addressType">
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="#AddressTypes"/>
+    </owl:ObjectProperty>
+    
+    <owl:Class rdf:ID="AddressComponent">
+    </owl:Class>
+    
+    <owl:ObjectProperty rdf:ID="addressComponentValue">
+        <rdfs:domain rdf:resource="#AddressComponent"/>
+        <rdfs:range rdf:resource="&lang;LangString"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:ID="addressComponentType">
+        <rdfs:domain rdf:resource="#AddressComponent"/>
+        <rdfs:range rdf:resource="#AddressComponentTypes"/>
+   </owl:ObjectProperty>
+    
+    <owl:Class  rdf:ID="AddressComponentTypes">
+        <owl:oneOf rdf:parseType="Collection">
+            <AddressComponentType rdf:about="#AddressUnit"/>
+            <AddressComponentType rdf:about="#AddressRoom"/>
+            <AddressComponentType rdf:about="#AddressStreet"/>
+            <AddressComponentType rdf:about="#AddressPostbox"/>
+            <AddressComponentType rdf:about="#AddressCity"/>
+            <AddressComponentType rdf:about="#AddressState"/>
+        </owl:oneOf>
+    </owl:Class>
+    
+    <owl:Class rdf:ID="AddressComponentType"/>
+    
+    <AddressComponentType rdf:ID="AddressUnit"/>
+    <AddressComponentType rdf:ID="AddressRoom"/>
+    <AddressComponentType rdf:ID="AddressStreet"/>
+    <AddressComponentType rdf:ID="AddressPostbox"/>
+    <AddressComponentType rdf:ID="AddressCity"/>
+    <AddressComponentType rdf:ID="AddressState"/>
+    
+    <!-- ======================================================================================================== -->
+    </rdf:RDF>

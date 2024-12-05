@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.loria.fr/~coulet/ontology/familybond/version0.1/familybond.owl#"
+  xml:base="http://www.loria.fr/~coulet/ontology/familybond/version0.1/familybond.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Author: Adrien Coulet</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="family_member"/>
+  <owl:ObjectProperty rdf:ID="hasHusband">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:ID="isMarriedWith"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasWife"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isSisterOf">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:ID="sibling"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasSister"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasChild">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasParent"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#family_member"/>
+    <rdfs:range rdf:resource="#family_member"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasParent">
+    <rdfs:domain rdf:resource="#family_member"/>
+    <owl:inverseOf rdf:resource="#hasChild"/>
+    <rdfs:range rdf:resource="#family_member"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasWife">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="#isMarriedWith"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="#hasHusband"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDaughter">
+    <rdfs:subPropertyOf rdf:resource="#hasChild"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isBrotherOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasBrother"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="#sibling"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasBrother">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="#sibling"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="#isBrotherOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasSister">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="#sibling"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="#isSisterOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSon">
+    <rdfs:subPropertyOf rdf:resource="#hasChild"/>
+  </owl:ObjectProperty>
+  <owl:SymmetricProperty rdf:about="#isMarriedWith">
+    <owl:inverseOf rdf:resource="#isMarriedWith"/>
+    <rdfs:range rdf:resource="#family_member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#family_member"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="#sibling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#family_member"/>
+    <owl:inverseOf rdf:resource="#sibling"/>
+    <rdfs:range rdf:resource="#family_member"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:ID="hasFather">
+    <rdfs:subPropertyOf rdf:resource="#hasParent"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="isFatherOf"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasMother">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#hasParent"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="isMotherOf"/>
+    </owl:inverseOf>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#isMotherOf">
+    <owl:inverseOf rdf:resource="#hasMother"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#hasChild"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#isFatherOf">
+    <owl:inverseOf rdf:resource="#hasFather"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#hasChild"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->

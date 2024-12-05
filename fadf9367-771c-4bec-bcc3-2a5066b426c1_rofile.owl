@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://efe.ege.edu.tr/MetaProfile/" xmlns="http://efe.ege.edu.tr/MetaProfile.owl#" xmlns:foaf="http://efe.ege.edu.tr/~odo/Ortak/06Mart2008/foaf_proje.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:p4="http://efe.ege.edu.tr/foaf#" xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	<owl:Ontology rdf:about=""/>
+	<owl:Class rdf:about="http://efe.ege.edu.tr/foaf#Age"/>
+	<owl:Class rdf:about="http://efe.ege.edu.tr/foaf#Occupation"/>
+	<owl:Class rdf:ID="Demographical"/>
+	<owl:Class rdf:about="http://efe.ege.edu.tr/foaf#Income"/>
+	<owl:Class rdf:ID="ProfileName"/>
+	<owl:Class rdf:ID="Profile">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasName"/>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="DemographicalProperties">
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="ProfileProperties"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="RangeBasedProfileIdentifier">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasMinValue"/>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasMaxValue"/>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="PointBasedProfileIndentifier">
+		
+	</owl:Class>
+	<owl:Class rdf:ID="Age">
+		<rdfs:subClassOf rdf:resource="#Demographical"/>
+		<owl:equivalentClass rdf:resource="foaf#Age"/>
+		<rdfs:subClassOf rdf:resource="#RangeBasedProfileIdentifier"/>
+	</owl:Class>
+	<owl:Class rdf:ID="Income">
+		<rdfs:subClassOf rdf:resource="#Demographical"/>
+		<owl:equivalentClass rdf:resource="foaf#Income"/>
+		<rdfs:subClassOf rdf:resource="#RangeBasedProfileIdentifier"/>
+	</owl:Class>
+	<owl:Class rdf:ID="Occupation">
+		<rdfs:subClassOf rdf:resource="#Demographical"/>
+		<owl:equivalentClass rdf:resource="foaf#Occupation"/>
+		<rdfs:subClassOf rdf:resource="#PointBasedProfileIdentifier"/>
+	</owl:Class>
+	<owl:ObjectProperty rdf:ID="hasMinValue">
+		<rdfs:domain rdf:resource="#ProfileIdentifier"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasMaxValue">
+		<rdfs:domain rdf:resource="#ProfileIdentifier"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasName">
+		<rdfs:domain rdf:resource="#Profile"/>
+		<rdfs:range rdf:resource="#ProfileName"/>
+	</owl:ObjectProperty>
+	<owl:DatatypeProperty rdf:ID="minValue"/>
+	<owl:DatatypeProperty rdf:ID="maxValue"/>
+	<owl:DatatypeProperty rdf:ID="name">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>
+</rdf:RDF>

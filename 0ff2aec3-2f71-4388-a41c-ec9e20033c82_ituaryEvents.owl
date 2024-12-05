@@ -1,0 +1,973 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+     <!ENTITY obituary  "http://osm.cs.byu.edu/CS652s04/ontologies/OWL/obituary.owl#" >
+     <!ENTITY ontos "http://www.deg.byu.edu/demos/annotationdemo/input/ontology/OntosBasic.owl#" >
+     <!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+     <!ENTITY xs  "http://www.w3.org/2001/XMLSchema#" >
+   ]>
+
+<rdf:RDF
+  xmlns     = "&obituary;"
+  xmlns:obituary = "&obituary;"
+  xml:base  = "&obituary;"
+  xmlns:ontos = "&ontos;"
+  xmlns:owl = "http://www.w3.org/2002/07/owl#"
+  xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs= "http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xs = "http://www.w3.org/2001/XMLSchema#">
+
+<owl:Ontology rdf:about="">
+    <rdfs:label>Obituary Ontology</rdfs:label>
+    <rdfs:comment>obituaries.xml</rdfs:comment>
+</owl:Ontology>
+
+<owl:Class rdf:ID="DeceasedPerson">
+  <rdfs:label xml:lang="en">DeceasedPerson</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;NonLexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasAge" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasAge" />
+            <owl:allValuesFrom rdf:resource="#Age" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasBirthDate" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasBirthDate" />
+            <owl:allValuesFrom rdf:resource="#BirthDate" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasDeathDate" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasDeathDate" />
+            <owl:allValuesFrom rdf:resource="#DeathDate" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasDeceasedName" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasDeceasedName" />
+            <owl:allValuesFrom rdf:resource="#DeceasedName" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasFuneral" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasFuneral" />
+            <owl:allValuesFrom rdf:resource="#Funeral" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasInterment" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasInterment" />
+            <owl:allValuesFrom rdf:resource="#Interment" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasViewing" />
+            <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasViewing" />
+            <owl:allValuesFrom rdf:resource="#Viewing" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasRelationshiptoRelativeName" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">0</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasRelationshiptoRelativeName" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPersonn-Relationship-RelativeName" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="DeceasedPersonValue">
+  <rdfs:domain rdf:resource="#DeceasedPerson" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="Age">
+  <rdfs:label xml:lang="en">Age</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#ageFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#ageFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="AgeValue">
+  <rdfs:domain rdf:resource="#Age" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="BirthDate">
+  <rdfs:label xml:lang="en">BirthDate</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#birthDateFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#birthDateFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="DeathDate">
+  <rdfs:label xml:lang="en">DeathDate</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#deathDateFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#deathDateFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="FuneralDate">
+  <rdfs:label xml:lang="en">FuneralDate</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#funeralDateFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#funeralDateFor" />
+            <owl:allValuesFrom rdf:resource="#Funeral" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="IntermentDate">
+  <rdfs:label xml:lang="en">IntermentDate</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#intermentDateFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#intermentDateFor" />
+            <owl:allValuesFrom rdf:resource="#Interment" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="ViewingDate">
+  <rdfs:label xml:lang="en">ViewingDate</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#viewingDateFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#viewingDateFor" />
+            <owl:allValuesFrom rdf:resource="#Viewing" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+
+<owl:DatatypeProperty rdf:ID="DateValue">
+  <rdfs:domain>
+    <owl:Class>    
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="#BirthDate"/>
+	<owl:Class rdf:about="#DeathDate"/>
+	<owl:Class rdf:about="#FuneralDate"/>
+	<owl:Class rdf:about="#IntermentDate"/>
+	<owl:Class rdf:about="#ViewingDate"/>
+      </owl:unionOf>
+    </owl:Class>    
+  </rdfs:domain>
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="FuneralTime">
+  <rdfs:label xml:lang="en">FuneralTime</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#funeralTimeFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#funeralTimeFor" />
+            <owl:allValuesFrom rdf:resource="#Funeral" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="BeginningTime">
+  <rdfs:label xml:lang="en">BeginningTime</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#beginningTimeFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#beginningTimeFor" />
+            <owl:allValuesFrom rdf:resource="#Viewing" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="EndingTime">
+  <rdfs:label xml:lang="en">EndingTime</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#endingTimeFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#endingTimeFor" />
+            <owl:allValuesFrom rdf:resource="#Viewing" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="TimeValue">
+  <rdfs:domain>
+    <owl:Class>    
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="#BeginningTime"/>
+	<owl:Class rdf:about="#EndingTime"/>
+	<owl:Class rdf:about="#FuneralTime"/>
+      </owl:unionOf>
+    </owl:Class>    
+  </rdfs:domain>
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="FuneralAddress">
+  <rdfs:label xml:lang="en">FuneralAddress</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#funeralAddressFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#funeralAddressFor" />
+            <owl:allValuesFrom rdf:resource="#Funeral" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="IntermentAddress">
+  <rdfs:label xml:lang="en">IntermentAddress</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#intermentAddressFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#intermentAddressFor" />
+            <owl:allValuesFrom rdf:resource="#Interment" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="ViewingAddress">
+  <rdfs:label xml:lang="en">ViewingAddress</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#viewingAddressFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#viewingAddressFor" />
+            <owl:allValuesFrom rdf:resource="#Viewing" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="AddressValue">
+  <rdfs:domain>
+    <owl:Class>    
+      <owl:unionOf rdf:parseType="Collection">
+	<owl:Class rdf:about="#ViewingTime"/>
+	<owl:Class rdf:about="#FuneralAddress"/>
+      </owl:unionOf>
+    </owl:Class>    
+  </rdfs:domain>
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="Name">
+  <rdfs:label xml:lang="en">Name</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="NameValue">
+  <rdfs:domain>
+    <owl:Class>    
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="#DeceasedName"/>
+        <owl:Class rdf:about="#RelativeName"/>
+      </owl:unionOf>
+    </owl:Class>    
+  </rdfs:domain>
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="DeceasedName">
+  <rdfs:subClassOf rdf:resource="#Name" />
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#DeceasedNameFor" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#DeceasedNameFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="Funeral">
+  <rdfs:label xml:lang="en">Funeral</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;NonLexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#funeralFor" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#funeralFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasFuneralDate" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasFuneralDate" />
+            <owl:allValuesFrom rdf:resource="#FuneralDate" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasFuneralAddress" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasFuneralAddress" />
+            <owl:allValuesFrom rdf:resource="#FuneralAddress" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasFuneralTime" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasFuneralTime" />
+            <owl:allValuesFrom rdf:resource="#FuneralTime" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="FuneralValue">
+  <rdfs:domain rdf:resource="#Funeral" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="Interment">
+  <rdfs:label xml:lang="en">Interment</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;NonLexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#intermentFor" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#intermentFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasIntermentDate" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasIntermentDate" />
+            <owl:allValuesFrom rdf:resource="#IntermentDate" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasIntermentAddress" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasIntermentAddress" />
+            <owl:allValuesFrom rdf:resource="#IntermentAddress" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="IntermentValue">
+  <rdfs:domain rdf:resource="#Interment" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+
+<owl:Class rdf:ID="Viewing">
+  <rdfs:label xml:lang="en">Viewing</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;NonLexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#viewingFor" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#viewingFor" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasViewingDate" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasViewingDate" />
+            <owl:allValuesFrom rdf:resource="#ViewinglDate" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasViewingAddress" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasViewingAddress" />
+            <owl:allValuesFrom rdf:resource="#ViewingAddress" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasBeginningTime" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasBeginningTime" />
+            <owl:allValuesFrom rdf:resource="#BeginninggTime" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasEndingTime" />
+	    <owl:maxCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:maxCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasEndingTime" />
+            <owl:allValuesFrom rdf:resource="#EndingTime" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="ViewingValue">
+  <rdfs:domain rdf:resource="#Viewing" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+
+
+<owl:Class rdf:ID="DeceasedPerson-Relationship-RelativeName">
+  <rdfs:label xml:lang="en">DeceasedPerson-Relationship-RelativeName</rdfs:label>
+  <rdfs:comment>Additional Concept for decomposing a tenary relationship set</rdfs:comment>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;NonLexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#forDecesedPerson" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#forDecesedPerson" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#forRelativeName" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#forRelativeName" />
+            <owl:allValuesFrom rdf:resource="#RelativeName" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#forRelationship" />
+	    <owl:cardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:cardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#forRelationship" />
+            <owl:allValuesFrom rdf:resource="#Relationship" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:DatatypeProperty rdf:ID="DeceasedPerson-Relationship-RelativeNamValue">
+  <rdfs:domain rdf:resource="#DeceasedPerson-Relationship-RelativeName" />    
+  <rdfs:range  rdf:resource="&xs;string" />
+</owl:DatatypeProperty>
+
+<owl:Class rdf:ID="RelativeName">
+  <rdfs:subClassOf rdf:resource="#Name" />
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#hasRelationshipForDeceasedPerson" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasRelationshipForDeceasedPerson" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson-Relationship-RelativeName" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID="Relationship">
+  <rdfs:label xml:lang="en">Relationship</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&ontos;isConceptType" />
+        <owl:hasValue rdf:resource="&ontos;LexiconConcept" />
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+	  <owl:Restriction>
+	    <owl:onProperty rdf:resource="#toRelativeNameForDeceasedPerson" />
+	    <owl:minCardinality rdf:datatype="&xs;nonNegativeInteger">1</owl:minCardinality>
+          </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#toRelativeNameForDeceasedPerson" />
+            <owl:allValuesFrom rdf:resource="#DeceasedPerson-Relationship-RelativeName" />
+          </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+
+
+<owl:ObjectProperty rdf:ID="hasAge">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#Age" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="ageFor">
+  <owl:inverseOf rdf:resource="#hasAge" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasBirthDate">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#BirthDate" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="birthDateFor">
+  <owl:inverseOf rdf:resource="#hasModelTrim" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasDeathDate">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#DeathDate" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="deathDateFor">
+  <owl:inverseOf rdf:resource="#hasDeathDate" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasDeceasedName">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#DeceasedName" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="deceasedNameFor">
+  <owl:inverseOf rdf:resource="#hasDeceasedName" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasFuneral">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#Funeral" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="funeralFor">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#hasFuneral" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasInterment">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#Interment" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="intermentFor">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#hasInterment" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasViewing">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#Viewing" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="viewingFor">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#hasViewing" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasFuneralDate">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Funeral" />   
+  <rdfs:range rdf:resource="#FuneralDate" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="funeralDateFor">
+  <owl:inverseOf rdf:resource="#hasFuneralDate" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasFuneralAddress">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Funeral" />   
+  <rdfs:range rdf:resource="#FuneralAddress" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="funeralAddressFor">
+  <owl:inverseOf rdf:resource="#hasFuneralAddress" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasFuneralTime">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Funeral" />   
+  <rdfs:range rdf:resource="#FuneralTime" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="funeralTimeFor">
+  <owl:inverseOf rdf:resource="#hasFuneralTime" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasIntermentDate">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Interment" />   
+  <rdfs:range rdf:resource="#IntermentDate" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="intermentDateFor">
+  <owl:inverseOf rdf:resource="#hasIntermentDate" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasIntermentAddress">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Interment" />   
+  <rdfs:range rdf:resource="#IntermentAddress" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="intermentDateFor">
+  <owl:inverseOf rdf:resource="#hasIntermentAddress" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasViewingDate">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Viewing" />   
+  <rdfs:range rdf:resource="#ViewingDate" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="viewingDateFor">
+  <owl:inverseOf rdf:resource="#hasViewingDate" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasViewingAddress">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Viewing" />   
+  <rdfs:range rdf:resource="#ViewingAddress" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="viewingAddressFor">
+  <owl:inverseOf rdf:resource="#hasViewingAddress" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasBeginningTime">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Viewing" />   
+  <rdfs:range rdf:resource="#BeginningTime" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="beginningTimeFor">
+  <owl:inverseOf rdf:resource="#hasBeginningTime" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasEndingTime">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Viewing" />   
+  <rdfs:range rdf:resource="#EndingTime" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="endingTimeFor">
+  <owl:inverseOf rdf:resource="#hasEndingTime" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasRelationshiptoRelativeName">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#DeceasedPerson" />   
+  <rdfs:range rdf:resource="#DeceasedPerson-Relationship-RelativeName" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="forDecesedPerson">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#hasRelationshiptoRelativeName" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasRelationshipForDeceasedPerson">
+  <rdfs:domain rdf:resource="#RelativeName" />   
+  <rdfs:range rdf:resource="#DeceasedPerson-Relationship-RelativeName" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="forRelativeName">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#hasRelationshipForDeceasedPerson" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="toRelativeNameForDeceasedPerson">
+  <rdfs:domain rdf:resource="#Relationship" />   
+  <rdfs:range rdf:resource="#DeceasedPerson-Relationship-RelativeName" /> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="forRelationship">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <owl:inverseOf rdf:resource="#toRelativeNameForDeceasedPerson" />
+</owl:ObjectProperty>
+
+</rdf:RDF>

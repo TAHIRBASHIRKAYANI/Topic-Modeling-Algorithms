@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:timeindexedpersonrole="http://www.ontologydesignpatterns.org/cp/owl/timeindexedpersonrole.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:cpschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.ontology.se/examples/ProductionRole.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.ontology.se/examples/ProductionRole.owl">
+  <owl:Ontology rdf:about="">
+    <cpschema:hasIntent rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >To model the role playing of different people in a certain production (i.e. setup of a play), e.g. that Tom is playing a servant in this particular setup of a certain play. </cpschema:hasIntent>
+    <cpschema:coversRequirements rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What roles does a certain person have within a certain production during a certain time?</cpschema:coversRequirements>
+    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedpersonrole.owl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ProductionRole">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The situation where a person is playing a particular role in a production during a certain time, e.g. Arnold is playing Shylock as a guest actor during two shows.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >production role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedpersonrole.owl#TimeIndexedPersonRole"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Production">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A setup of a play by a particular ensemble.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >production</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="rolePlayed">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicating the role being played.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role"/>
+    <rdfs:domain rdf:resource="#ProductionRole"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#isIncludedInClassification"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >role played</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="productionInRolePlaying">
+    <rdfs:range rdf:resource="#ProductionRole"/>
+    <rdfs:domain rdf:resource="#Production"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="roleInProduction"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#classificationIncludes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >production in role playing</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="roleDuringTime">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicating the time period of playing the role.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+    <rdfs:domain rdf:resource="#ProductionRole"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#isIncludedInClassification"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >role during time</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="timeOfRolePlaying">
+    <rdfs:range rdf:resource="#ProductionRole"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+    <owl:inverseOf rdf:resource="#roleDuringTime"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >time of role playing</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#classificationIncludes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personPlayingRole">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicating the person who is playing the role.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedpersonrole.owl#Person"/>
+    <rdfs:domain rdf:resource="#ProductionRole"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#isIncludedInClassification"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >person playing role</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="rolePlayedIn">
+    <rdfs:range rdf:resource="#ProductionRole"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role"/>
+    <owl:inverseOf rdf:resource="#rolePlayed"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#classificationIncludes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >role played in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#roleInProduction">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicating the production within which the role playing is going on.</rdfs:comment>
+    <rdfs:range rdf:resource="#Production"/>
+    <rdfs:domain rdf:resource="#ProductionRole"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#isIncludedInClassification"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >role in production</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personInRolePlaying">
+    <rdfs:range rdf:resource="#ProductionRole"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedpersonrole.owl#Person"/>
+    <owl:inverseOf rdf:resource="#personPlayingRole"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/naryclassification.owl#classificationIncludes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >person in role playing</rdfs:label>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

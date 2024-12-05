@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY teams "http://owl.man.ac.uk/2005/sssw/teams#">
+  <!ENTITY test "http://test">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="&test;"
+         xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;"
+         xmlns:teams="&teams;">
+
+<!-- Ontology Information -->
+  <owl:Ontology rdf:about=""/>
+
+<!-- Classes -->
+  <owl:Class rdf:about="&teams;Female">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="&teams;Male"/>
+        <owl:onProperty rdf:resource="&teams;isMarriedTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&teams;Male">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="&teams;Female"/>
+        <owl:onProperty rdf:resource="&teams;isMarriedTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&teams;MixedTeam"/>
+  <owl:Class rdf:about="&teams;Person">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="&teams;Female"/>
+          <rdf:Description rdf:about="&teams;Male"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&teams;Team"/>
+  <owl:Class rdf:nodeID="b11">
+    <owl:complementOf rdf:resource="&teams;MixedTeam"/>
+  </owl:Class>
+
+  <owl:Class>
+    <owl:equivalentClass rdf:resource="&teams;MixedTeam"/>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="&teams;Team"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&teams;hasMember"/>
+        <owl:someValuesFrom rdf:resource="&teams;Male"/>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&teams;hasMember"/>
+        <owl:someValuesFrom rdf:resource="&teams;Female"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+
+<!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="&teams;hasMember">
+    <owl:inverseOf rdf:resource="&teams;isMemberOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&teams;isMarriedTo"/>
+  <owl:ObjectProperty rdf:about="&teams;isMemberOf"/>
+
+<!-- Instances -->
+  <teams:Person rdf:about="&teams;Chris">
+    <teams:isMemberOf rdf:resource="&teams;OntologyFC"/>
+  </teams:Person>
+
+  <teams:Team rdf:about="&teams;OntologyFC">
+    <rdf:type rdf:nodeID="b11"/>
+  </teams:Team>
+
+  <teams:Person rdf:about="&teams;Sam">
+    <teams:isMarriedTo rdf:resource="&teams;Chris"/>
+    <teams:isMemberOf rdf:resource="&teams;OntologyFC"/>
+  </teams:Person>
+</rdf:RDF>

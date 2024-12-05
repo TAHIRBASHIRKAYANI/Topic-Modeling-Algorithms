@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<!-- ======================================================================================================== -->  
+
+<rdf:RDF  
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns="http://multimedialab.elis.ugent.be/users/chpoppe/Ontologies/Phone.owl#"
+xml:base = "http://multimedialab.elis.ugent.be/users/chpoppe/Ontologies/Phone.owl#"	
+>
+
+<!-- ======================================================================================================== -->  
+<!-- F.2.10 PHONE NUMBER-->
+    
+    
+ <owl:Ontology rdf:about="">
+    <rdfs:comment xml:lang="en">
+        Ontology for describing phone numbers 
+    </rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version 0.1</owl:versionInfo>  
+</owl:Ontology>
+<!-- ======================================================================================================== -->
+<!-- Classes -->
+
+<owl:Class rdf:ID="Phone">
+  <rdfs:label>Phone number</rdfs:label>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+          <owl:onProperty rdf:resource="#countryPhoneCode"/>
+          <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+          <owl:onProperty rdf:resource="#area"/>
+          <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+          <owl:onProperty rdf:resource="#local"/>
+          <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+      <owl:Restriction>
+          <owl:onProperty rdf:resource="#extension"/>
+          <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+    
+<owl:Class rdf:ID="PhoneNumberType">
+    <rdfs:label>Phone number types</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:ID="PhoneNumberTypes">
+    <owl:oneOf rdf:parseType="Collection">
+        <PhoneNumberType rdf:about="#Home"/>
+        <PhoneNumberType rdf:about="#Message"/>
+        <PhoneNumberType rdf:about="#Work"/>
+        <PhoneNumberType rdf:about="#Voice"/>
+        <PhoneNumberType rdf:about="#Cell"/>
+        <PhoneNumberType rdf:about="#Video"/>
+        <PhoneNumberType rdf:about="#BBS"/>
+        <PhoneNumberType rdf:about="#Modem"/>
+        <PhoneNumberType rdf:about="#Car"/>
+        <PhoneNumberType rdf:about="#ISDN"/>
+        <PhoneNumberType rdf:about="#PCS"/>
+    </owl:oneOf>
+</owl:Class>
+<!-- ======================================================================================================== -->
+<!-- Properties -->
+
+<owl:DatatypeProperty rdf:ID="countryPhoneCode">
+  <rdfs:domain rdf:resource="#Phone"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="area">
+  <rdfs:domain rdf:resource="#Phone"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="local">
+  <rdfs:domain rdf:resource="#Phone"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="extension">
+  <rdfs:domain rdf:resource="#Phone"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:ID="phoneNumberType">
+  <rdfs:domain rdf:resource="#Phone"/>
+  <rdfs:range rdf:resource="#PhoneNumberTypes"/>
+</owl:ObjectProperty>
+<!-- ======================================================================================================== -->  
+
+<PhoneNumberType rdf:ID="Home">
+  <rdfs:label>Phone number associated with a residence</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Message">
+  <rdfs:label>Phone number that has a voice message support</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Work">
+  <rdfs:label>Phone number associated with a place of work</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Voice">
+    <rdfs:label>Phone number to indicate a voice telephone</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Cell">
+    <rdfs:label>Cellular  telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Video">
+    <rdfs:label>Video conference  telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="BBS">
+    <rdfs:label>Bulletin board system telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Modem">
+    <rdfs:label>Modem connected telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="Car">
+    <rdfs:label>A car-phone telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="ISDN">
+    <rdfs:label>ISDN service  telephone number</rdfs:label>
+</PhoneNumberType>
+<PhoneNumberType rdf:ID="PCS">
+    <rdfs:label>Personal communication service telephone number</rdfs:label>
+</PhoneNumberType>     
+<!-- ======================================================================================================== -->
+
+
+</rdf:RDF>
