@@ -1,0 +1,1002 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY airport "http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#"
+     xml:base="http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:airport="http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <dc:description
+            >An ontology to represent information about scheduled flights such as: which airlines offer direct flights between two particular airports, what reservations passengers have i.e. first class, buisness class etc., which airlines operate flights using certain aircrafts, which flights are operated by which airlines, which aircrafts are manufactured by Boeing, and what flights are codeshared.</dc:description>
+        <dc:title
+            >Ontology for an air travel booking service</dc:title>
+        <dc:creator
+            >Katie Derham kd2v07@ecs.soton.ac.uk</dc:creator>
+        <dc:date>18/04/2011</dc:date>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#destinationAirport -->
+
+    <owl:ObjectProperty rdf:about="#destinationAirport"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasAircraft -->
+
+    <owl:ObjectProperty rdf:about="#hasAircraft"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasAirline -->
+
+    <owl:ObjectProperty rdf:about="#hasAirline">
+        <owl:inverseOf rdf:resource="#hasFlight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasAirport -->
+
+    <owl:ObjectProperty rdf:about="#hasAirport"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasClass -->
+
+    <owl:ObjectProperty rdf:about="#hasClass"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasCodeshare -->
+
+    <owl:ObjectProperty rdf:about="#hasCodeshare"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasFlight -->
+
+    <owl:ObjectProperty rdf:about="#hasFlight"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasFlightNumber -->
+
+    <owl:ObjectProperty rdf:about="#hasFlightNumber">
+        <owl:inverseOf rdf:resource="#isNumberForFlight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasICAOAirportCode -->
+
+    <owl:ObjectProperty rdf:about="#hasICAOAirportCode"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasManufacturer -->
+
+    <owl:ObjectProperty rdf:about="#hasManufacturer"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasPassenger -->
+
+    <owl:ObjectProperty rdf:about="#hasPassenger"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasReservation -->
+
+    <owl:ObjectProperty rdf:about="#hasReservation"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasSeat -->
+
+    <owl:ObjectProperty rdf:about="#hasSeat"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#isNumberForFlight -->
+
+    <owl:ObjectProperty rdf:about="#isNumberForFlight"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#operatesFlights -->
+
+    <owl:ObjectProperty rdf:about="#operatesFlights"/>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#originAirport -->
+
+    <owl:ObjectProperty rdf:about="#originAirport"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="#hasDate">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasFlightNumberName -->
+
+    <owl:DatatypeProperty rdf:about="#hasFlightNumberName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasICAOCode -->
+
+    <owl:DatatypeProperty rdf:about="#hasICAOCode">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasManufacturerName -->
+
+    <owl:DatatypeProperty rdf:about="#hasManufacturerName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#hasModelName -->
+
+    <owl:DatatypeProperty rdf:about="#hasModelName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Aircraft -->
+
+    <owl:Class rdf:about="#Aircraft">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasModelName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasManufacturer"/>
+                <owl:someValuesFrom rdf:resource="#Manufacturer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: This class refers to the model of the airplane associated with each flight. Each aircraft has a manufacturer e.g. Airbus and a model name e.g. A380 
+
+T: Aircraft
+
+D: Model of the Aircraft
+
+E: Airbus A380 is a four engine airliner made by Airbus. The aircraft Boeing 747 is sometimes known as a jumbo jet, and is manufactured by Boeing commerical airplanes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Airline -->
+
+    <owl:Class rdf:about="#Airline">
+        <rdfs:comment
+            >C: An Airline is the company that own the aircraft and operate flights between airports.
+
+T:Airline
+
+D: The company that operates flights 
+
+E: Flybe, Virgin Atlantic, British Airways, Singapore Airlines, American Airlines</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Airport -->
+
+    <owl:Class rdf:about="#Airport">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasICAOCode"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: Class contains an airport, which is where the flight originated from or is destined for. Each airport can be uniquely identified by an ICAO(International Civil Aviation Organisation) code, which is a four letter code. They are used to indicate departure, destination, and alternative airfields. The first two letters identify the country. 
+
+T: Airport 
+
+D: The location where the aircraft takes off and lands.
+
+E: LondonHeathrow, Manchester, JFK, Munich, Southampton International</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#BAFlight -->
+
+    <owl:Class rdf:about="#BAFlight">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Flight"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAirline"/>
+                        <owl:hasValue rdf:resource="#AirlineBA"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment
+            >Subclass of Flight. A defined class that allows the conditions a flight operated by British Airways to be satisfied.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Boeing747 -->
+
+    <owl:Class rdf:about="#Boeing747">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasManufacturer"/>
+                <owl:hasValue rdf:resource="#ManufacturerBoeing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Manufacturer"/>
+        <rdfs:comment
+            >C: This refers to an aircraft which are manufactured by Boeing and is the model 747 and was required to satify the query - an aicraft manufactured by Boeing
+
+T: Boeing 747
+
+D: Boeing 747 is a type of aircraft.
+
+E: Boeing 747</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#BusinessClassPassenger -->
+
+    <owl:Class rdf:about="#BusinessClassPassenger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Passenger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasReservation"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasSeat"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#hasClass"/>
+                                        <owl:hasValue rdf:resource="#BusinessClass"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Class -->
+
+    <owl:Class rdf:about="#Class">
+        <rdfs:comment
+            >C: Class contains the four different types of travel classes available on an aircraft. Each seat on an aircraft has a different class e.g. business class, first class, economy, and premium economy.
+
+T: Class
+
+D: Type of travel class available on airlines
+
+E: Business Class, First Class, Economy, Premium Economy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#CodeShareFlight -->
+
+    <owl:Class rdf:about="#CodeShareFlight">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Flight"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasFlight"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment
+            >This is the subclass of the superclass Flight. It isa defined class that contains members that are needed to satisfy the query: Which airlines codeshare american Airlines gliht AA1514 </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Country -->
+
+    <owl:Class rdf:about="#Country">
+        <rdfs:comment
+            >C: This Class is concerned with the geographical region where the airport is situated. 
+
+T: Country
+
+D:  The country the airport is located.
+
+E: United Kingdom, USA, Germany,</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Flight -->
+
+    <owl:Class rdf:about="#Flight">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasPassenger"/>
+                <owl:someValuesFrom rdf:resource="#Passenger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasDate"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFlightNumber"/>
+                <owl:someValuesFrom rdf:resource="#FlightNumber"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#originAirport"/>
+                <owl:someValuesFrom rdf:resource="#Airport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#destinationAirport"/>
+                <owl:someValuesFrom rdf:resource="#Airport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAirline"/>
+                <owl:someValuesFrom rdf:resource="#Airline"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: A flight is operated by an airline, where an aircraft originates from one airport and is destined for another. Each flight has iat least one flight code. 
+
+T: Flight
+
+D: Where an aircraft froms from one airport to another. 
+
+E: Flight from London Heathrow to JFK, A flight from Manchester to SOuthampton International</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightNumber -->
+
+    <owl:Class rdf:about="#FlightNumber">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFlightNumberName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: Each flight has a flight number, which is of type string, that when combined with the name of the airline and the date, can uniquely identify a flight. An aircraft may be used by a number of different flights in one day,and different aircrafts may be used for the same flight number on consecutive days.
+
+T: Flight Number/Code
+
+D: A number/code given to a flight.
+
+E: AA1514, BA0117</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Manufacturer -->
+
+    <owl:Class rdf:about="#Manufacturer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasManufacturerName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: Each aircraft has a manufacturer (name) who was responsible for building it.
+
+T: Manufacturer
+
+D: A company or individual who built the aircraft.
+
+E: Airbus,Boeing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#OriginOrDestinationSouthampton -->
+
+    <owl:Class rdf:about="#OriginOrDestinationSouthampton">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Airline"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasFlight"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#destinationAirport"/>
+                                        <owl:hasValue rdf:resource="#AirportSouthamptonInternational"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#originAirport"/>
+                                        <owl:hasValue rdf:resource="#AirportSouthamptonInternational"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment
+            >This is a subclass of the class Airline. This contains all of the airlines who have flights departing from or arriving at Southampton international airport. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Passenger -->
+
+    <owl:Class rdf:about="#Passenger">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasReservation"/>
+                <owl:someValuesFrom rdf:resource="#Reservation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: This refers to an individual who travels on the aircraft. 
+
+T: Passenger
+
+D: A person who travels on the aircraft.
+
+E: Alice, Bob
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Reservation -->
+
+    <owl:Class rdf:about="#Reservation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasSeat"/>
+                <owl:someValuesFrom rdf:resource="#Seat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: This class represents the reservation that is made by each passenger.  that has to be made in order to use a service with costs. It allows for the distinction between differnet pricing categories, i.e.business class and first class.
+
+T: Reservation
+
+D: An arrangement by which a seat is secured on the aircraft in advance.
+
+E: Business Class, First Class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#Seat -->
+
+    <owl:Class rdf:about="#Seat">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasClass"/>
+                <owl:someValuesFrom rdf:resource="#Class"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >C: Seats are chairs on an aircraft, in which a passengers sits for the duration of a flight. They are usually organised in rows across the fuselage of the aircraft.
+
+T: Seat
+
+D: A chair on an aircraft.
+
+E: Seat A1, Seat B2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AircraftAirbusA350 -->
+
+    <owl:Thing rdf:about="#AircraftAirbusA350">
+        <rdf:type rdf:resource="#Aircraft"/>
+        <hasManufacturer rdf:resource="#ManufacturerAirbus"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AircraftAirbusA380-800 -->
+
+    <Aircraft rdf:about="#AircraftAirbusA380-800">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasManufacturer rdf:resource="#ManufacturerAirbus"/>
+    </Aircraft>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AircraftBoeing747 -->
+
+    <owl:Thing rdf:about="#AircraftBoeing747">
+        <rdf:type rdf:resource="#Aircraft"/>
+        <hasManufacturer rdf:resource="#ManufacturerBoeing"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineAirFrance -->
+
+    <Airline rdf:about="#AirlineAirFrance">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasAircraft rdf:resource="#AircraftAirbusA380-800"/>
+        <operatesFlights rdf:resource="#ManufacturerAirbus"/>
+    </Airline>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineAmericanAirlines -->
+
+    <owl:Thing rdf:about="#AirlineAmericanAirlines">
+        <rdf:type rdf:resource="#Airline"/>
+        <hasFlight rdf:resource="#FlightCodeShare"/>
+        <hasCodeshare rdf:resource="#FlightNumberAA1514"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineBA -->
+
+    <owl:Thing rdf:about="#AirlineBA">
+        <rdf:type rdf:resource="#Airline"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineEmirates -->
+
+    <Airline rdf:about="#AirlineEmirates">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasAircraft rdf:resource="#AircraftAirbusA380-800"/>
+        <operatesFlights rdf:resource="#ManufacturerAirbus"/>
+    </Airline>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineFlybe -->
+
+    <owl:Thing rdf:about="#AirlineFlybe">
+        <rdf:type rdf:resource="#Airline"/>
+        <hasFlight rdf:resource="#FlightManchesterToSouthampton"/>
+        <hasFlight rdf:resource="#FlightSouthamptonToManchester"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineQuantas -->
+
+    <owl:Thing rdf:about="#AirlineQuantas">
+        <rdf:type rdf:resource="#Airline"/>
+        <rdfs:comment
+            >The Airline Quantas codeshaes with American Airlines Flight AA1514 http://www.aa.com/i18n/aboutUs/codesharePartners/qantasAirlines.jsp</rdfs:comment>
+        <hasFlight rdf:resource="#FlightCodeShare"/>
+        <hasCodeshare rdf:resource="#FlightNumberAA1514"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirlineSingaporeAirlines -->
+
+    <Airline rdf:about="#AirlineSingaporeAirlines">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasAircraft rdf:resource="#AircraftAirbusA380-800"/>
+        <operatesFlights rdf:resource="#ManufacturerAirbus"/>
+    </Airline>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirportJFK -->
+
+    <Airport rdf:about="#AirportJFK">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Airport>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirportLondonHeathrow -->
+
+    <owl:Thing rdf:about="#AirportLondonHeathrow">
+        <rdf:type rdf:resource="#Airport"/>
+        <hasAircraft rdf:resource="#AircraftAirbusA380-800"/>
+        <hasAirline rdf:resource="#AirlineEmirates"/>
+        <hasICAOAirportCode rdf:resource="#ICAOCodeEGLL"/>
+        <hasManufacturer rdf:resource="#ManufacturerAirbus"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirportManchester -->
+
+    <owl:Thing rdf:about="#AirportManchester">
+        <rdf:type rdf:resource="#Airport"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirportMunich -->
+
+    <Airport rdf:about="#AirportMunich">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasAircraft rdf:resource="#AircraftAirbusA380-800"/>
+        <hasAirline rdf:resource="#AirlineSingaporeAirlines"/>
+        <hasManufacturer rdf:resource="#ManufacturerAirbus"/>
+    </Airport>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#AirportSouthamptonInternational -->
+
+    <Airport rdf:about="#AirportSouthamptonInternational">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Airport>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#BusinessClass -->
+
+    <Class rdf:about="#BusinessClass">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#CountryGermany -->
+
+    <Country rdf:about="#CountryGermany">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >Even though the class Coutnry had no queries to be comepleted, individuals Germany, the USA, and United Kingdom have been created to provide concepts</rdfs:comment>
+        <hasAirport rdf:resource="#AirportMunich"/>
+    </Country>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#CountryUSA -->
+
+    <owl:Thing rdf:about="#CountryUSA">
+        <rdf:type rdf:resource="#Country"/>
+        <hasAirport rdf:resource="#AirportJFK"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#CountryUnitedKingdom -->
+
+    <owl:Thing rdf:about="#CountryUnitedKingdom">
+        <rdf:type rdf:resource="#Country"/>
+        <hasAirport rdf:resource="#AirportLondonHeathrow"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#EconomyClass -->
+
+    <Class rdf:about="#EconomyClass">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FirstClass -->
+
+    <owl:Thing rdf:about="#FirstClass">
+        <rdf:type rdf:resource="#Class"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightCodeShare -->
+
+    <CodeShareFlight rdf:about="#FlightCodeShare">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasFlightNumber rdf:resource="#FlightCodeShare"/>
+        <hasCodeshare rdf:resource="#FlightNumberAA1514"/>
+    </CodeShareFlight>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightHeathrowToJFK -->
+
+    <owl:Thing rdf:about="#FlightHeathrowToJFK">
+        <rdf:type rdf:resource="#Flight"/>
+        <hasAirline rdf:resource="#AirlineBA"/>
+        <destinationAirport rdf:resource="#AirportJFK"/>
+        <originAirport rdf:resource="#AirportLondonHeathrow"/>
+        <hasFlightNumber rdf:resource="#FlightNumberBA0117"/>
+        <hasReservation rdf:resource="#ReservationFirstClass"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightManchesterToSouthampton -->
+
+    <Flight rdf:about="#FlightManchesterToSouthampton">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <originAirport rdf:resource="#AirportManchester"/>
+        <destinationAirport rdf:resource="#AirportSouthamptonInternational"/>
+    </Flight>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightNumberAA1514 -->
+
+    <FlightNumber rdf:about="#FlightNumberAA1514">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </FlightNumber>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightNumberBA0117 -->
+
+    <FlightNumber rdf:about="#FlightNumberBA0117">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </FlightNumber>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#FlightSouthamptonToManchester -->
+
+    <owl:Thing rdf:about="#FlightSouthamptonToManchester">
+        <rdf:type rdf:resource="#Flight"/>
+        <destinationAirport rdf:resource="#AirportManchester"/>
+        <originAirport rdf:resource="#AirportSouthamptonInternational"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#ICAOCodeEGLL -->
+
+    <owl:Thing rdf:about="#ICAOCodeEGLL">
+        <hasAirport rdf:resource="#AirportLondonHeathrow"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#ManufacturerAirbus -->
+
+    <Manufacturer rdf:about="#ManufacturerAirbus">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Manufacturer>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#ManufacturerBoeing -->
+
+    <Manufacturer rdf:about="#ManufacturerBoeing">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Manufacturer>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#PassengerAlice -->
+
+    <owl:Thing rdf:about="#PassengerAlice">
+        <rdf:type rdf:resource="#Passenger"/>
+        <hasReservation rdf:resource="#ReservationFirstClass"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#PassengerBob -->
+
+    <Passenger rdf:about="#PassengerBob">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasReservation rdf:resource="#ReservationBusinessClass"/>
+    </Passenger>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#PremiumEconomyClass -->
+
+    <Class rdf:about="#PremiumEconomyClass">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Class>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#ReservationBusinessClass -->
+
+    <Reservation rdf:about="#ReservationBusinessClass">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasSeat rdf:resource="#SeatB1"/>
+    </Reservation>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#ReservationFirstClass -->
+
+    <owl:Thing rdf:about="#ReservationFirstClass">
+        <rdf:type rdf:resource="#Reservation"/>
+        <hasSeat rdf:resource="#SeatA1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#SeatA1 -->
+
+    <Seat rdf:about="#SeatA1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <hasClass rdf:resource="#FirstClass"/>
+    </Seat>
+    
+
+
+    <!-- http://users.ecs.soton.ac.uk/kd2v07/Ontology/airport.owl#SeatB1 -->
+
+    <owl:Thing rdf:about="#SeatB1">
+        <rdf:type rdf:resource="#Seat"/>
+        <hasClass rdf:resource="#BusinessClass"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Aircraft"/>
+            <rdf:Description rdf:about="#Airline"/>
+            <rdf:Description rdf:about="#Airport"/>
+            <rdf:Description rdf:about="#Class"/>
+            <rdf:Description rdf:about="#Country"/>
+            <rdf:Description rdf:about="#Flight"/>
+            <rdf:Description rdf:about="#FlightNumber"/>
+            <rdf:Description rdf:about="#Manufacturer"/>
+            <rdf:Description rdf:about="#Passenger"/>
+            <rdf:Description rdf:about="#Reservation"/>
+            <rdf:Description rdf:about="#Seat"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Airport"/>
+            <rdf:Description rdf:about="#Country"/>
+            <rdf:Description rdf:about="#Flight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="#PremiumEconomyClass"/>
+            <rdf:Description rdf:about="#EconomyClass"/>
+            <rdf:Description rdf:about="#FirstClass"/>
+            <rdf:Description rdf:about="#BusinessClass"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
