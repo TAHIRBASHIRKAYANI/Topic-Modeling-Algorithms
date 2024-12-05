@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#"
+     xml:base="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#hasLocus -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#hasLocus"/>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Body -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Body"/>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Carditis -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Carditis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#hasLocus"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Body"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocarditis -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocarditis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#hasLocus"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocardium"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocardium"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocardium -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Myocardium">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#partOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Pancarditis -->
+
+    <owl:Class rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Pancarditis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#hasLocus"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Heart"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cs.manchester.ac.uk/pgt/COMP60421/sep#Inflammation"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

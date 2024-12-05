@@ -1,0 +1,2384 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY roughtest "http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2009/6/roughtest.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:roughtest="http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#hasDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="#hasDiagnosis">
+        <rdfs:range rdf:resource="#Disease"/>
+        <rdfs:domain rdf:resource="#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#hasMedication -->
+
+    <owl:ObjectProperty rdf:about="#hasMedication">
+        <rdfs:domain rdf:resource="#Patient"/>
+        <rdfs:range rdf:resource="#Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="#hasSymptom">
+        <rdfs:domain rdf:resource="#Patient"/>
+        <rdfs:range rdf:resource="#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#laprs -->
+
+    <owl:ObjectProperty rdf:about="#laprs">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="#LowerApr"/>
+        <rdfs:domain rdf:resource="#RoughClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#uaprs -->
+
+    <owl:ObjectProperty rdf:about="#uaprs">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="#RoughClass"/>
+        <rdfs:range rdf:resource="#UpperApr"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#hasDialysis -->
+
+    <owl:DatatypeProperty rdf:about="#hasDialysis">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#heartRate -->
+
+    <owl:DatatypeProperty rdf:about="#heartRate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#leukocyteCount -->
+
+    <owl:DatatypeProperty rdf:about="#leukocyteCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#pH -->
+
+    <owl:DatatypeProperty rdf:about="#pH">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#paco2count -->
+
+    <owl:DatatypeProperty rdf:about="#paco2count">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#pao2fio2 -->
+
+    <owl:DatatypeProperty rdf:about="#pao2fio2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#respiratoryRate -->
+
+    <owl:DatatypeProperty rdf:about="#respiratoryRate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#systolicBloodPressure -->
+
+    <owl:DatatypeProperty rdf:about="#systolicBloodPressure">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#temperature -->
+
+    <owl:DatatypeProperty rdf:about="#temperature">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#thrombocyteCount -->
+
+    <owl:DatatypeProperty rdf:about="#thrombocyteCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#urineOutput -->
+
+    <owl:DatatypeProperty rdf:about="#urineOutput">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#BoneSeptic -->
+
+    <owl:Class rdf:about="#BoneSeptic">
+        <owl:equivalentClass rdf:resource="#UpperSeptic"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasDiagnosis"/>
+                        <owl:someValuesFrom rdf:resource="#Infection"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasSymptom"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Hypoperfusion"/>
+                                    <rdf:Description rdf:about="#Hypotension"/>
+                                    <rdf:Description rdf:about="#OrganDysfunction"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#SepticPatient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ChronicDialysis -->
+
+    <owl:Class rdf:about="#ChronicDialysis">
+        <rdfs:subClassOf rdf:resource="#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Disease -->
+
+    <owl:Class rdf:about="#Disease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Hypoperfusion -->
+
+    <owl:Class rdf:about="#Hypoperfusion">
+        <rdfs:subClassOf rdf:resource="#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Hypotension -->
+
+    <owl:Class rdf:about="#Hypotension">
+        <rdfs:subClassOf rdf:resource="#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Infection -->
+
+    <owl:Class rdf:about="#Infection">
+        <rdfs:subClassOf rdf:resource="#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#LowerApr -->
+
+    <owl:Class rdf:about="#LowerApr">
+        <rdfs:subClassOf rdf:resource="#RoughClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#LowerSeptic -->
+
+    <owl:Class rdf:about="#LowerSeptic">
+        <owl:equivalentClass rdf:resource="#StrictSeptic"/>
+        <rdfs:subClassOf rdf:resource="#LowerApr"/>
+        <rdfs:subClassOf rdf:resource="#SepticPatient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#OrganDysfunction -->
+
+    <owl:Class rdf:about="#OrganDysfunction">
+        <rdfs:subClassOf rdf:resource="#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Patient -->
+
+    <owl:Class rdf:about="#Patient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#RSeptic -->
+
+    <owl:Class rdf:about="#RSeptic">
+        <rdfs:subClassOf rdf:resource="#RoughClass"/>
+        <rdfs:subClassOf rdf:resource="#SepticPatient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#RoughClass -->
+
+    <owl:Class rdf:about="#RoughClass">
+        <rdfs:subClassOf rdf:resource="#UpperApr"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#uaprs"/>
+                <owl:someValuesFrom rdf:resource="#UpperApr"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#laprs"/>
+                <owl:someValuesFrom rdf:resource="#LowerApr"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#RoughSets -->
+
+    <owl:Class rdf:about="#RoughSets"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Sepsis -->
+
+    <owl:Class rdf:about="#Sepsis">
+        <rdfs:subClassOf rdf:resource="#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#SepticPatient -->
+
+    <owl:Class rdf:about="#SepticPatient">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasDiagnosis"/>
+                <owl:someValuesFrom rdf:resource="#Infection"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#StrictSeptic -->
+
+    <owl:Class rdf:about="#StrictSeptic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasDialysis"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#urineOutput"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;double">0.5</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#hasMedication"/>
+                                                <owl:someValuesFrom rdf:resource="#VasoActiveMedication"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#systolicBloodPressure"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">90</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pH"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;double">7.3</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#pao2fio2"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">250</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#thrombocyteCount"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">80000</xsd:maxExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">12000</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#leukocyteCount"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">4000</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#paco2count"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">32</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#respiratoryRate"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">20</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:minExclusive rdf:datatype="&xsd;integer">38</xsd:minExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="#temperature"/>
+                                                <owl:someValuesFrom>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                        <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                        <owl:withRestrictions rdf:parseType="Collection">
+                                                            <rdf:Description>
+                                                                <xsd:maxExclusive rdf:datatype="&xsd;integer">36</xsd:maxExclusive>
+                                                            </rdf:Description>
+                                                        </owl:withRestrictions>
+                                                    </rdf:Description>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#heartRate"/>
+                                        <owl:someValuesFrom>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdfs;Datatype"/>
+                                                <owl:onDatatype rdf:resource="&xsd;int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minExclusive rdf:datatype="&xsd;integer">90</xsd:minExclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdf:Description>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasDiagnosis"/>
+                        <owl:someValuesFrom rdf:resource="#Infection"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasSymptom"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#Hypoperfusion"/>
+                                    <rdf:Description rdf:about="#Hypotension"/>
+                                    <rdf:Description rdf:about="#OrganDysfunction"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#SepticPatient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Symptom -->
+
+    <owl:Class rdf:about="#Symptom"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Treatment -->
+
+    <owl:Class rdf:about="#Treatment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#UpperApr -->
+
+    <owl:Class rdf:about="#UpperApr">
+        <rdfs:subClassOf rdf:resource="#RoughSets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#UpperSeptic -->
+
+    <owl:Class rdf:about="#UpperSeptic">
+        <rdfs:subClassOf rdf:resource="#SepticPatient"/>
+        <rdfs:subClassOf rdf:resource="#UpperApr"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#VasoActiveMedication -->
+
+    <owl:Class rdf:about="#VasoActiveMedication">
+        <rdfs:subClassOf rdf:resource="#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Aldo -->
+
+    <owl:Thing rdf:about="#Aldo">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <hasDialysis rdf:datatype="&xsd;int">1</hasDialysis>
+        <leukocyteCount rdf:datatype="&xsd;int">11500</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">21</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">243</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">32</paco2count>
+        <temperature rdf:datatype="&xsd;float">37.5</temperature>
+        <pH rdf:datatype="&xsd;float">7.26</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80050</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">90</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">91</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf7"/>
+        <hasSymptom rdf:resource="#ohh7"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Andrea -->
+
+    <owl:Thing rdf:about="#Andrea">
+        <urineOutput rdf:datatype="&xsd;float">0.48</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">10000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">19</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">251</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">34</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.9</temperature>
+        <pH rdf:datatype="&xsd;float">7.29</pH>
+        <heartRate rdf:datatype="&xsd;int">90</heartRate>
+        <thrombocyteCount rdf:datatype="&xsd;int">90000</thrombocyteCount>
+        <systolicBloodPressure rdf:datatype="&xsd;int">91</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf5"/>
+        <hasSymptom rdf:resource="#ohh5"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Aoife -->
+
+    <owl:Thing rdf:about="#Aoife">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <hasDialysis rdf:datatype="&xsd;int">1</hasDialysis>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">243</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">28</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasSymptom rdf:resource="#ohh13"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Arturo -->
+
+    <owl:Thing rdf:about="#Arturo">
+        <urineOutput rdf:datatype="&xsd;float">0.49</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">11000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">21</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">240</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">29</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.0</temperature>
+        <pH rdf:datatype="&xsd;float">7.35</pH>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <thrombocyteCount rdf:datatype="&xsd;int">90000</thrombocyteCount>
+        <systolicBloodPressure rdf:datatype="&xsd;int">92</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf11"/>
+        <hasSymptom rdf:resource="#ohh11"/>
+        <hasMedication rdf:resource="#vaso3"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Heinrich -->
+
+    <owl:Thing rdf:about="#Heinrich">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">22</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">33</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.32</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasSymptom rdf:resource="#ohh12"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Jan -->
+
+    <owl:Thing rdf:about="#Jan">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <hasDialysis rdf:datatype="&xsd;int">1</hasDialysis>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">252</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">28</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf8"/>
+        <hasSymptom rdf:resource="#ohh8"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Jane -->
+
+    <owl:Thing rdf:about="#Jane">
+        <urineOutput rdf:datatype="&xsd;float">0.48</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">28</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf3"/>
+        <hasSymptom rdf:resource="#ohh3"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#John -->
+
+    <owl:Thing rdf:about="#John">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">22</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">33</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.32</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf1"/>
+        <hasSymptom rdf:resource="#ohh1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Josh -->
+
+    <owl:Thing rdf:about="#Josh">
+        <urineOutput rdf:datatype="&xsd;float">0.4</urineOutput>
+        <respiratoryRate rdf:datatype="&xsd;int">22</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">233</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">29</paco2count>
+        <temperature rdf:datatype="&xsd;float">35.8</temperature>
+        <leukocyteCount rdf:datatype="&xsd;int">3555</leukocyteCount>
+        <pH rdf:datatype="&xsd;float">7.20</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70000</thrombocyteCount>
+        <systolicBloodPressure rdf:datatype="&xsd;int">83</systolicBloodPressure>
+        <heartRate rdf:datatype="&xsd;int">93</heartRate>
+        <hasDiagnosis rdf:resource="#inf6"/>
+        <hasSymptom rdf:resource="#ohh6"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Kieran -->
+
+    <owl:Thing rdf:about="#Kieran">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">22</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">33</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.32</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf12"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Mary -->
+
+    <owl:Thing rdf:about="#Mary">
+        <urineOutput rdf:datatype="&xsd;float">0.48</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">30</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf2"/>
+        <hasSymptom rdf:resource="#ohh2"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Mien -->
+
+    <owl:Thing rdf:about="#Mien">
+        <urineOutput rdf:datatype="&xsd;float">0.49</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">11000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">21</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">240</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">29</paco2count>
+        <temperature rdf:datatype="&xsd;float">37.5</temperature>
+        <pH rdf:datatype="&xsd;float">7.35</pH>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <thrombocyteCount rdf:datatype="&xsd;int">90000</thrombocyteCount>
+        <systolicBloodPressure rdf:datatype="&xsd;int">92</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf10"/>
+        <hasSymptom rdf:resource="#ohh10"/>
+        <hasMedication rdf:resource="#vaso2"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Milena -->
+
+    <owl:Thing rdf:about="#Milena">
+        <urineOutput rdf:datatype="&xsd;float">0.55</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">11000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">21</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">240</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">29</paco2count>
+        <temperature rdf:datatype="&xsd;float">37.5</temperature>
+        <pH rdf:datatype="&xsd;float">7.35</pH>
+        <systolicBloodPressure rdf:datatype="&xsd;int">85</systolicBloodPressure>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <thrombocyteCount rdf:datatype="&xsd;int">90000</thrombocyteCount>
+        <hasDiagnosis rdf:resource="#inf9"/>
+        <hasSymptom rdf:resource="#ohh9"/>
+        <hasMedication rdf:resource="#vaso1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Pierre -->
+
+    <owl:Thing rdf:about="#Pierre">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <hasDialysis rdf:datatype="&xsd;int">1</hasDialysis>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">243</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">28</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf4"/>
+        <hasSymptom rdf:resource="#ohh4"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Sven -->
+
+    <owl:Thing rdf:about="#Sven">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <hasDialysis rdf:datatype="&xsd;int">1</hasDialysis>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">20</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">243</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">28</paco2count>
+        <temperature rdf:datatype="&xsd;float">39.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.28</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">70100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf14"/>
+        <hasSymptom rdf:resource="#ohh15"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#Thembela -->
+
+    <owl:Thing rdf:about="#Thembela">
+        <urineOutput rdf:datatype="&xsd;float">0.52</urineOutput>
+        <leukocyteCount rdf:datatype="&xsd;int">13000</leukocyteCount>
+        <respiratoryRate rdf:datatype="&xsd;int">22</respiratoryRate>
+        <pao2fio2 rdf:datatype="&xsd;int">260</pao2fio2>
+        <paco2count rdf:datatype="&xsd;int">33</paco2count>
+        <temperature rdf:datatype="&xsd;float">38.3</temperature>
+        <pH rdf:datatype="&xsd;float">7.32</pH>
+        <thrombocyteCount rdf:datatype="&xsd;int">80100</thrombocyteCount>
+        <heartRate rdf:datatype="&xsd;int">89</heartRate>
+        <systolicBloodPressure rdf:datatype="&xsd;int">90</systolicBloodPressure>
+        <hasDiagnosis rdf:resource="#inf13"/>
+        <hasSymptom rdf:resource="#ohh14"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#dial1 -->
+
+    <owl:Thing rdf:about="#dial1">
+        <rdf:type rdf:resource="#ChronicDialysis"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#dial2 -->
+
+    <ChronicDialysis rdf:about="#dial2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </ChronicDialysis>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#dial3 -->
+
+    <owl:Thing rdf:about="#dial3">
+        <rdf:type rdf:resource="#ChronicDialysis"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#dial4 -->
+
+    <owl:Thing rdf:about="#dial4">
+        <rdf:type rdf:resource="#ChronicDialysis"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf1 -->
+
+    <owl:Thing rdf:about="#inf1">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf10 -->
+
+    <owl:Thing rdf:about="#inf10">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf11 -->
+
+    <owl:Thing rdf:about="#inf11">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf12 -->
+
+    <Infection rdf:about="#inf12">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf13 -->
+
+    <owl:Thing rdf:about="#inf13">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf14 -->
+
+    <Infection rdf:about="#inf14">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf2 -->
+
+    <owl:Thing rdf:about="#inf2">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf3 -->
+
+    <owl:Thing rdf:about="#inf3">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf4 -->
+
+    <Infection rdf:about="#inf4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf5 -->
+
+    <Infection rdf:about="#inf5">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf6 -->
+
+    <Infection rdf:about="#inf6">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf7 -->
+
+    <owl:Thing rdf:about="#inf7">
+        <rdf:type rdf:resource="#Infection"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf8 -->
+
+    <Infection rdf:about="#inf8">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#inf9 -->
+
+    <Infection rdf:about="#inf9">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Infection>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh1 -->
+
+    <Hypotension rdf:about="#ohh1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh10 -->
+
+    <owl:Thing rdf:about="#ohh10">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh11 -->
+
+    <Hypotension rdf:about="#ohh11">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh12 -->
+
+    <Hypotension rdf:about="#ohh12">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh13 -->
+
+    <owl:Thing rdf:about="#ohh13">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh14 -->
+
+    <owl:Thing rdf:about="#ohh14">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh15 -->
+
+    <Hypotension rdf:about="#ohh15">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh2 -->
+
+    <Hypotension rdf:about="#ohh2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh3 -->
+
+    <owl:Thing rdf:about="#ohh3">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh4 -->
+
+    <owl:Thing rdf:about="#ohh4">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh5 -->
+
+    <owl:Thing rdf:about="#ohh5">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh6 -->
+
+    <owl:Thing rdf:about="#ohh6">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh7 -->
+
+    <Hypotension rdf:about="#ohh7">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Hypotension>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh8 -->
+
+    <owl:Thing rdf:about="#ohh8">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#ohh9 -->
+
+    <owl:Thing rdf:about="#ohh9">
+        <rdf:type rdf:resource="#Hypotension"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#vaso1 -->
+
+    <owl:Thing rdf:about="#vaso1">
+        <rdf:type rdf:resource="#VasoActiveMedication"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#vaso2 -->
+
+    <VasoActiveMedication rdf:about="#vaso2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </VasoActiveMedication>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/6/roughtest.owl#vaso3 -->
+
+    <VasoActiveMedication rdf:about="#vaso3">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </VasoActiveMedication>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

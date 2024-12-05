@@ -1,0 +1,699 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl">
+  <owl:Ontology rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl"/>
+  <owl:Class rdf:ID="MicroMembrane">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CellularStructure"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroMembrane</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="OrganicStructure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Note defined by a skeleton class plus a
+            single valued - functional - slot constraint.  Since the
+            slot is single valued, OrganicStructure and
+            InorganicStructure are inferred to be disjoint"</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Physical_Structure"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasOrganicStatus"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="Biological"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OrganicStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Physical things that have parts and a notion
+            of being a discrete whole, e.g. trees, houses, hearts,
+            bodies, livers, etc."</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Physical_Process"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Physical"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Physical_Substance"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PhysicalStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MacroOrganicStructure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:ID="hasScaleRealm"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="MacroScale"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MacroOrganicStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Domain_entity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Everything that is about the _Domain_ -
+            Biology, Medicine, the physical world, organisations, etc."</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DomainConcept</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MicroOrganism">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"The distinction between _Micro_ and _Macro_
+            is determined by _ScaleRealmValueType_.  _Micro_ and _Macro_
+            _organisms_ are disjoint because the valuetypes of
+            _ScaleRealmValueType_ are disjoint and the role
+            _hasScaleRealm_ is functional - i.e. single valued.
+            Additional values allow can be added or an additional
+            dimension for _PotentiallyInfectious_.  "</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Organism"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="MicroScale"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroOrganism</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MacroOrganism">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Organism"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroScale"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MacroOrganism</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"The distinction between _Micro_ and _Macro_
+            is determined by _ScaleRealmValueType_.  _Micro_ and _Macro_
+            _organisms_ are disjoint because the valuetypes of
+            _ScaleRealmValueType_ are disjoint and the role
+            _hasScaleRealm_ is functional - i.e. single valued.
+            Additional values allow can be added or an additional
+            dimension for _PotentiallyInfectious_.  "</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="OrganPart">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"A part of an organ which is not itself an
+            organ: See Digital Anatomist"</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroOrganicStructure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OrganPart</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Biological_status_value_partition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Value_Partition"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Bacterial_pneumonia">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pneumonia caused by a bacterium</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Pneumonia"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasCause"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="Bacterium"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="InorganicStructure">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="Non_biological"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >InorganicStructure</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Note defined by a skeleton class plus a
+            single valued - functional - slot constraint.  Since the
+            slot is single valued, OrganicStructure and
+            InorganicStructure are inferred to be disjoint"</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Organism">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#OrganicStructure"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"A complete organism: see Digital anatomist"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organism</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Refining_entity">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Self_standing_entity"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Value partitions and other exhaustive entities that modify or refine self-standing entities when used as values of properties.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Domain_entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Bacterium">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bacterium</rdfs:label>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroOrganism"/>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#CellularStructure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MicroOrganicStructure"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CellularStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organic</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological_status_value_partition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pneumococcus">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Bacterium"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pneumococcus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Virus">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroOrganism"/>
+    <owl:disjointWith rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Bacterium"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Virus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroScale">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MacroScale</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Scale_realm_value_partition"/>
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroScale"/>
+            </owl:complementOf>
+          </owl:Class>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="MicroStructure">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroScale"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Molecular and cellular level things - for
+            now distinguish only Macro.  May need to split Micro as
+            Cellular and Molecular_atomic"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Hand">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BodyPart"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="UpperExtremity"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hand</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="CellWall">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#CellularStructure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CellWall</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Pneumococcal_pneumonia">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Pneumonia"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Pneumococcus"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasCause"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#BodyPart">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BodyPart</rdfs:label>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroOrganicStructure"/>
+    <owl:disjointWith rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#OrganPart"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Organ"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Biological_Process">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OrganicProcess</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Process"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Value_Partition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sets of values that partition a quality or feature.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Refining_entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lung">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Organ"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lung</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroOrganicStructure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroScale"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroOrganicStructure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Self_standing_entity"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Things in the physical world"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MacroStructure">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MacroStructure</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"All the things we see - for now distinguish
+            only Macro and Micro.  Note definition by essential property"</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroScale"/>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="MembraneTransport">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MembraneTransport</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CellularProcess"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cell">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cell</rdfs:label>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroOrganicStructure"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#CellularProcess">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CellularProcess</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MicroOrganicProcess"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OrganicSubstance">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Substance"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OrganicSubstance</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Non_biological">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:complementOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological"/>
+          </owl:Class>
+          <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological_status_value_partition"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Process">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical_occurrant</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"The processes which change structures, stuff
+            and other procsses - e.g. breathing, moving, reproducing
+            etc.  Diseases are a special case of processes.  Note that
+            this version does not distinguish between Lenat-s _Process_
+            and _Activity_"
+
+Occurrents in DOLCE and standard upper ontology</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroScale">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Scale_realm_value_partition"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroScale</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Disorder">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological_Process"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Anything wrong with something organic - to
+            be elaborated later"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Disorder</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Pneumonia">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasLocus"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Lung"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Disorder"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pneumonia is a disease of the lung.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#UpperExtremity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UpperExtremity</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#BodyPart"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Quality">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Quality</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Self_standing_entity"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="CellNucleus">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#CellularStructure"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CellNucleus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Self_standing_entity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Things that stand on their own.  Guarino: _Sortals_"</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Domain_entity"/>
+    <owl:disjointWith rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Refining_entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Organ">
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MacroOrganicStructure"/>
+    <owl:disjointWith rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#OrganPart"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organ</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"A structurally and developmental whole unit
+            of an organism: see Digital Anatomist"</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroOrganicProcess">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#MicroScale"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MicroOrganicProcess</rdfs:label>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Biological_Process"/>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Substance">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Physical stuff - the substance of which
+            structures are made or which exist as masses, e.g.water,
+            steel, tissue, cartilage,  etc."</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PhysicalSubstance</rdfs:label>
+    <owl:disjointWith rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Process"/>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Physical_Structure"/>
+  </owl:Class>
+  <owl:Class rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Scale_realm_value_partition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"the essential value type that distinguishes
+            Micro from Macro"</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#Value_Partition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mitochondrion">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mitochondrion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#CellularStructure"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="causes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >causes</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="RelationProperty"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasCause"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Simple notion for now - links Disorders with
+            the thing or process that causes them"</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasOrganicStatus">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="RefiningProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has_bio_status</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="DomainSlot">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Slots linking DomainConcepts"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DomainSlot</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RelationProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RelationProperty</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Links two IndependentConcepts"</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#DomainSlot"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ModifierProperty">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ModifierProperty</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RefiningProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasCause">
+    <rdfs:subPropertyOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RelationProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasCause</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Simple notion for now - links Disorders with
+            the thing or process that causes them"</rdfs:comment>
+    <owl:inverseOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#causes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasLocus">
+    <rdfs:subPropertyOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RelationProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasLocation</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Links disorders with OrganicStructures and OrganicProcesses"</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActionRole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasActionRole</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RefiningProperty">
+    <rdfs:subPropertyOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#DomainSlot"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"Things that modify domain values.  Link
+            IndependentConcepts to ValueTypes"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RefiningProperty</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#hasScaleRealm">
+    <rdfs:subPropertyOf rdf:resource="file:/Users/alanrector/Documents/Ontologies/Bio-medical-tutorial/Biomedical-TutorialTop-01.owl#RefiningProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"the essential property that distinguishes
+            Micro from Macro"</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasScaleRealm</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.2 beta, Build 289)  http://protege.stanford.edu -->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY example "http://example.com/#">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="&example;"
+         xmlns:example="&example;"
+         xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;">
+
+<!-- Ontology Information -->
+  <owl:Ontology rdf:about="#"/>
+
+<!-- Classes -->
+  <owl:Class rdf:about="#breast-cancer"/>
+  <owl:Class rdf:about="#increase-in-breast-cancer-disease-free-survival"/>
+
+<!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="#is-referred-to-by"/>
+  <owl:ObjectProperty rdf:about="#refers-to">
+    <owl:inverseOf rdf:resource="#is-referred-to-by"/>
+  </owl:ObjectProperty>
+
+<!-- Instances -->
+  <example:increase-in-breast-cancer-disease-free-survival rdf:about="#increase-in-brca-dfs-1"/>
+  <example:breast-cancer rdf:about="#tumor1"/>
+  <example:breast-cancer rdf:about="#tumor2"/>
+  <example:breast-cancer rdf:about="#tumor3"/>
+  <owl:Restriction>
+    <owl:equivalentClass rdf:resource="#breast-cancer"/>
+    <owl:hasValue rdf:resource="#increase-in-brca-dfs-1"/>
+    <owl:onProperty rdf:resource="#is-referred-to-by"/>
+  </owl:Restriction>
+</rdf:RDF>
+

@@ -1,0 +1,4255 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology "http://www.mygrid.org.uk/ontology#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY myGridDomainOntology "http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#"
+     xml:base="http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:myGridDomainOntology="http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://www.mygrid.org.uk/ontology#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#participateIn -->
+
+    <owl:ObjectProperty rdf:about="#participateIn"/>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#useIn -->
+
+    <owl:ObjectProperty rdf:about="#useIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ABI_graph_plot -->
+
+    <owl:Class rdf:about="&ontology;ABI_graph_plot">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ABI_sequence_trace -->
+
+    <owl:Class rdf:about="&ontology;ABI_sequence_trace">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#AMPS_block_format -->
+
+    <owl:Class rdf:about="&ontology;AMPS_block_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Affymetrix_probe_set_id -->
+
+    <owl:Class rdf:about="&ontology;Affymetrix_probe_set_id">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ArrayExpress -->
+
+    <owl:Class rdf:about="&ontology;ArrayExpress">
+        <rdfs:subClassOf rdf:resource="&ontology;microarray_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#microarray_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BIND -->
+
+    <owl:Class rdf:about="&ontology;BIND">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#protein_interaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BIND_id -->
+
+    <owl:Class rdf:about="&ontology;BIND_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BIND_record -->
+
+    <owl:Class rdf:about="&ontology;BIND_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BLAST_Basic_Local_Alignment_Search_Tool -->
+
+    <owl:Class rdf:about="&ontology;BLAST_Basic_Local_Alignment_Search_Tool">
+        <rdfs:subClassOf rdf:resource="&ontology;similarity_search_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BLAST_report -->
+
+    <owl:Class rdf:about="&ontology;BLAST_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_similarity_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BRENDA -->
+
+    <owl:Class rdf:about="&ontology;BRENDA">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BRENDA_Record -->
+
+    <owl:Class rdf:about="&ontology;BRENDA_Record">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioCyc -->
+
+    <owl:Class rdf:about="&ontology;BioCyc">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioCyc_record -->
+
+    <owl:Class rdf:about="&ontology;BioCyc_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioCyc_record_id -->
+
+    <owl:Class rdf:about="&ontology;BioCyc_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioPax -->
+
+    <owl:Class rdf:about="&ontology;BioPax">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioPax_term_id -->
+
+    <owl:Class rdf:about="&ontology;BioPax_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#BioPax_term_record -->
+
+    <owl:Class rdf:about="&ontology;BioPax_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#CATH -->
+
+    <owl:Class rdf:about="&ontology;CATH">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#CATH_id -->
+
+    <owl:Class rdf:about="&ontology;CATH_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#CATH_record -->
+
+    <owl:Class rdf:about="&ontology;CATH_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#CGD_id -->
+
+    <owl:Class rdf:about="&ontology;CGD_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#CGD_record -->
+
+    <owl:Class rdf:about="&ontology;CGD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#COG -->
+
+    <owl:Class rdf:about="&ontology;COG">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#COG_record -->
+
+    <owl:Class rdf:about="&ontology;COG_record">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Candida_Genome_Database_CGD -->
+
+    <owl:Class rdf:about="&ontology;Candida_Genome_Database_CGD">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#genome_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ -->
+
+    <owl:Class rdf:about="&ontology;DDBJ">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ_Amino_Acid_Database_DAD -->
+
+    <owl:Class rdf:about="&ontology;DDBJ_Amino_Acid_Database_DAD">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ_Amino_Acid_Database__DAD_id -->
+
+    <owl:Class rdf:about="&ontology;DDBJ_Amino_Acid_Database__DAD_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ_Amino_Acid_database_DAD_record -->
+
+    <owl:Class rdf:about="&ontology;DDBJ_Amino_Acid_database_DAD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ_accession -->
+
+    <owl:Class rdf:about="&ontology;DDBJ_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DDBJ_record -->
+
+    <owl:Class rdf:about="&ontology;DDBJ_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DNA_sequence -->
+
+    <owl:Class rdf:about="&ontology;DNA_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DNA_strider_format -->
+
+    <owl:Class rdf:about="&ontology;DNA_strider_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DSSP -->
+
+    <owl:Class rdf:about="&ontology;DSSP">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DSSP_record -->
+
+    <owl:Class rdf:about="&ontology;DSSP_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DictyBase -->
+
+    <owl:Class rdf:about="&ontology;DictyBase">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DictyBase_id -->
+
+    <owl:Class rdf:about="&ontology;DictyBase_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DictyBase_record -->
+
+    <owl:Class rdf:about="&ontology;DictyBase_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DragonDB -->
+
+    <owl:Class rdf:about="&ontology;DragonDB">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DragonDB_id -->
+
+    <owl:Class rdf:about="&ontology;DragonDB_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#DragonDB_record -->
+
+    <owl:Class rdf:about="&ontology;DragonDB_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EC_number -->
+
+    <owl:Class rdf:about="&ontology;EC_number">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHA -->
+
+    <owl:Class rdf:about="&ontology;EDHA">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHAA -->
+
+    <owl:Class rdf:about="&ontology;EDHAA">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHAA_term_id -->
+
+    <owl:Class rdf:about="&ontology;EDHAA_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHAA_term_redord -->
+
+    <owl:Class rdf:about="&ontology;EDHAA_term_redord">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHA_term_id -->
+
+    <owl:Class rdf:about="&ontology;EDHA_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EDHA_term_record -->
+
+    <owl:Class rdf:about="&ontology;EDHA_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;human_anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAGE -->
+
+    <owl:Class rdf:about="&ontology;EMAGE">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAP -->
+
+    <owl:Class rdf:about="&ontology;EMAP">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAPA -->
+
+    <owl:Class rdf:about="&ontology;EMAPA">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAPA_term_id -->
+
+    <owl:Class rdf:about="&ontology;EMAPA_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAPA_term_record -->
+
+    <owl:Class rdf:about="&ontology;EMAPA_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAP_term_id -->
+
+    <owl:Class rdf:about="&ontology;EMAP_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMAP_term_record -->
+
+    <owl:Class rdf:about="&ontology;EMAP_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;mouse_anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMBL_accession -->
+
+    <owl:Class rdf:about="&ontology;EMBL_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMBL_nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="&ontology;EMBL_nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EMBL_record -->
+
+    <owl:Class rdf:about="&ontology;EMBL_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ENZYME -->
+
+    <owl:Class rdf:about="&ontology;ENZYME">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ENZYME_Record -->
+
+    <owl:Class rdf:about="&ontology;ENZYME_Record">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EcoCyc -->
+
+    <owl:Class rdf:about="&ontology;EcoCyc">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#EcoCyc_record -->
+
+    <owl:Class rdf:about="&ontology;EcoCyc_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Ensembl -->
+
+    <owl:Class rdf:about="&ontology;Ensembl">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Ensembl_record -->
+
+    <owl:Class rdf:about="&ontology;Ensembl_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Entrez_GenBank_protein -->
+
+    <owl:Class rdf:about="&ontology;Entrez_GenBank_protein">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Entrez_Gene_ID -->
+
+    <owl:Class rdf:about="&ontology;Entrez_Gene_ID">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_map_record_id"/>
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Entrez_genbank_protein_accession -->
+
+    <owl:Class rdf:about="&ontology;Entrez_genbank_protein_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Entrez_genbank_protein_record -->
+
+    <owl:Class rdf:about="&ontology;Entrez_genbank_protein_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Entrez_gene_record -->
+
+    <owl:Class rdf:about="&ontology;Entrez_gene_record">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_map_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FASTA -->
+
+    <owl:Class rdf:about="&ontology;FASTA">
+        <rdfs:subClassOf rdf:resource="&ontology;similarity_search_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FSSP -->
+
+    <owl:Class rdf:about="&ontology;FSSP">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FSSP_record -->
+
+    <owl:Class rdf:about="&ontology;FSSP_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Fasta_report -->
+
+    <owl:Class rdf:about="&ontology;Fasta_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_similarity_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FlyBase -->
+
+    <owl:Class rdf:about="&ontology;FlyBase">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FlyBase_id -->
+
+    <owl:Class rdf:about="&ontology;FlyBase_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#FlyBase_record -->
+
+    <owl:Class rdf:about="&ontology;FlyBase_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GCG_MSF_format -->
+
+    <owl:Class rdf:about="&ontology;GCG_MSF_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GDE_format -->
+
+    <owl:Class rdf:about="&ontology;GDE_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GenBank_record -->
+
+    <owl:Class rdf:about="&ontology;GenBank_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Genbank_nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="&ontology;Genbank_nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gene3D -->
+
+    <owl:Class rdf:about="&ontology;Gene3D">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gene3D_code -->
+
+    <owl:Class rdf:about="&ontology;Gene3D_code">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GeneDB_S._pombe -->
+
+    <owl:Class rdf:about="&ontology;GeneDB_S._pombe">
+        <rdfs:subClassOf rdf:resource="&ontology;Sanger_GeneDB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GeneDB_protozoa -->
+
+    <owl:Class rdf:about="&ontology;GeneDB_protozoa">
+        <rdfs:subClassOf rdf:resource="&ontology;Sanger_GeneDB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gene_Ontology_term_id -->
+
+    <owl:Class rdf:about="&ontology;Gene_Ontology_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gene_expression_omnibus_GEO -->
+
+    <owl:Class rdf:about="&ontology;Gene_expression_omnibus_GEO">
+        <rdfs:subClassOf rdf:resource="&ontology;gene_expression_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gene_ontology_GO -->
+
+    <owl:Class rdf:about="&ontology;Gene_ontology_GO">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#GermOnline -->
+
+    <owl:Class rdf:about="&ontology;GermOnline">
+        <rdfs:subClassOf rdf:resource="&ontology;gene_expression_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gramene -->
+
+    <owl:Class rdf:about="&ontology;Gramene">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gramene_id -->
+
+    <owl:Class rdf:about="&ontology;Gramene_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Gramene_record -->
+
+    <owl:Class rdf:about="&ontology;Gramene_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGNC -->
+
+    <owl:Class rdf:about="&ontology;HGNC">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGNC_gene_record -->
+
+    <owl:Class rdf:about="&ontology;HGNC_gene_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGNC_symbol -->
+
+    <owl:Class rdf:about="&ontology;HGNC_symbol">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGVbase -->
+
+    <owl:Class rdf:about="&ontology;HGVbase">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGVbaseID -->
+
+    <owl:Class rdf:about="&ontology;HGVbaseID">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HGVbase_record -->
+
+    <owl:Class rdf:about="&ontology;HGVbase_record">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype_phenotype_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#HIVDB -->
+
+    <owl:Class rdf:about="&ontology;HIVDB">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#IG_format -->
+
+    <owl:Class rdf:about="&ontology;IG_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#INOH -->
+
+    <owl:Class rdf:about="&ontology;INOH">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#INOH_record -->
+
+    <owl:Class rdf:about="&ontology;INOH_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#INOH_record_id -->
+
+    <owl:Class rdf:about="&ontology;INOH_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InAct_database -->
+
+    <owl:Class rdf:about="&ontology;InAct_database">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#protein_interaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InAct_record -->
+
+    <owl:Class rdf:about="&ontology;InAct_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#IntAct_accession -->
+
+    <owl:Class rdf:about="&ontology;IntAct_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InterPro -->
+
+    <owl:Class rdf:about="&ontology;InterPro">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InterPro_accession -->
+
+    <owl:Class rdf:about="&ontology;InterPro_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InterPro_match_report -->
+
+    <owl:Class rdf:about="&ontology;InterPro_match_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#InterPro_record -->
+
+    <owl:Class rdf:about="&ontology;InterPro_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#International_Chemical_Identifier -->
+
+    <owl:Class rdf:about="&ontology;International_Chemical_Identifier">
+        <rdfs:subClassOf rdf:resource="&ontology;proteomics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Jackknifer_format -->
+
+    <owl:Class rdf:about="&ontology;Jackknifer_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG -->
+
+    <owl:Class rdf:about="&ontology;KEGG">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_genes -->
+
+    <owl:Class rdf:about="&ontology;KEGG_genes">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_genes_id -->
+
+    <owl:Class rdf:about="&ontology;KEGG_genes_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_ligand_database -->
+
+    <owl:Class rdf:about="&ontology;KEGG_ligand_database">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#protein_interaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_pathway_database -->
+
+    <owl:Class rdf:about="&ontology;KEGG_pathway_database">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_record -->
+
+    <owl:Class rdf:about="&ontology;KEGG_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#KEGG_record_id -->
+
+    <owl:Class rdf:about="&ontology;KEGG_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Kegg_compound_record -->
+
+    <owl:Class rdf:about="&ontology;Kegg_compound_record">
+        <rdfs:subClassOf rdf:resource="&ontology;Kegg_ligand_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Kegg_ligand_record -->
+
+    <owl:Class rdf:about="&ontology;Kegg_ligand_record">
+        <rdfs:subClassOf rdf:resource="&ontology;interacting_molecule_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MEDLINE -->
+
+    <owl:Class rdf:about="&ontology;MEDLINE">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_repository"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MEDLINE_citation -->
+
+    <owl:Class rdf:about="&ontology;MEDLINE_citation">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_citation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MEDLINE_reference_id -->
+
+    <owl:Class rdf:about="&ontology;MEDLINE_reference_id">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_citation_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MGD_id -->
+
+    <owl:Class rdf:about="&ontology;MGD_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MGD_record -->
+
+    <owl:Class rdf:about="&ontology;MGD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MIM_number -->
+
+    <owl:Class rdf:about="&ontology;MIM_number">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MSD -->
+
+    <owl:Class rdf:about="&ontology;MSD">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MSD_accession -->
+
+    <owl:Class rdf:about="&ontology;MSD_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MSD_record -->
+
+    <owl:Class rdf:about="&ontology;MSD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MSPcrunch_report -->
+
+    <owl:Class rdf:about="&ontology;MSPcrunch_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_similarity_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MaizeGDB -->
+
+    <owl:Class rdf:about="&ontology;MaizeGDB">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MaizeGDB_id -->
+
+    <owl:Class rdf:about="&ontology;MaizeGDB_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Maize_genetics_and_genomics_database_MaizeGDB -->
+
+    <owl:Class rdf:about="&ontology;Maize_genetics_and_genomics_database_MaizeGDB">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MeSH -->
+
+    <owl:Class rdf:about="&ontology;MeSH">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MeSH_term_id -->
+
+    <owl:Class rdf:about="&ontology;MeSH_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#MeSH_term_record -->
+
+    <owl:Class rdf:about="&ontology;MeSH_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Mesh_description -->
+
+    <owl:Class rdf:about="&ontology;Mesh_description">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ModBase_accession -->
+
+    <owl:Class rdf:about="&ontology;ModBase_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Mouse_Genome_Database_MGD -->
+
+    <owl:Class rdf:about="&ontology;Mouse_Genome_Database_MGD">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#NBRF_PIR_format -->
+
+    <owl:Class rdf:about="&ontology;NBRF_PIR_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#NCBI_Taxonomy -->
+
+    <owl:Class rdf:about="&ontology;NCBI_Taxonomy">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#NCBI_Taxonomy_id -->
+
+    <owl:Class rdf:about="&ontology;NCBI_Taxonomy_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#NCBI_taxonomy_record -->
+
+    <owl:Class rdf:about="&ontology;NCBI_taxonomy_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Needleman_and_Wunsch_global_sequence_alignment_algorithm -->
+
+    <owl:Class rdf:about="&ontology;Needleman_and_Wunsch_global_sequence_alignment_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#OMIM -->
+
+    <owl:Class rdf:about="&ontology;OMIM">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype-phenotype_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#OMIM_record -->
+
+    <owl:Class rdf:about="&ontology;OMIM_record">
+        <rdfs:subClassOf rdf:resource="&ontology;genotype_phenotype_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PATIKA -->
+
+    <owl:Class rdf:about="&ontology;PATIKA">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PATIKA_record -->
+
+    <owl:Class rdf:about="&ontology;PATIKA_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PATIKA_record_id -->
+
+    <owl:Class rdf:about="&ontology;PATIKA_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PDB -->
+
+    <owl:Class rdf:about="&ontology;PDB">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PDB_format -->
+
+    <owl:Class rdf:about="&ontology;PDB_format">
+        <rdfs:subClassOf rdf:resource="&ontology;structure_file_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PDB_id -->
+
+    <owl:Class rdf:about="&ontology;PDB_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PDB_record -->
+
+    <owl:Class rdf:about="&ontology;PDB_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIR -->
+
+    <owl:Class rdf:about="&ontology;PIR">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIRSF -->
+
+    <owl:Class rdf:about="&ontology;PIRSF">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIRSF_id -->
+
+    <owl:Class rdf:about="&ontology;PIRSF_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIRSF_record -->
+
+    <owl:Class rdf:about="&ontology;PIRSF_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIRSF_report -->
+
+    <owl:Class rdf:about="&ontology;PIRSF_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIR_accession -->
+
+    <owl:Class rdf:about="&ontology;PIR_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PIR_record -->
+
+    <owl:Class rdf:about="&ontology;PIR_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PRIDE -->
+
+    <owl:Class rdf:about="&ontology;PRIDE">
+        <rdfs:subClassOf rdf:resource="&ontology;proteomics_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PRIDE_record -->
+
+    <owl:Class rdf:about="&ontology;PRIDE_record">
+        <rdfs:subClassOf rdf:resource="&ontology;proteomics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PRINTS -->
+
+    <owl:Class rdf:about="&ontology;PRINTS">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PRINTS_record -->
+
+    <owl:Class rdf:about="&ontology;PRINTS_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Panther -->
+
+    <owl:Class rdf:about="&ontology;Panther">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Panther_id -->
+
+    <owl:Class rdf:about="&ontology;Panther_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Panther_record -->
+
+    <owl:Class rdf:about="&ontology;Panther_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Panther_report -->
+
+    <owl:Class rdf:about="&ontology;Panther_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Pfam -->
+
+    <owl:Class rdf:about="&ontology;Pfam">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Pfam_Stockholm_format -->
+
+    <owl:Class rdf:about="&ontology;Pfam_Stockholm_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Pfam_accession -->
+
+    <owl:Class rdf:about="&ontology;Pfam_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Pfam_record -->
+
+    <owl:Class rdf:about="&ontology;Pfam_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Pfam_report -->
+
+    <owl:Class rdf:about="&ontology;Pfam_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Plant_ontology_PO -->
+
+    <owl:Class rdf:about="&ontology;Plant_ontology_PO">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Prints_accession -->
+
+    <owl:Class rdf:about="&ontology;Prints_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ProDom -->
+
+    <owl:Class rdf:about="&ontology;ProDom">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ProDom_record -->
+
+    <owl:Class rdf:about="&ontology;ProDom_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Prodom_accession -->
+
+    <owl:Class rdf:about="&ontology;Prodom_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Prosite -->
+
+    <owl:Class rdf:about="&ontology;Prosite">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Prosite_accession -->
+
+    <owl:Class rdf:about="&ontology;Prosite_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Prosite_record -->
+
+    <owl:Class rdf:about="&ontology;Prosite_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#PubMed_id -->
+
+    <owl:Class rdf:about="&ontology;PubMed_id">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_citation_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#REBASE -->
+
+    <owl:Class rdf:about="&ontology;REBASE">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#REBASE_id -->
+
+    <owl:Class rdf:about="&ontology;REBASE_id">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#REBASE_record -->
+
+    <owl:Class rdf:about="&ontology;REBASE_record">
+        <rdfs:subClassOf rdf:resource="&ontology;enzyme_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RGD_id -->
+
+    <owl:Class rdf:about="&ontology;RGD_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RGD_record -->
+
+    <owl:Class rdf:about="&ontology;RGD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RNA_sequence -->
+
+    <owl:Class rdf:about="&ontology;RNA_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RNA_structure -->
+
+    <owl:Class rdf:about="&ontology;RNA_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;molecular_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RSF_format -->
+
+    <owl:Class rdf:about="&ontology;RSF_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Rat_Genome_Database_RGD -->
+
+    <owl:Class rdf:about="&ontology;Rat_Genome_Database_RGD">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Reactome -->
+
+    <owl:Class rdf:about="&ontology;Reactome">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RefSeq -->
+
+    <owl:Class rdf:about="&ontology;RefSeq">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#gene_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#protein_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RefSeq_record -->
+
+    <owl:Class rdf:about="&ontology;RefSeq_record">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#RefSeq_record_id -->
+
+    <owl:Class rdf:about="&ontology;RefSeq_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SCOP -->
+
+    <owl:Class rdf:about="&ontology;SCOP">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SCOP_protein_family_id -->
+
+    <owl:Class rdf:about="&ontology;SCOP_protein_family_id">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SCOP_record -->
+
+    <owl:Class rdf:about="&ontology;SCOP_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SGD_id -->
+
+    <owl:Class rdf:about="&ontology;SGD_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SGD_record -->
+
+    <owl:Class rdf:about="&ontology;SGD_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SMART -->
+
+    <owl:Class rdf:about="&ontology;SMART">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SMART_record -->
+
+    <owl:Class rdf:about="&ontology;SMART_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SWISS-PROT -->
+
+    <owl:Class rdf:about="&ontology;SWISS-PROT">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SWISS-PROT_accession -->
+
+    <owl:Class rdf:about="&ontology;SWISS-PROT_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#SWISS-PROT_record -->
+
+    <owl:Class rdf:about="&ontology;SWISS-PROT_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Saccharomyces_Genome_Database_SGD -->
+
+    <owl:Class rdf:about="&ontology;Saccharomyces_Genome_Database_SGD">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Sanger_GeneDB -->
+
+    <owl:Class rdf:about="&ontology;Sanger_GeneDB">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Sanger_GeneDB_id -->
+
+    <owl:Class rdf:about="&ontology;Sanger_GeneDB_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Sanger_GeneDB_record -->
+
+    <owl:Class rdf:about="&ontology;Sanger_GeneDB_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Smart_accession -->
+
+    <owl:Class rdf:about="&ontology;Smart_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Smith-Waterman_sequence_alignment_algorithm -->
+
+    <owl:Class rdf:about="&ontology;Smith-Waterman_sequence_alignment_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Smith-Waterman_similarity_search_algorithm -->
+
+    <owl:Class rdf:about="&ontology;Smith-Waterman_similarity_search_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;similarity_search_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Superfamily_accession -->
+
+    <owl:Class rdf:about="&ontology;Superfamily_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TAIR_id -->
+
+    <owl:Class rdf:about="&ontology;TAIR_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TAIR_record -->
+
+    <owl:Class rdf:about="&ontology;TAIR_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TIGR -->
+
+    <owl:Class rdf:about="&ontology;TIGR">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TIGR_id -->
+
+    <owl:Class rdf:about="&ontology;TIGR_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TIGR_record -->
+
+    <owl:Class rdf:about="&ontology;TIGR_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TIGRfam_accession -->
+
+    <owl:Class rdf:about="&ontology;TIGRfam_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TREMBL -->
+
+    <owl:Class rdf:about="&ontology;TREMBL">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TREMBL_record -->
+
+    <owl:Class rdf:about="&ontology;TREMBL_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#The_Arabidopsis_Information_Resource_TAIR -->
+
+    <owl:Class rdf:about="&ontology;The_Arabidopsis_Information_Resource_TAIR">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TreeBASE -->
+
+    <owl:Class rdf:about="&ontology;TreeBASE">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#TreeBASE_record -->
+
+    <owl:Class rdf:about="&ontology;TreeBASE_record">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Tree_of_Life -->
+
+    <owl:Class rdf:about="&ontology;Tree_of_Life">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Tree_of_life_record -->
+
+    <owl:Class rdf:about="&ontology;Tree_of_life_record">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UMLS -->
+
+    <owl:Class rdf:about="&ontology;UMLS">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UMLS_id -->
+
+    <owl:Class rdf:about="&ontology;UMLS_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UMLS_record -->
+
+    <owl:Class rdf:about="&ontology;UMLS_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UniGene_id -->
+
+    <owl:Class rdf:about="&ontology;UniGene_id">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UniGene_record -->
+
+    <owl:Class rdf:about="&ontology;UniGene_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UniProt -->
+
+    <owl:Class rdf:about="&ontology;UniProt">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UniProt_accession -->
+
+    <owl:Class rdf:about="&ontology;UniProt_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#UniProt_record -->
+
+    <owl:Class rdf:about="&ontology;UniProt_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Unigene -->
+
+    <owl:Class rdf:about="&ontology;Unigene">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#WormBase -->
+
+    <owl:Class rdf:about="&ontology;WormBase">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#WormBase_id -->
+
+    <owl:Class rdf:about="&ontology;WormBase_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#WormBase_record -->
+
+    <owl:Class rdf:about="&ontology;WormBase_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#XPAN -->
+
+    <owl:Class rdf:about="&ontology;XPAN">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ZFIN_id -->
+
+    <owl:Class rdf:about="&ontology;ZFIN_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ZFIN_record -->
+
+    <owl:Class rdf:about="&ontology;ZFIN_record">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#Zebrafish_Information_Network_ZFIN -->
+
+    <owl:Class rdf:about="&ontology;Zebrafish_Information_Network_ZFIN">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_genome_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#_2D_alignment_quality_graph_plot -->
+
+    <owl:Class rdf:about="&ontology;_2D_alignment_quality_graph_plot">
+        <rdfs:subClassOf rdf:resource="&ontology;alignment_quality_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#_3D_plot_of_Gene_Ontology_lattice -->
+
+    <owl:Class rdf:about="&ontology;_3D_plot_of_Gene_Ontology_lattice">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#aMAZE -->
+
+    <owl:Class rdf:about="&ontology;aMAZE">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#aMAZE_record -->
+
+    <owl:Class rdf:about="&ontology;aMAZE_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#aMAZE_record_id -->
+
+    <owl:Class rdf:about="&ontology;aMAZE_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#acedb_format -->
+
+    <owl:Class rdf:about="&ontology;acedb_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#alignment_quality_graph -->
+
+    <owl:Class rdf:about="&ontology;alignment_quality_graph">
+        <rdfs:subClassOf rdf:resource="&ontology;alignment_quality_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#alignment_quality_report -->
+
+    <owl:Class rdf:about="&ontology;alignment_quality_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#anatomical_structure -->
+
+    <owl:Class rdf:about="&ontology;anatomical_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#anatomy_database -->
+
+    <owl:Class rdf:about="&ontology;anatomy_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#anatomy_ontology -->
+
+    <owl:Class rdf:about="&ontology;anatomy_ontology">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#anatomy_term_id -->
+
+    <owl:Class rdf:about="&ontology;anatomy_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#anatomy_term_record -->
+
+    <owl:Class rdf:about="&ontology;anatomy_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#asn1_format -->
+
+    <owl:Class rdf:about="&ontology;asn1_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bio-ontology_report -->
+
+    <owl:Class rdf:about="&ontology;bio-ontology_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bio-ontology_resource -->
+
+    <owl:Class rdf:about="&ontology;bio-ontology_resource">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#ontology_annotation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_algorithm -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_concept -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_concept"/>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_data -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_data">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_data_resource -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_data_resource">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_file_formats -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_file_formats">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_metadata -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_metadata">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_record -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_record_id -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_metadata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_report -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#bioinformatics_task -->
+
+    <owl:Class rdf:about="&ontology;bioinformatics_task">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#biological_location -->
+
+    <owl:Class rdf:about="&ontology;biological_location">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#biological_sequence -->
+
+    <owl:Class rdf:about="&ontology;biological_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#biological_sequence_id -->
+
+    <owl:Class rdf:about="&ontology;biological_sequence_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#biological_structure -->
+
+    <owl:Class rdf:about="&ontology;biological_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#biological_text_analysis -->
+
+    <owl:Class rdf:about="&ontology;biological_text_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#cellular_location -->
+
+    <owl:Class rdf:about="&ontology;cellular_location">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#chEBI -->
+
+    <owl:Class rdf:about="&ontology;chEBI">
+        <rdfs:subClassOf rdf:resource="&ontology;proteomics_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#chEBI_ontology -->
+
+    <owl:Class rdf:about="&ontology;chEBI_ontology">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#chEBI_record -->
+
+    <owl:Class rdf:about="&ontology;chEBI_record">
+        <rdfs:subClassOf rdf:resource="&ontology;proteomics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#chEBI_term_id -->
+
+    <owl:Class rdf:about="&ontology;chEBI_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#chEBI_term_record -->
+
+    <owl:Class rdf:about="&ontology;chEBI_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#clustalw_format -->
+
+    <owl:Class rdf:about="&ontology;clustalw_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#codata_format -->
+
+    <owl:Class rdf:about="&ontology;codata_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbEST -->
+
+    <owl:Class rdf:about="&ontology;dbEST">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbEST_accession -->
+
+    <owl:Class rdf:about="&ontology;dbEST_accession">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbEST_record -->
+
+    <owl:Class rdf:about="&ontology;dbEST_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbSNP -->
+
+    <owl:Class rdf:about="&ontology;dbSNP">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbSNP_id -->
+
+    <owl:Class rdf:about="&ontology;dbSNP_id">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#dbSNP_record -->
+
+    <owl:Class rdf:about="&ontology;dbSNP_record">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#domain_motif_report -->
+
+    <owl:Class rdf:about="&ontology;domain_motif_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#eMIM -->
+
+    <owl:Class rdf:about="&ontology;eMIM">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#eMIM_record -->
+
+    <owl:Class rdf:about="&ontology;eMIM_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#eMIM_record_id -->
+
+    <owl:Class rdf:about="&ontology;eMIM_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+        <rdfs:subClassOf rdf:resource="&ontology;protein_interaction_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#embl_format -->
+
+    <owl:Class rdf:about="&ontology;embl_format">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_record_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ensembl_record_id -->
+
+    <owl:Class rdf:about="&ontology;ensembl_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;model_organism_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#enzyme_database -->
+
+    <owl:Class rdf:about="&ontology;enzyme_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#enzyme_record -->
+
+    <owl:Class rdf:about="&ontology;enzyme_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#enzyme_record_id -->
+
+    <owl:Class rdf:about="&ontology;enzyme_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#est_human -->
+
+    <owl:Class rdf:about="&ontology;est_human">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#expressed_sequence_tag -->
+
+    <owl:Class rdf:about="&ontology;expressed_sequence_tag">
+        <rdfs:subClassOf rdf:resource="&ontology;DNA_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#expressed_sequence_tag_location -->
+
+    <owl:Class rdf:about="&ontology;expressed_sequence_tag_location">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#fasta_format -->
+
+    <owl:Class rdf:about="&ontology;fasta_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#fitch_format -->
+
+    <owl:Class rdf:about="&ontology;fitch_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genbank_GI -->
+
+    <owl:Class rdf:about="&ontology;genbank_GI">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genbank_format -->
+
+    <owl:Class rdf:about="&ontology;genbank_format">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_record_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_espression_id -->
+
+    <owl:Class rdf:about="&ontology;gene_espression_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_expression_database -->
+
+    <owl:Class rdf:about="&ontology;gene_expression_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_expression_profile -->
+
+    <owl:Class rdf:about="&ontology;gene_expression_profile">
+        <rdfs:subClassOf rdf:resource="&ontology;gene_expression_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_expression_report -->
+
+    <owl:Class rdf:about="&ontology;gene_expression_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_ontology_term_record -->
+
+    <owl:Class rdf:about="&ontology;gene_ontology_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_prediction_algorithm -->
+
+    <owl:Class rdf:about="&ontology;gene_prediction_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gene_prediction_report -->
+
+    <owl:Class rdf:about="&ontology;gene_prediction_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genome_location -->
+
+    <owl:Class rdf:about="&ontology;genome_location">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genome_map_record -->
+
+    <owl:Class rdf:about="&ontology;genome_map_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genome_map_record_id -->
+
+    <owl:Class rdf:about="&ontology;genome_map_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genome_nucleotide_sequence -->
+
+    <owl:Class rdf:about="&ontology;genome_nucleotide_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;DNA_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genomic_structure -->
+
+    <owl:Class rdf:about="&ontology;genomic_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;molecular_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genotype-phenotype_database -->
+
+    <owl:Class rdf:about="&ontology;genotype-phenotype_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genotype-phenotype_record_id -->
+
+    <owl:Class rdf:about="&ontology;genotype-phenotype_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#genotype_phenotype_record -->
+
+    <owl:Class rdf:about="&ontology;genotype_phenotype_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#gff_format -->
+
+    <owl:Class rdf:about="&ontology;gff_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#human_anatomy_ontology -->
+
+    <owl:Class rdf:about="&ontology;human_anatomy_ontology">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#human_anatomy_term_id -->
+
+    <owl:Class rdf:about="&ontology;human_anatomy_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#human_anatomy_term_record -->
+
+    <owl:Class rdf:about="&ontology;human_anatomy_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#interacting_molecule_record -->
+
+    <owl:Class rdf:about="&ontology;interacting_molecule_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#interacting_molecule_record_id -->
+
+    <owl:Class rdf:about="&ontology;interacting_molecule_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#interacting_molecule_resource -->
+
+    <owl:Class rdf:about="&ontology;interacting_molecule_resource">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_compound_database -->
+
+    <owl:Class rdf:about="&ontology;kegg_compound_database">
+        <rdfs:subClassOf rdf:resource="&ontology;kegg_ligand_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_compound_record_id -->
+
+    <owl:Class rdf:about="&ontology;kegg_compound_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;interacting_molecule_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_drug_database -->
+
+    <owl:Class rdf:about="&ontology;kegg_drug_database">
+        <rdfs:subClassOf rdf:resource="&ontology;kegg_ligand_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_drug_record -->
+
+    <owl:Class rdf:about="&ontology;kegg_drug_record">
+        <rdfs:subClassOf rdf:resource="&ontology;Kegg_ligand_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_drug_record_id -->
+
+    <owl:Class rdf:about="&ontology;kegg_drug_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;interacting_molecule_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_glycan_database -->
+
+    <owl:Class rdf:about="&ontology;kegg_glycan_database">
+        <rdfs:subClassOf rdf:resource="&ontology;kegg_ligand_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_glycan_record -->
+
+    <owl:Class rdf:about="&ontology;kegg_glycan_record">
+        <rdfs:subClassOf rdf:resource="&ontology;Kegg_ligand_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_glycan_record_id -->
+
+    <owl:Class rdf:about="&ontology;kegg_glycan_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;interacting_molecule_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#kegg_ligand_database -->
+
+    <owl:Class rdf:about="&ontology;kegg_ligand_database">
+        <rdfs:subClassOf rdf:resource="&ontology;interacting_molecule_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#literature_citation -->
+
+    <owl:Class rdf:about="&ontology;literature_citation">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#literature_citation_id -->
+
+    <owl:Class rdf:about="&ontology;literature_citation_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#literature_repository -->
+
+    <owl:Class rdf:about="&ontology;literature_repository">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#text_mining"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#Literature_searching"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mega_format -->
+
+    <owl:Class rdf:about="&ontology;mega_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mged_ontology -->
+
+    <owl:Class rdf:about="&ontology;mged_ontology">
+        <rdfs:subClassOf rdf:resource="&ontology;bio-ontology_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mged_term_id -->
+
+    <owl:Class rdf:about="&ontology;mged_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mged_term_record -->
+
+    <owl:Class rdf:about="&ontology;mged_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#microarray_database -->
+
+    <owl:Class rdf:about="&ontology;microarray_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#microarray_database_record -->
+
+    <owl:Class rdf:about="&ontology;microarray_database_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#model_organism_genome_database -->
+
+    <owl:Class rdf:about="&ontology;model_organism_genome_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#genome_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#gene_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#model_organism_record -->
+
+    <owl:Class rdf:about="&ontology;model_organism_record">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_map_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#model_organism_record_id -->
+
+    <owl:Class rdf:about="&ontology;model_organism_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_map_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#molecular_structure -->
+
+    <owl:Class rdf:about="&ontology;molecular_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mouse_anatomy_ontology -->
+
+    <owl:Class rdf:about="&ontology;mouse_anatomy_ontology">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mouse_anatomy_term_id -->
+
+    <owl:Class rdf:about="&ontology;mouse_anatomy_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#mouse_anatomy_term_record -->
+
+    <owl:Class rdf:about="&ontology;mouse_anatomy_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;anatomy_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#multiple_sequence_alignment_report -->
+
+    <owl:Class rdf:about="&ontology;multiple_sequence_alignment_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#multiple_sequence_format -->
+
+    <owl:Class rdf:about="&ontology;multiple_sequence_format">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nexus_paup_format -->
+
+    <owl:Class rdf:about="&ontology;nexus_paup_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#gene_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_feature_diagram -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_feature_diagram">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_feature_report -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_feature_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_id -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_id">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_location -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_location">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#nucleotide_sequence_record -->
+
+    <owl:Class rdf:about="&ontology;nucleotide_sequence_record">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ontology_term_id -->
+
+    <owl:Class rdf:about="&ontology;ontology_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#ontology_term_record -->
+
+    <owl:Class rdf:about="&ontology;ontology_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pairwise_sequence_alignment_report -->
+
+    <owl:Class rdf:about="&ontology;pairwise_sequence_alignment_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pathway_record -->
+
+    <owl:Class rdf:about="&ontology;pathway_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pathway_record_id -->
+
+    <owl:Class rdf:about="&ontology;pathway_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pathway_resource -->
+
+    <owl:Class rdf:about="&ontology;pathway_resource">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#gene_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pattern_and_profile_search_algorithms -->
+
+    <owl:Class rdf:about="&ontology;pattern_and_profile_search_algorithms">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylip_format -->
+
+    <owl:Class rdf:about="&ontology;phylip_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylogenetic_algorithm -->
+
+    <owl:Class rdf:about="&ontology;phylogenetic_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylogenetic_database -->
+
+    <owl:Class rdf:about="&ontology;phylogenetic_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#phylogenetic_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylogenetic_record -->
+
+    <owl:Class rdf:about="&ontology;phylogenetic_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylogenetic_report -->
+
+    <owl:Class rdf:about="&ontology;phylogenetic_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#phylogenetic_tree -->
+
+    <owl:Class rdf:about="&ontology;phylogenetic_tree">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#plant_ontology_term_id -->
+
+    <owl:Class rdf:about="&ontology;plant_ontology_term_id">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#plant_ontology_term_record -->
+
+    <owl:Class rdf:about="&ontology;plant_ontology_term_record">
+        <rdfs:subClassOf rdf:resource="&ontology;ontology_term_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#post-translational_modification_prediction -->
+
+    <owl:Class rdf:about="&ontology;post-translational_modification_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#primer_report -->
+
+    <owl:Class rdf:about="&ontology;primer_report">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#primer_sequence_location -->
+
+    <owl:Class rdf:about="&ontology;primer_sequence_location">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#prints_report -->
+
+    <owl:Class rdf:about="&ontology;prints_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#prodom_report -->
+
+    <owl:Class rdf:about="&ontology;prodom_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#prosite_report -->
+
+    <owl:Class rdf:about="&ontology;prosite_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_composition -->
+
+    <owl:Class rdf:about="&ontology;protein_composition">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_expression_profile -->
+
+    <owl:Class rdf:about="&ontology;protein_expression_profile">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_expression_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_expression_report -->
+
+    <owl:Class rdf:about="&ontology;protein_expression_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_family_database -->
+
+    <owl:Class rdf:about="&ontology;protein_family_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#functional_motif_searching"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_family_id -->
+
+    <owl:Class rdf:about="&ontology;protein_family_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_family_record -->
+
+    <owl:Class rdf:about="&ontology;protein_family_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_interaction_database -->
+
+    <owl:Class rdf:about="&ontology;protein_interaction_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_interaction_id -->
+
+    <owl:Class rdf:about="&ontology;protein_interaction_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_interaction_record -->
+
+    <owl:Class rdf:about="&ontology;protein_interaction_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_sequence -->
+
+    <owl:Class rdf:about="&ontology;protein_sequence">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_sequence_database -->
+
+    <owl:Class rdf:about="&ontology;protein_sequence_database">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#protein_analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_sequence_id -->
+
+    <owl:Class rdf:about="&ontology;protein_sequence_id">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_sequence_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_sequence_record -->
+
+    <owl:Class rdf:about="&ontology;protein_sequence_record">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure -->
+
+    <owl:Class rdf:about="&ontology;protein_structure">
+        <rdfs:subClassOf rdf:resource="&ontology;molecular_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure_database -->
+
+    <owl:Class rdf:about="&ontology;protein_structure_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#structure_prediction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure_model -->
+
+    <owl:Class rdf:about="&ontology;protein_structure_model">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure_prediction_report -->
+
+    <owl:Class rdf:about="&ontology;protein_structure_prediction_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure_record -->
+
+    <owl:Class rdf:about="&ontology;protein_structure_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#protein_structure_record_id -->
+
+    <owl:Class rdf:about="&ontology;protein_structure_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#proteomics_database -->
+
+    <owl:Class rdf:about="&ontology;proteomics_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#proteomics_record -->
+
+    <owl:Class rdf:about="&ontology;proteomics_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#proteomics_record_id -->
+
+    <owl:Class rdf:about="&ontology;proteomics_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pubmed -->
+
+    <owl:Class rdf:about="&ontology;pubmed">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_repository"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#pubmed_citation -->
+
+    <owl:Class rdf:about="&ontology;pubmed_citation">
+        <rdfs:subClassOf rdf:resource="&ontology;literature_citation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#raw_sequence_format -->
+
+    <owl:Class rdf:about="&ontology;raw_sequence_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#reactome_record -->
+
+    <owl:Class rdf:about="&ontology;reactome_record">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#reactome_record_id -->
+
+    <owl:Class rdf:about="&ontology;reactome_record_id">
+        <rdfs:subClassOf rdf:resource="&ontology;pathway_record_id"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#restriction_enzyme_report -->
+
+    <owl:Class rdf:about="&ontology;restriction_enzyme_report">
+        <rdfs:subClassOf rdf:resource="&ontology;nucleotide_sequence_feature_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#secondary_structure_prediction -->
+
+    <owl:Class rdf:about="&ontology;secondary_structure_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#selex_format -->
+
+    <owl:Class rdf:about="&ontology;selex_format">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_alignment_algorithm -->
+
+    <owl:Class rdf:about="&ontology;sequence_alignment_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_alignment_dot_plot -->
+
+    <owl:Class rdf:about="&ontology;sequence_alignment_dot_plot">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_alignment_report -->
+
+    <owl:Class rdf:about="&ontology;sequence_alignment_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_database -->
+
+    <owl:Class rdf:about="&ontology;sequence_database">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_data_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#participateIn"/>
+                <owl:someValuesFrom rdf:resource="#data_retrieval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_feature_report -->
+
+    <owl:Class rdf:about="&ontology;sequence_feature_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_file_formats -->
+
+    <owl:Class rdf:about="&ontology;sequence_file_formats">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_record -->
+
+    <owl:Class rdf:about="&ontology;sequence_record">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_record_format -->
+
+    <owl:Class rdf:about="&ontology;sequence_record_format">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#sequence_similarity_report -->
+
+    <owl:Class rdf:about="&ontology;sequence_similarity_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#similarity_search_algorithm -->
+
+    <owl:Class rdf:about="&ontology;similarity_search_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#single_nucleotide_polymorphism -->
+
+    <owl:Class rdf:about="&ontology;single_nucleotide_polymorphism">
+        <rdfs:subClassOf rdf:resource="&ontology;DNA_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#single_nucleotide_polymorphism_location -->
+
+    <owl:Class rdf:about="&ontology;single_nucleotide_polymorphism_location">
+        <rdfs:subClassOf rdf:resource="&ontology;genome_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#single_sequence_format -->
+
+    <owl:Class rdf:about="&ontology;single_sequence_format">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#smart_report -->
+
+    <owl:Class rdf:about="&ontology;smart_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#smith_waterman_similarity_report -->
+
+    <owl:Class rdf:about="&ontology;smith_waterman_similarity_report">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_similarity_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#staden_experiment_format -->
+
+    <owl:Class rdf:about="&ontology;staden_experiment_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#structural_alignment_algorithm -->
+
+    <owl:Class rdf:about="&ontology;structural_alignment_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#structural_alignment_report -->
+
+    <owl:Class rdf:about="&ontology;structural_alignment_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#structure_file_format -->
+
+    <owl:Class rdf:about="&ontology;structure_file_format">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#superfamily -->
+
+    <owl:Class rdf:about="&ontology;superfamily">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#superfamily_record -->
+
+    <owl:Class rdf:about="&ontology;superfamily_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#superfamily_report -->
+
+    <owl:Class rdf:about="&ontology;superfamily_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tertiary_structure_prediction -->
+
+    <owl:Class rdf:about="&ontology;tertiary_structure_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_structure_model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#text_plain_format -->
+
+    <owl:Class rdf:about="&ontology;text_plain_format">
+        <rdfs:subClassOf rdf:resource="&ontology;single_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#threshold_graph_of_local_alignment_score -->
+
+    <owl:Class rdf:about="&ontology;threshold_graph_of_local_alignment_score">
+        <rdfs:subClassOf rdf:resource="&ontology;alignment_quality_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tigrfam -->
+
+    <owl:Class rdf:about="&ontology;tigrfam">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tigrfam_record -->
+
+    <owl:Class rdf:about="&ontology;tigrfam_record">
+        <rdfs:subClassOf rdf:resource="&ontology;protein_family_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tigrfam_report -->
+
+    <owl:Class rdf:about="&ontology;tigrfam_report">
+        <rdfs:subClassOf rdf:resource="&ontology;domain_motif_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tissue_location -->
+
+    <owl:Class rdf:about="&ontology;tissue_location">
+        <rdfs:subClassOf rdf:resource="&ontology;biological_location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#topology_prediction -->
+
+    <owl:Class rdf:about="&ontology;topology_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#topology_report -->
+
+    <owl:Class rdf:about="&ontology;topology_report">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#translation_algorithm -->
+
+    <owl:Class rdf:about="&ontology;translation_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tree_fam -->
+
+    <owl:Class rdf:about="&ontology;tree_fam">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#tree_fam_record -->
+
+    <owl:Class rdf:about="&ontology;tree_fam_record">
+        <rdfs:subClassOf rdf:resource="&ontology;phylogenetic_record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#treecon -->
+
+    <owl:Class rdf:about="&ontology;treecon">
+        <rdfs:subClassOf rdf:resource="&ontology;multiple_sequence_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology#word_match_sequence_alignment_algorithm -->
+
+    <owl:Class rdf:about="&ontology;word_match_sequence_alignment_algorithm">
+        <rdfs:subClassOf rdf:resource="&ontology;sequence_alignment_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#Gene_prediction -->
+
+    <owl:Class rdf:about="#Gene_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#transcriptomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#Identifier_mapping -->
+
+    <owl:Class rdf:about="#Identifier_mapping">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#Literature_searching -->
+
+    <owl:Class rdf:about="#Literature_searching">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:comment
+            >search through the biology related literatures</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#biochemistry -->
+
+    <owl:Class rdf:about="#biochemistry">
+        <rdfs:subClassOf rdf:resource="#domains"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#biostatistical_analysis -->
+
+    <owl:Class rdf:about="#biostatistical_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#biostatistics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#biostatistics -->
+
+    <owl:Class rdf:about="#biostatistics">
+        <rdfs:subClassOf rdf:resource="#domains"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#data_retrieval -->
+
+    <owl:Class rdf:about="#data_retrieval">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:comment
+            >Retrieve data from biological database. e.g protein sequence, dna sequence, protein identifier, pathway identifier</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#domains -->
+
+    <owl:Class rdf:about="#domains">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >name of bioinformatics domains </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#functional_motif_searching -->
+
+    <owl:Class rdf:about="#functional_motif_searching">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#gene_analysis -->
+
+    <owl:Class rdf:about="#gene_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#genome_analysis -->
+
+    <owl:Class rdf:about="#genome_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#genomics -->
+
+    <owl:Class rdf:about="#genomics">
+        <rdfs:subClassOf rdf:resource="#omics"/>
+        <rdfs:comment
+            >Study of genomes of organisms. As defined by http://en.wikipedia.org/wiki/Genomics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#metabolomics -->
+
+    <owl:Class rdf:about="#metabolomics">
+        <rdfs:subClassOf rdf:resource="#omics"/>
+        <rdfs:comment
+            >As defined by http://en.wikipedia.org/wiki/Metabolomics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#microarray_analysis -->
+
+    <owl:Class rdf:about="#microarray_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#biostatistics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#multiple_sequence_alignment -->
+
+    <owl:Class rdf:about="#multiple_sequence_alignment">
+        <rdfs:subClassOf rdf:resource="#sequence_alignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#omics -->
+
+    <owl:Class rdf:about="#omics">
+        <rdfs:subClassOf rdf:resource="#domains"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#ontology_annotation -->
+
+    <owl:Class rdf:about="#ontology_annotation">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#pairwise_alignment -->
+
+    <owl:Class rdf:about="#pairwise_alignment">
+        <rdfs:subClassOf rdf:resource="#sequence_alignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#phylogenetic_analysis -->
+
+    <owl:Class rdf:about="#phylogenetic_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#primer_design -->
+
+    <owl:Class rdf:about="#primer_design">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#protein_analysis -->
+
+    <owl:Class rdf:about="#protein_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#protein_function_prediction -->
+
+    <owl:Class rdf:about="#protein_function_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#protein_interaction -->
+
+    <owl:Class rdf:about="#protein_interaction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#proteomics -->
+
+    <owl:Class rdf:about="#proteomics">
+        <rdfs:subClassOf rdf:resource="#omics"/>
+        <rdfs:comment
+            >large scale study of proteins. As defined by http://en.wikipedia.org/wiki/Proteomic </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#secondary_structure_prediction -->
+
+    <owl:Class rdf:about="#secondary_structure_prediction">
+        <rdfs:subClassOf rdf:resource="#structure_prediction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#sequence_alignment -->
+
+    <owl:Class rdf:about="#sequence_alignment">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#sequence_assembly -->
+
+    <owl:Class rdf:about="#sequence_assembly">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#sequence_similarity -->
+
+    <owl:Class rdf:about="#sequence_similarity">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#genomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#structure_analysis -->
+
+    <owl:Class rdf:about="#structure_analysis">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#structure_prediction -->
+
+    <owl:Class rdf:about="#structure_prediction">
+        <rdfs:subClassOf rdf:resource="&ontology;bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#useIn"/>
+                <owl:someValuesFrom rdf:resource="#proteomics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >task for protein structure prediction </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#system_biology -->
+
+    <owl:Class rdf:about="#system_biology">
+        <rdfs:subClassOf rdf:resource="#domains"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#tertiary_structure__prediction_ -->
+
+    <owl:Class rdf:about="#tertiary_structure__prediction_">
+        <rdfs:subClassOf rdf:resource="#structure_prediction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#text_mining -->
+
+    <owl:Class rdf:about="#text_mining">
+        <rdfs:subClassOf rdf:resource="#Literature_searching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mygrid.org.uk/ontology/myGridDomainOntology.rdfs#transcriptomics -->
+
+    <owl:Class rdf:about="#transcriptomics">
+        <rdfs:subClassOf rdf:resource="#omics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1042) http://owlapi.sourceforge.net -->
+

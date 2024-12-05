@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.co-ode.org/ontologies/untangling-hormones.owl#"
+  xml:base="http://www.co-ode.org/ontologies/untangling-hormones.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is a simple demo ontology for untangling hormones as per slides.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Steroid_hormone">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Steroid"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="plays_role"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="Hormone_role"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Substance">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Domain_entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cortisol">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Steroid"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#plays_role"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Hormone_role"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Insulin">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Protein"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#plays_role"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Hormone_role"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Protein_hormone">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Protein"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#plays_role"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Hormone_role"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Bio_Role">
+    <rdfs:subClassOf rdf:resource="#Domain_entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hormone">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Substance"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#plays_role"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Hormone_role"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Hormone_role">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Catalyst_role"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Bio_Role"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Protein">
+    <rdfs:subClassOf rdf:resource="#Substance"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Catalyst_role">
+    <owl:disjointWith rdf:resource="#Hormone_role"/>
+    <rdfs:subClassOf rdf:resource="#Bio_Role"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Steroid">
+    <rdfs:subClassOf rdf:resource="#Substance"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Enzyme">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Protein"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Catalyst_role"/>
+            <owl:onProperty rdf:resource="#plays_role"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ATPase">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#plays_role"/>
+        <owl:someValuesFrom rdf:resource="#Catalyst_role"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Protein"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Catalyst">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Substance"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="#plays_role"/>
+            <owl:someValuesFrom rdf:resource="#Catalyst_role"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.2 beta, Build 290)  http://protege.stanford.edu -->
