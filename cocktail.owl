@@ -1,0 +1,901 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://vocabulary.semantic-web.at/cocktail-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://vocabulary.semantic-web.at/cocktail-ontology">
+    <Prefix name="" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-05T14:40:00Z</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Whiskie</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/visible"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PUBLIC</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Sweeteners</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/availableLanguages"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">en</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/served</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/uses</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Worcestershire-sauce</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/is-part-of</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Tequilas</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Coconut-milks</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Cocktail</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/From-eggs</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Liqueurs</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/consists-of</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Alcoholic-Beverages</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Herbal-distillates</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Souces</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Drinkware</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsSymmetricProperty"/>
+        <IRI>/isOppositeOf</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Schnapps</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/is-used-by</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/availableLanguages"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">de</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Soft-drinks</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Beverages</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Hot-souces</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Juices</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Dairy-products</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/is-used-by_2</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/BaseUrl"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://vocabulary.semantic-web.at</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">How to create great ontologies</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/iba</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail_ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Ingredients</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Gins</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/timing</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Fortified-wines</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Rums</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/preparation</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Non-alcoholic-Beverages</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Coffees</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Brandies</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+        <IRI>http://localhost/user/barzgarann</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Wines</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+        <IRI>/uses_2</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/image_2</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/image_3</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/identifier"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cocktail-ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Vodkas</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+        <IRI>/Garnish</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsDirectedProperty"/>
+        <IRI>/is-variant-of</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/ResourceSeparator"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+        <IRI>/image</IRI>
+    </Annotation>
+    <Declaration>
+        <Class IRI="/Brandies"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/timing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Wines"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Souces"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/From-eggs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Rums"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Beverages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Sweeteners"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Vodkas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/is-part-of"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Schnapps"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Fortified-wines"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/image_3"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/iba"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/served"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Cocktail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Garnish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Juices"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isOppositeOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/image"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/is-variant-of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/is-used-by"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Coffees"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Soft-drinks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Gins"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Worcestershire-sauce"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Hot-souces"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/consists-of"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Whiskie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Ingredients"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Liqueurs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/uses_2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Coconut-milks"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/uses"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Herbal-distillates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Tequilas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/image_2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Dairy-products"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Drinkware"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/preparation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/is-used-by_2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsSymmetricProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/availableLanguages"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsCustomType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/BaseUrl"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdf:langString"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsDirectedProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.semantic-web.at/ppt/FunctionalLanguageProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsPropertyWithInverse"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/ResourceSeparator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/visible"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/containsAttributeProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/identifier"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/singleLineInput"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/timing"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="/Alcoholic-Beverages"/>
+        <Class IRI="/Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Brandies"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Coconut-milks"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Coffees"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Dairy-products"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Fortified-wines"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/From-eggs"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Gins"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Herbal-distillates"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Hot-souces"/>
+        <Class IRI="/Souces"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Juices"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Liqueurs"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+        <Class IRI="/Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Rums"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Schnapps"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Soft-drinks"/>
+        <Class IRI="/Non-alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Tequilas"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Vodkas"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Whiskie"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Wines"/>
+        <Class IRI="/Alcoholic-Beverages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Worcestershire-sauce"/>
+        <Class IRI="/Souces"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="http://schema.semantic-web.at/ppt/FunctionalLanguageProperty"/>
+        <NamedIndividual IRI="/timing"/>
+    </ClassAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/consists-of"/>
+        <ObjectProperty IRI="/is-part-of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/is-used-by"/>
+        <ObjectProperty IRI="/uses"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/is-used-by_2"/>
+        <ObjectProperty IRI="/uses_2"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/iba"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="/isOppositeOf"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/consists-of"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/iba"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/image"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/image_2"/>
+        <Class IRI="/Drinkware"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/image_3"/>
+        <Class IRI="/Ingredients"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/is-part-of"/>
+        <Class IRI="/Ingredients"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/is-used-by"/>
+        <Class IRI="/Drinkware"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/is-used-by_2"/>
+        <Class IRI="/Garnish"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/is-variant-of"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isOppositeOf"/>
+        <Class IRI="/Garnish"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/preparation"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/served"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/uses"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/uses_2"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/consists-of"/>
+        <Class IRI="/Ingredients"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/iba"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/image"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/image_2"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/image_3"/>
+        <Class abbreviatedIRI="rdfs:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/is-part-of"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/is-used-by"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/is-used-by_2"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/is-variant-of"/>
+        <Class IRI="/Cocktail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isOppositeOf"/>
+        <Class IRI="/Garnish"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/preparation"/>
+        <Class abbreviatedIRI="rdf:langString"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/served"/>
+        <Class abbreviatedIRI="rdf:langString"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/uses"/>
+        <Class IRI="/Drinkware"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/uses_2"/>
+        <Class IRI="/Garnish"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="/iba"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="/timing"/>
+        <Class IRI="/Cocktail"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="/timing"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Alcoholic-Beverages</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Alcoholic Beverages</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Beverages</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Beverages</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Brandies</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Brandies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Cocktail</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Coconut-milks</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Coconut milks</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Coffees</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Coffees</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Dairy-products</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Dairy products</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Drinkware</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drinkware</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Fortified-wines</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Fortified wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/From-eggs</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">From eggs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Garnish</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Garnish</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Gins</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gins</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Herbal-distillates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Herbal distillates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+        <IRI>/Hot-souces</IRI>
+        <IRI>http://localhost/user/barzgarann</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <IRI>/Hot-souces</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-17T17:04:26Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Hot-souces</IRI>
+        <Literal xml:lang="de" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">                                        
+                                    </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Hot-souces</IRI>
+        <Literal xml:lang="de" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Hot sauces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Ingredients</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ingredients</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Juices</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Juices</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Liqueurs</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Liqueurs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Non-alcoholic-Beverages</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Non-alcoholic Beverages</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Rums</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rums</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Schnapps</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Schnapps&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Soft-drinks</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Soft drinks</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Souces</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sauces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Sweeteners</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sweeteners</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Tequilas</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tequilas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Vodkas</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Vodkas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Whiskie</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Whiskies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Wines</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Worcestershire-sauce</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Worcestershire sauce</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/consists-of</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">consists of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/iba</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IBA</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/image</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">image</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/image_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">image</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/image_3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">image</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/is-part-of</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is part of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/is-used-by</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is used by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/is-used-by_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is used by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/is-variant-of</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is variant of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/isOppositeOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isOppositeOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/preparation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">preparation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/served</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">served</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <IRI>/timing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-09T13:56:24Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+        <IRI>/timing</IRI>
+        <IRI>http://localhost/user/yangy</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://schema.semantic-web.at/ppt/singleLineInput"/>
+        <IRI>/timing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/timing</IRI>
+        <Literal xml:lang="de" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/timing</IRI>
+        <Literal xml:lang="de" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">timing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/uses</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">uses Drinkware</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/uses_2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">uses Garnish</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

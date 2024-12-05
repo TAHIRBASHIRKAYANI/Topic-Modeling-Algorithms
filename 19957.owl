@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://vest.agrisemantics.org/node/19957"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://vest.agrisemantics.org/node/19957">
+    <Prefix name="dc" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="omv" IRI="http://omv.ontoware.org/2005/05/ontology#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="dcat" IRI="http://www.w3.org/ns/dcat#"/>
+    <Prefix name="doap" IRI="http://usefulinc.com/ns/doap#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="sioc" IRI="http://rdfs.org/sioc/ns#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
+    <Prefix name="schema" IRI="http://schema.org/"/>
+    <Prefix name="content" IRI="http://purl.org/rss/1.0/modules/content/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcat:mediaType"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/11</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:c-schemacontributor-schemaname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1970</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="void:uriSpace"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://data.lirmm.fr/ontologies/food#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="doap:name"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Open Food Facts Food Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="omv:hasOntologySyntax"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7592</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:publisher"/>
+        <IRI>https://vest.agrisemantics.org/_:l-schemapublisher-schemaname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7697</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:format"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/11</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-11-03T18:18:12+01:00</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://data.lirmm.fr/ontologies/food#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:dateCreated"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1970</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcat:mediaType"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/5</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This ontology models the Food domain. It allows to describe ingredients and food products. Ontology used by the Open Food Facts dataset</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:conformsTo"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7592</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:f-dccontributor-foafname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:b-dccontributor-foafname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="doap:category"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/458</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:License"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/409</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7567</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="omv:hasDomain"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/458</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="omv:hasLicense"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/409</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="doap:vendor"/>
+        <IRI>https://vest.agrisemantics.org/_:k-doapvendor</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:e-schemacontributor-schemaname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:about"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/458</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:format"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/5</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7716</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7636</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This ontology models the Food domain. It allows to describe ingredients and food products. Ontology used by the Open Food Facts dataset</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-21T19:26:24+02:00</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/458</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="omv:conformsToKnowledgeRepresentationParadigm"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7592</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:h-dccontributor-foafname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-11-03T18:18:12+01:00</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="sioc:num_replies"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:g-schemacontributor-schemaname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Open Food Facts Food Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:subject"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/458</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="content:encoded"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This ontology models the Food domain. It allows to describe ingredients and food products. Ontology used by the Open Food Facts dataset</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:type"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/484</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:publisher"/>
+        <IRI>https://vest.agrisemantics.org/_:j-dcpublisher-foafname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:a-schemacontributor-schemaname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>https://vest.agrisemantics.org/_:d-dccontributor-foafname</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:source"/>
+        <IRI>https://vest.agrisemantics.org/node/18384</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7581</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7582</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <IRI>https://vest.agrisemantics.org/_:i-dcatdistribution-dcataccessURL</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7622</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Open Food Facts Food Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+        <IRI>https://vest.agrisemantics.org/taxonomy_term/7620</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="doap:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This ontology models the Food domain. It allows to describe ingredients and food products. Ontology used by the Open Food Facts dataset</Literal>
+    </Annotation>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dc:Standard"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/vocommons/voaf#Vocabulary"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="doap:vendor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:f-dccontributor-foafname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI=""/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:Agent"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="doap:category"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:b-dccontributor-foafname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:coverage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:l-schemapublisher-schemaname"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:about"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="omv:hasDomain"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="omv:hasLicense"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:a-schemacontributor-schemaname"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:i-dcatdistribution-dcataccessURL"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sioc:num_replies"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:subject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:description"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:CreativeWork"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:e-schemacontributor-schemaname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:issued"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="omv:conformsToKnowledgeRepresentationParadigm"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:modified"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:h-dccontributor-foafname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:c-schemacontributor-schemaname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:format"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:d-dccontributor-foafname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:publisher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:j-dcpublisher-foafname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:Person"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:accessURL"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:g-schemacontributor-schemaname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="doap:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:conformsTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:License"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:dateCreated"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omv:Ontology"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://kannel.kmi.open.ac.uk/ontology#Ontology"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="content:encoded"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="void:uriSpace"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="omv:hasOntologySyntax"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="doap:Project"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:mediaType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="doap:name"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:a-schemacontributor-schemaname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:b-dccontributor-foafname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:c-schemacontributor-schemaname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:d-dccontributor-foafname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:e-schemacontributor-schemaname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:f-dccontributor-foafname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:g-schemacontributor-schemaname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:h-dccontributor-foafname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:i-dcatdistribution-dcataccessURL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Agent"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:j-dcpublisher-foafname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:Agent"/>
+        <NamedIndividual IRI="https://vest.agrisemantics.org/_:l-schemapublisher-schemaname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://kannel.kmi.open.ac.uk/ontology#Ontology"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omv:Ontology"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dc:Standard"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/vocommons/voaf#Vocabulary"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="void:Dataset"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="schema:CreativeWork"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="doap:Project"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Document"/>
+        <NamedIndividual IRI=""/>
+    </ClassAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <IRI>https://vest.agrisemantics.org/_:a-schemacontributor-schemaname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">François Scharffe (LIRMM)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://vest.agrisemantics.org/_:b-dccontributor-foafname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">François Scharffe (LIRMM)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <IRI>https://vest.agrisemantics.org/_:c-schemacontributor-schemaname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stéphane Gigandet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://vest.agrisemantics.org/_:d-dccontributor-foafname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stéphane Gigandet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <IRI>https://vest.agrisemantics.org/_:e-schemacontributor-schemaname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Emmanuel Nauer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://vest.agrisemantics.org/_:f-dccontributor-foafname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Emmanuel Nauer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <IRI>https://vest.agrisemantics.org/_:g-schemacontributor-schemaname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Mark Harrison</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://vest.agrisemantics.org/_:h-dccontributor-foafname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Mark Harrison</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:accessURL"/>
+        <IRI>https://vest.agrisemantics.org/_:i-dcatdistribution-dcataccessURL</IRI>
+        <IRI>http://data.lirmm.fr/ontologies/food.rdf</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://vest.agrisemantics.org/_:j-dcpublisher-foafname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIRMM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>https://vest.agrisemantics.org/_:k-doapvendor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIRMM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:name"/>
+        <IRI>https://vest.agrisemantics.org/_:l-schemapublisher-schemaname</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIRMM</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

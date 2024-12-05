@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY pizza "http://www.pipian.com/rdf/school/pizza.owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;"
+         xmlns:pizza="&pizza;">
+  
+  <!-- base classes -->
+  
+  <owl:Class rdf:about="&pizza;PizzaIngredient">
+    <rdfs:label xml:lang="en">pizza ingredient</rdfs:label>
+    <rdfs:comment xml:lang="en">An ingredient of a pizza.</rdfs:comment>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;Meat">
+    <rdfs:label xml:lang="en">meat</rdfs:label>
+    <rdfs:comment xml:lang="en">A meat.</rdfs:comment>
+    <owl:disjointWith rdf:resource="&pizza;Vegetable"/>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;Vegetable">
+    <rdfs:label xml:lang="en">vegetable</rdfs:label>
+    <rdfs:comment xml:lang="en">A vegetable.</rdfs:comment>
+    <owl:disjointWith rdf:resource="&pizza;Meat"/>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;MeatIngredient">
+    <rdfs:subClassOf rdf:resource="&pizza;Meat"/>
+    <rdfs:subClassOf rdf:resource="&pizza;PizzaIngredient"/>
+    <rdfs:label xml:lang="en">meat ingredient</rdfs:label>
+    <rdfs:comment xml:lang="en">A meat ingredient.</rdfs:comment>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;VegetableIngredient">
+    <rdfs:subClassOf rdf:resource="&pizza;Vegetable"/>
+    <rdfs:subClassOf rdf:resource="&pizza;PizzaIngredient"/>
+    <rdfs:label xml:lang="en">vegetable ingredient</rdfs:label>
+    <rdfs:comment xml:lang="en">A vegetable ingredient.</rdfs:comment>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;Pizza">
+    <rdfs:label xml:lang="en">pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza.</rdfs:comment>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;SmallPizza">
+    <rdfs:subClassOf rdf:resource="&pizza;Pizza"/>
+    <rdfs:label xml:lang="en">small pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza with 2 or less ingredients on it.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;MediumPizza">
+    <rdfs:subClassOf rdf:resource="&pizza;Pizza"/>
+    <rdfs:label xml:lang="en">medium pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza with 3 to 5 ingredients on it.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">5</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;LargePizza">
+    <rdfs:subClassOf rdf:resource="&pizza;Pizza"/>
+    <rdfs:label xml:lang="en">large pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza with 6 or more ingredients on it.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">6</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;VegetarianPizza">
+    <rdfs:subClassOf rdf:resource="&pizza;Pizza"/>
+    <rdfs:label xml:lang="en">vegetarian pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza with no meat on it.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:allValuesFrom rdf:resource="&pizza;VegetableIngredient"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  
+  <owl:Class rdf:about="&pizza;MeatOnlyPizza">
+    <rdfs:subClassOf rdf:resource="&pizza;Pizza"/>
+    <rdfs:label xml:lang="en">meat-only pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza with no vegetables on it.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&pizza;hasIngredient"/>
+        <owl:allValuesFrom rdf:resource="&pizza;MeatIngredient"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&pizza;Order">
+    <rdfs:label xml:lang="en">order</rdfs:label>
+    <rdfs:comment xml:lang="en">An order for a set of pizzas.</rdfs:comment>
+  </owl:Class>
+  
+  <!-- base properties -->
+  
+  <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+  <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+  
+  <owl:ObjectProperty rdf:about="&pizza;hasIngredient">
+    <rdfs:label xml:lang="en">has ingredient</rdfs:label>
+    <rdfs:comment xml:lang="en">An ingredient that a pizza has.</rdfs:comment>
+    <rdfs:domain rdf:resource="&pizza;Pizza"/>
+    <rdfs:range rdf:resource="&pizza;PizzaIngredient"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="&pizza;hasPizza">
+    <rdfs:label xml:lang="en">has pizza</rdfs:label>
+    <rdfs:comment xml:lang="en">A pizza than an order has.</rdfs:comment>
+    <rdfs:domain rdf:resource="&pizza;Order"/>
+    <rdfs:range rdf:resource="&pizza;Pizza"/>
+  </owl:ObjectProperty>
+  
+  <!-- ingredient instances -->
+  
+  <pizza:PizzaIngredient rdf:about="&pizza;anchovie">
+    <rdfs:label xml:lang="en">anchovie</rdfs:label>
+  </pizza:PizzaIngredient>
+  
+  <pizza:MeatIngredient rdf:about="&pizza;ham">
+    <rdfs:label xml:lang="en">ham</rdfs:label>
+  </pizza:MeatIngredient>
+  
+  <pizza:MeatIngredient rdf:about="&pizza;meatball">
+    <rdfs:label xml:lang="en">meatball</rdfs:label>
+  </pizza:MeatIngredient>
+  
+  <pizza:VegetableIngredient rdf:about="&pizza;mushroom">
+    <rdfs:label xml:lang="en">mushroom</rdfs:label>
+  </pizza:VegetableIngredient>
+  
+  <pizza:VegetableIngredient rdf:about="&pizza;olive">
+    <rdfs:label xml:lang="en">olive</rdfs:label>
+  </pizza:VegetableIngredient>
+  
+  <pizza:VegetableIngredient rdf:about="&pizza;onion">
+    <rdfs:label xml:lang="en">onion</rdfs:label>
+  </pizza:VegetableIngredient>
+  
+  <pizza:MeatIngredient rdf:about="&pizza;pepperoni">
+    <rdfs:label xml:lang="en">pepperoni</rdfs:label>
+  </pizza:MeatIngredient>
+  
+  <pizza:VegetableIngredient rdf:about="&pizza;pepper">
+    <rdfs:label xml:lang="en">pepper</rdfs:label>
+  </pizza:VegetableIngredient>
+  
+  <pizza:MeatIngredient rdf:about="&pizza;sausage">
+    <rdfs:label xml:lang="en">sausage</rdfs:label>
+  </pizza:MeatIngredient>
+  
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <pizza:PizzaIngredient rdf:about="&pizza;anchovie"/>
+      <pizza:MeatIngredient rdf:about="&pizza;ham"/>
+      <pizza:MeatIngredient rdf:about="&pizza;meatball"/>
+      <pizza:VegetableIngredient rdf:about="&pizza;mushroom"/>
+      <pizza:VegetableIngredient rdf:about="&pizza;olive"/>
+      <pizza:VegetableIngredient rdf:about="&pizza;onion"/>
+      <pizza:MeatIngredient rdf:about="&pizza;pepperoni"/>
+      <pizza:VegetableIngredient rdf:about="&pizza;pepper"/>
+      <pizza:MeatIngredient rdf:about="&pizza;sausage"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+</rdf:RDF>
