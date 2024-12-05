@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:ex="http://example.org/#">
+
+  <owl:Ontology rdf:about=""/>
+
+  <rdf:Description rdf:ID="andreas">
+    <ex:worksAt rdf:resource="#swc"/>
+  </rdf:Description>
+
+  <ex:Student rdf:ID="wolf">
+    <ex:worksAt rdf:resource="#swc"/>
+    <ex:advisedBy rdf:resource="#stefan"/>
+  </ex:Student>
+
+  <rdf:Description rdf:ID="stefan">
+    <ex:leads rdf:resource="#swc"/>
+    <ex:manages rdf:resource="#andreas"/>
+  </rdf:Description>
+
+  <owl:ObjectProperty rdf:ID="worksAt">
+    <rdfs:domain rdf:resource="#Employee"/>
+    <rdfs:range rdf:resource="#Department"/>
+    <owl:inverseOf rdf:resource="#hosts"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="leads">
+    <rdfs:subPropertyOf rdf:resource="#worksAt"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="manages">
+    <rdfs:domain rdf:resource="#Manager"/>
+    <rdfs:range rdf:resource="#Student"/>
+    <owl:inverseOf rdf:resource="#advisedBy"/>
+    <owl:equivalentProperty rdf:resource="#advises"/>
+  </owl:ObjectProperty>
+
+  <!-- manages in connection with student means advisor -->
+  <owl:Class rdf:ID="Advisor">
+    <rdfs:subClassOf rdf:resource="#AdvisorRestriction"/>
+  </owl:Class>
+
+  <owl:Restriction rdf:ID="AdvisorRestriction">
+    <owl:onProperty rdf:resource="#manages"/>
+    <owl:allValuesFrom rdf:resource="#Student"/>
+  </owl:Restriction>
+</rdf:RDF>
+  

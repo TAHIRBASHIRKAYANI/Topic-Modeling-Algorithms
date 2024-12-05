@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY swrlx "http://www.w3.org/2003/11/swrlx#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ro "http://www.obofoundry.org/ro/ro.owl#" >
+    <!ENTITY swrc "http://swrc.ontoware.org/ontology-07#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY dul "http://www.loa-cnr.it/ontologies/DUL.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.e-lico.org/ontologies/dmro/DMRO-Event#"
+     xml:base="http://www.e-lico.org/ontologies/dmro/DMRO-Event"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
+     xmlns:swrlx="http://www.w3.org/2003/11/swrlx#"
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:dul="http://www.loa-cnr.it/ontologies/DUL.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:swrc="http://swrc.ontoware.org/ontology-07#">
+    <owl:Ontology rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event">
+        <rdfs:comment rdf:datatype="&rdfs;Literal">Ontology module created using DOLCE Ultralite as upper ontology. We have reused statements from SWRC and DC</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#hasSubEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#hasSubEvent">
+        <owl:inverseOf rdf:resource="http://www.e-lico.org/ontologies/dmro/DMRO-Event#isSubEventOf"/>
+        <rdfs:domain rdf:resource="&dul;Event"/>
+        <rdfs:range rdf:resource="&dul;Event"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#isSubEventOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#isSubEventOf">
+        <rdfs:range rdf:resource="&dul;Event"/>
+        <rdfs:domain rdf:resource="&dul;Event"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.obofoundry.org/ro/ro.owl#has_part -->
+
+    <owl:ObjectProperty rdf:about="&ro;has_part"/>
+    
+
+
+    <!-- http://www.obofoundry.org/ro/ro.owl#part_of -->
+
+    <owl:ObjectProperty rdf:about="&ro;part_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:DatatypeProperty rdf:about="&dc;date">
+        <owl:equivalentProperty rdf:resource="&swrc;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:DatatypeProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:DatatypeProperty rdf:about="&dc;language"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:DatatypeProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#date -->
+
+    <owl:DatatypeProperty rdf:about="&swrc;date"/>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#endDate -->
+
+    <owl:DatatypeProperty rdf:about="&swrc;endDate">
+        <rdfs:subPropertyOf rdf:resource="&swrc;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#startDate -->
+
+    <owl:DatatypeProperty rdf:about="&swrc;startDate">
+        <rdfs:subPropertyOf rdf:resource="&swrc;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Colloquium -->
+
+    <owl:Class rdf:about="&swrc;Colloquium">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Conference -->
+
+    <owl:Class rdf:about="&swrc;Conference">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Event -->
+
+    <owl:Class rdf:about="&swrc;Event">
+        <rdfs:subClassOf rdf:resource="&dul;Event"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">An event in the research community. It is meant to model different types of events and is thus specialized by a wide range of concepts including events like Lecture or Conference</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Exhibition -->
+
+    <owl:Class rdf:about="&swrc;Exhibition">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#GraduateClass -->
+
+    <owl:Class rdf:about="&swrc;GraduateClass">
+        <rdfs:subClassOf rdf:resource="&swrc;Seminar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Lecture -->
+
+    <owl:Class rdf:about="&swrc;Lecture">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Meeting -->
+
+    <owl:Class rdf:about="&swrc;Meeting">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Project -->
+
+    <owl:Class rdf:about="&swrc;Project">
+        <rdfs:subClassOf rdf:resource="&dul;Event"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">A project in the research community. It is meant to model different types of projects and is thus specialized by other concepts such as MetaProject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#ProjectMeeting -->
+
+    <owl:Class rdf:about="&swrc;ProjectMeeting">
+        <rdfs:subClassOf rdf:resource="&swrc;Meeting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Seminar -->
+
+    <owl:Class rdf:about="&swrc;Seminar">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#UndergraduateAdvancedClass -->
+
+    <owl:Class rdf:about="&swrc;UndergraduateAdvancedClass">
+        <rdfs:subClassOf rdf:resource="&swrc;Seminar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#UndergraduateIntermediateClass -->
+
+    <owl:Class rdf:about="&swrc;UndergraduateIntermediateClass">
+        <rdfs:subClassOf rdf:resource="&swrc;Seminar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology-07#Workshop -->
+
+    <owl:Class rdf:about="&swrc;Workshop">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Advertisement -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Advertisement">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#BestPaperEvent -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#BestPaperEvent">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Debate -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Debate">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#DemoVideo -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#DemoVideo">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#EventSection -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#EventSection">
+        <rdfs:subClassOf rdf:resource="&swrc;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#ExternalLecture -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#ExternalLecture">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Interview -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Interview">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Introduction -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Introduction">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#InvitedTalk -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#InvitedTalk">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Keynote -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Keynote">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#MetaProject -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#MetaProject">
+        <rdfs:subClassOf rdf:resource="&swrc;Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Opening -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Opening">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Panel -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Panel">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#PromoVideo -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#PromoVideo">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Summary -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Summary">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#ThesisDefense -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#ThesisDefense">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#ThesisProposal -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#ThesisProposal">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.e-lico.org/ontologies/dmro/DMRO-Event#Tutorial -->
+
+    <owl:Class rdf:about="http://www.e-lico.org/ontologies/dmro/DMRO-Event#Tutorial">
+        <rdfs:subClassOf rdf:resource="&swrc;Lecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DUL.owl#Event -->
+
+    <owl:Class rdf:about="&dul;Event">
+        <rdfs:comment rdf:datatype="&rdfs;Literal">Any physical, social, or mental process, event, or state.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

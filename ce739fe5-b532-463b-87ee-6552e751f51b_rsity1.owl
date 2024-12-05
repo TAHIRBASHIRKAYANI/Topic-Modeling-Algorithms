@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY university "http://owl.man.ac.uk/2005/07/sssw/university#" >
+]>
+
+
+<rdf:RDF xmlns="http://owl.man.ac.uk/2005/07/sssw/university#"
+     xml:base="http://owl.man.ac.uk/2005/07/sssw/university"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:university="http://owl.man.ac.uk/2005/07/sssw/university#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#assistsWith -->
+
+    <owl:ObjectProperty rdf:about="#assistsWith">
+        <rdfs:range rdf:resource="#Module"/>
+        <owl:inverseOf rdf:resource="#hasAssistant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#hasAssistant -->
+
+    <owl:ObjectProperty rdf:about="#hasAssistant"/>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#isTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="#isTaughtBy"/>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#takes -->
+
+    <owl:ObjectProperty rdf:about="#takes">
+        <rdfs:range rdf:resource="#Module"/>
+        <rdfs:domain rdf:resource="#UndergraduateStudent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#teaches -->
+
+    <owl:ObjectProperty rdf:about="#teaches">
+        <rdfs:domain rdf:resource="#AcademicStaff"/>
+        <rdfs:range rdf:resource="#Module"/>
+        <owl:inverseOf rdf:resource="#isTaughtBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#AcademicStaff -->
+
+    <owl:Class rdf:about="#AcademicStaff">
+        <rdfs:subClassOf rdf:resource="#Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#ComputerScienceModule -->
+
+    <owl:Class rdf:about="#ComputerScienceModule">
+        <rdfs:subClassOf rdf:resource="#Module"/>
+        <owl:disjointWith rdf:resource="#EconomicsModule"/>
+        <owl:disjointWith rdf:resource="#MathsModule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#EconomicsModule -->
+
+    <owl:Class rdf:about="#EconomicsModule">
+        <rdfs:subClassOf rdf:resource="#Module"/>
+        <owl:disjointWith rdf:resource="#MathsModule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#GraduateStudent -->
+
+    <owl:Class rdf:about="#GraduateStudent">
+        <rdfs:subClassOf rdf:resource="#Student"/>
+        <owl:disjointWith rdf:resource="#UndergraduateStudent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#JointHons -->
+
+    <owl:Class rdf:about="#JointHons">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#takes"/>
+                        <owl:someValuesFrom rdf:resource="#ComputerScienceModule"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#takes"/>
+                        <owl:someValuesFrom rdf:resource="#MathsModule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#MathsModule -->
+
+    <owl:Class rdf:about="#MathsModule">
+        <rdfs:subClassOf rdf:resource="#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Module -->
+
+    <owl:Class rdf:about="#Module">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isTaughtBy"/>
+                <owl:allValuesFrom rdf:resource="#AcademicStaff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isTaughtBy"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAssistant"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#NonAcademicStaff -->
+
+    <owl:Class rdf:about="#NonAcademicStaff">
+        <rdfs:subClassOf rdf:resource="#Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Person -->
+
+    <owl:Class rdf:about="#Person"/>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Staff -->
+
+    <owl:Class rdf:about="#Staff">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student -->
+
+    <owl:Class rdf:about="#Student">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#UndergraduateStudent -->
+
+    <owl:Class rdf:about="#UndergraduateStudent">
+        <rdfs:subClassOf rdf:resource="#Student"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#takes"/>
+                <owl:onClass rdf:resource="#Module"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#CS101 -->
+
+    <owl:Thing rdf:about="#CS101">
+        <rdf:type rdf:resource="#ComputerScienceModule"/>
+        <isTaughtBy rdf:resource="#Prof1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#CS102 -->
+
+    <ComputerScienceModule rdf:about="#CS102">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof2"/>
+    </ComputerScienceModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#CS103 -->
+
+    <ComputerScienceModule rdf:about="#CS103">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof3"/>
+    </ComputerScienceModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#CS104 -->
+
+    <ComputerScienceModule rdf:about="#CS104">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof1"/>
+    </ComputerScienceModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#CS105 -->
+
+    <owl:Thing rdf:about="#CS105">
+        <rdf:type rdf:resource="#ComputerScienceModule"/>
+        <isTaughtBy rdf:resource="#Prof3"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#EC101 -->
+
+    <owl:Thing rdf:about="#EC101">
+        <rdf:type rdf:resource="#EconomicsModule"/>
+        <isTaughtBy rdf:resource="#Prof7"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#EC102 -->
+
+    <EconomicsModule rdf:about="#EC102">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof8"/>
+    </EconomicsModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#EC103 -->
+
+    <owl:Thing rdf:about="#EC103">
+        <rdf:type rdf:resource="#EconomicsModule"/>
+        <isTaughtBy rdf:resource="#Prof9"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#MT101 -->
+
+    <MathsModule rdf:about="#MT101">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof4"/>
+    </MathsModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#MT102 -->
+
+    <MathsModule rdf:about="#MT102">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof5"/>
+    </MathsModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#MT103 -->
+
+    <MathsModule rdf:about="#MT103">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <isTaughtBy rdf:resource="#Prof6"/>
+    </MathsModule>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof1 -->
+
+    <AcademicStaff rdf:about="#Prof1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <teaches rdf:resource="#CS101"/>
+        <teaches rdf:resource="#CS104"/>
+    </AcademicStaff>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof2 -->
+
+    <AcademicStaff rdf:about="#Prof2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <teaches rdf:resource="#CS102"/>
+    </AcademicStaff>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof3 -->
+
+    <AcademicStaff rdf:about="#Prof3">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <teaches rdf:resource="#CS103"/>
+        <teaches rdf:resource="#CS105"/>
+    </AcademicStaff>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof4 -->
+
+    <AcademicStaff rdf:about="#Prof4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <teaches rdf:resource="#MT101"/>
+    </AcademicStaff>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof5 -->
+
+    <owl:Thing rdf:about="#Prof5">
+        <rdf:type rdf:resource="#AcademicStaff"/>
+        <teaches rdf:resource="#MT102"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof6 -->
+
+    <AcademicStaff rdf:about="#Prof6">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <teaches rdf:resource="#MT103"/>
+    </AcademicStaff>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof7 -->
+
+    <owl:Thing rdf:about="#Prof7">
+        <rdf:type rdf:resource="#AcademicStaff"/>
+        <teaches rdf:resource="#EC101"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof8 -->
+
+    <owl:Thing rdf:about="#Prof8">
+        <rdf:type rdf:resource="#AcademicStaff"/>
+        <teaches rdf:resource="#EC102"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Prof9 -->
+
+    <owl:Thing rdf:about="#Prof9">
+        <rdf:type rdf:resource="#AcademicStaff"/>
+        <teaches rdf:resource="#EC103"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student1 -->
+
+    <owl:Thing rdf:about="#Student1">
+        <rdf:type rdf:resource="#UndergraduateStudent"/>
+        <takes rdf:resource="#CS101"/>
+        <takes rdf:resource="#CS102"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student2 -->
+
+    <UndergraduateStudent rdf:about="#Student2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <takes rdf:resource="#CS101"/>
+        <takes rdf:resource="#MT101"/>
+    </UndergraduateStudent>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student3 -->
+
+    <owl:Thing rdf:about="#Student3">
+        <rdf:type rdf:resource="#UndergraduateStudent"/>
+        <takes rdf:resource="#MT101"/>
+        <takes rdf:resource="#MT103"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student4 -->
+
+    <UndergraduateStudent rdf:about="#Student4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <takes rdf:resource="#CS101"/>
+        <takes rdf:resource="#MT101"/>
+    </UndergraduateStudent>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student5 -->
+
+    <UndergraduateStudent rdf:about="#Student5">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <takes rdf:resource="#MT102"/>
+        <takes rdf:resource="#MT103"/>
+    </UndergraduateStudent>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student6 -->
+
+    <owl:Thing rdf:about="#Student6">
+        <rdf:type rdf:resource="#UndergraduateStudent"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#takes"/>
+                <owl:someValuesFrom rdf:resource="#Module"/>
+            </owl:Restriction>
+        </rdf:type>
+        <takes rdf:resource="#MT101"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student7 -->
+
+    <owl:Thing rdf:about="#Student7">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#takes"/>
+                <owl:someValuesFrom rdf:resource="#MathsModule"/>
+            </owl:Restriction>
+        </rdf:type>
+        <takes rdf:resource="#CS101"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student8 -->
+
+    <owl:Thing rdf:about="#Student8">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#takes"/>
+                <owl:someValuesFrom rdf:resource="#EconomicsModule"/>
+            </owl:Restriction>
+        </rdf:type>
+        <takes rdf:resource="#CS102"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://owl.man.ac.uk/2005/07/sssw/university#Student9 -->
+
+    <owl:Thing rdf:about="#Student9">
+        <takes rdf:resource="#CS101"/>
+        <takes rdf:resource="#CS102"/>
+        <takes rdf:resource="#MT101"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
