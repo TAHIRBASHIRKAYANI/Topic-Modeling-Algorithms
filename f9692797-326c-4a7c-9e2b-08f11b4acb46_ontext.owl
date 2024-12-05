@@ -1,0 +1,1670 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://islab.dico.unimi.it/ontologies/mxonto-context.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://islab.dico.unimi.it/ontologies/mxonto-context.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mx Onto Context</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Describes the music resource context</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Bichord">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Chord"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Membranophone_Instrument">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Plucked_Strings">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Chordophone_Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Accent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="accent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Music_Feature"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="order"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Ensemble"/>
+  <owl:Class rdf:ID="Electrophone_Instrument">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Triple_Meter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Time_Signature"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Beating_Reed">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Aerophone_Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Instrument">
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Bowed_Strings">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Chordophone_Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Chord">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="scale"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BeatingSingleReed">
+    <rdfs:subClassOf rdf:resource="#Beating_Reed"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Minor_Triad">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Triad"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Minor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Scale"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Melodic_Fragment">
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Four_Notes_Chord">
+    <rdfs:subClassOf rdf:resource="#Chord"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Time_Signature">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="numerator"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="denominator"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Part">
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Chromatic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Scale"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Note">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="octave"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Diminished_Triad">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Triad"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Major">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Scale"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pentatonic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Scale"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mj_Triad_Second_Inversion">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <Bichord_Component rdf:ID="Major_Sixth">
+            <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >6</degree_distance>
+            <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >major</modifier>
+          </Bichord_Component>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="bichord"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <Bichord_Component rdf:ID="Perfect_Fourth">
+            <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >perfect</modifier>
+            <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >4</degree_distance>
+          </Bichord_Component>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#bichord"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Major_Triad"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Dominant_Seventh">
+    <rdfs:subClassOf rdf:resource="#Four_Notes_Chord"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Episode">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="time_signature"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#accent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Aerophone_Instrument">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Rubbed_Strings">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Chordophone_Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Rhythm"/>
+  <owl:Class rdf:ID="Struck_Strings">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Chordophone_Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mj_Triad_Root_Position">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <Bichord_Component rdf:ID="Major_Third">
+            <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >3</degree_distance>
+            <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >major</modifier>
+          </Bichord_Component>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#bichord"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Major_Triad"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#bichord"/>
+        </owl:onProperty>
+        <owl:hasValue>
+          <Bichord_Component rdf:ID="Perfect_Fifth">
+            <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >5</degree_distance>
+            <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >perfect</modifier>
+          </Bichord_Component>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bachian_Minor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Scale"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BeatingDoubleReed">
+    <rdfs:subClassOf rdf:resource="#Beating_Reed"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Triad">
+    <rdfs:subClassOf rdf:resource="#Chord"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Melody"/>
+  <owl:Class rdf:ID="Harmony"/>
+  <owl:Class rdf:ID="Mi_Triad_Root_Position">
+    <rdfs:subClassOf rdf:resource="#Minor_Triad"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Chordophone_Instrument">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Scale">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="episode"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Music_Resource">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="harmony"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="melody"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="ensemble"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="rhythm"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Plucked_Keyboards">
+    <rdfs:subClassOf rdf:resource="#Chordophone_Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mi_Triad_Second_Inversion">
+    <rdfs:subClassOf rdf:resource="#Minor_Triad"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Major_Triad">
+    <rdfs:subClassOf rdf:resource="#Triad"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Idiophone_Instrument">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Bichord_Component">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="degree_distance"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Music_Feature"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modifier"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mj_Triad_First_Inversion">
+    <rdfs:subClassOf rdf:resource="#Major_Triad"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Esatonic">
+    <rdfs:subClassOf rdf:resource="#Scale"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Duple_Meter">
+    <rdfs:subClassOf rdf:resource="#Time_Signature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mi_Triad_First_Inversion">
+    <rdfs:subClassOf rdf:resource="#Minor_Triad"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="upper_pitch">
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:domain rdf:resource="#Melodic_Fragment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#melody">
+    <rdfs:range rdf:resource="#Melody"/>
+    <rdfs:domain rdf:resource="#Music_Resource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="melody_scale">
+    <rdfs:range rdf:resource="#Scale"/>
+    <rdfs:domain rdf:resource="#Melodic_Fragment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ensemble_part">
+    <rdfs:range rdf:resource="#Part"/>
+    <rdfs:domain rdf:resource="#Ensemble"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#scale">
+    <rdfs:range rdf:resource="#Scale"/>
+    <rdfs:domain rdf:resource="#Chord"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#time_signature">
+    <rdfs:domain rdf:resource="#Episode"/>
+    <rdfs:range rdf:resource="#Time_Signature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#episode">
+    <rdfs:domain rdf:resource="#Rhythm"/>
+    <rdfs:range rdf:resource="#Episode"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="chord">
+    <rdfs:range rdf:resource="#Chord"/>
+    <rdfs:domain rdf:resource="#Harmony"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#ensemble">
+    <rdfs:domain rdf:resource="#Music_Resource"/>
+    <rdfs:range rdf:resource="#Ensemble"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="lower_pitch">
+    <rdfs:domain rdf:resource="#Melodic_Fragment"/>
+    <rdfs:range rdf:resource="#Note"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#bichord">
+    <rdfs:domain rdf:resource="#Chord"/>
+    <rdfs:range rdf:resource="#Bichord_Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="first_degree">
+    <rdfs:domain rdf:resource="#Scale"/>
+    <rdfs:range rdf:resource="#Note"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#rhythm">
+    <rdfs:range rdf:resource="#Rhythm"/>
+    <rdfs:domain rdf:resource="#Music_Resource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="instrument">
+    <rdfs:domain rdf:resource="#Part"/>
+    <rdfs:range rdf:resource="#Instrument"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#harmony">
+    <rdfs:range rdf:resource="#Harmony"/>
+    <rdfs:domain rdf:resource="#Music_Resource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="melodic_fragment">
+    <rdfs:domain rdf:resource="#Melody"/>
+    <rdfs:range rdf:resource="#Melodic_Fragment"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="accidental">
+    <rdfs:domain rdf:resource="#Note"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >b</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >X</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >#</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >null</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >bb</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pitch">
+    <rdfs:domain rdf:resource="#Note"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >C</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >D</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >G</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >F</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >E</rdf:first>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >B</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >A</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#degree_distance">
+    <rdfs:domain rdf:resource="#Bichord_Component"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#denominator">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Time_Signature"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#accent">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >weak</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >half_strong</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >strong</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Accent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#octave">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >0</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >4</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                      >5</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >6</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                          >7</rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                  >3</rdf:first>
+                </rdf:rest>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+              >1</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+          >-1</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Note"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#numerator">
+    <rdfs:domain rdf:resource="#Time_Signature"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fundamental_degree">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >III</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >V</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >VI</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >VII</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >II+</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >II-</rdf:first>
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >III+</rdf:first>
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:rest rdf:parseType="Resource">
+                                        <rdf:rest rdf:parseType="Resource">
+                                          <rdf:first rdf:datatype=
+                                          "http://www.w3.org/2001/XMLSchema#string"
+                                          >V-</rdf:first>
+                                          <rdf:rest rdf:parseType="Resource">
+                                            <rdf:first rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >VI+</rdf:first>
+                                            <rdf:rest rdf:parseType="Resource">
+                                              <rdf:first rdf:datatype=
+                                              "http://www.w3.org/2001/XMLSchema#string"
+                                              >VI-</rdf:first>
+                                              <rdf:rest rdf:parseType="Resource">
+                                                <rdf:first rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >VII+</rdf:first>
+                                                <rdf:rest rdf:parseType="Resource">
+                                                  <rdf:first rdf:datatype=
+                                                  "http://www.w3.org/2001/XMLSchema#string"
+                                                  >VII-</rdf:first>
+                                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                </rdf:rest>
+                                              </rdf:rest>
+                                            </rdf:rest>
+                                          </rdf:rest>
+                                        </rdf:rest>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >V+</rdf:first>
+                                      </rdf:rest>
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >IV-</rdf:first>
+                                    </rdf:rest>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >IV+</rdf:first>
+                                  </rdf:rest>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >III-</rdf:first>
+                                </rdf:rest>
+                              </rdf:rest>
+                            </rdf:rest>
+                          </rdf:rest>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >I-</rdf:first>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >I+</rdf:first>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >IV</rdf:first>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >II</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >I</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Chord"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modifier">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >perfect</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >augmented</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >diminished</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >double_augmented</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >triple_augmented</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >quintuple_augmented</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >double_diminished</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >triple_diminished</rdf:first>
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >quintuple_diminished</rdf:first>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </rdf:rest>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >quadruple_diminished</rdf:first>
+                              </rdf:rest>
+                            </rdf:rest>
+                          </rdf:rest>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >quadruple_augmented</rdf:first>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >minor</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >major</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Bichord_Component"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="number_of_measures">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Episode"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#order">
+    <rdfs:domain rdf:resource="#Accent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="number_of_parts">
+    <rdfs:domain rdf:resource="#Ensemble"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="performers">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Part"/>
+  </owl:DatatypeProperty>
+  <Plucked_Strings rdf:ID="mandoline">
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="mandolin">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >mandolino</rdfs:comment>
+        <owl:sameAs rdf:resource="#mandoline"/>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mandolino</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="tube_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra tubolare</rdfs:comment>
+  </Plucked_Strings>
+  <Struck_Strings rdf:ID="piano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte</rdfs:comment>
+  </Struck_Strings>
+  <Note rdf:ID="E3b">
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >b</accidental>
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >E</pitch>
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >-1</octave>
+  </Note>
+  <Bowed_Strings rdf:ID="bow_harp">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="arched_harp">
+        <owl:sameAs rdf:resource="#bow_harp"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >arpa arcuata</rdfs:comment>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arpa arcuata</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="koto">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >koto</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="guitar_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra chitarra, citara-guitarra</rdfs:comment>
+  </Plucked_Strings>
+  <Major rdf:ID="C_Major"/>
+  <Plucked_Strings rdf:ID="gusli">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gusli</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="mezzo-soprano">
+    <owl:sameAs>
+      <BeatingDoubleReed rdf:ID="contralto">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >contralto</rdfs:comment>
+        <owl:sameAs>
+          <BeatingDoubleReed rdf:ID="alto">
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >contralto</rdfs:comment>
+            <owl:sameAs rdf:resource="#contralto"/>
+          </BeatingDoubleReed>
+        </owl:sameAs>
+      </BeatingDoubleReed>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mezzosoprano</rdfs:comment>
+  </BeatingDoubleReed>
+  <Plucked_Strings rdf:ID="double_necked_lute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto a doppio manico</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="cittern">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra</rdfs:comment>
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="cither">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >cetra</rdfs:comment>
+        <owl:sameAs rdf:resource="#cittern"/>
+        <owl:sameAs>
+          <Plucked_Strings rdf:ID="citole">
+            <owl:sameAs rdf:resource="#cittern"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cetra</rdfs:comment>
+            <owl:sameAs rdf:resource="#cither"/>
+          </Plucked_Strings>
+        </owl:sameAs>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <owl:sameAs rdf:resource="#citole"/>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="keyed_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chitarra a pianoforte</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="violin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >violino</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Keyboards rdf:ID="claviorganum"/>
+  <Plucked_Strings rdf:ID="lyre">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lira</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="biwa">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >biwa</rdfs:comment>
+  </Plucked_Strings>
+  <Bichord_Component rdf:ID="Minor_Sixth">
+    <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >minor</modifier>
+    <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</degree_distance>
+  </Bichord_Component>
+  <Plucked_Strings rdf:ID="tres">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tres</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="tenor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tenore</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="viola_pomposa">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola pomposa</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="mandora">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mandola</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="bowed_lute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto ad arco</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="violone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >violone</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="trumpet_marine">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tromba marina</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Keyboards rdf:ID="virginal">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >virginale</rdfs:comment>
+  </Plucked_Keyboards>
+  <Plucked_Strings rdf:ID="long_necked_lute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto col manico lungo</rdfs:comment>
+  </Plucked_Strings>
+  <Struck_Strings rdf:ID="square_piano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte a tavolo</rdfs:comment>
+  </Struck_Strings>
+  <Rubbed_Strings rdf:ID="hurdy_gurdy">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gironda, ghironda, viola da orbo</rdfs:comment>
+  </Rubbed_Strings>
+  <Plucked_Keyboards rdf:ID="sambuca_lincea">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clavicembalo</rdfs:comment>
+  </Plucked_Keyboards>
+  <Bowed_Strings rdf:ID="arpeggione">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="bowed_guitar">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >arpeggione</rdfs:comment>
+        <owl:sameAs rdf:resource="#arpeggione"/>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arpeggione</rdfs:comment>
+  </Bowed_Strings>
+  <Rubbed_Strings rdf:ID="musical_bow">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arco musicale</rdfs:comment>
+  </Rubbed_Strings>
+  <Plucked_Strings rdf:ID="veena">
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="vina">
+        <owl:sameAs rdf:resource="#veena"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >vina</rdfs:comment>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >veena</rdfs:comment>
+  </Plucked_Strings>
+  <Note rdf:ID="D3b">
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >b</accidental>
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >D</pitch>
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</octave>
+  </Note>
+  <BeatingDoubleReed rdf:ID="human_voice">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >voce umana</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="vielle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viella</rdfs:comment>
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="fiddle">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >viella</rdfs:comment>
+        <owl:sameAs rdf:resource="#vielle"/>
+      </Bowed_Strings>
+    </owl:sameAs>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="hawaiian_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chitarra hawaiana</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="short_necked_lute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto con manico corto</rdfs:comment>
+  </Plucked_Strings>
+  <Struck_Strings rdf:ID="transposing_piano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte traspositore</rdfs:comment>
+  </Struck_Strings>
+  <BeatingDoubleReed rdf:ID="humming_voices">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coro a bocca chiusa</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="viola_di_bordone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola di bordone</rdfs:comment>
+  </Bowed_Strings>
+  <Major rdf:ID="G_Major"/>
+  <BeatingDoubleReed rdf:ID="bass">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >basso</rdfs:comment>
+  </BeatingDoubleReed>
+  <Plucked_Strings rdf:ID="baglama">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >baglama</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="cut_away_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chitarra incavata</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="kantele">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salterio finlandese</rdfs:comment>
+  </Plucked_Strings>
+  <Note rdf:ID="A4">
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</octave>
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A</pitch>
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >null</accidental>
+  </Note>
+  <Mj_Triad_Root_Position rdf:ID="Mj_Triad_Root_Position_A_V">
+    <scale>
+      <Major rdf:ID="A_Major">
+        <first_degree>
+          <Note rdf:ID="A">
+            <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >null</accidental>
+            <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >A</pitch>
+          </Note>
+        </first_degree>
+      </Major>
+    </scale>
+    <fundamental_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >V</fundamental_degree>
+  </Mj_Triad_Root_Position>
+  <Plucked_Strings rdf:ID="thuringian_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra turingia</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="banjo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banjo</rdfs:comment>
+  </Plucked_Strings>
+  <Aerophone_Instrument rdf:ID="accordion">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fisarmonica</rdfs:comment>
+  </Aerophone_Instrument>
+  <Plucked_Strings rdf:ID="small_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >piccola chitarra</rdfs:comment>
+  </Plucked_Strings>
+  <Episode rdf:ID="three_fourth_Sww">
+    <time_signature>
+      <Triple_Meter rdf:ID="three_fourth">
+        <denominator rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4</denominator>
+        <numerator rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</numerator>
+      </Triple_Meter>
+    </time_signature>
+  </Episode>
+  <Rubbed_Strings rdf:ID="sambuca">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sambuca, ghironda</rdfs:comment>
+  </Rubbed_Strings>
+  <Plucked_Strings rdf:ID="ud">
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="oud">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >oud</rdfs:comment>
+        <owl:sameAs rdf:resource="#ud"/>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oud</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Keyboards rdf:ID="enharmonic_harpsichord">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >archicembalo, arcicembalo, cembalo enarmonico</rdfs:comment>
+  </Plucked_Keyboards>
+  <Plucked_Strings rdf:ID="psalter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salterio</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chitarra</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="lute_with_turned_back_peg_box">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto con paletta ortogonale al manico</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="big_discant_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >grande chitarra soprano</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="choir">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coro</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="crowth">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="crwth">
+        <owl:sameAs>
+          <Bowed_Strings rdf:ID="crowd">
+            <owl:sameAs rdf:resource="#crwth"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >crotta</rdfs:comment>
+            <owl:sameAs rdf:resource="#crowth"/>
+          </Bowed_Strings>
+        </owl:sameAs>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >crotta</rdfs:comment>
+        <owl:sameAs rdf:resource="#crowth"/>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <owl:sameAs rdf:resource="#crowd"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >crotta</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="violoncello">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="cello">
+        <owl:sameAs rdf:resource="#violoncello"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >violoncello</rdfs:comment>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >violoncello</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="viola_da_gamba">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola da gamba</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="lute_with_several_courses_of_strings">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto a coro, liuto con corde doppie</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="lute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liuto</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Keyboards rdf:ID="cembalo">
+    <owl:sameAs>
+      <Plucked_Keyboards rdf:ID="harpsichord">
+        <owl:sameAs rdf:resource="#cembalo"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >clavicembalo</rdfs:comment>
+      </Plucked_Keyboards>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clavicembalo</rdfs:comment>
+  </Plucked_Keyboards>
+  <Plucked_Strings rdf:ID="chitarrone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chitarrone</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="cithara">
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="kithara">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >citara</rdfs:comment>
+        <owl:sameAs rdf:resource="#cithara"/>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >citara</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="banjo_mandolin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banjo mandolino</rdfs:comment>
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="mandolin_banjo">
+        <owl:sameAs rdf:resource="#banjo_mandolin"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >banjo mandolino</rdfs:comment>
+      </Plucked_Strings>
+    </owl:sameAs>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="soprano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >soprano</rdfs:comment>
+  </BeatingDoubleReed>
+  <Accent rdf:ID="Weak_2">
+    <accent rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weak</accent>
+  </Accent>
+  <Note rdf:ID="E3">
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >E</pitch>
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</octave>
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >null</accidental>
+  </Note>
+  <Note rdf:ID="D4b">
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >D</pitch>
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</octave>
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >b</accidental>
+  </Note>
+  <Aerophone_Instrument rdf:ID="barrel_organ">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte a cilindro</rdfs:comment>
+  </Aerophone_Instrument>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >weak</rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >half_strong</rdf:first>
+        </rdf:rest>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >strong</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+  <BeatingDoubleReed rdf:ID="buffo_bass">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >basso buffo</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="viola_d_amore">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola d'amore</rdfs:comment>
+  </Bowed_Strings>
+  <Accent rdf:ID="Weak_3">
+    <accent rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weak</accent>
+  </Accent>
+  <Plucked_Strings rdf:ID="flat_back_mandolin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mandolino piatto, mandolino a fondo piatto</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="childrens_voices">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >voci bianche</rdfs:comment>
+  </BeatingDoubleReed>
+  <Major rdf:ID="Ab_Major"/>
+  <Bowed_Strings rdf:ID="barytone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola di bordone, viola di fagotto</rdfs:comment>
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="baryton">
+        <owl:sameAs rdf:resource="#barytone"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >viola di bordone, viola di fagotto</rdfs:comment>
+      </Bowed_Strings>
+    </owl:sameAs>
+  </Bowed_Strings>
+  <BeatingDoubleReed rdf:ID="baritone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >baritono</rdfs:comment>
+  </BeatingDoubleReed>
+  <Plucked_Strings rdf:ID="bouzouki">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bouzouki</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="countertenor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >controtenore</rdfs:comment>
+  </BeatingDoubleReed>
+  <Dominant_Seventh rdf:ID="Dominant_Seventh_A_V">
+    <bichord>
+      <Bichord_Component rdf:ID="Minor_Seventh">
+        <degree_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7</degree_distance>
+        <modifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >minor</modifier>
+      </Bichord_Component>
+    </bichord>
+    <bichord rdf:resource="#Major_Third"/>
+    <scale rdf:resource="#A_Major"/>
+    <fundamental_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >V</fundamental_degree>
+    <bichord rdf:resource="#Perfect_Fifth"/>
+  </Dominant_Seventh>
+  <Melodic_Fragment rdf:ID="E3b_D4b_AbMj">
+    <melody_scale rdf:resource="#Ab_Major"/>
+    <upper_pitch rdf:resource="#D4b"/>
+    <lower_pitch rdf:resource="#E3b"/>
+  </Melodic_Fragment>
+  <Plucked_Strings rdf:ID="small_discant_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >piccola chitarra soprano</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="pipa">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pinyin pípá</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="charango">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >charango</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="balalajka">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >balalaica</rdfs:comment>
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="balalayka">
+        <owl:sameAs rdf:resource="#balalajka"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >balalaica</rdfs:comment>
+      </Plucked_Strings>
+    </owl:sameAs>
+  </Plucked_Strings>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >major</rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >minor</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >augmented</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >triple_augmented</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >triple_diminished</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >quintuple_dimished</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >quadruple_diminished</rdf:first>
+                          </rdf:rest>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >double_diminished</rdf:first>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >diminished</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >quintuple_augmented</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >quadruple_augmented</rdf:first>
+                </rdf:rest>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >double_augmented</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </rdf:rest>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >perfect</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+  <Plucked_Keyboards rdf:ID="spinet">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spinetta</rdfs:comment>
+  </Plucked_Keyboards>
+  <Mj_Triad_Second_Inversion rdf:ID="Mj_Triad_Second_Inversion_A_I">
+    <fundamental_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >I</fundamental_degree>
+    <scale rdf:resource="#A_Major"/>
+  </Mj_Triad_Second_Inversion>
+  <Plucked_Strings rdf:ID="vihuela">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vihuela</rdfs:comment>
+  </Plucked_Strings>
+  <Note rdf:ID="B2b">
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >b</accidental>
+    <octave rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</octave>
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >B</pitch>
+  </Note>
+  <Plucked_Strings rdf:ID="harp_lute">
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="dital_harp">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >arpa liuto</rdfs:comment>
+        <owl:sameAs rdf:resource="#harp_lute"/>
+      </Plucked_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arpa liuto</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="shamisen">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shamisen</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="rebec">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="rebeck">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >rubeba, rebeca, ribecca</rdfs:comment>
+        <owl:sameAs rdf:resource="#rebec"/>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rubeba, rebeca, ribecca</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="piano_violin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cembalo ad arco</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="kora">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >kora</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="sitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sitar</rdfs:comment>
+  </Plucked_Strings>
+  <BeatingDoubleReed rdf:ID="mixed_voices">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(coro di) voci miste</rdfs:comment>
+  </BeatingDoubleReed>
+  <Bowed_Strings rdf:ID="bass_viol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola bassa</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Keyboards rdf:ID="clavicytherium">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >claviciterio</rdfs:comment>
+  </Plucked_Keyboards>
+  <Bowed_Strings rdf:ID="contrabass">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >contrabbasso</rdfs:comment>
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="double_bass">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >contrabbasso</rdfs:comment>
+        <owl:sameAs rdf:resource="#contrabass"/>
+      </Bowed_Strings>
+    </owl:sameAs>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="lyre_guitar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lira_chitarra</rdfs:comment>
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="apollo_guitar">
+        <owl:sameAs rdf:resource="#lyre_guitar"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >lira chitarra</rdfs:comment>
+      </Plucked_Strings>
+    </owl:sameAs>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="tenor_viol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola tenore</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra da tavolo</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="violino_piccolo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >violino piccolo</rdfs:comment>
+  </Bowed_Strings>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >A</rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >B</rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >C</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >D</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Abb</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >G</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >F</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >E</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </rdf:rest>
+      </rdf:rest>
+    </owl:oneOf>
+  </owl:DataRange>
+  <Melodic_Fragment rdf:ID="B2b_D3b_AbMj">
+    <lower_pitch rdf:resource="#B2b"/>
+    <upper_pitch rdf:resource="#D3b"/>
+    <melody_scale rdf:resource="#Ab_Major"/>
+  </Melodic_Fragment>
+  <Struck_Strings rdf:ID="piano_with_aliquot_strings">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte ad armonici</rdfs:comment>
+  </Struck_Strings>
+  <BeatingDoubleReed rdf:ID="castrato">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >castrato</rdfs:comment>
+  </BeatingDoubleReed>
+  <Plucked_Strings rdf:ID="plucked_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra a percussione</rdfs:comment>
+  </Plucked_Strings>
+  <Rubbed_Strings rdf:ID="monochord">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >monocordo</rdfs:comment>
+  </Rubbed_Strings>
+  <Rhythm rdf:ID="Rhythm_Chopin42">
+    <episode rdf:resource="#three_fourth_Sww"/>
+  </Rhythm>
+  <Plucked_Strings rdf:ID="zheng">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zheng</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="theorbo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tiorba</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="pointed_harp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arpanetta</rdfs:comment>
+    <owl:sameAs>
+      <Plucked_Strings rdf:ID="peaked_harp">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >arpanetta</rdfs:comment>
+        <owl:sameAs rdf:resource="#pointed_harp"/>
+      </Plucked_Strings>
+    </owl:sameAs>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="bow_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra ad arco</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="sarod">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sarod</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="viola">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola</rdfs:comment>
+  </Bowed_Strings>
+  <Mi_Triad_Second_Inversion rdf:ID="F_mi_Triad_SecondInversion">
+    <scale rdf:resource="#Ab_Major"/>
+    <bichord rdf:resource="#Perfect_Fourth"/>
+    <fundamental_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VI</fundamental_degree>
+    <bichord rdf:resource="#Minor_Sixth"/>
+  </Mi_Triad_Second_Inversion>
+  <Accent rdf:ID="Strong_1">
+    <accent rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</accent>
+  </Accent>
+  <Bowed_Strings rdf:ID="bumbass">
+    <owl:sameAs>
+      <Bowed_Strings rdf:ID="bumbasz">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >basso di Fiandra</rdfs:comment>
+        <owl:sameAs rdf:resource="#bumbass"/>
+        <owl:sameAs>
+          <Bowed_Strings rdf:ID="bladder_and_string">
+            <owl:sameAs rdf:resource="#bumbasz"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >basso di Fiandra</rdfs:comment>
+            <owl:sameAs rdf:resource="#bumbass"/>
+          </Bowed_Strings>
+        </owl:sameAs>
+      </Bowed_Strings>
+    </owl:sameAs>
+    <owl:sameAs rdf:resource="#bladder_and_string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >basso di Fiandra</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="bassoon_fiddle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola da spalla, viola fagotto</rdfs:comment>
+  </Bowed_Strings>
+  <Plucked_Strings rdf:ID="harp_zither">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cetra a 7 piroli</rdfs:comment>
+  </Plucked_Strings>
+  <Struck_Strings rdf:ID="clavichord">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clavicordo</rdfs:comment>
+  </Struck_Strings>
+  <Plucked_Strings rdf:ID="round_back_mandolin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mandolino sassone, mandolino con conchiglia a tre strisce</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="viola_bastarda">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola bastarda</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="descant_viol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola discantica</rdfs:comment>
+  </Bowed_Strings>
+  <Bowed_Strings rdf:ID="violotta">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola tenore, violino tenore</rdfs:comment>
+  </Bowed_Strings>
+  <Struck_Strings rdf:ID="fortepiano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fortepiano</rdfs:comment>
+  </Struck_Strings>
+  <Plucked_Strings rdf:ID="archlute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arciliuto</rdfs:comment>
+  </Plucked_Strings>
+  <Plucked_Strings rdf:ID="ukulele">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ukulele</rdfs:comment>
+  </Plucked_Strings>
+  <Bowed_Strings rdf:ID="treble_viol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viola soprano</rdfs:comment>
+  </Bowed_Strings>
+  <Struck_Strings rdf:ID="prepared_piano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte preparato</rdfs:comment>
+  </Struck_Strings>
+  <Struck_Strings rdf:ID="aeolian_piano">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pianoforte eolio</rdfs:comment>
+  </Struck_Strings>
+  <Note rdf:ID="E">
+    <accidental rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >null</accidental>
+    <pitch rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >E</pitch>
+  </Note>
+  <BeatingDoubleReed rdf:ID="bass_baritone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >basso-baritono</rdfs:comment>
+  </BeatingDoubleReed>
+  <Part rdf:ID="Piano_Solo">
+    <performers rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</performers>
+    <instrument rdf:resource="#piano"/>
+  </Part>
+  <Plucked_Strings rdf:ID="harp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arpa</rdfs:comment>
+  </Plucked_Strings>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
