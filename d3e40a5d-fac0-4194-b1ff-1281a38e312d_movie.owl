@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:mime="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://wwwis.win.tue.nl/~hera/Hera-S/movie.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://wwwis.win.tue.nl/~hera/Hera-S/movie.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Director">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="directed"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ActorParticipant"/>
+  <owl:Class rdf:ID="Actor">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MemorableQuote"/>
+  <owl:Class rdf:ID="Genre"/>
+  <owl:Class rdf:ID="Movie">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="directed_by"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="written_by"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="produced_by"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#directed_by"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ExternalReview"/>
+  <owl:Class rdf:ID="Soundtrack"/>
+  <owl:Class rdf:ID="Writer">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has_written"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Producer">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has_produced"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="trailer_of_movie">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="has_trailer"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdfs:domain rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="quote_made_by">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="made_quote"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#ActorParticipant"/>
+    <rdfs:domain rdf:resource="#MemorableQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="person_photo">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="photo_of_person"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="photo"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_external_review">
+    <rdfs:range rdf:resource="#ExternalReview"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:ID="belongs_to_movie"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="movie_photo">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="photo_of_movie"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#photo"/>
+    <rdfs:range rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="soundrack_of_movie">
+    <rdfs:domain rdf:resource="#Soundtrack"/>
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="has_soundtrack"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#directed">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#directed_by"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdfs:domain rdf:resource="#Director"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#written_by">
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdfs:range rdf:resource="#Writer"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#has_written"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_trailer">
+    <rdfs:range rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <owl:inverseOf rdf:resource="#trailer_of_movie"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_written">
+    <rdfs:domain rdf:resource="#Writer"/>
+    <owl:inverseOf rdf:resource="#written_by"/>
+    <rdfs:range rdf:resource="#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="movie_has_quotes">
+    <rdfs:domain rdf:resource="#Movie"/>
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:ID="quote_for_movie"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#MemorableQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#directed_by">
+    <owl:inverseOf rdf:resource="#directed"/>
+    <rdfs:range rdf:resource="#Director"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_produced">
+    <rdfs:domain rdf:resource="#Producer"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#produced_by"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#made_quote">
+    <owl:inverseOf rdf:resource="#quote_made_by"/>
+    <rdfs:range rdf:resource="#MemorableQuote"/>
+    <rdfs:domain rdf:resource="#ActorParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#produced_by">
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdfs:range rdf:resource="#Producer"/>
+    <owl:inverseOf rdf:resource="#has_produced"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_genre">
+    <rdfs:range rdf:resource="#Genre"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_soundtrack">
+    <owl:inverseOf rdf:resource="#soundrack_of_movie"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdfs:range rdf:resource="#Soundtrack"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:ID="mimeType"/>
+  <rdf:Property rdf:ID="URL_1"/>
+  <rdf:Property rdf:ID="URL"/>
+  <owl:DatatypeProperty rdf:ID="description">
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="official_site">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="birthdate">
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="genre_description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Genre"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="title">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="first_name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="plays_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdfs:domain rdf:resource="#ActorParticipant"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="last_name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="has_status">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Movie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="quote">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#MemorableQuote"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="year">
+    <rdfs:domain rdf:resource="#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ExternalReview"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="has_actor">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:domain rdf:resource="#ActorParticipant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="credited_cast">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#ActorParticipant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#belongs_to_movie">
+    <owl:inverseOf rdf:resource="#has_external_review"/>
+    <rdfs:domain rdf:resource="#ExternalReview"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Movie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="external_url">
+    <rdfs:domain rdf:resource="#ExternalReview"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#quote_for_movie">
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdfs:domain rdf:resource="#MemorableQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="#movie_has_quotes"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#photo_of_person">
+    <owl:inverseOf rdf:resource="#person_photo"/>
+    <rdfs:domain rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="#Person"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#photo_of_movie">
+    <rdfs:domain rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Media"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Movie"/>
+    <owl:inverseOf rdf:resource="#movie_photo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:InverseFunctionalProperty>
+  <MemorableQuote rdf:ID="diCaprio_CatchMeIfYouCan_quote1">
+    <quote rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ah, people only know what you tell them, Carl.</quote>
+    <quote_made_by>
+      <ActorParticipant rdf:ID="diCaprio_CatchMeIfYouCan">
+        <credited_cast rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</credited_cast>
+        <has_actor>
+          <Actor rdf:ID="Leonardo_di_Caprio">
+            <person_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Leonardo_di_Caprio"/>
+            <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >di Caprio</last_name>
+            <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Leonardo</first_name>
+            <birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+            >1974-03-11</birthdate>
+          </Actor>
+        </has_actor>
+        <plays_in>
+          <Movie rdf:ID="Catch_Me_If_You_Can">
+            <directed_by>
+              <Director rdf:ID="Steven_Spielberg">
+                <birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+                >1946-12-18</birthdate>
+                <directed rdf:resource="#Catch_Me_If_You_Can"/>
+                <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Spielberg</last_name>
+                <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Steven</first_name>
+                <person_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Steven_Spielberg"/>
+              </Director>
+            </directed_by>
+            <written_by>
+              <Writer rdf:ID="Frank_Abagnale">
+                <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Frank</first_name>
+                <birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+                >1948-03-03</birthdate>
+                <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Abagnale</last_name>
+                <has_written rdf:resource="#Catch_Me_If_You_Can"/>
+              </Writer>
+            </written_by>
+            <official_site rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.imdb.com/title/tt0264464/officialsites</official_site>
+            <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Catch Me If You Can</title>
+            <movie_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Catch_Me_If_You_Can"/>
+            <produced_by>
+              <Producer rdf:ID="Walter_F_Parkes">
+                <has_produced rdf:resource="#Catch_Me_If_You_Can"/>
+                <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Parks</last_name>
+                <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Walter</first_name>
+              </Producer>
+            </produced_by>
+            <has_genre>
+              <Genre rdf:ID="Drama">
+                <genre_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >A movie  that is turbulent or highly emotional.</genre_description>
+              </Genre>
+            </has_genre>
+            <has_genre>
+              <Genre rdf:ID="Biography">
+                <genre_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >A movie about the series of events making up a person's life.</genre_description>
+              </Genre>
+            </has_genre>
+            <has_genre>
+              <Genre rdf:ID="Crime">
+                <genre_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >The genre of fiction that deals with crimes, their detection, criminals, and their motives.</genre_description>
+              </Genre>
+            </has_genre>
+            <has_trailer rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Trailer_Catch_Me_If_You_Can"/>
+            <year rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2002</year>
+            <has_external_review>
+              <ExternalReview rdf:ID="CatchMeIfYouCan_Chicago_Sun-Times">
+                <belongs_to_movie rdf:resource="#Catch_Me_If_You_Can"/>
+                <author rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Roger Ebert</author>
+                <external_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/20021225/REVIEWS/212250301/1023</external_url>
+              </ExternalReview>
+            </has_external_review>
+            <has_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Released</has_status>
+            <has_external_review>
+              <ExternalReview rdf:ID="CatchMeIfYouCan_Guardian-Observer">
+                <author rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Philip French</author>
+                <external_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://film.guardian.co.uk/News_Story/Critic_Review/Observer_Film_of_the_week/0,,887196,00.html</external_url>
+                <belongs_to_movie rdf:resource="#Catch_Me_If_You_Can"/>
+              </ExternalReview>
+            </has_external_review>
+          </Movie>
+        </plays_in>
+        <made_quote rdf:resource="#diCaprio_CatchMeIfYouCan_quote1"/>
+      </ActorParticipant>
+    </quote_made_by>
+  </MemorableQuote>
+  <Genre rdf:ID="Fantasy">
+    <genre_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Movie that is more or less coherent, as in dreams and daydreams, yet unrestricted by reality.</genre_description>
+  </Genre>
+  <Soundtrack rdf:ID="Soundtrack_Green_Mile">
+    <soundrack_of_movie>
+      <Movie rdf:ID="Green_Mile">
+        <has_soundtrack rdf:resource="#Soundtrack_Green_Mile"/>
+        <has_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Released</has_status>
+        <has_genre rdf:resource="#Drama"/>
+        <movie_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Green_Mile"/>
+        <written_by>
+          <Writer rdf:ID="Stephen_King">
+            <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >King</last_name>
+            <has_written rdf:resource="#Green_Mile"/>
+            <person_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Stephen_King"/>
+            <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Stephen</first_name>
+          </Writer>
+        </written_by>
+        <has_trailer rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Trailer_Green_Mile"/>
+        <has_external_review>
+          <ExternalReview rdf:ID="GreenMile_Chicago_Sun-Times">
+            <author rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Roger Ebert</author>
+            <belongs_to_movie rdf:resource="#Green_Mile"/>
+            <external_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19991210/REVIEWS/912100302/1023</external_url>
+          </ExternalReview>
+        </has_external_review>
+        <official_site rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://thegreenmile.warnerbros.com/</official_site>
+        <produced_by>
+          <Producer rdf:ID="David_Valdes">
+            <has_produced rdf:resource="#Green_Mile"/>
+            <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >David</first_name>
+            <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Valdes</last_name>
+          </Producer>
+        </produced_by>
+        <has_genre rdf:resource="#Fantasy"/>
+        <directed_by>
+          <Director rdf:ID="Frank_Darabont">
+            <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Darabont</last_name>
+            <birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+            >2006-01-25</birthdate>
+            <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Frank</first_name>
+            <person_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Frank_Darabont"/>
+            <directed rdf:resource="#Green_Mile"/>
+          </Director>
+        </directed_by>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1999</year>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The Green Mile</title>
+      </Movie>
+    </soundrack_of_movie>
+  </Soundtrack>
+  <ActorParticipant rdf:ID="Hanks_CatchMeIfYouCan">
+    <made_quote>
+      <MemorableQuote rdf:ID="Hanks_CatchMeIfYouCan_quote1">
+        <quote rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sometimes it's easier livin' the lie.</quote>
+        <quote_made_by rdf:resource="#Hanks_CatchMeIfYouCan"/>
+      </MemorableQuote>
+    </made_quote>
+    <credited_cast rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</credited_cast>
+    <has_actor>
+      <Actor rdf:ID="Tom_Hanks">
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tom</first_name>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hanks</last_name>
+        <birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >1956-07-09</birthdate>
+        <person_photo rdf:resource="http://wwwis.win.tue.nl/~hera/Hera-S/mime.owl#Photo_Tom_Hanks"/>
+      </Actor>
+    </has_actor>
+    <plays_in rdf:resource="#Catch_Me_If_You_Can"/>
+  </ActorParticipant>
+  <MemorableQuote rdf:ID="Hanks_GreenMile_quote1">
+    <quote rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What happens on the mile stays on the mile. Always has. </quote>
+    <quote_made_by>
+      <ActorParticipant rdf:ID="Hanks_GreenMile">
+        <has_actor rdf:resource="#Tom_Hanks"/>
+        <made_quote rdf:resource="#Hanks_GreenMile_quote1"/>
+        <credited_cast rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</credited_cast>
+        <plays_in rdf:resource="#Green_Mile"/>
+      </ActorParticipant>
+    </quote_made_by>
+  </MemorableQuote>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.2 beta, Build 291)  http://protege.stanford.edu -->
