@@ -47,7 +47,26 @@ docs <- Corpus(DirSource("G:/Synopsis Tahir/LDATOPICMODELLING/ontoloy courpus fo
 #and store results in docs VARIABLE
 summary(docs)# this give detail about our corpus
 
+# Count stopwords BEFORE removal
+stopword_list <- stopwords("english")
+total_stopwords_before <- 0
+found_stopwords_before <- c()
 
+for (doc in docs) {
+  words <- unlist(strsplit(tolower(as.character(doc)), "\\s+"))
+  clean_words <- gsub("[[:punct:]]", "", words)  # Remove punctuation attached to words
+  found <- clean_words[clean_words %in% stopword_list]
+  found_stopwords_before <- c(found_stopwords_before, found)
+  total_stopwords_before <- total_stopwords_before + length(found)
+}
+
+cat("🔹 Total stop words before removal:", total_stopwords_before, "\n")
+cat("🔹 Unique stop words found:\n")
+print(unique(found_stopwords_before))
+# Count frequency of each stopword before removal
+stopword_freq_table <- table(found_stopwords_before)
+cat("🔢 Frequency of each stopword before removal:\n")
+print(stopword_freq_table)
 
 #inspect a particular document
 #PRE-PROCESSING OF DATA
@@ -86,7 +105,21 @@ docs <- tm_map(docs, toSpace, " ,")
 #Strip digits (std transformation, so no need for content_transformer)
 docs <- tm_map(docs, removeNumbers)
 writeLines(as.character(docs[[91]]))#single document file detail all content this show
+# Count stopwords AFTER removal
+total_stopwords_after <- 0
+found_stopwords_after <- c()
 
+for (doc in docs) {
+  words <- unlist(strsplit(tolower(as.character(doc)), "\\s+"))
+  clean_words <- gsub("[[:punct:]]", "", words)
+  found <- clean_words[clean_words %in% stopword_list]
+  found_stopwords_after <- c(found_stopwords_after, found)
+  total_stopwords_after <- total_stopwords_after + length(found)
+}
+
+cat("🔻 Total stop words after removal:", total_stopwords_after, "\n")
+cat("🔻 Unique stop words still remaining:\n")
+print(unique(found_stopwords_after))
 summary(docs)
 docs <- tm_map(docs, toSpace, "Synopsis Tahir")
 docs <- tm_map(docs, toSpace, "LDATOPICMODELLING")
